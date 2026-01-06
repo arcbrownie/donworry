@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Heart, Home, Calculator, FileText, Shield } from "lucide-react";
 import { ReactNode } from "react";
 
 interface CalculatorLayoutProps {
@@ -10,12 +9,17 @@ interface CalculatorLayoutProps {
 }
 
 const navItems = [
-  { path: "/", label: "홈", icon: Home },
-  { path: "/debt/test", label: "채무조정 진단", icon: Shield },
-  { path: "/cal/part-time", label: "알바 계산기", icon: Calculator },
-  { path: "/cal/freelancer", label: "프리랜서 환급", icon: FileText },
-  { path: "/cal/youth-tax", label: "청년 세금감면", icon: Heart },
-  { path: "/cal/soldier", label: "군인 적금", icon: Calculator },
+  { path: "/", label: "홈", emoji: "🏠" },
+  { path: "/debt", label: "채무조정", emoji: "💙" },
+  { path: "/cal", label: "계산기", emoji: "🧮" },
+  { path: "/about", label: "소개", emoji: "ℹ️" },
+];
+
+const mobileNavItems = [
+  { path: "/", label: "홈", emoji: "🏠" },
+  { path: "/debt", label: "채무조정", emoji: "💙" },
+  { path: "/debt/test", label: "진단", emoji: "🩺" },
+  { path: "/cal", label: "계산기", emoji: "🧮" },
 ];
 
 export function CalculatorLayout({ children, title, description, seoContent }: CalculatorLayoutProps) {
@@ -26,7 +30,7 @@ export function CalculatorLayout({ children, title, description, seoContent }: C
         <div className="container flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-9 h-9 rounded-xl gradient-hero flex items-center justify-center shadow-soft group-hover:shadow-card transition-shadow">
-              <Heart className="w-5 h-5 text-primary-foreground" />
+              <span className="text-lg">💙</span>
             </div>
             <span className="font-bold text-lg text-foreground">돈워리</span>
           </Link>
@@ -48,19 +52,16 @@ export function CalculatorLayout({ children, title, description, seoContent }: C
       {/* Mobile Nav */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-t border-border/50">
         <div className="flex justify-around py-2">
-          {navItems.slice(0, 5).map((item) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="flex flex-col items-center gap-1 px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Icon className="w-5 h-5" />
-                <span className="text-xs">{item.label.split(' ')[0]}</span>
-              </Link>
-            );
-          })}
+          {mobileNavItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className="flex flex-col items-center gap-1 px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <span className="text-xl">{item.emoji}</span>
+              <span className="text-xs">{item.label}</span>
+            </Link>
+          ))}
         </div>
       </nav>
 
@@ -102,13 +103,26 @@ export function CalculatorLayout({ children, title, description, seoContent }: C
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card mt-auto">
         <div className="container py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Heart className="w-5 h-5 text-primary" />
-              <span className="font-medium text-foreground">돈워리</span>
-              <span className="text-muted-foreground text-sm">- 마음까지 챙기는 금융 처방전</span>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xl">💙</span>
+                <span className="font-medium text-foreground">돈워리</span>
+                <span className="text-muted-foreground text-sm">- 마음까지 챙기는 금융 처방전</span>
+              </div>
+              <div className="flex items-center gap-4 text-sm">
+                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+                  서비스 소개
+                </Link>
+                <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+                  개인정보처리방침
+                </Link>
+                <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+                  이용약관
+                </Link>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-center">
               © 2025 돈워리. 본 계산기는 참고용이며, 정확한 상담은 전문가와 진행하세요.
             </p>
           </div>
