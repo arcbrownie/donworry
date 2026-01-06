@@ -2,87 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* 돈워리 - 금융 테라피 디자인 시스템 */
+    --background: 210 33% 98%;
+    --foreground: 215 35% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 35% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 35% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* 딥블루 - 신뢰와 안정 */
+    --primary: 215 55% 28%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* 소프트 블루 - 편안함 */
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 215 35% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* 뮤트 - 차분한 그레이 */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* 액센트 - 따뜻한 하늘색 */
+    --accent: 200 85% 94%;
+    --accent-foreground: 215 55% 28%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* 성공 - 희망의 그린 */
+    --success: 160 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* 경고 - 부드러운 오렌지 */
+    --warning: 35 90% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 55%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 25% 90%;
+    --input: 210 25% 90%;
+    --ring: 215 55% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* 커스텀 테라피 컬러 */
+    --therapy-soft: 210 40% 97%;
+    --therapy-calm: 200 35% 92%;
+    --therapy-trust: 215 55% 35%;
+    --therapy-hope: 160 50% 50%;
+    --therapy-warm: 30 60% 95%;
+
+    /* 그라디언트 */
+    --gradient-hero: linear-gradient(135deg, hsl(215 55% 28%) 0%, hsl(200 50% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 30% 98%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(210 40% 97%) 0%, hsl(200 35% 95%) 100%);
+
+    /* 그림자 */
+    --shadow-soft: 0 4px 20px -4px hsl(215 55% 28% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(215 55% 28% / 0.12);
+    --shadow-elevated: 0 16px 50px -12px hsl(215 55% 28% / 0.18);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 215 35% 12%;
+    --foreground: 210 30% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 32% 16%;
+    --card-foreground: 210 30% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 32% 16%;
+    --popover-foreground: 210 30% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 200 70% 60%;
+    --primary-foreground: 215 35% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 25% 22%;
+    --secondary-foreground: 210 30% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 25% 20%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 50% 25%;
+    --accent-foreground: 200 70% 80%;
+
+    --success: 160 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 90% 55%;
+    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 215 25% 25%;
+    --input: 215 25% 25%;
+    --ring: 200 70% 50%;
+
+    --therapy-soft: 215 30% 15%;
+    --therapy-calm: 215 25% 18%;
+    --therapy-trust: 200 60% 55%;
+    --therapy-hope: 160 50% 45%;
+    --therapy-warm: 30 30% 20%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(215 35% 18%) 0%, hsl(200 40% 25%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(215 32% 16%) 0%, hsl(215 30% 14%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(215 30% 15%) 0%, hsl(215 25% 18%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 16px 50px -12px hsl(0 0% 0% / 0.5);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -99,7 +141,96 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+}
+
+@layer components {
+  .therapy-card {
+    @apply bg-card rounded-2xl p-6 shadow-soft border border-border/50;
+    background: var(--gradient-card);
+  }
+
+  .therapy-input {
+    @apply w-full px-4 py-3 rounded-xl border border-input bg-background 
+           focus:ring-2 focus:ring-ring/30 focus:border-primary transition-all duration-200;
+  }
+
+  .therapy-label {
+    @apply text-sm font-medium text-foreground mb-2 block;
+  }
+
+  .ad-container {
+    @apply w-full min-h-[100px] bg-muted/50 rounded-xl border-2 border-dashed border-border 
+           flex items-center justify-center text-muted-foreground text-sm;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
