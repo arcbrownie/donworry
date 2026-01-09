@@ -26,7 +26,7 @@ const navigationItems = [
       { path: "/life", label: "생활 허브", emoji: "🏡", description: "일상 재테크 팁 모음" },
       { 
         label: "생활 계산기", 
-        emoji: "🧮", 
+        emoji: "🔢", 
         description: "생활에 필요한 계산기",
         isFolder: true,
         subItems: [
