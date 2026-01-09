@@ -9,7 +9,7 @@ const calculators = [
     emoji: "💰", 
     title: "알바 실수령액 계산기", 
     description: "2026년 최저임금 반영, 주휴수당 포함 실수령액",
-    tag: "2026",
+    tag: "생활",
     variant: "life" as const 
   },
   { 
@@ -17,7 +17,7 @@ const calculators = [
     emoji: "🎖️", 
     title: "군인 적금 계산기", 
     description: "장병내일준비적금 만기금액 & 전역일",
-    tag: "인기",
+    tag: "생활",
     variant: "life" as const 
   },
 ];
@@ -59,10 +59,10 @@ export default function LifeHub() {
       <MainNavigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-500/10 to-emerald-600/5">
+      <section className="relative overflow-hidden bg-category-life-light border-b-4 border-category-life">
         <div className="container py-12 md:py-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-2xl bg-category-life/20 flex items-center justify-center">
               <span className="text-3xl">🏠</span>
             </div>
             <div>
@@ -81,7 +81,7 @@ export default function LifeHub() {
       <section className="container py-12">
         <div className="mb-6">
           <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            🧮 생활 계산기
+            🔢 생활 계산기
           </h2>
           <p className="text-sm text-muted-foreground mt-1">생활에 필요한 필수 금융 계산기</p>
         </div>

@@ -12,7 +12,7 @@ const debtFeatures = [
     emoji: "🩺", 
     title: "채무조정 자가진단", 
     description: "나에게 맞는 해결책 찾기",
-    tag: "핵심",
+    tag: "채무조정",
     variant: "debt" as const 
   },
   { 
@@ -20,6 +20,7 @@ const debtFeatures = [
     emoji: "📖", 
     title: "채무조정 상세 가이드", 
     description: "절차, 비용, 자격요건 안내",
+    tag: "채무조정",
     variant: "debt" as const 
   },
 ];
@@ -61,14 +62,14 @@ export default function DebtHub() {
       <MainNavigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-secondary/10 to-secondary/5">
+      <section className="relative overflow-hidden bg-category-debt-light border-b-4 border-category-debt">
         <div className="container py-12 md:py-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-2xl bg-category-debt/20 flex items-center justify-center">
               <span className="text-3xl">🛡️</span>
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground">채무</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground">채무조정</h1>
               <p className="text-muted-foreground">개인회생·파산·채무조정</p>
             </div>
           </div>
