@@ -64,24 +64,22 @@ export default function Index() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(128,90,213,0.2)_0%,transparent_50%)]" />
         
-        <div className="relative container py-16 md:py-24 lg:py-28">
+        <div className="relative container py-14 md:py-20 lg:py-24">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            {/* Logo Badge */}
-            <div className="flex items-center gap-3 mb-6 animate-fade-in">
-              <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center shadow-glow">
-                <Shield className="w-9 h-9 text-white" />
-              </div>
-            </div>
-            
-            {/* Main Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <span className="block">돈워리</span>
-              <span className="block text-2xl md:text-3xl font-medium text-white/80 mt-2">Don't Worry</span>
+            {/* Main Slogan */}
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <span className="text-[#F8FAFC]">일상은 </span>
+              <span className="text-secondary font-extrabold">가볍게</span>
+              <span className="text-[#F8FAFC]">, 돈 걱정은 </span>
+              <span className="text-secondary font-extrabold">없게</span>
+              <span className="text-[#F8FAFC]">.</span>
+              <br />
+              <span className="text-secondary font-extrabold text-3xl md:text-4xl lg:text-5xl mt-2 block">돈워리</span>
             </h1>
             
-            {/* Slogan */}
-            <p className="text-lg md:text-xl text-white/90 mb-8 mt-4 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
-              당신의 든든한 <span className="font-semibold">금융 및 채무조정 파트너</span>
+            {/* Sub Slogan */}
+            <p className="text-base md:text-lg text-[#F8FAFC]/80 mb-8 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
+              어제보다 가벼운 오늘을 만드는 금융 솔루션
             </p>
 
             {/* CTA Buttons */}
@@ -108,10 +106,10 @@ export default function Index() {
       <section className="container py-12 -mt-8">
         <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5">
           <h2 className="text-2xl font-bold text-foreground mb-2">
-            왜 돈워리일까요? ✨
+            당신의 일상을 지키는 <span className="text-secondary">돈워리</span>만의 특별함 ✨
           </h2>
           <p className="text-muted-foreground mb-8">
-            신뢰할 수 있는 금융 정보를 쉽고 빠르게
+            어제보다 가벼운 오늘을 만드는 금융 솔루션
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {benefits.map((item, index) => (

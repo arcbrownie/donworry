@@ -56,14 +56,15 @@ export default function MainNavigation() {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2.5 group">
           <div className="w-10 h-10 rounded-lg gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div className="flex flex-col">
+            <span className="text-[10px] text-muted-foreground leading-tight hidden sm:block">일상은 가볍게, 돈 걱정은 없게</span>
             <div className="flex items-baseline gap-1.5">
               <span className="font-bold text-lg text-foreground leading-tight">돈워리</span>
-              <span className="font-medium text-sm text-muted-foreground leading-tight hidden md:inline">Don't Worry</span>
+              <span className="font-medium text-xs text-muted-foreground leading-tight hidden md:inline">Don't Worry</span>
             </div>
           </div>
         </Link>
