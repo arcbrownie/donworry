@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Category hub pages
+import LifeHub from "./pages/life/LifeHub";
+import FinanceHub from "./pages/finance/FinanceHub";
+
 // Debt pages
 import DebtHub from "./pages/debt/DebtHub";
 import DebtTest from "./pages/debt/DebtTest";
@@ -33,6 +37,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          
+          {/* Category hub routes */}
+          <Route path="/life" element={<LifeHub />} />
+          <Route path="/finance" element={<FinanceHub />} />
           
           {/* Debt routes */}
           <Route path="/debt" element={<DebtHub />} />
