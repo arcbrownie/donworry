@@ -32,12 +32,12 @@ export default function Footer() {
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col">
+                <span className="text-[10px] text-muted-foreground">일상은 가볍게, 돈 걱정은 없게</span>
                 <span className="font-bold text-lg text-foreground">돈워리</span>
-                <span className="text-xs text-muted-foreground hidden sm:inline">Don't Worry</span>
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              당신의 든든한 금융 및 채무조정 파트너
+              어제보다 가벼운 오늘을 만드는 금융 솔루션
             </p>
           </div>
 
