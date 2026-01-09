@@ -228,7 +228,7 @@ export default function MainNavigation() {
                       {category.items.map((item, idx) => (
                         item.isFolder ? (
                           <Collapsible key={item.label} className="space-y-1">
-                            <CollapsibleTrigger className="flex items-center gap-3 px-3 py-3 rounded-lg transition-colors hover:bg-muted w-full">
+                            <CollapsibleTrigger className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${category.hoverBg} w-full`}>
                               <span className="text-lg">{item.emoji}</span>
                               <div className="flex flex-col flex-1 text-left">
                                 <span className="font-medium text-sm">{item.label}</span>
@@ -244,8 +244,8 @@ export default function MainNavigation() {
                                   onClick={() => setMobileOpen(false)}
                                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                                     isActive(subItem.path)
-                                      ? "bg-accent text-accent-foreground"
-                                      : "hover:bg-muted"
+                                      ? `${category.bgColor} ${category.color}`
+                                      : category.hoverBg
                                   }`}
                                 >
                                   <span className="text-base">{subItem.emoji}</span>
@@ -264,8 +264,8 @@ export default function MainNavigation() {
                             onClick={() => setMobileOpen(false)}
                             className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
                               isActive(item.path!)
-                                ? "bg-accent text-accent-foreground"
-                                : "hover:bg-muted"
+                                ? `${category.bgColor} ${category.color}`
+                                : category.hoverBg
                             }`}
                           >
                             <span className="text-lg">{item.emoji}</span>
