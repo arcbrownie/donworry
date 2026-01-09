@@ -6,133 +6,154 @@
 
 @layer base {
   :root {
-    /* 돈워리 - 금융 테라피 디자인 시스템 */
-    --background: 210 33% 98%;
-    --foreground: 215 35% 18%;
+    /* 돈워리 - Deep Blue & Purple 프리미엄 테마 */
+    --background: 240 10% 98%;
+    --foreground: 235 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 35% 18%;
+    --card-foreground: 235 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 35% 18%;
+    --popover-foreground: 235 25% 15%;
 
-    /* 딥블루 - 신뢰와 안정 */
-    --primary: 215 55% 28%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep Blue (#1A237E) - 메인 컬러 */
+    --primary: 232 68% 30%;
+    --primary-foreground: 0 0% 100%;
 
-    /* 소프트 블루 - 편안함 */
-    --secondary: 210 30% 94%;
-    --secondary-foreground: 215 35% 25%;
+    /* Deep Purple (#4A148C) - 보조 컬러 */
+    --secondary: 280 78% 31%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* 뮤트 - 차분한 그레이 */
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 15% 50%;
+    /* 소프트 퍼플-블루 */
+    --muted: 240 15% 95%;
+    --muted-foreground: 235 15% 45%;
 
-    /* 액센트 - 따뜻한 하늘색 */
-    --accent: 200 85% 94%;
-    --accent-foreground: 215 55% 28%;
+    /* 액센트 - 라이트 퍼플 */
+    --accent: 260 60% 95%;
+    --accent-foreground: 260 60% 35%;
 
-    /* 성공 - 희망의 그린 */
-    --success: 160 60% 45%;
+    /* 성공 */
+    --success: 160 60% 40%;
     --success-foreground: 0 0% 100%;
 
-    /* 경고 - 부드러운 오렌지 */
-    --warning: 35 90% 55%;
+    /* 경고 */
+    --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
     --destructive: 0 65% 55%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 25% 90%;
-    --input: 210 25% 90%;
-    --ring: 215 55% 45%;
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 232 68% 45%;
 
     --radius: 0.75rem;
 
-    /* 커스텀 테라피 컬러 */
-    --therapy-soft: 210 40% 97%;
-    --therapy-calm: 200 35% 92%;
-    --therapy-trust: 215 55% 35%;
-    --therapy-hope: 160 50% 50%;
-    --therapy-warm: 30 60% 95%;
+    /* 커스텀 테마 컬러 */
+    --theme-deep-blue: 232 68% 30%;
+    --theme-deep-purple: 280 78% 31%;
+    --theme-light-blue: 220 70% 96%;
+    --theme-light-purple: 270 60% 96%;
+    --theme-gradient-start: 232 68% 30%;
+    --theme-gradient-end: 280 78% 31%;
+
+    /* 카테고리별 컬러 */
+    --category-life: 160 60% 45%;
+    --category-life-light: 160 50% 95%;
+    --category-finance: 232 68% 45%;
+    --category-finance-light: 232 50% 95%;
+    --category-debt: 280 60% 45%;
+    --category-debt-light: 280 50% 95%;
 
     /* 그라디언트 */
-    --gradient-hero: linear-gradient(135deg, hsl(215 55% 28%) 0%, hsl(200 50% 40%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 30% 98%) 100%);
-    --gradient-soft: linear-gradient(135deg, hsl(210 40% 97%) 0%, hsl(200 35% 95%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(232 68% 25%) 0%, hsl(280 78% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(240 15% 98%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(240 15% 97%) 0%, hsl(270 30% 96%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(232 68% 30%) 0%, hsl(280 78% 35%) 50%, hsl(320 70% 40%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(232 68% 35%) 0%, hsl(280 78% 40%) 100%);
 
     /* 그림자 */
-    --shadow-soft: 0 4px 20px -4px hsl(215 55% 28% / 0.08);
-    --shadow-card: 0 8px 30px -8px hsl(215 55% 28% / 0.12);
-    --shadow-elevated: 0 16px 50px -12px hsl(215 55% 28% / 0.18);
+    --shadow-soft: 0 4px 20px -4px hsl(232 68% 30% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(232 68% 30% / 0.15);
+    --shadow-elevated: 0 20px 50px -15px hsl(232 68% 30% / 0.2);
+    --shadow-glow: 0 0 40px -10px hsl(280 78% 50% / 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-primary: 232 68% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 30% 95%;
+    --sidebar-accent-foreground: 232 68% 30%;
+    --sidebar-border: 240 10% 90%;
+    --sidebar-ring: 232 68% 50%;
   }
 
   .dark {
-    --background: 215 35% 12%;
-    --foreground: 210 30% 96%;
+    --background: 235 25% 10%;
+    --foreground: 240 10% 95%;
 
-    --card: 215 32% 16%;
-    --card-foreground: 210 30% 96%;
+    --card: 235 25% 14%;
+    --card-foreground: 240 10% 95%;
 
-    --popover: 215 32% 16%;
-    --popover-foreground: 210 30% 96%;
+    --popover: 235 25% 14%;
+    --popover-foreground: 240 10% 95%;
 
-    --primary: 200 70% 60%;
-    --primary-foreground: 215 35% 12%;
+    --primary: 232 70% 55%;
+    --primary-foreground: 235 25% 10%;
 
-    --secondary: 215 25% 22%;
-    --secondary-foreground: 210 30% 90%;
+    --secondary: 280 60% 55%;
+    --secondary-foreground: 235 25% 10%;
 
-    --muted: 215 25% 20%;
-    --muted-foreground: 215 15% 60%;
+    --muted: 235 20% 18%;
+    --muted-foreground: 240 10% 60%;
 
-    --accent: 200 50% 25%;
-    --accent-foreground: 200 70% 80%;
+    --accent: 260 40% 25%;
+    --accent-foreground: 260 60% 75%;
 
     --success: 160 60% 45%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 35 90% 55%;
+    --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 25% 25%;
-    --input: 215 25% 25%;
-    --ring: 200 70% 50%;
+    --border: 235 20% 22%;
+    --input: 235 20% 22%;
+    --ring: 232 70% 55%;
 
-    --therapy-soft: 215 30% 15%;
-    --therapy-calm: 215 25% 18%;
-    --therapy-trust: 200 60% 55%;
-    --therapy-hope: 160 50% 45%;
-    --therapy-warm: 30 30% 20%;
+    --theme-deep-blue: 232 70% 55%;
+    --theme-deep-purple: 280 60% 55%;
+    --theme-light-blue: 232 40% 20%;
+    --theme-light-purple: 280 40% 20%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(215 35% 18%) 0%, hsl(200 40% 25%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(215 32% 16%) 0%, hsl(215 30% 14%) 100%);
-    --gradient-soft: linear-gradient(135deg, hsl(215 30% 15%) 0%, hsl(215 25% 18%) 100%);
+    --category-life: 160 50% 50%;
+    --category-life-light: 160 30% 18%;
+    --category-finance: 232 60% 55%;
+    --category-finance-light: 232 30% 18%;
+    --category-debt: 280 50% 55%;
+    --category-debt-light: 280 30% 18%;
 
-    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
-    --shadow-elevated: 0 16px 50px -12px hsl(0 0% 0% / 0.5);
+    --gradient-hero: linear-gradient(135deg, hsl(235 25% 12%) 0%, hsl(280 40% 20%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(235 25% 14%) 0%, hsl(235 25% 12%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(235 20% 15%) 0%, hsl(280 25% 15%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(232 60% 45%) 0%, hsl(280 60% 50%) 50%, hsl(320 50% 45%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(232 60% 50%) 0%, hsl(280 60% 50%) 100%);
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.5);
+    --shadow-elevated: 0 20px 50px -15px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 40px -10px hsl(280 60% 50% / 0.4);
+
+    --sidebar-background: 235 25% 12%;
+    --sidebar-foreground: 240 10% 90%;
+    --sidebar-primary: 232 70% 55%;
+    --sidebar-primary-foreground: 235 25% 10%;
+    --sidebar-accent: 260 30% 20%;
+    --sidebar-accent-foreground: 260 60% 70%;
+    --sidebar-border: 235 20% 22%;
+    --sidebar-ring: 232 70% 55%;
   }
 }
 
@@ -170,6 +191,54 @@
     @apply w-full min-h-[100px] bg-muted/50 rounded-xl border-2 border-dashed border-border 
            flex items-center justify-center text-muted-foreground text-sm;
   }
+
+  /* 프리미엄 버튼 */
+  .btn-premium {
+    @apply relative overflow-hidden px-6 py-3 rounded-xl font-medium text-white transition-all duration-300;
+    background: var(--gradient-button);
+  }
+
+  .btn-premium:hover {
+    @apply shadow-elevated scale-[1.02];
+  }
+
+  .btn-premium::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, hsl(280 78% 45%) 0%, hsl(232 68% 40%) 100%);
+  }
+
+  .btn-premium:hover::before {
+    @apply opacity-100;
+  }
+
+  /* 카테고리별 카드 */
+  .category-card-life {
+    @apply border-l-4;
+    border-left-color: hsl(var(--category-life));
+    background: linear-gradient(135deg, hsl(var(--category-life-light)) 0%, hsl(var(--card)) 100%);
+  }
+
+  .category-card-finance {
+    @apply border-l-4;
+    border-left-color: hsl(var(--category-finance));
+    background: linear-gradient(135deg, hsl(var(--category-finance-light)) 0%, hsl(var(--card)) 100%);
+  }
+
+  .category-card-debt {
+    @apply border-l-4;
+    border-left-color: hsl(var(--category-debt));
+    background: linear-gradient(135deg, hsl(var(--category-debt-light)) 0%, hsl(var(--card)) 100%);
+  }
+
+  /* 블로그 카드 */
+  .blog-card {
+    @apply bg-card rounded-2xl overflow-hidden shadow-soft border border-border/50 hover:shadow-elevated transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .blog-card-thumbnail {
+    @apply w-full h-40 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center;
+  }
 }
 
 @layer utilities {
@@ -185,12 +254,29 @@
     box-shadow: var(--shadow-elevated);
   }
 
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
   .gradient-hero {
     background: var(--gradient-hero);
   }
 
   .gradient-soft {
     background: var(--gradient-soft);
+  }
+
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .gradient-button {
+    background: var(--gradient-button);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background: var(--gradient-premium);
   }
 
   .animate-fade-in {
@@ -203,6 +289,10 @@
 
   .animate-pulse-soft {
     animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
   }
 }
 
@@ -232,5 +322,14 @@
   }
   50% {
     opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }

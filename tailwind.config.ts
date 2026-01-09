@@ -58,13 +58,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        therapy: {
-          soft: "hsl(var(--therapy-soft))",
-          calm: "hsl(var(--therapy-calm))",
-          trust: "hsl(var(--therapy-trust))",
-          hope: "hsl(var(--therapy-hope))",
-          warm: "hsl(var(--therapy-warm))",
-        },
+        // Category colors
+        "category-life": "hsl(var(--category-life))",
+        "category-life-light": "hsl(var(--category-life-light))",
+        "category-finance": "hsl(var(--category-finance))",
+        "category-finance-light": "hsl(var(--category-finance-light))",
+        "category-debt": "hsl(var(--category-debt))",
+        "category-debt-light": "hsl(var(--category-debt-light))",
+        // Theme colors
+        "theme-deep-blue": "hsl(var(--theme-deep-blue))",
+        "theme-deep-purple": "hsl(var(--theme-deep-purple))",
+        "theme-light-blue": "hsl(var(--theme-light-blue))",
+        "theme-light-purple": "hsl(var(--theme-light-purple))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -88,6 +93,7 @@ export default {
         soft: "var(--shadow-soft)",
         card: "var(--shadow-card)",
         elevated: "var(--shadow-elevated)",
+        glow: "var(--shadow-glow)",
       },
       keyframes: {
         "accordion-down": {
@@ -106,12 +112,17 @@ export default {
           from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.5s ease-out forwards",
         "slide-up": "slide-up 0.5s ease-out forwards",
+        shimmer: "shimmer 2s linear infinite",
       },
     },
   },
