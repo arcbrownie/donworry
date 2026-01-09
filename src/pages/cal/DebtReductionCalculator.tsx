@@ -136,6 +136,9 @@ export default function DebtReductionCalculator() {
         {result && (
           <ResultCard
             title="예상 탕감 결과"
+            showShare
+            shareTitle="개인회생 탕감액 계산 결과"
+            shareDescription={`탕감률 ${result.reductionRate}%, 탕감액 ${result.reducedAmount.toLocaleString()}원`}
           >
             <ResultItem
               label="예상 탕감률"

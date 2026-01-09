@@ -140,6 +140,9 @@ export default function InterestSavingCalculator() {
         {result && (
           <ResultCard
             title="이자 절감 결과"
+            showShare
+            shareTitle="이자 절감 계산 결과"
+            shareDescription={`총 이자 절감액 ${result.interestSaving.toLocaleString()}원`}
           >
             <ResultItem
               label="현재 금리 총 이자"

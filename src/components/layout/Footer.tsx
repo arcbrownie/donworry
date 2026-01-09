@@ -93,8 +93,29 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="pt-8 border-t border-border/50">
+        {/* Slogan */}
+        <div className="pt-8 border-t border-border/50 mb-8">
+          <p className="text-center text-lg font-semibold text-foreground">
+            일상은 가볍게, 돈 걱정은 없게. <span className="text-secondary">돈워리</span>
+          </p>
+        </div>
+
+        {/* Business Info */}
+        <div className="pt-6 border-t border-border/50">
+          <div className="text-center space-y-2 mb-6">
+            <p className="text-sm text-muted-foreground">
+              상호: 돈워리 | 대표: 홍길동
+            </p>
+            <p className="text-sm text-muted-foreground">
+              사업자등록번호: 000-00-00000 | 통신판매업신고: 제0000-서울강남-0000호
+            </p>
+            <p className="text-sm text-muted-foreground">
+              주소: 서울특별시 강남구 테헤란로 000, 0층
+            </p>
+            <p className="text-sm text-muted-foreground">
+              이메일: contact@donworry.kr | 고객센터: 1544-0000
+            </p>
+          </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
               © 2025 Donworry. All rights reserved.
