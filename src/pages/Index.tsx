@@ -59,22 +59,22 @@ export default function Index() {
       <MainNavigation />
 
       {/* 1. 왜 돈워리일까요? (강점 소개) - 첫 번째 섹션 */}
-      <section className="container py-12 pt-8">
-        <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5">
-          <h2 className="text-2xl font-bold text-foreground mb-2">
+      <section className="container py-16">
+        <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5 py-12 px-8">
+          <h2 className="text-2xl font-bold text-foreground mb-4">
             당신의 일상을 지키는 <span className="text-secondary">돈워리</span>만의 특별함 ✨
           </h2>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-10 leading-relaxed">
             어제보다 가벼운 오늘을 만드는 금융 솔루션
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {benefits.map((item, index) => (
-              <div key={index} className="space-y-3">
+              <div key={index} className="space-y-4">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center">
                   <item.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground text-sm">{item.title}</h3>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -84,7 +84,7 @@ export default function Index() {
       </section>
 
       {/* 2. 인기 계산기 위젯 (실사용 유도) */}
-      <section className="container py-12">
+      <section className="container py-16">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold text-foreground">인기 계산기</h2>
@@ -102,21 +102,23 @@ export default function Index() {
       </section>
 
       {/* 3. 무료 채무진단 배너 (CTA) */}
-      <section className="container py-6">
+      <section className="container py-8">
         <div className="relative overflow-hidden rounded-3xl gradient-hero p-8 md:p-12">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
           <div className="relative text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               지금 바로 무료 채무진단을 받아보세요
             </h2>
-            <p className="text-white/80 mb-6 max-w-xl mx-auto">
+            <p className="text-white/80 mb-6 max-w-xl mx-auto leading-relaxed">
               개인회생, 파산, 신속채무조정 중 나에게 맞는 해결책을 찾아드립니다.
+              <br />
               전문가 상담 전 자가진단으로 방향을 잡아보세요.
             </p>
             <Link to="/debt/test">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elevated px-8">
-                🩺 무료 진단 시작하기
-                <ArrowRight className="w-4 h-4 ml-2" />
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elevated px-10 py-6">
+                <span className="text-xl">🩺</span>
+                <span className="text-lg font-bold ml-2">무료 진단 시작하기</span>
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
           </div>
@@ -124,7 +126,7 @@ export default function Index() {
       </section>
 
       {/* 4. 카테고리별 바로가기 (최신 콘텐츠 위로 이동) */}
-      <section className="container py-12">
+      <section className="container py-16">
         <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-foreground">카테고리별 바로가기</h2>
           <p className="text-muted-foreground text-sm mt-1">원하는 카테고리를 선택하세요</p>
@@ -157,7 +159,7 @@ export default function Index() {
       </section>
 
       {/* 5. 최신 콘텐츠/블로그 리스트 (SEO) */}
-      <section className="container py-12">
+      <section className="container py-16">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
