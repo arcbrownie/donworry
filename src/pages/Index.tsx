@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, CheckCircle, Calendar, Zap, Calculator, Users } from "lucide-react";
+import { ArrowRight, Calendar, Zap, Calculator, Users } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
@@ -17,7 +17,7 @@ const categories = [
   },
   {
     path: "/finance",
-    emoji: "💳",
+    emoji: "💰",
     title: "금융",
     description: "프리랜서 환급, 청년 세금감면 등 금융 정보",
     color: "from-primary/20 to-primary/10",
@@ -25,8 +25,8 @@ const categories = [
   },
   {
     path: "/debt",
-    emoji: "🛡️",
-    title: "채무",
+    emoji: "⚖️",
+    title: "채무조정",
     description: "개인회생, 파산, 채무조정 솔루션",
     color: "from-secondary/20 to-secondary/10",
     borderColor: "border-secondary",
@@ -41,7 +41,7 @@ const featuredCalculators = [
 ];
 
 const blogPosts = [
-  { emoji: "📊", title: "2026년 달라지는 개인회생 제도", excerpt: "새해부터 적용되는 개인회생 변경사항을 알아보세요.", category: "채무", isPlaceholder: true },
+  { emoji: "📊", title: "2026년 달라지는 개인회생 제도", excerpt: "새해부터 적용되는 개인회생 변경사항을 알아보세요.", category: "채무조정", isPlaceholder: true },
   { emoji: "💡", title: "알바생을 위한 주휴수당 완벽 가이드", excerpt: "주휴수당, 정확히 얼마나 받을 수 있을까요?", category: "생활", isPlaceholder: true },
   { emoji: "🏦", title: "2030을 위한 첫 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융", isPlaceholder: true },
 ];
@@ -58,52 +58,8 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <MainNavigation />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 gradient-hero" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(128,90,213,0.2)_0%,transparent_50%)]" />
-        
-        <div className="relative container py-14 md:py-20 lg:py-24">
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            {/* Main Slogan */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <span className="text-[#F8FAFC]">일상은 </span>
-              <span className="text-secondary font-extrabold">가볍게</span>
-              <span className="text-[#F8FAFC]">, 돈 걱정은 </span>
-              <span className="text-secondary font-extrabold">없게</span>
-              <span className="text-[#F8FAFC]">.</span>
-              <br />
-              <span className="text-secondary font-extrabold text-3xl md:text-4xl lg:text-5xl mt-2 block">돈워리</span>
-            </h1>
-            
-            {/* Sub Slogan */}
-            <p className="text-base md:text-lg text-[#F8FAFC]/80 mb-8 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
-              어제보다 가벼운 오늘을 만드는 금융 솔루션
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <Link to="/debt/test">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elevated px-8">
-                  🩺 무료 채무진단
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-              <Link to="/cal">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8">
-                  🧮 금융 계산기
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
-      </section>
-
-      {/* 1. 왜 돈워리일까요? (강점 소개) */}
-      <section className="container py-12 -mt-8">
+      {/* 1. 왜 돈워리일까요? (강점 소개) - 첫 번째 섹션 */}
+      <section className="container py-12 pt-8">
         <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5">
           <h2 className="text-2xl font-bold text-foreground mb-2">
             당신의 일상을 지키는 <span className="text-secondary">돈워리</span>만의 특별함 ✨
@@ -139,7 +95,7 @@ export default function Index() {
           </Link>
         </div>
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-          {featuredCalculators.map((calc, index) => (
+          {featuredCalculators.map((calc) => (
             <CalculatorWidget key={calc.path} {...calc} />
           ))}
         </div>
@@ -167,22 +123,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* 4. 최신 콘텐츠/블로그 리스트 (SEO) */}
-      <section className="container py-12">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
-            <p className="text-muted-foreground text-sm mt-1">알아두면 좋은 금융 정보</p>
-          </div>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
-          ))}
-        </div>
-      </section>
-
-      {/* 5. 생활 / 금융 / 채무 카테고리별 대형 아이콘 메뉴 (하단 배치) */}
+      {/* 4. 카테고리별 바로가기 (최신 콘텐츠 위로 이동) */}
       <section className="container py-12">
         <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-foreground">카테고리별 바로가기</h2>
@@ -215,11 +156,24 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Ad Container */}
-      <section className="container py-6">
-        <div className="ad-container py-10">
-          <span>광고 영역 (AdSense)</span>
+      {/* 5. 최신 콘텐츠/블로그 리스트 (SEO) */}
+      <section className="container py-12">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
+            <p className="text-muted-foreground text-sm mt-1">알아두면 좋은 금융 정보</p>
+          </div>
         </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {blogPosts.map((post, index) => (
+            <BlogCard key={index} {...post} />
+          ))}
+        </div>
+      </section>
+
+      {/* Ad Container - 점선 빈 공간 */}
+      <section className="container py-6">
+        <div className="border-2 border-dashed border-border/50 rounded-2xl py-16" />
       </section>
 
       <Footer />
