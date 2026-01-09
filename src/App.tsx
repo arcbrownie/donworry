@@ -17,6 +17,8 @@ import DebtGuide from "./pages/debt/DebtGuide";
 
 // Calculator pages
 import CalculatorHub from "./pages/cal/CalculatorHub";
+import LifeCalculatorHub from "./pages/cal/LifeCalculatorHub";
+import FinanceCalculatorHub from "./pages/cal/FinanceCalculatorHub";
 import PartTimeCalculator from "./pages/cal/PartTimeCalculator";
 import FreelancerCalculator from "./pages/cal/FreelancerCalculator";
 import YouthTaxCalculator from "./pages/cal/YouthTaxCalculator";
@@ -49,6 +51,8 @@ const App = () => (
           
           {/* Calculator routes */}
           <Route path="/cal" element={<CalculatorHub />} />
+          <Route path="/cal/life" element={<LifeCalculatorHub />} />
+          <Route path="/cal/finance" element={<FinanceCalculatorHub />} />
           <Route path="/cal/part-time" element={<PartTimeCalculator />} />
           <Route path="/cal/freelancer" element={<FreelancerCalculator />} />
           <Route path="/cal/youth-tax" element={<YouthTaxCalculator />} />
