@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Shield } from "lucide-react";
 
 const footerLinks = {
@@ -10,8 +10,8 @@ const footerLinks = {
   services: [
     { label: "채무조정 진단", path: "/debt/test" },
     { label: "채무조정 가이드", path: "/debt/guide" },
-    { label: "🔢  생활 계산기", path: "/cal", hash: "life" },
-    { label: "🧮  금융 계산기", path: "/cal", hash: "finance" },
+    { label: "생활 계산기", path: "/cal/life" },
+    { label: "금융 계산기", path: "/cal/finance" },
   ],
   info: [
     { label: "서비스 소개", path: "/about" },
@@ -21,15 +21,6 @@ const footerLinks = {
 };
 
 export default function Footer() {
-  const navigate = useNavigate();
-
-  const handleServiceClick = (path: string, hash?: string) => {
-    if (hash) {
-      navigate(path);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="border-t border-border/50 bg-card mt-16">
       <div className="container py-12">
@@ -73,21 +64,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.services.map((link, index) => (
                 <li key={`${link.path}-${index}`}>
-                  {link.hash ? (
-                    <button
-                      onClick={() => handleServiceClick(link.path, link.hash)}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
-                    >
-                      {link.label}
-                    </button>
-                  ) : (
-                    <Link
-                      to={link.path}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
+                  <Link
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

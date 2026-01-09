@@ -12,24 +12,27 @@ const categories = [
     emoji: "🏠",
     title: "생활",
     description: "알바 실수령액, 군인 적금 등 일상 재테크",
-    color: "from-emerald-500/20 to-emerald-600/10",
-    borderColor: "border-emerald-500",
+    bgColor: "bg-category-life-light",
+    borderColor: "border-category-life",
+    hoverColor: "group-hover:text-category-life",
   },
   {
     path: "/finance",
     emoji: "💰",
     title: "금융",
     description: "프리랜서 환급, 청년 세금감면 등 금융 정보",
-    color: "from-primary/20 to-primary/10",
-    borderColor: "border-primary",
+    bgColor: "bg-category-finance-light",
+    borderColor: "border-category-finance",
+    hoverColor: "group-hover:text-category-finance",
   },
   {
     path: "/debt",
     emoji: "⚖️",
     title: "채무조정",
     description: "개인회생, 파산, 채무조정 솔루션",
-    color: "from-secondary/20 to-secondary/10",
-    borderColor: "border-secondary",
+    bgColor: "bg-category-debt-light",
+    borderColor: "border-category-debt",
+    hoverColor: "group-hover:text-category-debt",
   },
 ];
 
@@ -136,20 +139,20 @@ export default function Index() {
             <Link
               key={category.path}
               to={category.path}
-              className={`group therapy-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 animate-slide-up bg-gradient-to-br ${category.color}`}
+              className={`group therapy-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 animate-slide-up ${category.bgColor} border-l-4 ${category.borderColor}`}
               style={{ animationDelay: `${0.1 + index * 0.05}s` }}
             >
               <div className="flex flex-col items-center text-center py-4">
                 <div className="w-20 h-20 rounded-2xl bg-background/80 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-soft mb-4">
                   <span className="text-5xl">{category.emoji}</span>
                 </div>
-                <h2 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h2 className={`text-2xl font-bold text-foreground mb-2 transition-colors ${category.hoverColor}`}>
                   {category.title}
                 </h2>
                 <p className="text-sm text-muted-foreground">
                   {category.description}
                 </p>
-                <div className="mt-4 flex items-center gap-1 text-primary font-medium text-sm">
+                <div className={`mt-4 flex items-center gap-1 font-medium text-sm text-muted-foreground ${category.hoverColor}`}>
                   자세히 보기 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
