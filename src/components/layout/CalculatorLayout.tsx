@@ -1,14 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ReactNode } from "react";
-import { FloatingContactBar } from "@/components/FloatingContactBar";
-import { AdContainer } from "@/components/AdContainer";
 
 interface CalculatorLayoutProps {
   children: ReactNode;
   title: string;
   description: string;
   seoContent?: string;
-  showFloatingBar?: boolean;
 }
 
 const navItems = [
@@ -25,15 +22,7 @@ const mobileNavItems = [
   { path: "/cal", label: "계산기", emoji: "🧮" },
 ];
 
-export function CalculatorLayout({ 
-  children, 
-  title, 
-  description, 
-  seoContent,
-  showFloatingBar = true 
-}: CalculatorLayoutProps) {
-  const location = useLocation();
-  
+export function CalculatorLayout({ children, title, description, seoContent }: CalculatorLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -51,11 +40,7 @@ export function CalculatorLayout({
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  location.pathname.startsWith(item.path) && item.path !== "/"
-                    ? "bg-accent text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}
+                className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
               >
                 {item.label}
               </Link>
@@ -64,18 +49,14 @@ export function CalculatorLayout({
         </div>
       </header>
 
-      {/* Mobile Nav - Hidden when floating bar is shown */}
-      <nav className={`md:hidden fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-t border-border/50 ${showFloatingBar ? 'hidden' : ''}`}>
+      {/* Mobile Nav */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-t border-border/50">
         <div className="flex justify-around py-2">
           {mobileNavItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`flex flex-col items-center gap-1 px-3 py-2 transition-colors ${
-                location.pathname === item.path
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-primary"
-              }`}
+              className="flex flex-col items-center gap-1 px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <span className="text-xl">{item.emoji}</span>
               <span className="text-xs">{item.label}</span>
@@ -85,12 +66,7 @@ export function CalculatorLayout({
       </nav>
 
       {/* Main Content */}
-      <main className="container py-8 pb-32 md:pb-8">
-        {/* Top Ad Container */}
-        <div className="max-w-2xl mx-auto mb-6">
-          <AdContainer size="rectangle" />
-        </div>
-
+      <main className="container py-8 pb-24 md:pb-8">
         {/* Page Header */}
         <div className="text-center mb-8 animate-fade-in">
           <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
@@ -106,15 +82,17 @@ export function CalculatorLayout({
           {children}
         </div>
 
-        {/* Bottom Ad Container */}
+        {/* Ad Container */}
         <div className="max-w-2xl mx-auto mt-10">
-          <AdContainer size="rectangle" />
+          <div className="ad-container py-8">
+            <span>광고 영역 (AdSense)</span>
+          </div>
         </div>
 
         {/* SEO Content */}
         {seoContent && (
           <section className="max-w-2xl mx-auto mt-10 p-6 bg-therapy-soft rounded-2xl">
-            <h2 className="text-lg font-semibold text-foreground mb-4">📚 관련 정보</h2>
+            <h2 className="text-lg font-semibold text-foreground mb-4">관련 정보</h2>
             <div className="prose prose-sm text-muted-foreground leading-relaxed">
               {seoContent}
             </div>
@@ -128,11 +106,9 @@ export function CalculatorLayout({
           <div className="flex flex-col gap-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg gradient-hero flex items-center justify-center">
-                  <span className="text-xs">💙</span>
-                </div>
-                <span className="font-semibold text-foreground">돈워리</span>
-                <span className="text-muted-foreground text-sm">- 마음까지 챙기는 금융 솔루션</span>
+                <span className="text-xl">💙</span>
+                <span className="font-medium text-foreground">돈워리</span>
+                <span className="text-muted-foreground text-sm">- 마음까지 챙기는 금융 처방전</span>
               </div>
               <div className="flex items-center gap-4 text-sm">
                 <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -152,9 +128,6 @@ export function CalculatorLayout({
           </div>
         </div>
       </footer>
-
-      {/* Floating Contact Bar */}
-      {showFloatingBar && <FloatingContactBar />}
     </div>
   );
 }

@@ -2,37 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Pretendard 폰트 */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* 돈워리 - 금융 솔루션 플랫폼 디자인 시스템 */
-    /* Deep Blue + Purple 그라데이션 테마 */
-    --background: 230 25% 98%;
-    --foreground: 235 35% 15%;
+    /* 돈워리 - 금융 테라피 디자인 시스템 */
+    --background: 210 33% 98%;
+    --foreground: 215 35% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 235 35% 15%;
+    --card-foreground: 215 35% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 235 35% 15%;
+    --popover-foreground: 215 35% 18%;
 
-    /* Deep Blue Primary - #1A237E 기반 */
-    --primary: 232 70% 30%;
-    --primary-foreground: 0 0% 100%;
+    /* 딥블루 - 신뢰와 안정 */
+    --primary: 215 55% 28%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Purple Accent */
-    --secondary: 260 60% 55%;
-    --secondary-foreground: 0 0% 100%;
+    /* 소프트 블루 - 편안함 */
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 215 35% 25%;
 
-    /* 뮤트 - 차분한 블루그레이 */
-    --muted: 230 20% 95%;
-    --muted-foreground: 230 15% 45%;
+    /* 뮤트 - 차분한 그레이 */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 50%;
 
-    /* 액센트 - 라이트 퍼플 */
-    --accent: 260 80% 95%;
-    --accent-foreground: 260 60% 40%;
+    /* 액센트 - 따뜻한 하늘색 */
+    --accent: 200 85% 94%;
+    --accent-foreground: 215 55% 28%;
 
     /* 성공 - 희망의 그린 */
     --success: 160 60% 45%;
@@ -43,33 +41,30 @@
     --warning-foreground: 0 0% 100%;
 
     --destructive: 0 65% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 230 20% 88%;
-    --input: 230 20% 88%;
-    --ring: 260 60% 55%;
+    --border: 210 25% 90%;
+    --input: 210 25% 90%;
+    --ring: 215 55% 45%;
 
     --radius: 0.75rem;
 
     /* 커스텀 테라피 컬러 */
-    --therapy-soft: 260 40% 97%;
-    --therapy-calm: 230 30% 94%;
-    --therapy-trust: 232 70% 35%;
+    --therapy-soft: 210 40% 97%;
+    --therapy-calm: 200 35% 92%;
+    --therapy-trust: 215 55% 35%;
     --therapy-hope: 160 50% 50%;
     --therapy-warm: 30 60% 95%;
-    --therapy-purple: 260 60% 55%;
 
     /* 그라디언트 */
-    --gradient-hero: linear-gradient(135deg, hsl(232 70% 25%) 0%, hsl(260 60% 45%) 50%, hsl(280 55% 40%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(260 30% 98%) 100%);
-    --gradient-soft: linear-gradient(135deg, hsl(260 40% 97%) 0%, hsl(230 30% 96%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(232 70% 30%) 0%, hsl(260 60% 50%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(260 60% 55%) 0%, hsl(280 55% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 55% 28%) 0%, hsl(200 50% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 30% 98%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(210 40% 97%) 0%, hsl(200 35% 95%) 100%);
 
     /* 그림자 */
-    --shadow-soft: 0 4px 20px -4px hsl(232 70% 30% / 0.1);
-    --shadow-card: 0 8px 30px -8px hsl(232 70% 30% / 0.15);
-    --shadow-elevated: 0 20px 60px -15px hsl(232 70% 30% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(215 55% 28% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(215 55% 28% / 0.12);
+    --shadow-elevated: 0 16px 50px -12px hsl(215 55% 28% / 0.18);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -82,26 +77,26 @@
   }
 
   .dark {
-    --background: 235 30% 10%;
-    --foreground: 230 20% 95%;
+    --background: 215 35% 12%;
+    --foreground: 210 30% 96%;
 
-    --card: 235 28% 14%;
-    --card-foreground: 230 20% 95%;
+    --card: 215 32% 16%;
+    --card-foreground: 210 30% 96%;
 
-    --popover: 235 28% 14%;
-    --popover-foreground: 230 20% 95%;
+    --popover: 215 32% 16%;
+    --popover-foreground: 210 30% 96%;
 
-    --primary: 260 70% 65%;
-    --primary-foreground: 235 30% 10%;
+    --primary: 200 70% 60%;
+    --primary-foreground: 215 35% 12%;
 
-    --secondary: 260 50% 45%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 215 25% 22%;
+    --secondary-foreground: 210 30% 90%;
 
-    --muted: 235 20% 18%;
-    --muted-foreground: 230 15% 60%;
+    --muted: 215 25% 20%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 260 40% 25%;
-    --accent-foreground: 260 70% 75%;
+    --accent: 200 50% 25%;
+    --accent-foreground: 200 70% 80%;
 
     --success: 160 60% 45%;
     --success-foreground: 0 0% 100%;
@@ -110,28 +105,25 @@
     --warning-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 235 20% 22%;
-    --input: 235 20% 22%;
-    --ring: 260 70% 55%;
+    --border: 215 25% 25%;
+    --input: 215 25% 25%;
+    --ring: 200 70% 50%;
 
-    --therapy-soft: 235 25% 14%;
-    --therapy-calm: 235 22% 16%;
-    --therapy-trust: 260 60% 55%;
+    --therapy-soft: 215 30% 15%;
+    --therapy-calm: 215 25% 18%;
+    --therapy-trust: 200 60% 55%;
     --therapy-hope: 160 50% 45%;
-    --therapy-warm: 30 30% 18%;
-    --therapy-purple: 260 60% 55%;
+    --therapy-warm: 30 30% 20%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(235 30% 15%) 0%, hsl(260 50% 30%) 50%, hsl(280 45% 25%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(235 28% 14%) 0%, hsl(235 25% 12%) 100%);
-    --gradient-soft: linear-gradient(135deg, hsl(235 25% 14%) 0%, hsl(235 22% 16%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(260 70% 55%) 0%, hsl(280 55% 50%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(260 60% 45%) 0%, hsl(280 45% 40%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 35% 18%) 0%, hsl(200 40% 25%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(215 32% 16%) 0%, hsl(215 30% 14%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(215 30% 15%) 0%, hsl(215 25% 18%) 100%);
 
     --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
     --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
-    --shadow-elevated: 0 20px 60px -15px hsl(0 0% 0% / 0.5);
+    --shadow-elevated: 0 16px 50px -12px hsl(0 0% 0% / 0.5);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -154,21 +146,20 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 }
 
 @layer components {
   .therapy-card {
-    @apply bg-card rounded-2xl p-6 shadow-card border border-border/50;
+    @apply bg-card rounded-2xl p-6 shadow-soft border border-border/50;
     background: var(--gradient-card);
   }
 
   .therapy-input {
-    @apply w-full px-4 py-4 rounded-xl border border-input bg-background 
-           focus:ring-2 focus:ring-ring/30 focus:border-primary transition-all duration-200
-           text-base min-h-[52px];
+    @apply w-full px-4 py-3 rounded-xl border border-input bg-background 
+           focus:ring-2 focus:ring-ring/30 focus:border-primary transition-all duration-200;
   }
 
   .therapy-label {
@@ -176,42 +167,8 @@
   }
 
   .ad-container {
-    @apply bg-muted/50 rounded-xl border-2 border-dashed border-border 
+    @apply w-full min-h-[100px] bg-muted/50 rounded-xl border-2 border-dashed border-border 
            flex items-center justify-center text-muted-foreground text-sm;
-  }
-
-  .ad-container-300 {
-    @apply ad-container;
-    width: 300px;
-    height: 250px;
-    margin: 0 auto;
-  }
-
-  .gradient-button {
-    background: var(--gradient-button);
-    @apply text-white font-medium shadow-soft hover:shadow-card transition-all duration-200;
-  }
-
-  .gradient-text {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .quiz-option {
-    @apply w-full p-5 rounded-xl border-2 border-border bg-card text-left
-           hover:border-primary hover:bg-accent/30 transition-all duration-200
-           flex items-center gap-4 min-h-[70px];
-  }
-
-  .quiz-option.selected {
-    @apply border-primary bg-accent/50 shadow-soft;
-  }
-
-  .floating-bar {
-    @apply fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-t border-border
-           p-4 shadow-elevated md:hidden;
   }
 }
 
@@ -247,10 +204,6 @@
   .animate-pulse-soft {
     animation: pulseSoft 2s ease-in-out infinite;
   }
-
-  .animate-bounce-soft {
-    animation: bounceSoft 2s ease-in-out infinite;
-  }
 }
 
 @keyframes fadeIn {
@@ -279,14 +232,5 @@
   }
   50% {
     opacity: 0.8;
-  }
-}
-
-@keyframes bounceSoft {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
   }
 }
