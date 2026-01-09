@@ -36,7 +36,7 @@ const blogPosts = [
   },
   { 
     emoji: "⚖️", 
-    title: "개인회생 vs 개인파산, 어떤 게 나을까?", 
+    title: "개인회생 vs 개인파산 비교", 
     excerpt: "두 제도의 차이점과 선택 기준을 알려드립니다",
     category: "채무",
     isPlaceholder: true 
@@ -58,10 +58,10 @@ const blogPosts = [
 ];
 
 const debtFAQ = [
-  { question: "개인회생과 개인파산의 차이점은 무엇인가요?", answer: "개인회생은 3~5년간 일정 금액을 상환하고 나머지를 탕감받는 제도이고, 개인파산은 모든 재산을 정리하고 면책받는 제도입니다. 소득 유무에 따라 선택이 달라집니다." },
-  { question: "개인회생 신청 자격 조건이 어떻게 되나요?", answer: "총 채무액이 담보채무 15억원, 무담보채무 10억원 이하이고, 정기적인 수입이 있어야 합니다. 최근 5년 내 면책받은 적이 없어야 합니다." },
-  { question: "채무조정 후 신용회복까지 얼마나 걸리나요?", answer: "개인회생 면책 후 약 5년, 개인파산 면책 후 약 5~7년 정도 지나면 신용정보가 삭제됩니다. 이후 신용카드 발급 등이 가능해집니다." },
-  { question: "신속채무조정은 무엇인가요?", answer: "금융회사와 협의 없이 신용회복위원회를 통해 진행하는 채무조정입니다. 연체 전이라도 3개월 이상 이자만 납부 중이면 신청 가능합니다." },
+  { question: "개인회생과 개인파산의 차이점", answer: "개인회생은 3~5년간 일정 금액을 상환하고 나머지를 탕감받는 제도이고, 개인파산은 모든 재산을 정리하고 면책받는 제도입니다. 소득 유무에 따라 선택이 달라집니다." },
+  { question: "개인회생 신청 자격 조건", answer: "총 채무액이 담보채무 15억원, 무담보채무 10억원 이하이고, 정기적인 수입이 있어야 합니다. 최근 5년 내 면책받은 적이 없어야 합니다." },
+  { question: "채무조정 후 신용회복 기간", answer: "개인회생 면책 후 약 5년, 개인파산 면책 후 약 5~7년 정도 지나면 신용정보가 삭제됩니다. 이후 신용카드 발급 등이 가능해집니다." },
+  { question: "신속채무조정 제도", answer: "금융회사와 협의 없이 신용회복위원회를 통해 진행하는 채무조정입니다. 연체 전이라도 3개월 이상 이자만 납부 중이면 신청 가능합니다." },
 ];
 
 export default function DebtHub() {
@@ -97,21 +97,6 @@ export default function DebtHub() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="container py-12">
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            🔧 채무 해결 도구
-          </h2>
-          <p className="text-sm text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-2">
-          {debtFeatures.map((feature) => (
-            <CalculatorWidget key={feature.path} {...feature} />
-          ))}
-        </div>
-      </section>
-
       {/* Info Card */}
       <section className="container py-6">
         <div className="therapy-card bg-gradient-to-br from-secondary/5 to-primary/5 border-secondary/20">
@@ -137,11 +122,28 @@ export default function DebtHub() {
         </div>
       </section>
 
+      {/* Features */}
+      <section className="container py-12">
+        <div className="mb-6">
+          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+            <span>🔧</span>
+            <span>채무 해결 도구</span>
+          </h2>
+          <p className="text-sm text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
+        </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          {debtFeatures.map((feature) => (
+            <CalculatorWidget key={feature.path} {...feature} />
+          ))}
+        </div>
+      </section>
+
       {/* Blog */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            📚 채무조정 가이드
+          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+            <span>📚</span>
+            <span>채무조정 가이드</span>
           </h2>
           <p className="text-sm text-muted-foreground mt-1">알아두면 도움이 되는 채무 관련 정보</p>
         </div>

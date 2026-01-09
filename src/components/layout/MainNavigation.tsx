@@ -19,10 +19,10 @@ const navigationItems = [
   {
     label: "생활",
     emoji: "🏠",
-    color: "text-category-life",
-    bgColor: "bg-category-life/10",
-    hoverColor: "hover:bg-category-life/10 hover:text-category-life",
-    hoverBg: "hover:bg-category-life/10",
+    color: "text-category-debt",
+    bgColor: "bg-category-debt/10",
+    hoverColor: "hover:bg-category-debt/10 hover:text-category-debt",
+    hoverBg: "hover:bg-category-debt/10",
     items: [
       { path: "/life", label: "생활 허브", emoji: "🏡", description: "일상 재테크 팁 모음" },
       { 
@@ -41,10 +41,10 @@ const navigationItems = [
   {
     label: "금융",
     emoji: "💰",
-    color: "text-category-finance",
-    bgColor: "bg-category-finance/10",
-    hoverColor: "hover:bg-category-finance/10 hover:text-category-finance",
-    hoverBg: "hover:bg-category-finance/10",
+    color: "text-category-debt",
+    bgColor: "bg-category-debt/10",
+    hoverColor: "hover:bg-category-debt/10 hover:text-category-debt",
+    hoverBg: "hover:bg-category-debt/10",
     items: [
       { path: "/finance", label: "금융 허브", emoji: "🏦", description: "대출·금리 정보 모음" },
       { 
@@ -125,7 +125,7 @@ export default function MainNavigation() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-colors ${category.hoverColor} ${
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${category.hoverColor} ${
                     category.items.some((item) => 
                       item.isFolder 
                         ? item.subItems?.some(sub => isActive(sub.path))
@@ -245,7 +245,7 @@ export default function MainNavigation() {
               <nav className="flex-1 overflow-y-auto p-4">
                 {navigationItems.map((category) => (
                   <div key={category.label} className="mb-6">
-                    <div className={`flex items-center gap-2 px-3 py-2 rounded-lg ${category.bgColor} mb-2`}>
+                    <div className={`flex items-center gap-3 px-3 py-2 rounded-lg ${category.bgColor} mb-2`}>
                       <span className="text-lg">{category.emoji}</span>
                       <span className={`font-semibold ${category.color}`}>{category.label}</span>
                     </div>

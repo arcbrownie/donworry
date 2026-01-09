@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
         </p>
 
         <p className="text-sm text-muted-foreground mt-8 pt-4 border-t border-border">
-          시행일: 2025년 1월 1일
+          시행일: 2026년 1월 1일
         </p>
       </div>
     </CalculatorLayout>

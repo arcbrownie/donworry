@@ -17,6 +17,7 @@ const footerLinks = {
     { label: "서비스 소개", path: "/about" },
     { label: "개인정보처리방침", path: "/privacy" },
     { label: "이용약관", path: "/terms" },
+    { label: "법적 고지", path: "/disclaimer" },
   ],
 };
 
@@ -105,7 +106,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2025 Donworry. All rights reserved.
+              © 2026 Donworry. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground text-left md:text-right">
               본 서비스는 참고용이며, 정확한 상담은 전문가와 진행하세요.

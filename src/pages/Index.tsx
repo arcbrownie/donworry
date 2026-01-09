@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, Zap, Calculator, Users } from "lucide-react";
+import { Calendar, Zap, Calculator, Users } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
@@ -47,9 +47,9 @@ const heroCalculators = [
 ];
 
 const blogPosts = [
-  { emoji: "📊", title: "2026년 달라지는 개인회생 제도", excerpt: "새해부터 적용되는 개인회생 변경사항을 알아보세요.", category: "채무조정", isPlaceholder: true },
-  { emoji: "💡", title: "알바생을 위한 주휴수당 완벽 가이드", excerpt: "주휴수당, 정확히 얼마나 받을 수 있을까요?", category: "생활", isPlaceholder: true },
-  { emoji: "🏦", title: "2030을 위한 첫 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융", isPlaceholder: true },
+  { emoji: "📊", title: "2026년 달라지는 개인회생 제도", excerpt: "새해부터 적용되는 개인회생 변경사항을 알아보세요.", category: "채무조정", path: "/personal-rehabilitation-2026-changes", isPlaceholder: false },
+  { emoji: "💡", title: "알바생 주휴수당 완벽 가이드", excerpt: "2026년 최저임금 기준 주휴수당 계산법과 지급 조건", category: "생활", path: "/blog/weekly-holiday-pay-guide", isPlaceholder: false },
+  { emoji: "🏦", title: "2030을 위한 첫 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융", path: "/blog/first-loan-guide-2030", isPlaceholder: false },
 ];
 
 const benefits = [
@@ -68,7 +68,7 @@ export default function Index() {
       <section className="container py-16">
         <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5 py-12 px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            당신의 일상을 지키는 <span className="text-secondary">돈워리</span>만의 특별함 ✨
+            당신의 행복을 지키는 <span className="text-secondary font-extrabold">돈워리</span>만의 특별함 ✨
           </h2>
           <p className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
             어제보다 가벼운 오늘을 만드는 금융 솔루션
@@ -123,9 +123,6 @@ export default function Index() {
                   </h3>
                   <p className="text-sm text-muted-foreground">{calc.description}</p>
                 </div>
-                <ArrowRight className={`w-6 h-6 ${
-                  calc.variant === "debt" ? "text-category-debt" : "text-category-finance"
-                } group-hover:translate-x-1 transition-transform shrink-0`} />
               </div>
             </Link>
           ))}
@@ -164,7 +161,7 @@ export default function Index() {
       <section className="container py-16">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-foreground">인기 계산기</h2>
+            <h2 className="text-3xl md:text-2xl font-bold text-foreground">인기 계산기</h2>
             <p className="text-muted-foreground text-base mt-1 leading-relaxed">가장 많이 사용하는 금융 계산기</p>
           </div>
           <Link to="/cal" className="text-base font-medium text-primary hover:underline">
@@ -226,7 +223,7 @@ export default function Index() {
                   {category.description}
                 </p>
                 <div className={`mt-4 flex items-center gap-1 font-medium text-base text-muted-foreground ${category.hoverColor}`}>
-                  자세히 보기 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  자세히 보기
                 </div>
               </div>
             </Link>

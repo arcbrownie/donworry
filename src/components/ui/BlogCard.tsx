@@ -19,33 +19,41 @@ export default function BlogCard({
   isPlaceholder = false,
 }: BlogCardProps) {
   const categoryColors: Record<string, string> = {
-    생활: "bg-emerald-100 text-emerald-700",
-    금융: "bg-primary/10 text-primary",
-    채무: "bg-secondary/10 text-secondary",
+    생활: "bg-category-life/10 text-category-life",
+    금융: "bg-category-finance/10 text-category-finance",
+    채무조정: "bg-category-debt/10 text-category-debt",
+    채무: "bg-category-debt/10 text-category-debt",
+  };
+
+  const categoryGradient: Record<string, string> = {
+    생활: "group-hover:bg-gradient-to-br group-hover:from-category-life-light group-hover:to-card",
+    금융: "group-hover:bg-gradient-to-br group-hover:from-category-finance-light group-hover:to-card",
+    채무조정: "group-hover:bg-gradient-to-br group-hover:from-category-debt-light group-hover:to-card",
+    채무: "group-hover:bg-gradient-to-br group-hover:from-category-debt-light group-hover:to-card",
   };
 
   const CardContent = () => (
     <>
-      {/* Thumbnail */}
-      <div className="blog-card-thumbnail relative">
-        <span className="text-5xl">{emoji}</span>
-        {isPlaceholder && (
-          <div className="absolute inset-0 bg-muted/50 flex items-center justify-center">
-            <span className="text-xs text-muted-foreground bg-background/80 px-2 py-1 rounded">
-              콘텐츠 준비중
-            </span>
-          </div>
-        )}
-      </div>
-
       {/* Content */}
-      <div className="p-4">
-        <div className="flex items-center gap-2 mb-2">
-          <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
-            {category}
-          </span>
+      <div className={`p-4 transition-all duration-300 ${categoryGradient[category] || ""}`}>
+        <div className="flex items-start gap-3 mb-3">
+          <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
+            <span className="text-2xl">{emoji}</span>
+          </div>
+          <div className="flex-1">
+            <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
+              {category}
+            </span>
+            {isPlaceholder && (
+              <div className="mt-2">
+                <span className="text-xs text-muted-foreground bg-background/80 px-2 py-1 rounded">
+                  콘텐츠 준비중
+                </span>
+              </div>
+            )}
+          </div>
         </div>
-        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors text-sm md:text-base">
           {title}
         </h3>
         <p className="text-sm text-muted-foreground line-clamp-2 mb-3">

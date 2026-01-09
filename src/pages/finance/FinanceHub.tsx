@@ -33,7 +33,7 @@ const blogPosts = [
   },
   { 
     emoji: "💳", 
-    title: "신용카드 vs 체크카드, 뭐가 유리할까?", 
+    title: "신용카드 vs 체크카드 비교", 
     excerpt: "소비 패턴에 따른 최적의 카드 선택법",
     category: "금융",
     isPlaceholder: true 
@@ -55,10 +55,10 @@ const blogPosts = [
 ];
 
 const financeFAQ = [
-  { question: "프리랜서 3.3% 원천징수란 무엇인가요?", answer: "프리랜서가 용역비를 받을 때 미리 떼는 세금(소득세 3% + 지방소득세 0.3%)입니다. 5월 종합소득세 신고 시 환급받을 수 있습니다." },
-  { question: "청년 소득세 감면 혜택은 누가 받을 수 있나요?", answer: "만 15~34세 청년이 중소기업에 취업하면 5년간 소득세의 90%를 감면받을 수 있습니다. 군 복무기간은 연령 계산에서 제외됩니다." },
-  { question: "신용점수를 높이려면 어떻게 해야 하나요?", answer: "연체 없이 결제하기, 신용카드 적정 사용, 다양한 금융거래 이력 쌓기 등이 도움됩니다. 특히 연체는 신용점수에 치명적입니다." },
-  { question: "적금 vs 투자, 어떤 것이 더 유리한가요?", answer: "단기 자금은 적금, 장기 목표는 투자가 유리합니다. 안전성과 수익성의 밸런스를 고려해 분산하는 것이 좋습니다." },
+  { question: "프리랜서 3.3% 원천징수", answer: "프리랜서가 용역비를 받을 때 미리 떼는 세금(소득세 3% + 지방소득세 0.3%)입니다. 5월 종합소득세 신고 시 환급받을 수 있습니다." },
+  { question: "청년 소득세 감면 혜택 대상", answer: "만 15~34세 청년이 중소기업에 취업하면 5년간 소득세의 90%를 감면받을 수 있습니다. 군 복무기간은 연령 계산에서 제외됩니다." },
+  { question: "신용점수 향상 방법", answer: "연체 없이 결제하기, 신용카드 적정 사용, 다양한 금융거래 이력 쌓기 등이 도움됩니다. 특히 연체는 신용점수에 치명적입니다." },
+  { question: "적금 vs 투자 선택 기준", answer: "단기 자금은 적금, 장기 목표는 투자가 유리합니다. 안전성과 수익성의 밸런스를 고려해 분산하는 것이 좋습니다." },
 ];
 
 export default function FinanceHub() {
@@ -88,8 +88,9 @@ export default function FinanceHub() {
       {/* Calculators */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            🧮 금융 계산기
+          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+            <span>🧮</span>
+            <span>금융 계산기</span>
           </h2>
           <p className="text-sm text-muted-foreground mt-1">세금과 금리를 쉽게 계산하세요</p>
         </div>
@@ -103,8 +104,9 @@ export default function FinanceHub() {
       {/* Blog */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            📚 금융 가이드
+          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+            <span>📚</span>
+            <span>금융 가이드</span>
           </h2>
           <p className="text-sm text-muted-foreground mt-1">알아두면 돈 되는 금융 지식</p>
         </div>

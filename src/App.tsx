@@ -21,6 +21,9 @@ import DebtGuideContent from "./pages/debt/DebtGuideContent";
 
 // Content pages
 import ContentHub from "./pages/content/ContentHub";
+import PersonalRehabilitation2026 from "./pages/content/PersonalRehabilitation2026";
+import WeeklyHolidayPayGuide from "./pages/content/WeeklyHolidayPayGuide";
+import FirstLoanGuide2030 from "./pages/content/FirstLoanGuide2030";
 
 // Calculator pages
 import CalculatorHub from "./pages/cal/CalculatorHub";
@@ -38,6 +41,7 @@ import InterestSavingCalculator from "./pages/cal/InterestSavingCalculator";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import TermsOfService from "./pages/legal/TermsOfService";
 import About from "./pages/legal/About";
+import Disclaimer from "./pages/legal/Disclaimer";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +63,9 @@ const App = () => (
           
           {/* Content routes */}
           <Route path="/content" element={<ContentHub />} />
+          <Route path="/personal-rehabilitation-2026-changes" element={<PersonalRehabilitation2026 />} />
+          <Route path="/blog/weekly-holiday-pay-guide" element={<WeeklyHolidayPayGuide />} />
+          <Route path="/blog/first-loan-guide-2030" element={<FirstLoanGuide2030 />} />
           
           {/* Debt routes */}
           <Route path="/debt" element={<DebtHub />} />
@@ -82,6 +89,7 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/about" element={<About />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

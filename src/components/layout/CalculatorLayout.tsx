@@ -27,13 +27,6 @@ export function CalculatorLayout({ children, title, description, seoContent }: C
           </p>
         </div>
 
-        {/* AD Container - 결과 위 광고 영역 */}
-        <div className="max-w-2xl mx-auto mb-6">
-          <div className="h-[250px] border-2 border-dashed border-border/50 rounded-2xl flex items-center justify-center bg-muted/20">
-            <span className="text-muted-foreground font-medium">AD</span>
-          </div>
-        </div>
-
         {/* Calculator Content */}
         <div className="max-w-2xl mx-auto space-y-6 animate-slide-up" style={{ animationDelay: "0.1s" }}>
           {children}

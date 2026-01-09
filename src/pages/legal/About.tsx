@@ -1,4 +1,5 @@
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
+import { Shield } from "lucide-react";
 
 export default function About() {
   return (
@@ -8,7 +9,9 @@ export default function About() {
     >
       <div className="therapy-card">
         <div className="text-center mb-8">
-          <span className="text-6xl mb-4 block">💙</span>
+          <div className="w-20 h-20 rounded-2xl gradient-button flex items-center justify-center mx-auto mb-4 shadow-soft">
+            <Shield className="w-12 h-12 text-white" fill="white" fillOpacity={0.3} />
+          </div>
           <h2 className="text-2xl font-bold text-foreground mb-2">돈워리 (Don't Worry)</h2>
           <p className="text-muted-foreground">마음까지 챙기는 금융 처방전</p>
         </div>
@@ -25,7 +28,7 @@ export default function About() {
           </p>
 
           <div className="bg-therapy-soft rounded-xl p-6 my-6">
-            <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+            <h3 className="font-semibold text-foreground mb-4 flex items-center gap-3">
               <span>🎯</span> 돈워리가 하는 일
             </h3>
             <ul className="space-y-3">
@@ -60,7 +63,7 @@ export default function About() {
       </div>
 
       <div className="therapy-card">
-        <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+        <h3 className="font-semibold text-foreground mb-4 flex items-center gap-3">
           <span>📧</span> 문의하기
         </h3>
         <p className="text-muted-foreground">

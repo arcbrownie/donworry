@@ -36,14 +36,14 @@ const calculators = [
 const blogPosts = [
   { 
     emoji: "💡", 
-    title: "알바생을 위한 주휴수당 완벽 가이드", 
-    excerpt: "주휴수당, 정확히 얼마나 받을 수 있을까요? 조건과 계산법을 알려드립니다.",
+    title: "알바생 주휴수당 완벽 가이드", 
+    excerpt: "2026년 최저임금 기준 주휴수당 계산법과 지급 조건",
     category: "생활",
     isPlaceholder: true 
   },
   { 
     emoji: "🎖️", 
-    title: "2026년 군인 월급 인상, 얼마나 오를까?", 
+    title: "2026년 군인 월급 인상 정보", 
     excerpt: "병장 기준 월급 변화와 적금 활용 전략을 알아보세요.",
     category: "생활",
     isPlaceholder: true 
@@ -65,10 +65,10 @@ const blogPosts = [
 ];
 
 const lifeFAQ = [
-  { question: "주휴수당은 어떻게 계산하나요?", answer: "주 15시간 이상 근무하면 1일분의 유급휴일수당이 발생합니다. 주휴수당 = 1일 소정근로시간 × 시급으로 계산됩니다." },
-  { question: "2026년 최저임금은 얼마인가요?", answer: "2026년 최저임금은 시간당 10,030원입니다. 월급으로 환산하면 주 40시간 기준 약 209만원입니다." },
-  { question: "군인 적금 가입 조건이 어떻게 되나요?", answer: "현역 병사라면 누구나 장병내일준비적금에 가입할 수 있습니다. 월 40만원까지 저축 가능하며, 정부 매칭지원금이 추가됩니다." },
-  { question: "실업급여 수급 자격은 어떻게 되나요?", answer: "고용보험에 180일 이상 가입하고, 비자발적 사유로 퇴직한 경우 실업급여를 받을 수 있습니다. 자발적 퇴직 시에도 일정 조건 충족 시 가능합니다." },
+  { question: "주휴수당 계산 방법", answer: "주 15시간 이상 근무하면 1일분의 유급휴일수당이 발생합니다. 주휴수당 = 1일 소정근로시간 × 시급으로 계산됩니다." },
+  { question: "2026년 최저임금", answer: "2026년 최저임금은 시간당 10,030원입니다. 월급으로 환산하면 주 40시간 기준 약 209만원입니다." },
+  { question: "군인 적금 가입 조건", answer: "현역 병사라면 누구나 장병내일준비적금에 가입할 수 있습니다. 월 40만원까지 저축 가능하며, 정부 매칭지원금이 추가됩니다." },
+  { question: "실업급여 수급 자격", answer: "고용보험에 180일 이상 가입하고, 비자발적 사유로 퇴직한 경우 실업급여를 받을 수 있습니다. 자발적 퇴직 시에도 일정 조건 충족 시 가능합니다." },
 ];
 
 export default function LifeHub() {
@@ -98,8 +98,9 @@ export default function LifeHub() {
       {/* Calculators */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            🔢 생활 계산기
+          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+            <span>🔢</span>
+            <span>생활 계산기</span>
           </h2>
           <p className="text-sm text-muted-foreground mt-1">생활에 필요한 필수 금융 계산기</p>
         </div>
@@ -113,8 +114,9 @@ export default function LifeHub() {
       {/* Blog */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            📚 생활 재테크 가이드
+          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+            <span>📚</span>
+            <span>생활 재테크 가이드</span>
           </h2>
           <p className="text-sm text-muted-foreground mt-1">일상에서 바로 적용할 수 있는 재테크 팁</p>
         </div>

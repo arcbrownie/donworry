@@ -75,8 +75,9 @@ export default function UnemploymentCalculator() {
     >
       {/* 입력 섹션 */}
       <div className="therapy-card space-y-6">
-        <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
-          📝 기본 정보 입력
+        <h2 className="text-lg font-semibold text-foreground flex items-center gap-3">
+          <span>📝</span>
+          <span>기본 정보 입력</span>
         </h2>
         
         <div className="grid gap-4">

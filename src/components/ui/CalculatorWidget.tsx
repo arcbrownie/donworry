@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 interface CalculatorWidgetProps {
   title: string;
@@ -52,7 +51,6 @@ export default function CalculatorWidget({
             {description}
           </p>
         </div>
-        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-3" />
       </div>
     </Link>
   );
