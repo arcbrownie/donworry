@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
 import CalculatorWidget from "@/components/ui/CalculatorWidget";
 import { Button } from "@/components/ui/button";
-
+import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 const categories = [
   {
     path: "/life",
@@ -61,7 +61,7 @@ const benefits = [
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-24 md:pb-0">
       <MainNavigation />
 
       {/* 1. 왜 돈워리일까요? (강점 소개) - 첫 번째 섹션 */}
@@ -70,7 +70,7 @@ export default function Index() {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             당신의 일상을 지키는 <span className="text-secondary">돈워리</span>만의 특별함 ✨
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
             어제보다 가벼운 오늘을 만드는 금융 솔루션
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
@@ -80,7 +80,7 @@ export default function Index() {
                   <item.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground text-base">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -166,7 +166,7 @@ export default function Index() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold text-foreground">인기 계산기</h2>
-            <p className="text-muted-foreground text-sm mt-1">가장 많이 사용하는 금융 계산기</p>
+            <p className="text-muted-foreground text-base mt-1 leading-relaxed">가장 많이 사용하는 금융 계산기</p>
           </div>
           <Link to="/cal" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
             전체보기 <ArrowRight className="w-4 h-4" />
@@ -207,7 +207,7 @@ export default function Index() {
       <section className="container py-16">
         <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-foreground">카테고리별 바로가기</h2>
-          <p className="text-muted-foreground text-sm mt-1">원하는 카테고리를 선택하세요</p>
+          <p className="text-muted-foreground text-base mt-1 leading-relaxed">원하는 카테고리를 선택하세요</p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {categories.map((category, index) => (
@@ -224,10 +224,10 @@ export default function Index() {
                 <h2 className={`text-2xl font-bold text-foreground mb-2 transition-colors ${category.hoverColor}`}>
                   {category.title}
                 </h2>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   {category.description}
                 </p>
-                <div className={`mt-4 flex items-center gap-1 font-medium text-sm text-muted-foreground ${category.hoverColor}`}>
+                <div className={`mt-4 flex items-center gap-1 font-medium text-base text-muted-foreground ${category.hoverColor}`}>
                   자세히 보기 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -241,7 +241,7 @@ export default function Index() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
-            <p className="text-muted-foreground text-sm mt-1">알아두면 좋은 금융 정보</p>
+            <p className="text-muted-foreground text-base mt-1 leading-relaxed">알아두면 좋은 금융 정보</p>
           </div>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
@@ -257,6 +257,9 @@ export default function Index() {
       </section>
 
       <Footer />
+      
+      {/* Mobile Floating CTA */}
+      <MobileFloatingCTA />
     </div>
   );
 }

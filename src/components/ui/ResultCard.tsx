@@ -1,11 +1,15 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { ShareButtons } from "./ShareButtons";
 
 interface ResultCardProps {
   title: string;
   children: ReactNode;
   variant?: "default" | "success" | "warning" | "info";
   className?: string;
+  showShare?: boolean;
+  shareTitle?: string;
+  shareDescription?: string;
 }
 
 const variantStyles = {
@@ -15,7 +19,15 @@ const variantStyles = {
   info: "bg-accent border-accent-foreground/20",
 };
 
-export function ResultCard({ title, children, variant = "default", className }: ResultCardProps) {
+export function ResultCard({ 
+  title, 
+  children, 
+  variant = "default", 
+  className,
+  showShare = false,
+  shareTitle,
+  shareDescription
+}: ResultCardProps) {
   return (
     <div className={cn(
       "rounded-2xl border p-6 shadow-card animate-slide-up",
@@ -24,6 +36,12 @@ export function ResultCard({ title, children, variant = "default", className }: 
     )}>
       <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
       {children}
+      {showShare && (
+        <ShareButtons 
+          title={shareTitle || title} 
+          description={shareDescription} 
+        />
+      )}
     </div>
   );
 }
