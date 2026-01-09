@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, ChevronRight, CheckCircle, FolderOpen } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, CheckCircle, Shield } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -79,7 +79,7 @@ export default function MainNavigation() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-12 h-12 rounded-xl gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
-            <span className="text-2xl">🛡️</span>
+            <Shield className="w-7 h-7 text-white" fill="white" fillOpacity={0.3} />
           </div>
           <div className="flex flex-col">
             <div className="flex items-baseline gap-1.5">
@@ -204,7 +204,7 @@ export default function MainNavigation() {
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
                   <div className="w-10 h-10 rounded-lg gradient-button flex items-center justify-center">
-                    <span className="text-xl">🛡️</span>
+                    <Shield className="w-6 h-6 text-white" fill="white" fillOpacity={0.3} />
                   </div>
                   <span className="font-bold text-lg">돈워리</span>
                 </Link>
