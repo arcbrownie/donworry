@@ -55,6 +55,7 @@ const navigationItems = [
         subItems: [
           { path: "/cal/freelancer", label: "프리랜서 환급", emoji: "💼", description: "3.3% 세금 계산" },
           { path: "/cal/youth-tax", label: "청년 세금감면", emoji: "🎓", description: "중기청 90% 감면" },
+          { path: "/cal/interest-saving", label: "이자 절감 계산기", emoji: "💵", description: "대출 이자 절감액" },
         ]
       },
     ],
@@ -70,6 +71,15 @@ const navigationItems = [
       { path: "/debt", label: "채무조정 허브", emoji: "📋", description: "개인회생·파산 안내" },
       { path: "/debt/test", label: "자가진단", emoji: "🩺", description: "맞춤 해결책 찾기" },
       { path: "/debt/guide", label: "상세 가이드", emoji: "📖", description: "절차 및 비용 안내" },
+      { 
+        label: "채무 계산기", 
+        emoji: "🧮", 
+        description: "채무 관련 계산기",
+        isFolder: true,
+        subItems: [
+          { path: "/cal/debt-reduction", label: "개인회생 탕감액", emoji: "📉", description: "채무 탕감 예상액" },
+        ]
+      },
     ],
   },
 ];
