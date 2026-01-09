@@ -40,6 +40,12 @@ const featuredCalculators = [
   { path: "/cal/youth-tax", emoji: "🎓", title: "청년 세금감면", description: "중기청 90% 감면 혜택", tag: "금융", variant: "finance" as const },
 ];
 
+// 히어로 아래 메인 계산기 카드
+const heroCalculators = [
+  { path: "/cal/debt-reduction", emoji: "📉", title: "개인회생 탕감액 계산기", description: "채무 탕감 예상액을 미리 확인", tag: "채무조정", variant: "debt" as const },
+  { path: "/cal/interest-saving", emoji: "💵", title: "이자 절감 계산기", description: "대출 이자 절감액 시뮬레이션", tag: "금융", variant: "finance" as const },
+];
+
 const blogPosts = [
   { emoji: "📊", title: "2026년 달라지는 개인회생 제도", excerpt: "새해부터 적용되는 개인회생 변경사항을 알아보세요.", category: "채무조정", isPlaceholder: true },
   { emoji: "💡", title: "알바생을 위한 주휴수당 완벽 가이드", excerpt: "주휴수당, 정확히 얼마나 받을 수 있을까요?", category: "생활", isPlaceholder: true },
@@ -79,6 +85,78 @@ export default function Index() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: 히어로 아래 계산기 카드 2개 */}
+      <section className="container py-8">
+        <div className="grid gap-4 md:grid-cols-2">
+          {heroCalculators.map((calc) => (
+            <Link
+              key={calc.path}
+              to={calc.path}
+              className={`group therapy-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 ${
+                calc.variant === "debt" 
+                  ? "bg-gradient-to-br from-category-debt/10 to-category-debt/5 border-category-debt/20" 
+                  : "bg-gradient-to-br from-category-finance/10 to-category-finance/5 border-category-finance/20"
+              }`}
+            >
+              <div className="flex items-center gap-4">
+                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform ${
+                  calc.variant === "debt" ? "bg-category-debt/20" : "bg-category-finance/20"
+                }`}>
+                  <span className="text-3xl">{calc.emoji}</span>
+                </div>
+                <div className="flex-1">
+                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+                    calc.variant === "debt" 
+                      ? "text-category-debt bg-category-debt/20" 
+                      : "text-category-finance bg-category-finance/20"
+                  }`}>
+                    {calc.tag}
+                  </span>
+                  <h3 className={`font-bold text-lg text-foreground mt-1 group-hover:${
+                    calc.variant === "debt" ? "text-category-debt" : "text-category-finance"
+                  } transition-colors`}>
+                    {calc.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{calc.description}</p>
+                </div>
+                <ArrowRight className={`w-6 h-6 ${
+                  calc.variant === "debt" ? "text-category-debt" : "text-category-finance"
+                } group-hover:translate-x-1 transition-transform shrink-0`} />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* NEW: 30초 채무 건강 진단 CTA 섹션 */}
+      <section className="container py-8">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-category-debt via-category-debt/90 to-primary p-10 md:p-14">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
+          <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
+          <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 mb-4">
+                <span className="text-2xl">⏱️</span>
+                <span className="text-white font-bold text-sm">30초면 충분해요</span>
+              </div>
+              <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-3">
+                채무 건강 상태를 확인해보세요
+              </h2>
+              <p className="text-white/80 text-lg max-w-xl">
+                간단한 질문으로 나에게 맞는 채무 해결 방법을 찾아드립니다.
+              </p>
+            </div>
+            <Link to="/debt/test">
+              <Button size="lg" className="bg-white text-category-debt hover:bg-white/90 shadow-xl px-10 py-7 rounded-2xl">
+                <span className="text-2xl mr-2">🩺</span>
+                <span className="text-xl font-extrabold">무료 진단 시작</span>
+                <ArrowRight className="w-6 h-6 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
