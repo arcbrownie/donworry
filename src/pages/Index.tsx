@@ -34,10 +34,10 @@ const categories = [
 ];
 
 const featuredCalculators = [
-  { path: "/debt/test", emoji: "🩺", title: "채무조정 자가진단", description: "나에게 맞는 해결책 찾기", tag: "인기", variant: "debt" as const },
-  { path: "/cal/part-time", emoji: "💰", title: "알바 실수령액", description: "2026 최저임금 반영", tag: "2026", variant: "life" as const },
-  { path: "/cal/freelancer", emoji: "💼", title: "프리랜서 환급", description: "3.3% 세금 환급 계산", variant: "finance" as const },
-  { path: "/cal/youth-tax", emoji: "🎓", title: "청년 세금감면", description: "중기청 90% 감면 혜택", variant: "finance" as const },
+  { path: "/debt/test", emoji: "🩺", title: "채무조정 자가진단", description: "나에게 맞는 해결책 찾기", tag: "채무조정", variant: "debt" as const },
+  { path: "/cal/part-time", emoji: "💰", title: "알바 실수령액", description: "2026 최저임금 반영", tag: "생활", variant: "life" as const },
+  { path: "/cal/freelancer", emoji: "💼", title: "프리랜서 환급", description: "3.3% 세금 환급 계산", tag: "금융", variant: "finance" as const },
+  { path: "/cal/youth-tax", emoji: "🎓", title: "청년 세금감면", description: "중기청 90% 감면 혜택", tag: "금융", variant: "finance" as const },
 ];
 
 const blogPosts = [
@@ -94,7 +94,7 @@ export default function Index() {
             전체보기 <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-2.5 md:grid-cols-2 lg:grid-cols-4">
           {featuredCalculators.map((calc) => (
             <CalculatorWidget key={calc.path} {...calc} />
           ))}

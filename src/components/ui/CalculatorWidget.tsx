@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Calculator } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface CalculatorWidgetProps {
   title: string;
@@ -24,6 +24,12 @@ export default function CalculatorWidget({
     debt: "category-card-debt",
   };
 
+  const tagStyles = {
+    life: "text-category-life bg-category-life/10",
+    finance: "text-category-finance bg-category-finance/10",
+    debt: "text-category-debt bg-category-debt/10",
+  };
+
   return (
     <Link
       to={path}
@@ -35,7 +41,7 @@ export default function CalculatorWidget({
         </div>
         <div className="flex-1 min-w-0">
           {tag && (
-            <span className="inline-block text-[10px] font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full mb-1.5">
+            <span className={`inline-block text-[10px] font-medium px-2 py-0.5 rounded-full mb-1.5 ${tagStyles[variant]}`}>
               {tag}
             </span>
           )}
