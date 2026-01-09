@@ -31,10 +31,13 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-lg gradient-button flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-lg text-foreground">Donworry</span>
+              <div className="flex flex-col">
+                <span className="font-bold text-lg text-foreground">돈워리</span>
+                <span className="text-xs text-muted-foreground hidden sm:inline">Don't Worry</span>
+              </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              당신의 일상과 경제적 자유를 지키는<br />든든한 파트너, 돈워리
+              당신의 든든한 금융 및 채무조정 파트너
             </p>
           </div>
 

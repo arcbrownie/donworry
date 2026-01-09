@@ -57,12 +57,14 @@ export default function MainNavigation() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
-            <Shield className="w-5 h-5 text-white" />
+          <div className="w-10 h-10 rounded-lg gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
+            <Shield className="w-6 h-6 text-white" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-lg text-foreground leading-tight">Donworry</span>
-            <span className="text-[10px] text-muted-foreground leading-tight hidden sm:block">든든한 금융 파트너</span>
+            <div className="flex items-baseline gap-1.5">
+              <span className="font-bold text-lg text-foreground leading-tight">돈워리</span>
+              <span className="font-medium text-sm text-muted-foreground leading-tight hidden md:inline">Don't Worry</span>
+            </div>
           </div>
         </Link>
 
@@ -73,14 +75,14 @@ export default function MainNavigation() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-accent transition-colors ${
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-lg hover:bg-accent transition-colors ${
                     category.items.some((item) => isActive(item.path))
                       ? "bg-accent text-accent-foreground"
                       : ""
                   }`}
                 >
-                  <span>{category.emoji}</span>
-                  <span className="font-medium">{category.label}</span>
+                  <span className="text-lg">{category.emoji}</span>
+                  <span className="font-bold text-base">{category.label}</span>
                   <ChevronDown className="w-4 h-4 text-muted-foreground" />
                 </Button>
               </DropdownMenuTrigger>
@@ -128,8 +130,8 @@ export default function MainNavigation() {
         {/* Mobile Menu */}
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="w-10 h-10">
-              <Menu className="w-5 h-5" />
+            <Button variant="ghost" size="icon" className="w-12 h-12">
+              <Menu className="w-7 h-7" />
               <span className="sr-only">메뉴 열기</span>
             </Button>
           </SheetTrigger>
@@ -138,10 +140,10 @@ export default function MainNavigation() {
               {/* Mobile Header */}
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-                  <div className="w-8 h-8 rounded-lg gradient-button flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
+                  <div className="w-9 h-9 rounded-lg gradient-button flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-white" />
                   </div>
-                  <span className="font-bold text-lg">Donworry</span>
+                  <span className="font-bold text-lg">돈워리</span>
                 </Link>
               </div>
 
