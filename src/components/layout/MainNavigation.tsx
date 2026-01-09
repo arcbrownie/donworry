@@ -103,18 +103,18 @@ export default function MainNavigation() {
   return (
     <header className={`sticky top-0 z-50 w-full border-b border-border/50 backdrop-blur transition-colors duration-300 ${
       isScrolled 
-        ? "bg-purple-100/95 supports-[backdrop-filter]:bg-purple-100/90" 
+        ? "bg-purple-50/95 supports-[backdrop-filter]:bg-purple-50/90" 
         : "bg-background/95 supports-[backdrop-filter]:bg-background/80"
     }`}>
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-6 group">
           <div className="w-[43.2px] h-[43.2px] rounded-xl gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
             <Shield className="w-[25.2px] h-[25.2px] text-white" fill="white" fillOpacity={0.3} />
           </div>
           <div className="flex items-baseline gap-1.5">
-            <span className="font-extrabold text-xl text-foreground leading-tight">돈워리</span>
-            <span className="font-semibold text-base text-muted-foreground leading-tight hidden md:inline">Don't Worry</span>
+            <span className="font-extrabold text-2xl text-foreground leading-tight">돈워리</span>
+            <span className="font-semibold text-lg text-muted-foreground leading-tight hidden md:inline">Don't Worry</span>
           </div>
         </Link>
 
@@ -230,7 +230,7 @@ export default function MainNavigation() {
             <div className="flex flex-col h-full">
               {/* Mobile Header */}
               <div className="flex items-center justify-between p-5 border-b border-border">
-                <Link to="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
+                <Link to="/" className="flex items-center gap-6" onClick={() => setMobileOpen(false)}>
                   <div className="w-[43.2px] h-[43.2px] rounded-xl gradient-button flex items-center justify-center">
                     <Shield className="w-[25.2px] h-[25.2px] text-white" fill="white" fillOpacity={0.3} />
                   </div>

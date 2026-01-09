@@ -151,10 +151,9 @@ export default function Index() {
               </p>
             </div>
             <Link to="/debt/test">
-              <Button size="lg" className="bg-white text-category-debt hover:bg-white/90 shadow-xl px-10 py-7 rounded-2xl">
+              <Button size="lg" className="bg-white text-category-debt hover:bg-white/90 shadow-xl px-5 py-7 rounded-2xl">
                 <span className="text-2xl mr-2">🩺</span>
                 <span className="text-xl font-extrabold">무료 진단 시작</span>
-                <ArrowRight className="w-6 h-6 ml-2" />
               </Button>
             </Link>
           </div>
@@ -168,8 +167,8 @@ export default function Index() {
             <h2 className="text-2xl font-bold text-foreground">인기 계산기</h2>
             <p className="text-muted-foreground text-base mt-1 leading-relaxed">가장 많이 사용하는 금융 계산기</p>
           </div>
-          <Link to="/cal" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
-            전체보기 <ArrowRight className="w-4 h-4" />
+          <Link to="/cal" className="text-base font-medium text-primary hover:underline">
+            전체보기
           </Link>
         </div>
         <div className="grid gap-2.5 md:grid-cols-2 lg:grid-cols-4">
@@ -193,10 +192,9 @@ export default function Index() {
               전문가 상담 전 자가진단으로 방향을 잡아보세요.
             </p>
             <Link to="/debt/test">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elevated px-10 py-6">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elevated px-5 py-6">
                 <span className="text-xl">🩺</span>
                 <span className="text-lg font-bold ml-2">무료 진단 시작하기</span>
-                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
           </div>
