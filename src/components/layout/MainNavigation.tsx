@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight, CheckCircle, Shield } from "lucide-react";
 import {
@@ -86,24 +86,35 @@ const navigationItems = [
 
 export default function MainNavigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className={`sticky top-0 z-50 w-full border-b border-border/50 backdrop-blur transition-colors duration-300 ${
+      isScrolled 
+        ? "bg-purple-100/95 supports-[backdrop-filter]:bg-purple-100/90" 
+        : "bg-background/95 supports-[backdrop-filter]:bg-background/80"
+    }`}>
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-xl gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
-            <Shield className="w-7 h-7 text-white" fill="white" fillOpacity={0.3} />
+          <div className="w-[43.2px] h-[43.2px] rounded-xl gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
+            <Shield className="w-[25.2px] h-[25.2px] text-white" fill="white" fillOpacity={0.3} />
           </div>
-          <div className="flex flex-col">
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-bold text-xl text-foreground leading-tight">돈워리</span>
-              <span className="font-medium text-sm text-muted-foreground leading-tight hidden md:inline">Don't Worry</span>
-            </div>
-            <span className="text-xs text-muted-foreground leading-tight hidden sm:block">일상은 가볍게, 돈 걱정은 없게</span>
+          <div className="flex items-baseline gap-1.5">
+            <span className="font-extrabold text-xl text-foreground leading-tight">돈워리</span>
+            <span className="font-semibold text-base text-muted-foreground leading-tight hidden md:inline">Don't Worry</span>
           </div>
         </Link>
 
@@ -125,7 +136,7 @@ export default function MainNavigation() {
                   }`}
                 >
                   <span className="text-2xl">{category.emoji}</span>
-                  <span className="font-extrabold text-xl">{category.label}</span>
+                  <span className="font-bold text-xl">{category.label}</span>
                   <ChevronDown className="w-5 h-5 text-muted-foreground" />
                 </Button>
               </DropdownMenuTrigger>
@@ -199,9 +210,9 @@ export default function MainNavigation() {
         {/* CTA Button (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
           <Link to="/debt/test">
-            <Button className="btn-premium bg-primary/90 hover:bg-primary">
-              <span className="relative z-10 flex items-center gap-2">
-                <span className="text-lg">🩺</span> 무료 진단받기
+            <Button className="btn-premium px-[18px] py-2.5 bg-gradient-to-r from-blue-200/80 to-purple-200/80 hover:from-blue-300/90 hover:to-purple-300/90 text-primary shadow-soft border border-blue-300/30">
+              <span className="relative z-10 flex items-center gap-3 font-bold">
+                🩺 <span>채무조정 무료 진단</span>
               </span>
             </Button>
           </Link>
@@ -220,8 +231,8 @@ export default function MainNavigation() {
               {/* Mobile Header */}
               <div className="flex items-center justify-between p-5 border-b border-border">
                 <Link to="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
-                  <div className="w-12 h-12 rounded-xl gradient-button flex items-center justify-center">
-                    <Shield className="w-7 h-7 text-white" fill="white" fillOpacity={0.3} />
+                  <div className="w-[43.2px] h-[43.2px] rounded-xl gradient-button flex items-center justify-center">
+                    <Shield className="w-[25.2px] h-[25.2px] text-white" fill="white" fillOpacity={0.3} />
                   </div>
                   <span className="font-bold text-xl">돈워리</span>
                 </Link>
@@ -298,9 +309,9 @@ export default function MainNavigation() {
               {/* Mobile CTA */}
               <div className="p-4 border-t border-border">
                 <Link to="/debt/test" onClick={() => setMobileOpen(false)}>
-                  <Button className="w-full btn-premium py-3">
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      🩺 무료 채무진단 받기
+                  <Button className="w-full btn-premium px-[18px] py-3 bg-gradient-to-r from-blue-200/80 to-purple-200/80 hover:from-blue-300/90 hover:to-purple-300/90 text-primary shadow-soft border border-blue-300/30">
+                    <span className="relative z-10 flex items-center justify-center gap-3 font-bold">
+                      🩺 <span>채무조정 무료 진단</span>
                     </span>
                   </Button>
                 </Link>

@@ -53,7 +53,7 @@ const blogPosts = [
 ];
 
 const benefits = [
-  { icon: Calendar, title: "최신 기준 반영", desc: "2026년 세법과 정책을 실시간 업데이트합니다" },
+  { icon: Calendar, title: "최신 기준 반영", desc: "2026년 최신 정책 및 세법 반영" },
   { icon: Zap, title: "누구나 쉬운 사용", desc: "복잡한 계산도 클릭 몇 번으로 끝" },
   { icon: Calculator, title: "맞춤형 계산기", desc: "상황에 딱 맞는 계산기를 제공해요" },
   { icon: Users, title: "전문가 솔루션 연결", desc: "필요시 전문가 상담을 안내해드려요" },
