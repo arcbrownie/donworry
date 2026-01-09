@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["'Noto Sans KR'", "sans-serif"],
+        sans: ["'Pretendard'", "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -64,6 +64,7 @@ export default {
           trust: "hsl(var(--therapy-trust))",
           hope: "hsl(var(--therapy-hope))",
           warm: "hsl(var(--therapy-warm))",
+          purple: "hsl(var(--therapy-purple))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
