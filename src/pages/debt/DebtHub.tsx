@@ -62,7 +62,7 @@ export default function DebtHub() {
       <MainNavigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-category-debt-light border-b-4 border-category-debt">
+      <section className="relative overflow-hidden bg-category-debt/10">
         <div className="container py-12 md:py-16">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-14 h-14 rounded-2xl bg-category-debt/20 flex items-center justify-center">

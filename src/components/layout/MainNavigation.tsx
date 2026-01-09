@@ -20,8 +20,9 @@ const navigationItems = [
     label: "생활",
     emoji: "🏠",
     color: "text-category-life",
-    bgColor: "bg-category-life-light",
-    hoverColor: "hover:bg-category-life-light hover:text-category-life",
+    bgColor: "bg-category-life/10",
+    hoverColor: "hover:bg-category-life/10 hover:text-category-life",
+    hoverBg: "hover:bg-category-life/10",
     items: [
       { path: "/life", label: "생활 허브", emoji: "🏡", description: "일상 재테크 팁 모음" },
       { 
@@ -40,8 +41,9 @@ const navigationItems = [
     label: "금융",
     emoji: "💰",
     color: "text-category-finance",
-    bgColor: "bg-category-finance-light",
-    hoverColor: "hover:bg-category-finance-light hover:text-category-finance",
+    bgColor: "bg-category-finance/10",
+    hoverColor: "hover:bg-category-finance/10 hover:text-category-finance",
+    hoverBg: "hover:bg-category-finance/10",
     items: [
       { path: "/finance", label: "금융 허브", emoji: "🏦", description: "대출·금리 정보 모음" },
       { 
@@ -60,8 +62,9 @@ const navigationItems = [
     label: "채무조정",
     emoji: "⚖️",
     color: "text-category-debt",
-    bgColor: "bg-category-debt-light",
-    hoverColor: "hover:bg-category-debt-light hover:text-category-debt",
+    bgColor: "bg-category-debt/10",
+    hoverColor: "hover:bg-category-debt/10 hover:text-category-debt",
+    hoverBg: "hover:bg-category-debt/10",
     items: [
       { path: "/debt", label: "채무조정 허브", emoji: "📋", description: "개인회생·파산 안내" },
       { path: "/debt/test", label: "자가진단", emoji: "🩺", description: "맞춤 해결책 찾기" },
@@ -122,7 +125,7 @@ export default function MainNavigation() {
                 {category.items.map((item, idx) => (
                   item.isFolder ? (
                     <DropdownMenuSub key={item.label}>
-                      <DropdownMenuSubTrigger className="flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors hover:bg-muted">
+                      <DropdownMenuSubTrigger className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors ${category.hoverBg}`}>
                         <span className="text-xl mt-0.5">{item.emoji}</span>
                         <div className="flex flex-col flex-1">
                           <span className="font-medium text-foreground">{item.label}</span>
@@ -137,8 +140,8 @@ export default function MainNavigation() {
                                 to={subItem.path}
                                 className={`flex items-start gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${
                                   isActive(subItem.path)
-                                    ? "bg-accent text-accent-foreground"
-                                    : "hover:bg-muted"
+                                    ? `${category.bgColor} ${category.color}`
+                                    : category.hoverBg
                                 }`}
                               >
                                 <span className="text-lg">{subItem.emoji}</span>
@@ -147,7 +150,7 @@ export default function MainNavigation() {
                                   <span className="text-xs text-muted-foreground">{subItem.description}</span>
                                 </div>
                                 {isActive(subItem.path) && (
-                                  <CheckCircle className="w-4 h-4 text-primary ml-auto mt-1" />
+                                  <CheckCircle className={`w-4 h-4 ${category.color} ml-auto mt-1`} />
                                 )}
                               </Link>
                             </DropdownMenuItem>
@@ -161,8 +164,8 @@ export default function MainNavigation() {
                         to={item.path!}
                         className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors ${
                           isActive(item.path!)
-                            ? "bg-accent text-accent-foreground"
-                            : "hover:bg-muted"
+                            ? `${category.bgColor} ${category.color}`
+                            : category.hoverBg
                         }`}
                       >
                         <span className="text-xl mt-0.5">{item.emoji}</span>
@@ -171,7 +174,7 @@ export default function MainNavigation() {
                           <span className="text-xs text-muted-foreground">{item.description}</span>
                         </div>
                         {isActive(item.path!) && (
-                          <CheckCircle className="w-4 h-4 text-primary ml-auto mt-1" />
+                          <CheckCircle className={`w-4 h-4 ${category.color} ml-auto mt-1`} />
                         )}
                       </Link>
                     </DropdownMenuItem>
