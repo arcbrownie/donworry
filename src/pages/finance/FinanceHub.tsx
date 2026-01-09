@@ -2,6 +2,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
 import CalculatorWidget from "@/components/ui/CalculatorWidget";
+import FAQAccordion from "@/components/ui/FAQAccordion";
 
 const calculators = [
   { 
@@ -51,6 +52,13 @@ const blogPosts = [
     category: "금융",
     isPlaceholder: true 
   },
+];
+
+const financeFAQ = [
+  { question: "프리랜서 3.3% 원천징수란 무엇인가요?", answer: "프리랜서가 용역비를 받을 때 미리 떼는 세금(소득세 3% + 지방소득세 0.3%)입니다. 5월 종합소득세 신고 시 환급받을 수 있습니다." },
+  { question: "청년 소득세 감면 혜택은 누가 받을 수 있나요?", answer: "만 15~34세 청년이 중소기업에 취업하면 5년간 소득세의 90%를 감면받을 수 있습니다. 군 복무기간은 연령 계산에서 제외됩니다." },
+  { question: "신용점수를 높이려면 어떻게 해야 하나요?", answer: "연체 없이 결제하기, 신용카드 적정 사용, 다양한 금융거래 이력 쌓기 등이 도움됩니다. 특히 연체는 신용점수에 치명적입니다." },
+  { question: "적금 vs 투자, 어떤 것이 더 유리한가요?", answer: "단기 자금은 적금, 장기 목표는 투자가 유리합니다. 안전성과 수익성의 밸런스를 고려해 분산하는 것이 좋습니다." },
 ];
 
 export default function FinanceHub() {
@@ -106,6 +114,14 @@ export default function FinanceHub() {
           ))}
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQAccordion
+        title="금융 FAQ"
+        description="금융에 관한 자주 묻는 질문"
+        items={financeFAQ}
+        variant="finance"
+      />
 
       {/* Ad Container */}
       <section className="container py-6">

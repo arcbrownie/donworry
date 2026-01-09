@@ -30,6 +30,7 @@ import PartTimeCalculator from "./pages/cal/PartTimeCalculator";
 import FreelancerCalculator from "./pages/cal/FreelancerCalculator";
 import YouthTaxCalculator from "./pages/cal/YouthTaxCalculator";
 import SoldierCalculator from "./pages/cal/SoldierCalculator";
+import UnemploymentCalculator from "./pages/cal/UnemploymentCalculator";
 
 // Legal pages
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
@@ -71,6 +72,7 @@ const App = () => (
           <Route path="/cal/freelancer" element={<FreelancerCalculator />} />
           <Route path="/cal/youth-tax" element={<YouthTaxCalculator />} />
           <Route path="/cal/soldier" element={<SoldierCalculator />} />
+          <Route path="/cal/unemployment" element={<UnemploymentCalculator />} />
           
           {/* Legal routes */}
           <Route path="/privacy" element={<PrivacyPolicy />} />

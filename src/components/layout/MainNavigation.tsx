@@ -33,6 +33,7 @@ const navigationItems = [
         subItems: [
           { path: "/cal/part-time", label: "알바 실수령액", emoji: "💰", description: "2026 최저임금 반영" },
           { path: "/cal/soldier", label: "군인 적금", emoji: "🎖️", description: "전역일 & 만기금액" },
+          { path: "/cal/unemployment", label: "실업급여 예측", emoji: "🏥", description: "실업급여 예상액 계산" },
         ]
       },
     ],
@@ -97,13 +98,13 @@ export default function MainNavigation() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-2">
           {navigationItems.map((category) => (
             <DropdownMenu key={category.label}>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-lg transition-colors ${category.hoverColor} ${
+                  className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-colors ${category.hoverColor} ${
                     category.items.some((item) => 
                       item.isFolder 
                         ? item.subItems?.some(sub => isActive(sub.path))
@@ -113,9 +114,9 @@ export default function MainNavigation() {
                       : ""
                   }`}
                 >
-                  <span className="text-xl">{category.emoji}</span>
-                  <span className="font-bold text-lg">{category.label}</span>
-                  <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-2xl">{category.emoji}</span>
+                  <span className="font-extrabold text-xl">{category.label}</span>
+                  <ChevronDown className="w-5 h-5 text-muted-foreground" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent 
@@ -196,24 +197,27 @@ export default function MainNavigation() {
           </Link>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Full Screen */}
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon" className="w-12 h-12">
-              <Menu className="w-7 h-7" />
+              <Menu className="w-8 h-8" />
               <span className="sr-only">메뉴 열기</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-80 p-0 bg-background">
+          <SheetContent side="right" className="w-full sm:w-full max-w-full p-0 bg-background">
             <div className="flex flex-col h-full">
               {/* Mobile Header */}
-              <div className="flex items-center justify-between p-4 border-b border-border">
-                <Link to="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-                  <div className="w-10 h-10 rounded-lg gradient-button flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-white" fill="white" fillOpacity={0.3} />
+              <div className="flex items-center justify-between p-5 border-b border-border">
+                <Link to="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
+                  <div className="w-12 h-12 rounded-xl gradient-button flex items-center justify-center">
+                    <Shield className="w-7 h-7 text-white" fill="white" fillOpacity={0.3} />
                   </div>
-                  <span className="font-bold text-lg">돈워리</span>
+                  <span className="font-bold text-xl">돈워리</span>
                 </Link>
+                <Button variant="ghost" size="icon" className="w-12 h-12" onClick={() => setMobileOpen(false)}>
+                  <X className="w-7 h-7" />
+                </Button>
               </div>
 
               {/* Mobile Navigation */}

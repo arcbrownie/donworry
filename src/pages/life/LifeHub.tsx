@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
 import CalculatorWidget from "@/components/ui/CalculatorWidget";
+import FAQAccordion from "@/components/ui/FAQAccordion";
 
 const calculators = [
   { 
@@ -17,6 +20,14 @@ const calculators = [
     emoji: "🎖️", 
     title: "군인 적금 계산기", 
     description: "장병내일준비적금 만기금액 & 전역일",
+    tag: "생활",
+    variant: "life" as const 
+  },
+  { 
+    path: "/cal/unemployment", 
+    emoji: "🏥", 
+    title: "실업급여 예측 계산기", 
+    description: "실업급여 예상 수령액 계산",
     tag: "생활",
     variant: "life" as const 
   },
@@ -51,6 +62,13 @@ const blogPosts = [
     category: "생활",
     isPlaceholder: true 
   },
+];
+
+const lifeFAQ = [
+  { question: "주휴수당은 어떻게 계산하나요?", answer: "주 15시간 이상 근무하면 1일분의 유급휴일수당이 발생합니다. 주휴수당 = 1일 소정근로시간 × 시급으로 계산됩니다." },
+  { question: "2026년 최저임금은 얼마인가요?", answer: "2026년 최저임금은 시간당 10,030원입니다. 월급으로 환산하면 주 40시간 기준 약 209만원입니다." },
+  { question: "군인 적금 가입 조건이 어떻게 되나요?", answer: "현역 병사라면 누구나 장병내일준비적금에 가입할 수 있습니다. 월 40만원까지 저축 가능하며, 정부 매칭지원금이 추가됩니다." },
+  { question: "실업급여 수급 자격은 어떻게 되나요?", answer: "고용보험에 180일 이상 가입하고, 비자발적 사유로 퇴직한 경우 실업급여를 받을 수 있습니다. 자발적 퇴직 시에도 일정 조건 충족 시 가능합니다." },
 ];
 
 export default function LifeHub() {
@@ -106,6 +124,14 @@ export default function LifeHub() {
           ))}
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQAccordion
+        title="생활 재테크 FAQ"
+        description="자주 묻는 질문을 확인해보세요"
+        items={lifeFAQ}
+        variant="life"
+      />
 
       {/* Ad Container */}
       <section className="container py-6">
