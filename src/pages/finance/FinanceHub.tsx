@@ -9,7 +9,7 @@ const calculators = [
     emoji: "💼", 
     title: "프리랜서 3.3% 환급 계산기", 
     description: "종합소득세 환급 예상액 미리 계산",
-    tag: "인기",
+    tag: "금융",
     variant: "finance" as const 
   },
   { 
@@ -17,7 +17,7 @@ const calculators = [
     emoji: "🎓", 
     title: "청년 세금감면 계산기", 
     description: "중소기업 취업청년 소득세 90% 감면",
-    tag: "청년혜택",
+    tag: "금융",
     variant: "finance" as const 
   },
 ];
@@ -59,10 +59,10 @@ export default function FinanceHub() {
       <MainNavigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="relative overflow-hidden bg-category-finance-light border-b-4 border-category-finance">
         <div className="container py-12 md:py-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-2xl bg-category-finance/20 flex items-center justify-center">
               <span className="text-3xl">💳</span>
             </div>
             <div>
