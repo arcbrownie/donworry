@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Shield } from "lucide-react";
 
 const footerLinks = {
   services: [
@@ -11,7 +10,7 @@ const footerLinks = {
   categories: [
     { label: "생활", path: "/life" },
     { label: "금융", path: "/finance" },
-    { label: "채무", path: "/debt" },
+    { label: "채무조정", path: "/debt" },
   ],
   legal: [
     { label: "서비스 소개", path: "/about" },
@@ -28,12 +27,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg gradient-button flex items-center justify-center">
-                <Shield className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 rounded-lg gradient-button flex items-center justify-center">
+                <span className="text-xl">⚖️</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] text-muted-foreground">일상은 가볍게, 돈 걱정은 없게</span>
                 <span className="font-bold text-lg text-foreground">돈워리</span>
+                <span className="text-[10px] text-muted-foreground">일상은 가볍게, 돈 걱정은 없게</span>
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
