@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, CheckCircle } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, CheckCircle, FolderOpen } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+  DropdownMenuPortal,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const navigationItems = [
   {
@@ -18,8 +23,16 @@ const navigationItems = [
     bgColor: "bg-emerald-50",
     items: [
       { path: "/life", label: "생활 허브", emoji: "🏡", description: "일상 재테크 팁 모음" },
-      { path: "/cal/part-time", label: "알바 실수령액", emoji: "💰", description: "2026 최저임금 반영" },
-      { path: "/cal/soldier", label: "군인 적금", emoji: "🎖️", description: "전역일 & 만기금액" },
+      { 
+        label: "생활 계산기", 
+        emoji: "🧮", 
+        description: "생활에 필요한 계산기",
+        isFolder: true,
+        subItems: [
+          { path: "/cal/part-time", label: "알바 실수령액", emoji: "💰", description: "2026 최저임금 반영" },
+          { path: "/cal/soldier", label: "군인 적금", emoji: "🎖️", description: "전역일 & 만기금액" },
+        ]
+      },
     ],
   },
   {
@@ -29,8 +42,16 @@ const navigationItems = [
     bgColor: "bg-primary/5",
     items: [
       { path: "/finance", label: "금융 허브", emoji: "🏦", description: "대출·금리 정보 모음" },
-      { path: "/cal/freelancer", label: "프리랜서 환급", emoji: "💼", description: "3.3% 세금 계산" },
-      { path: "/cal/youth-tax", label: "청년 세금감면", emoji: "🎓", description: "중기청 90% 감면" },
+      { 
+        label: "금융 계산기", 
+        emoji: "🧮", 
+        description: "금융에 필요한 계산기",
+        isFolder: true,
+        subItems: [
+          { path: "/cal/freelancer", label: "프리랜서 환급", emoji: "💼", description: "3.3% 세금 계산" },
+          { path: "/cal/youth-tax", label: "청년 세금감면", emoji: "🎓", description: "중기청 90% 감면" },
+        ]
+      },
     ],
   },
   {
@@ -77,7 +98,11 @@ export default function MainNavigation() {
                 <Button
                   variant="ghost"
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-lg hover:bg-accent transition-colors ${
-                    category.items.some((item) => isActive(item.path))
+                    category.items.some((item) => 
+                      item.isFolder 
+                        ? item.subItems?.some(sub => isActive(sub.path))
+                        : isActive(item.path)
+                    )
                       ? "bg-accent text-accent-foreground"
                       : ""
                   }`}
@@ -91,26 +116,63 @@ export default function MainNavigation() {
                 align="start" 
                 className="w-64 p-2 bg-popover border border-border shadow-elevated"
               >
-                {category.items.map((item) => (
-                  <DropdownMenuItem key={item.path} asChild>
-                    <Link
-                      to={item.path}
-                      className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors ${
-                        isActive(item.path)
-                          ? "bg-accent text-accent-foreground"
-                          : "hover:bg-muted"
-                      }`}
-                    >
-                      <span className="text-xl mt-0.5">{item.emoji}</span>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-foreground">{item.label}</span>
-                        <span className="text-xs text-muted-foreground">{item.description}</span>
-                      </div>
-                      {isActive(item.path) && (
-                        <CheckCircle className="w-4 h-4 text-primary ml-auto mt-1" />
-                      )}
-                    </Link>
-                  </DropdownMenuItem>
+                {category.items.map((item, idx) => (
+                  item.isFolder ? (
+                    <DropdownMenuSub key={item.label}>
+                      <DropdownMenuSubTrigger className="flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors hover:bg-muted">
+                        <span className="text-xl mt-0.5">{item.emoji}</span>
+                        <div className="flex flex-col flex-1">
+                          <span className="font-medium text-foreground">{item.label}</span>
+                          <span className="text-xs text-muted-foreground">{item.description}</span>
+                        </div>
+                      </DropdownMenuSubTrigger>
+                      <DropdownMenuPortal>
+                        <DropdownMenuSubContent className="w-56 p-2 bg-popover border border-border shadow-elevated">
+                          {item.subItems?.map((subItem) => (
+                            <DropdownMenuItem key={subItem.path} asChild>
+                              <Link
+                                to={subItem.path}
+                                className={`flex items-start gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${
+                                  isActive(subItem.path)
+                                    ? "bg-accent text-accent-foreground"
+                                    : "hover:bg-muted"
+                                }`}
+                              >
+                                <span className="text-lg">{subItem.emoji}</span>
+                                <div className="flex flex-col">
+                                  <span className="font-medium text-foreground text-sm">{subItem.label}</span>
+                                  <span className="text-xs text-muted-foreground">{subItem.description}</span>
+                                </div>
+                                {isActive(subItem.path) && (
+                                  <CheckCircle className="w-4 h-4 text-primary ml-auto mt-1" />
+                                )}
+                              </Link>
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuSubContent>
+                      </DropdownMenuPortal>
+                    </DropdownMenuSub>
+                  ) : (
+                    <DropdownMenuItem key={item.path} asChild>
+                      <Link
+                        to={item.path!}
+                        className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors ${
+                          isActive(item.path!)
+                            ? "bg-accent text-accent-foreground"
+                            : "hover:bg-muted"
+                        }`}
+                      >
+                        <span className="text-xl mt-0.5">{item.emoji}</span>
+                        <div className="flex flex-col">
+                          <span className="font-medium text-foreground">{item.label}</span>
+                          <span className="text-xs text-muted-foreground">{item.description}</span>
+                        </div>
+                        {isActive(item.path!) && (
+                          <CheckCircle className="w-4 h-4 text-primary ml-auto mt-1" />
+                        )}
+                      </Link>
+                    </DropdownMenuItem>
+                  )
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
@@ -120,9 +182,9 @@ export default function MainNavigation() {
         {/* CTA Button (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
           <Link to="/debt/test">
-            <Button className="btn-premium">
+            <Button className="btn-premium bg-primary/90 hover:bg-primary">
               <span className="relative z-10 flex items-center gap-2">
-                🩺 무료 진단받기
+                <span className="text-lg">🩺</span> 무료 진단받기
               </span>
             </Button>
           </Link>
@@ -157,23 +219,56 @@ export default function MainNavigation() {
                       <span className={`font-semibold ${category.color}`}>{category.label}</span>
                     </div>
                     <div className="space-y-1 pl-2">
-                      {category.items.map((item) => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          onClick={() => setMobileOpen(false)}
-                          className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
-                            isActive(item.path)
-                              ? "bg-accent text-accent-foreground"
-                              : "hover:bg-muted"
-                          }`}
-                        >
-                          <span className="text-lg">{item.emoji}</span>
-                          <div className="flex flex-col">
-                            <span className="font-medium text-sm">{item.label}</span>
-                            <span className="text-xs text-muted-foreground">{item.description}</span>
-                          </div>
-                        </Link>
+                      {category.items.map((item, idx) => (
+                        item.isFolder ? (
+                          <Collapsible key={item.label} className="space-y-1">
+                            <CollapsibleTrigger className="flex items-center gap-3 px-3 py-3 rounded-lg transition-colors hover:bg-muted w-full">
+                              <span className="text-lg">{item.emoji}</span>
+                              <div className="flex flex-col flex-1 text-left">
+                                <span className="font-medium text-sm">{item.label}</span>
+                                <span className="text-xs text-muted-foreground">{item.description}</span>
+                              </div>
+                              <ChevronRight className="w-4 h-4 text-muted-foreground transition-transform data-[state=open]:rotate-90" />
+                            </CollapsibleTrigger>
+                            <CollapsibleContent className="pl-4 space-y-1">
+                              {item.subItems?.map((subItem) => (
+                                <Link
+                                  key={subItem.path}
+                                  to={subItem.path}
+                                  onClick={() => setMobileOpen(false)}
+                                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                                    isActive(subItem.path)
+                                      ? "bg-accent text-accent-foreground"
+                                      : "hover:bg-muted"
+                                  }`}
+                                >
+                                  <span className="text-base">{subItem.emoji}</span>
+                                  <div className="flex flex-col">
+                                    <span className="font-medium text-sm">{subItem.label}</span>
+                                    <span className="text-xs text-muted-foreground">{subItem.description}</span>
+                                  </div>
+                                </Link>
+                              ))}
+                            </CollapsibleContent>
+                          </Collapsible>
+                        ) : (
+                          <Link
+                            key={item.path}
+                            to={item.path!}
+                            onClick={() => setMobileOpen(false)}
+                            className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
+                              isActive(item.path!)
+                                ? "bg-accent text-accent-foreground"
+                                : "hover:bg-muted"
+                            }`}
+                          >
+                            <span className="text-lg">{item.emoji}</span>
+                            <div className="flex flex-col">
+                              <span className="font-medium text-sm">{item.label}</span>
+                              <span className="text-xs text-muted-foreground">{item.description}</span>
+                            </div>
+                          </Link>
+                        )
                       ))}
                     </div>
                   </div>

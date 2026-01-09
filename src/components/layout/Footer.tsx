@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 
 const footerLinks = {
-  services: [
-    { label: "채무조정 진단", path: "/debt/test" },
-    { label: "채무조정 가이드", path: "/debt/guide" },
-    { label: "알바 계산기", path: "/cal/part-time" },
-    { label: "프리랜서 환급", path: "/cal/freelancer" },
-  ],
   categories: [
     { label: "생활", path: "/life" },
     { label: "금융", path: "/finance" },
     { label: "채무조정", path: "/debt" },
   ],
-  legal: [
+  services: [
+    { label: "채무조정 진단", path: "/debt/test" },
+    { label: "채무조정 가이드", path: "/debt/guide" },
+    { label: "생활 계산기", path: "/cal", hash: "life" },
+    { label: "금융 계산기", path: "/cal", hash: "finance" },
+  ],
+  info: [
     { label: "서비스 소개", path: "/about" },
     { label: "개인정보처리방침", path: "/privacy" },
     { label: "이용약관", path: "/terms" },
@@ -40,23 +40,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">서비스</h3>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Categories */}
           <div>
             <h3 className="font-semibold text-foreground mb-4">카테고리</h3>
@@ -74,11 +57,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Services */}
+          <div>
+            <h3 className="font-semibold text-foreground mb-4">주요 서비스</h3>
+            <ul className="space-y-2">
+              {footerLinks.services.map((link, index) => (
+                <li key={`${link.path}-${index}`}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Info */}
           <div>
             <h3 className="font-semibold text-foreground mb-4">정보</h3>
             <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
+              {footerLinks.info.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
