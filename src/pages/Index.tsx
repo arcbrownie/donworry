@@ -61,20 +61,20 @@ export default function Index() {
       {/* 1. 왜 돈워리일까요? (강점 소개) - 첫 번째 섹션 */}
       <section className="container py-16">
         <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5 py-12 px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             당신의 일상을 지키는 <span className="text-secondary">돈워리</span>만의 특별함 ✨
           </h2>
-          <p className="text-muted-foreground mb-10 leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed">
             어제보다 가벼운 오늘을 만드는 금융 솔루션
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
             {benefits.map((item, index) => (
-              <div key={index} className="space-y-4">
+              <div key={index} className="space-y-3">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center">
                   <item.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground text-sm">{item.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <h3 className="font-semibold text-foreground text-base">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
               </div>
