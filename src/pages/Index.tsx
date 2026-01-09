@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, CheckCircle, TrendingUp, Users, Award } from "lucide-react";
+import { ArrowRight, Shield, CheckCircle, Calendar, Zap, Calculator, Users } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
@@ -46,10 +46,11 @@ const blogPosts = [
   { emoji: "🏦", title: "2030을 위한 첫 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융", isPlaceholder: true },
 ];
 
-const stats = [
-  { icon: Users, value: "10만+", label: "이용자 수" },
-  { icon: Award, value: "98%", label: "만족도" },
-  { icon: TrendingUp, value: "2026", label: "최신 기준" },
+const benefits = [
+  { icon: Calendar, title: "최신 기준 반영", desc: "2026년 세법과 정책을 실시간 업데이트합니다" },
+  { icon: Zap, title: "누구나 쉬운 사용", desc: "복잡한 계산도 클릭 몇 번으로 끝" },
+  { icon: Calculator, title: "맞춤형 계산기", desc: "상황에 딱 맞는 계산기를 제공해요" },
+  { icon: Users, title: "전문가 솔루션 연결", desc: "필요시 전문가 상담을 안내해드려요" },
 ];
 
 export default function Index() {
@@ -63,41 +64,28 @@ export default function Index() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(128,90,213,0.2)_0%,transparent_50%)]" />
         
-        <div className="relative container py-16 md:py-24 lg:py-32">
+        <div className="relative container py-16 md:py-24 lg:py-28">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
             {/* Logo Badge */}
             <div className="flex items-center gap-3 mb-6 animate-fade-in">
-              <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center shadow-glow">
-                <Shield className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center shadow-glow">
+                <Shield className="w-9 h-9 text-white" />
               </div>
             </div>
             
             {/* Main Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              Donworry
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <span className="block">돈워리</span>
+              <span className="block text-2xl md:text-3xl font-medium text-white/80 mt-2">Don't Worry</span>
             </h1>
             
             {/* Slogan */}
-            <p className="text-lg md:text-xl text-white/90 mb-6 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
-              당신의 일상과 경제적 자유를 지키는<br className="md:hidden" />
-              <span className="font-semibold">든든한 파트너, 돈워리</span>
+            <p className="text-lg md:text-xl text-white/90 mb-8 mt-4 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
+              당신의 든든한 <span className="font-semibold">금융 및 채무조정 파트너</span>
             </p>
 
-            {/* Stats */}
-            <div className="flex items-center gap-6 md:gap-10 mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="flex items-center gap-1.5 text-white/90">
-                    <stat.icon className="w-4 h-4" />
-                    <span className="text-xl md:text-2xl font-bold">{stat.value}</span>
-                  </div>
-                  <span className="text-xs text-white/60">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <div className="flex flex-col sm:flex-row gap-3 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link to="/debt/test">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elevated px-8">
                   🩺 무료 채무진단
@@ -116,36 +104,32 @@ export default function Index() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Categories Section */}
+      {/* 1. 왜 돈워리일까요? (강점 소개) */}
       <section className="container py-12 -mt-8">
-        <div className="grid gap-4 md:grid-cols-3">
-          {categories.map((category, index) => (
-            <Link
-              key={category.path}
-              to={category.path}
-              className={`group therapy-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 animate-slide-up bg-gradient-to-br ${category.color}`}
-              style={{ animationDelay: `${0.1 + index * 0.05}s` }}
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-xl bg-background/80 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-soft">
-                  <span className="text-3xl">{category.emoji}</span>
+        <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5">
+          <h2 className="text-2xl font-bold text-foreground mb-2">
+            왜 돈워리일까요? ✨
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            신뢰할 수 있는 금융 정보를 쉽고 빠르게
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {benefits.map((item, index) => (
+              <div key={index} className="space-y-3">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center">
+                  <item.icon className="w-7 h-7 text-primary" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {category.title}
-                  </h2>
-                  <p className="text-sm text-muted-foreground line-clamp-1">
-                    {category.description}
-                  </p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
+                <h3 className="font-semibold text-foreground text-sm">{item.title}</h3>
+                <p className="text-xs text-muted-foreground">
+                  {item.desc}
+                </p>
               </div>
-            </Link>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Featured Calculators */}
+      {/* 2. 인기 계산기 위젯 (실사용 유도) */}
       <section className="container py-12">
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -163,52 +147,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section className="container py-12">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
-            <p className="text-muted-foreground text-sm mt-1">알아두면 좋은 금융 정보</p>
-          </div>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
-          ))}
-        </div>
-      </section>
-
-      {/* Trust Section */}
-      <section className="container py-12">
-        <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5">
-          <h2 className="text-2xl font-bold text-foreground mb-2">
-            왜 돈워리일까요? ✨
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            신뢰할 수 있는 금융 파트너가 되겠습니다
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { emoji: "🎯", title: "정확한 계산", desc: "2026년 최신 세법과 정책을\n실시간으로 반영합니다" },
-              { emoji: "💜", title: "쉬운 설명", desc: "어려운 금융 용어를\n누구나 이해할 수 있게 풀어드려요" },
-              { emoji: "🛡️", title: "믿을 수 있는 정보", desc: "공신력 있는 자료를 바탕으로\n신뢰할 수 있는 결과를 제공해요" },
-            ].map((item, index) => (
-              <div key={index} className="space-y-3">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center">
-                  <span className="text-3xl">{item.emoji}</span>
-                </div>
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground whitespace-pre-line">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="container py-12">
+      {/* 3. 무료 채무진단 배너 (CTA) */}
+      <section className="container py-6">
         <div className="relative overflow-hidden rounded-3xl gradient-hero p-8 md:p-12">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
           <div className="relative text-center">
@@ -226,6 +166,54 @@ export default function Index() {
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* 4. 최신 콘텐츠/블로그 리스트 (SEO) */}
+      <section className="container py-12">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
+            <p className="text-muted-foreground text-sm mt-1">알아두면 좋은 금융 정보</p>
+          </div>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {blogPosts.map((post, index) => (
+            <BlogCard key={index} {...post} />
+          ))}
+        </div>
+      </section>
+
+      {/* 5. 생활 / 금융 / 채무 카테고리별 대형 아이콘 메뉴 (하단 배치) */}
+      <section className="container py-12">
+        <div className="mb-6 text-center">
+          <h2 className="text-2xl font-bold text-foreground">카테고리별 바로가기</h2>
+          <p className="text-muted-foreground text-sm mt-1">원하는 카테고리를 선택하세요</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {categories.map((category, index) => (
+            <Link
+              key={category.path}
+              to={category.path}
+              className={`group therapy-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 animate-slide-up bg-gradient-to-br ${category.color}`}
+              style={{ animationDelay: `${0.1 + index * 0.05}s` }}
+            >
+              <div className="flex flex-col items-center text-center py-4">
+                <div className="w-20 h-20 rounded-2xl bg-background/80 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-soft mb-4">
+                  <span className="text-5xl">{category.emoji}</span>
+                </div>
+                <h2 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {category.title}
+                </h2>
+                <p className="text-sm text-muted-foreground">
+                  {category.description}
+                </p>
+                <div className="mt-4 flex items-center gap-1 text-primary font-medium text-sm">
+                  자세히 보기 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
