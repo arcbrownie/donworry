@@ -19,8 +19,9 @@ const navigationItems = [
   {
     label: "생활",
     emoji: "🏠",
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-50",
+    color: "text-category-life",
+    bgColor: "bg-category-life-light",
+    hoverColor: "hover:bg-category-life-light hover:text-category-life",
     items: [
       { path: "/life", label: "생활 허브", emoji: "🏡", description: "일상 재테크 팁 모음" },
       { 
@@ -38,8 +39,9 @@ const navigationItems = [
   {
     label: "금융",
     emoji: "💰",
-    color: "text-primary",
-    bgColor: "bg-primary/5",
+    color: "text-category-finance",
+    bgColor: "bg-category-finance-light",
+    hoverColor: "hover:bg-category-finance-light hover:text-category-finance",
     items: [
       { path: "/finance", label: "금융 허브", emoji: "🏦", description: "대출·금리 정보 모음" },
       { 
@@ -57,8 +59,9 @@ const navigationItems = [
   {
     label: "채무조정",
     emoji: "⚖️",
-    color: "text-secondary",
-    bgColor: "bg-secondary/5",
+    color: "text-category-debt",
+    bgColor: "bg-category-debt-light",
+    hoverColor: "hover:bg-category-debt-light hover:text-category-debt",
     items: [
       { path: "/debt", label: "채무조정 허브", emoji: "📋", description: "개인회생·파산 안내" },
       { path: "/debt/test", label: "자가진단", emoji: "🩺", description: "맞춤 해결책 찾기" },
@@ -97,13 +100,13 @@ export default function MainNavigation() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-lg hover:bg-accent transition-colors ${
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-lg transition-colors ${category.hoverColor} ${
                     category.items.some((item) => 
                       item.isFolder 
                         ? item.subItems?.some(sub => isActive(sub.path))
                         : isActive(item.path)
                     )
-                      ? "bg-accent text-accent-foreground"
+                      ? `${category.bgColor} ${category.color}`
                       : ""
                   }`}
                 >
