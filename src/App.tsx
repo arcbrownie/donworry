@@ -9,12 +9,18 @@ import NotFound from "./pages/NotFound";
 
 // Category hub pages
 import LifeHub from "./pages/life/LifeHub";
+import LifeGuide from "./pages/life/LifeGuide";
 import FinanceHub from "./pages/finance/FinanceHub";
+import FinanceGuide from "./pages/finance/FinanceGuide";
 
 // Debt pages
 import DebtHub from "./pages/debt/DebtHub";
 import DebtTest from "./pages/debt/DebtTest";
 import DebtGuide from "./pages/debt/DebtGuide";
+import DebtGuideContent from "./pages/debt/DebtGuideContent";
+
+// Content pages
+import ContentHub from "./pages/content/ContentHub";
 
 // Calculator pages
 import CalculatorHub from "./pages/cal/CalculatorHub";
@@ -44,12 +50,18 @@ const App = () => (
           
           {/* Category hub routes */}
           <Route path="/life" element={<LifeHub />} />
+          <Route path="/life/guide" element={<LifeGuide />} />
           <Route path="/finance" element={<FinanceHub />} />
+          <Route path="/finance/guide" element={<FinanceGuide />} />
+          
+          {/* Content routes */}
+          <Route path="/content" element={<ContentHub />} />
           
           {/* Debt routes */}
           <Route path="/debt" element={<DebtHub />} />
           <Route path="/debt/test" element={<DebtTest />} />
           <Route path="/debt/guide" element={<DebtGuide />} />
+          <Route path="/debt/guide-content" element={<DebtGuideContent />} />
           
           {/* Calculator routes */}
           <Route path="/cal" element={<CalculatorHub />} />
