@@ -12,8 +12,7 @@ const categories = [
     emoji: "🏠",
     title: "생활",
     description: "알바 실수령액, 군인 적금 등 일상 재테크",
-    bgColor: "bg-category-life/15",
-    borderColor: "border-category-life",
+    gradient: "bg-gradient-to-br from-category-life/20 to-category-life/5",
     hoverColor: "group-hover:text-category-life",
   },
   {
@@ -21,8 +20,7 @@ const categories = [
     emoji: "💰",
     title: "금융",
     description: "프리랜서 환급, 청년 세금감면 등 금융 정보",
-    bgColor: "bg-category-finance/15",
-    borderColor: "border-category-finance",
+    gradient: "bg-gradient-to-br from-category-finance/20 to-category-finance/5",
     hoverColor: "group-hover:text-category-finance",
   },
   {
@@ -30,8 +28,7 @@ const categories = [
     emoji: "⚖️",
     title: "채무조정",
     description: "개인회생, 파산, 채무조정 솔루션",
-    bgColor: "bg-category-debt/15",
-    borderColor: "border-category-debt",
+    gradient: "bg-gradient-to-br from-category-debt/20 to-category-debt/5",
     hoverColor: "group-hover:text-category-debt",
   },
 ];
@@ -139,7 +136,7 @@ export default function Index() {
             <Link
               key={category.path}
               to={category.path}
-              className={`group therapy-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 animate-slide-up ${category.bgColor} border-l-4 ${category.borderColor}`}
+              className={`group therapy-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 animate-slide-up ${category.gradient}`}
               style={{ animationDelay: `${0.1 + index * 0.05}s` }}
             >
               <div className="flex flex-col items-center text-center py-4">
