@@ -1,122 +1,170 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
+import MainNavigation from "@/components/layout/MainNavigation";
+import Footer from "@/components/layout/Footer";
+import BlogCard from "@/components/ui/BlogCard";
+import CalculatorWidget from "@/components/ui/CalculatorWidget";
+import { Button } from "@/components/ui/button";
 
 const debtFeatures = [
-  {
-    path: "/debt/test",
-    emoji: "🩺",
-    title: "맞춤형 채무조정 진단",
-    description: "연체 기간, 채무액, 소득을 입력하면 회생 vs 신속채무조정 중 나에게 맞는 방법을 추천해드려요.",
-    tag: "자가진단",
+  { 
+    path: "/debt/test", 
+    emoji: "🩺", 
+    title: "채무조정 자가진단", 
+    description: "나에게 맞는 해결책 찾기",
+    tag: "핵심",
+    variant: "debt" as const 
   },
-  {
-    path: "/debt/guide",
-    emoji: "📖",
-    title: "채무조정 완벽 가이드",
-    description: "개인회생, 개인파산, 신속채무조정의 차이점과 신청 방법을 쉽게 설명해드려요.",
-    tag: "가이드",
+  { 
+    path: "/debt/guide", 
+    emoji: "📖", 
+    title: "채무조정 상세 가이드", 
+    description: "절차, 비용, 자격요건 안내",
+    variant: "debt" as const 
   },
 ];
 
 const blogPosts = [
-  {
-    emoji: "💡",
-    title: "개인회생 vs 개인파산, 뭐가 다를까?",
-    excerpt: "비슷해 보이지만 완전히 다른 두 제도. 나에게 맞는 선택은?",
+  { 
+    emoji: "📊", 
+    title: "2026년 달라지는 개인회생 제도", 
+    excerpt: "새해부터 적용되는 개인회생 변경사항과 준비 방법",
+    category: "채무",
+    isPlaceholder: true 
   },
-  {
-    emoji: "📋",
-    title: "신속채무조정 신청 전 체크리스트",
-    excerpt: "준비해야 할 서류와 주의사항을 한눈에 정리했어요.",
+  { 
+    emoji: "⚖️", 
+    title: "개인회생 vs 개인파산, 어떤 게 나을까?", 
+    excerpt: "두 제도의 차이점과 선택 기준을 알려드립니다",
+    category: "채무",
+    isPlaceholder: true 
   },
-  {
-    emoji: "🔍",
-    title: "채무조정 후 신용점수 회복하기",
-    excerpt: "조정 완료 후 신용을 다시 쌓는 현실적인 방법들.",
+  { 
+    emoji: "📝", 
+    title: "신속채무조정 신청 완벽 가이드", 
+    excerpt: "은행 협의 없이 가능한 신속채무조정 절차 안내",
+    category: "채무",
+    isPlaceholder: true 
+  },
+  { 
+    emoji: "💡", 
+    title: "채무조정 후 신용회복 로드맵", 
+    excerpt: "채무조정 이후 신용점수를 회복하는 현실적인 방법",
+    category: "채무",
+    isPlaceholder: true 
   },
 ];
 
 export default function DebtHub() {
   return (
-    <CalculatorLayout
-      title="💙 채무조정 안내"
-      description="빚 때문에 힘드시죠? 돈워리가 새 출발을 도와드릴게요."
-      seoContent="개인회생, 개인파산, 신속채무조정 등 채무조정 제도에 대한 모든 정보를 쉽고 따뜻하게 안내해드립니다. 나에게 맞는 채무조정 방법을 찾아보세요."
-    >
-      {/* Main Features */}
-      <div className="space-y-4">
-        {debtFeatures.map((feature) => (
-          <Link
-            key={feature.path}
-            to={feature.path}
-            className="group therapy-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 block"
-          >
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                <span className="text-2xl">{feature.emoji}</span>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-medium text-primary bg-accent px-2 py-0.5 rounded-full">
-                    {feature.tag}
-                  </span>
-                </div>
-                <h2 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                  {feature.title}
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  {feature.description}
-                </p>
-              </div>
-              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-4" />
-            </div>
-          </Link>
-        ))}
-      </div>
+    <div className="min-h-screen bg-background">
+      <MainNavigation />
 
-      {/* Blog Section */}
-      <div className="therapy-card">
-        <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-          <span>📝</span> 채무조정 이야기
-        </h2>
-        <div className="space-y-4">
-          {blogPosts.map((post, index) => (
-            <div
-              key={index}
-              className="p-4 rounded-xl bg-therapy-soft hover:bg-accent/50 transition-colors cursor-pointer"
-            >
-              <div className="flex items-start gap-3">
-                <span className="text-xl">{post.emoji}</span>
-                <div>
-                  <h3 className="font-medium text-foreground mb-1">{post.title}</h3>
-                  <p className="text-sm text-muted-foreground">{post.excerpt}</p>
-                </div>
-              </div>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-secondary/10 to-secondary/5">
+        <div className="container py-12 md:py-16">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center">
+              <span className="text-3xl">🛡️</span>
             </div>
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground">채무</h1>
+              <p className="text-muted-foreground">개인회생·파산·채무조정</p>
+            </div>
+          </div>
+          <p className="text-muted-foreground max-w-2xl mb-6">
+            과도한 빚으로 힘드신가요? 개인회생, 파산, 신속채무조정 등 
+            법적으로 보호받을 수 있는 다양한 해결책이 있습니다.
+            돈워리가 새로운 시작을 응원합니다.
+          </p>
+          <Link to="/debt/test">
+            <Button className="btn-premium">
+              <span className="relative z-10 flex items-center gap-2">
+                🩺 무료 자가진단 시작하기
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="container py-12">
+        <div className="mb-6">
+          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+            🔧 채무 해결 도구
+          </h2>
+          <p className="text-sm text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
+        </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          {debtFeatures.map((feature) => (
+            <CalculatorWidget key={feature.path} {...feature} />
           ))}
         </div>
-        <p className="text-center text-sm text-muted-foreground mt-4">
-          더 많은 글이 곧 업데이트됩니다 ✨
-        </p>
-      </div>
+      </section>
 
-      {/* CTA */}
-      <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-therapy-soft">
-        <span className="text-4xl mb-4 block">🤝</span>
-        <h2 className="text-lg font-semibold text-foreground mb-2">
-          혼자 고민하지 마세요
-        </h2>
-        <p className="text-muted-foreground mb-4">
-          무료 상담을 통해 전문가의 도움을 받아보세요.
-        </p>
-        <Link
-          to="/debt/test"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-colors"
-        >
-          무료 진단 시작하기 <ArrowRight className="w-4 h-4" />
-        </Link>
-      </div>
-    </CalculatorLayout>
+      {/* Info Card */}
+      <section className="container py-6">
+        <div className="therapy-card bg-gradient-to-br from-secondary/5 to-primary/5 border-secondary/20">
+          <div className="flex flex-col md:flex-row gap-6 items-start">
+            <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center shrink-0">
+              <span className="text-2xl">💬</span>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground mb-2">혼자 고민하지 마세요</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                채무 문제는 부끄러운 것이 아닙니다. 대한민국 법은 경제적으로 어려운 분들을 위한 
+                다양한 구제 제도를 마련해두고 있습니다. 개인회생을 통해 최대 90%까지 채무를 감면받고,
+                새로운 시작을 할 수 있습니다.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">개인회생</span>
+                <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">개인파산</span>
+                <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">신속채무조정</span>
+                <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">채무통합</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog */}
+      <section className="container py-12">
+        <div className="mb-6">
+          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+            📚 채무조정 가이드
+          </h2>
+          <p className="text-sm text-muted-foreground mt-1">알아두면 도움이 되는 채무 관련 정보</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {blogPosts.map((post, index) => (
+            <BlogCard key={index} {...post} />
+          ))}
+        </div>
+      </section>
+
+      {/* SEO Content */}
+      <section className="container py-6">
+        <div className="therapy-card">
+          <h3 className="font-semibold text-foreground mb-3">채무조정이란?</h3>
+          <div className="prose prose-sm max-w-none text-muted-foreground">
+            <p>
+              채무조정은 과도한 빚으로 인해 정상적인 경제활동이 어려운 분들을 위한 법적 제도입니다.
+              개인회생, 개인파산, 신속채무조정 등 다양한 방법 중 본인의 상황에 맞는 최적의 해결책을 찾는 것이 중요합니다.
+              돈워리의 자가진단 도구를 통해 먼저 방향을 잡아보시고, 필요하다면 전문가 상담을 받아보세요.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Ad Container */}
+      <section className="container py-6">
+        <div className="ad-container py-10">
+          <span>광고 영역 (AdSense)</span>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
   );
 }
