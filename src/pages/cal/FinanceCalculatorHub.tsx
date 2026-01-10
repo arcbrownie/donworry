@@ -22,9 +22,9 @@ const financeCalculators = [
 export default function FinanceCalculatorHub() {
   return (
     <CalculatorLayout
-      title="🧮 금융 계산기"
-      description="세금, 환급, 투자 등 금융에 필요한 계산기 모음"
-      seoContent="프리랜서 세금환급, 청년 소득세 감면 등 금융 관련 계산기를 무료로 이용하세요. 2026년 세율과 최신 정책이 반영되어 있습니다."
+      title="🧮 금융 · 대출 계산기"
+      description="세금, 환급, 대출 등 금융 · 대출에 필요한 계산기 모음"
+      seoContent="프리랜서 세금환급, 청년 소득세 감면 등 금융 · 대출 관련 계산기를 무료로 이용하세요. 2026년 세율과 최신 정책이 반영되어 있습니다."
     >
       <div className="space-y-4">
         {financeCalculators.map((calc) => (
@@ -60,10 +60,10 @@ export default function FinanceCalculatorHub() {
       <div className="therapy-card text-center bg-category-finance-light border-l-4 border-category-finance">
         <span className="text-4xl mb-4 block">💳</span>
         <h2 className="text-lg font-semibold text-foreground mb-2">
-          똑똑한 금융 계산기
+          똑똑한 금융 · 대출 계산기
         </h2>
         <p className="text-muted-foreground">
-          세금, 환급, 감면 등 금융에 필요한 계산을 쉽게 해보세요.<br />
+          세금, 환급, 감면, 대출 등 금융 · 대출에 필요한 계산을 쉽게 해보세요.<br />
           2026년 최신 세율이 반영되어 있습니다.
         </p>
       </div>

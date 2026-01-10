@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
+import TableOfContents from "@/components/ui/TableOfContents";
 import { Button } from "@/components/ui/button";
 import { Calculator, ArrowRight } from "lucide-react";
 
@@ -11,7 +12,7 @@ export default function WeeklyHolidayPayGuide() {
 
   useEffect(() => {
     // SEO Meta Tags
-    document.title = "[2026] 알바생 주휴수당 완벽 가이드: 계산법부터 조건까지 한 번에 정리 | 돈워리";
+    document.title = "2026년 최신 알바생 주휴수당 완벽 가이드: 계산법부터 조건까지 한 번에 정리 | 돈워리";
     
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -35,7 +36,7 @@ export default function WeeklyHolidayPayGuide() {
       ogTitle.setAttribute('property', 'og:title');
       document.head.appendChild(ogTitle);
     }
-    ogTitle.setAttribute('content', '[2026] 알바생 주휴수당 완벽 가이드 | 돈워리');
+    ogTitle.setAttribute('content', '2026년 최신 알바생 주휴수당 완벽 가이드 | 돈워리');
 
     let ogDescription = document.querySelector('meta[property="og:description"]');
     if (!ogDescription) {
@@ -75,7 +76,7 @@ export default function WeeklyHolidayPayGuide() {
         <div className="container relative z-10">
           <div className="text-center text-white">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
-              [2026] 알바생 주휴수당 완벽 가이드
+              2026년 최신 알바생 주휴수당 완벽 가이드
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
               계산법부터 조건까지 한 번에 정리
@@ -87,31 +88,10 @@ export default function WeeklyHolidayPayGuide() {
       {/* Main Content */}
       <main className="container py-12">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Table of Contents - Desktop Only */}
-          <aside className="hidden lg:block lg:w-64 flex-shrink-0">
-            <div className="sticky top-[100px]">
-              <div className="bg-card border border-border rounded-xl p-4 shadow-soft">
-                <h3 className="font-semibold text-foreground mb-3">목차</h3>
-                <nav className="space-y-2">
-                  <a href="#what-is" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    1. 주휴수당이란?
-                  </a>
-                  <a href="#conditions" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    2. 주휴수당 지급 조건
-                  </a>
-                  <a href="#calculation" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    3. 주휴수당 계산법
-                  </a>
-                  <a href="#unpaid" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    4. 주휴수당 미지급 대응
-                  </a>
-                  <a href="#solution" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    5. 돈워리의 제안
-                  </a>
-                </nav>
-              </div>
-            </div>
-          </aside>
+          {/* Table of Contents */}
+          <div className="lg:w-64 flex-shrink-0">
+            <TableOfContents />
+          </div>
 
           {/* Article Content */}
           <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
@@ -127,8 +107,8 @@ export default function WeeklyHolidayPayGuide() {
 
           {/* Section 1 */}
           <section id="what-is" className="scroll-mt-20 mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              1. 주휴수당 정의 및 개념
+            <h2 id="what-is-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+              주휴수당 정의 및 개념
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               주휴수당은 근로기준법 제55조에 따라 일주일 동안 정해진 근무일을 모두 채운 근로자에게 유급 휴일을 주는 제도입니다. 즉, 쉬는 날임에도 불구하고 하루치 임금을 더 받는 것이죠.
@@ -142,8 +122,8 @@ export default function WeeklyHolidayPayGuide() {
 
           {/* Section 2 */}
           <section id="conditions" className="scroll-mt-20 mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              2. 2026년 주휴수당 지급 조건 (이것만 체크하세요!)
+            <h2 id="conditions-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+              2026년 주휴수당 지급 조건 (이것만 체크하세요!)
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               주휴수당을 받기 위해서는 다음의 세 가지 핵심 조건을 모두 충족해야 합니다.
@@ -180,8 +160,8 @@ export default function WeeklyHolidayPayGuide() {
 
           {/* Section 3 */}
           <section id="calculation" className="scroll-mt-20 mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              3. [2026 기준] 내 주휴수당은 얼마일까? 계산법 정리
+            <h2 id="calculation-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+              2026년 기준 내 주휴수당은 얼마일까? 계산법 정리
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               2026년 최저시급은 <strong className="text-primary font-semibold">10,320원</strong>입니다. 이를 기준으로 본인의 스케줄에 맞춰 계산해 보세요.
@@ -189,7 +169,7 @@ export default function WeeklyHolidayPayGuide() {
 
             {/* Subsection 1 */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 id="calculation-fulltime" className="text-xl font-semibold text-foreground mb-3 scroll-mt-20">
                 1) 주 40시간 이상 근무자 (통상 근로자)
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-3">
@@ -204,7 +184,7 @@ export default function WeeklyHolidayPayGuide() {
 
             {/* Subsection 2 */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 id="calculation-parttime" className="text-xl font-semibold text-foreground mb-3 scroll-mt-20">
                 2) 주 40시간 미만 근무자 (단시간 근로자)
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-3">
@@ -256,8 +236,8 @@ export default function WeeklyHolidayPayGuide() {
 
           {/* Section 4 */}
           <section id="unpaid" className="scroll-mt-20 mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              4. 주휴수당이 밀리거나 못 받았다면? 채무 관리의 시작
+            <h2 id="unpaid-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+              주휴수당이 밀리거나 못 받았다면? 채무 관리의 시작
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               만약 사장님이 "우리 가게는 주휴수당 안 준다"라고 한다면 이는 명백한 법 위반입니다. 받지 못한 수당은 고용노동부를 통해 임금체불 진정을 제기할 수 있습니다.
@@ -272,8 +252,8 @@ export default function WeeklyHolidayPayGuide() {
 
           {/* Section 5 */}
           <section id="solution" className="scroll-mt-20 mb-10">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              5. 돈 걱정 없는 일상을 위한 '돈워리'의 제안
+            <h2 id="solution-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+              돈 걱정 없는 일상을 위한 '돈워리'의 제안
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               주휴수당 계산, 매번 직접 하기 번거로우시죠? <strong className="text-primary">돈워리(donworry.kr)</strong>에서는 여러분의 소중한 임금을 1원도 놓치지 않도록 정확한 계산기를 제공합니다. 지금 바로 확인하고 나의 정당한 권리를 찾으세요!

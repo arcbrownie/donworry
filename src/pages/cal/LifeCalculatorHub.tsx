@@ -22,9 +22,9 @@ const lifeCalculators = [
 export default function LifeCalculatorHub() {
   return (
     <CalculatorLayout
-      title="🔢 생활 계산기"
-      description="일상에 필요한 생활 밀착형 계산기 모음"
-      seoContent="알바 실수령액, 군인 적금 등 2030세대 일상에 꼭 필요한 생활 계산기를 무료로 이용하세요. 2026년 최저임금과 최신 정책이 반영되어 있습니다."
+      title="🔢 재테크 · 절약 계산기"
+      description="일상에 필요한 재테크 · 절약 계산기 모음"
+      seoContent="알바 실수령액, 군인 적금 등 2030세대 일상에 꼭 필요한 재테크 · 절약 계산기를 무료로 이용하세요. 2026년 최저임금과 최신 정책이 반영되어 있습니다."
     >
       <div className="space-y-4">
         {lifeCalculators.map((calc) => (
@@ -60,7 +60,7 @@ export default function LifeCalculatorHub() {
       <div className="therapy-card text-center bg-category-life-light border-l-4 border-category-life">
         <span className="text-4xl mb-4 block">🏠</span>
         <h2 className="text-lg font-semibold text-foreground mb-2">
-          생활 밀착형 계산기
+          재테크 · 절약 계산기
         </h2>
         <p className="text-muted-foreground">
           알바, 군인 적금 등 일상에서 바로 활용할 수 있는 계산기입니다.<br />

@@ -3,15 +3,15 @@ import { Shield } from "lucide-react";
 
 const footerLinks = {
   categories: [
-    { label: "생활", path: "/life" },
-    { label: "금융", path: "/finance" },
+    { label: "재테크 · 절약", path: "/savings" },
+    { label: "금융 · 대출", path: "/finance" },
     { label: "채무조정", path: "/debt" },
   ],
   services: [
     { label: "채무조정 진단", path: "/debt/test" },
     { label: "채무조정 가이드", path: "/debt/guide" },
-    { label: "생활 계산기", path: "/cal/life" },
-    { label: "금융 계산기", path: "/cal/finance" },
+    { label: "재테크 · 절약 계산기", path: "/cal/life" },
+    { label: "금융 · 대출 계산기", path: "/cal/finance" },
   ],
   info: [
     { label: "서비스 소개", path: "/about" },
@@ -57,7 +57,10 @@ export default function Footer() {
                   <li key={link.path} className="text-right md:text-left">
                     <Link
                       to={link.path}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className={`text-sm text-muted-foreground hover:text-foreground transition-colors ${
+                        link.label === '채무조정' ? 'tracking-normal' : 'tracking-tight'
+                      }`}
+                      style={{ letterSpacing: link.label === '채무조정' ? '0' : '-0.02em' }}
                     >
                       {link.label}
                     </Link>

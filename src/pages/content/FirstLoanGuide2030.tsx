@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
+import TableOfContents from "@/components/ui/TableOfContents";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -151,7 +152,7 @@ export default function FirstLoanGuide2030() {
 
   useEffect(() => {
     // SEO Meta Tags
-    document.title = "[2030 사회초년생] 첫 대출 완벽 가이드: 신용점수 관리부터 저금리 상품 찾는 법까지 | 돈워리";
+    document.title = "2030 사회초년생을 위한 첫 대출 완벽 가이드: 신용점수 관리부터 저금리 상품 찾는 법까지 | 돈워리";
     
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -210,31 +211,10 @@ export default function FirstLoanGuide2030() {
       {/* Main Content */}
       <main className="container py-12">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Table of Contents - Desktop Only */}
-          <aside className="hidden lg:block lg:w-64 flex-shrink-0">
-            <div className="sticky top-[100px]">
-              <div className="bg-card border border-border rounded-xl p-4 shadow-soft">
-                <h3 className="font-semibold text-foreground mb-3">목차</h3>
-                <nav className="space-y-2">
-                  <a href="#credit-score" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    1. 신용점수 관리의 기술
-                  </a>
-                  <a href="#loan-products" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    2. 나에게 맞는 대출 상품 찾기
-                  </a>
-                  <a href="#checklist" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    3. 대출 전 체크리스트
-                  </a>
-                  <a href="#calculator" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    4. 대출 계산기
-                  </a>
-                  <a href="#solution" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    5. 솔루션
-                  </a>
-                </nav>
-              </div>
-            </div>
-          </aside>
+          {/* Table of Contents */}
+          <div className="lg:w-64 flex-shrink-0">
+            <TableOfContents />
+          </div>
 
           {/* Article Content */}
           <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
@@ -255,8 +235,8 @@ export default function FirstLoanGuide2030() {
 
             {/* Section 1 */}
             <section id="credit-score" className="mb-10 scroll-mt-20">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                1. 대출의 시작과 끝, '신용점수' 관리의 기술
+              <h2 id="credit-score" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
+                대출의 시작과 끝, '신용점수' 관리의 기술
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 대출을 받을 때 은행이 가장 먼저 보는 것은 여러분의 '상환 능력'이며, 이를 수치화한 것이 바로 <strong className="text-foreground">신용점수</strong>입니다. 신용점수가 높을수록 대출 한도는 늘어나고 금리는 낮아집니다.
@@ -306,8 +286,8 @@ export default function FirstLoanGuide2030() {
 
             {/* Section 2 */}
             <section id="loan-products" className="mb-10 scroll-mt-20">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                2. 나에게 맞는 대출 상품 찾기: 정부지원 vs 시중은행
+              <h2 id="loan-products-heading" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
+                나에게 맞는 대출 상품 찾기: 정부지원 vs 시중은행
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 첫 대출일수록 <strong className="text-foreground">정부 지원 서민금융 상품</strong>을 먼저 살펴보는 것이 유리합니다. 시중은행보다 조건이 완만하고 금리가 저렴하기 때문입니다.
@@ -349,8 +329,8 @@ export default function FirstLoanGuide2030() {
 
             {/* Section 3 */}
             <section id="checklist" className="mb-10 scroll-mt-20">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                3. 대출 전 반드시 체크해야 할 3요소 (DSR, 상환 방식)
+              <h2 id="checklist-heading" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
+                대출 전 반드시 체크해야 할 3요소 (DSR, 상환 방식)
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 대출 실행 버튼을 누르기 전, 다음 세 가지는 반드시 확인해야 합니다.
@@ -382,8 +362,8 @@ export default function FirstLoanGuide2030() {
 
             {/* Section 4 - Calculator */}
             <section id="calculator" className="mb-10 scroll-mt-20">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                4. 대출 이자 계산기: 내가 매달 내야 할 금액은?
+              <h2 id="calculator-heading" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
+                대출 이자 계산기: 내가 매달 내야 할 금액은?
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 대출 금액, 이자율, 상환 기간을 입력하면 정확한 월 상환액과 총 이자를 확인할 수 있습니다. 
@@ -394,8 +374,8 @@ export default function FirstLoanGuide2030() {
 
             {/* Section 5 */}
             <section id="solution" className="mb-10 scroll-mt-20">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                5. 돈 걱정 없는 내일을 위한 솔루션
+              <h2 id="solution-heading" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
+                돈 걱정 없는 내일을 위한 솔루션
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 이미 여러 곳에서 대출을 받아 관리가 어렵거나, 고금리 채무로 인해 고민 중이신가요? 혼자 고민하지 마세요. <strong className="text-foreground">개인회생</strong>이나 <strong className="text-foreground">채무 통합</strong> 같은 법적 제도나 금융 솔루션이 여러분의 재기를 도울 수 있습니다. 신용점수가 낮아 고민이라면 지금 바로 <strong className="text-primary">신용점수 관리 서비스</strong>를 시작하고, 나에게 가장 유리한 대출 금리를 비교해 보세요.

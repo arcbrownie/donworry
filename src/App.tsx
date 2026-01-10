@@ -18,12 +18,16 @@ import DebtHub from "./pages/debt/DebtHub";
 import DebtTest from "./pages/debt/DebtTest";
 import DebtGuide from "./pages/debt/DebtGuide";
 import DebtGuideContent from "./pages/debt/DebtGuideContent";
+import CreditRecoveryCommittee from "./pages/debt/CreditRecoveryCommittee";
+import PersonalRehabilitationBankruptcy from "./pages/debt/PersonalRehabilitationBankruptcy";
 
 // Content pages
 import ContentHub from "./pages/content/ContentHub";
 import PersonalRehabilitation2026 from "./pages/content/PersonalRehabilitation2026";
 import WeeklyHolidayPayGuide from "./pages/content/WeeklyHolidayPayGuide";
 import FirstLoanGuide2030 from "./pages/content/FirstLoanGuide2030";
+import SocialBeginnerSalaryGuide from "./pages/content/SocialBeginnerSalaryGuide";
+import OnePersonHouseholdSavingsDetailed from "./pages/content/OnePersonHouseholdSavingsDetailed";
 
 // Calculator pages
 import CalculatorHub from "./pages/cal/CalculatorHub";
@@ -56,8 +60,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           
           {/* Category hub routes */}
-          <Route path="/life" element={<LifeHub />} />
-          <Route path="/life/guide" element={<LifeGuide />} />
+          <Route path="/savings" element={<LifeHub />} />
+          <Route path="/savings/guide" element={<LifeGuide />} />
           <Route path="/finance" element={<FinanceHub />} />
           <Route path="/finance/guide" element={<FinanceGuide />} />
           
@@ -66,9 +70,13 @@ const App = () => (
           <Route path="/personal-rehabilitation-2026-changes" element={<PersonalRehabilitation2026 />} />
           <Route path="/blog/weekly-holiday-pay-guide" element={<WeeklyHolidayPayGuide />} />
           <Route path="/blog/first-loan-guide-2030" element={<FirstLoanGuide2030 />} />
+          <Route path="/blog/social-beginner-salary-guide" element={<SocialBeginnerSalaryGuide />} />
+          <Route path="/blog/one-person-household-savings-detailed" element={<OnePersonHouseholdSavingsDetailed />} />
           
           {/* Debt routes */}
           <Route path="/debt" element={<DebtHub />} />
+          <Route path="/debt/personal-rehabilitation-bankruptcy" element={<PersonalRehabilitationBankruptcy />} />
+          <Route path="/debt/credit-recovery-committee" element={<CreditRecoveryCommittee />} />
           <Route path="/debt/test" element={<DebtTest />} />
           <Route path="/debt/guide" element={<DebtGuide />} />
           <Route path="/debt/guide-content" element={<DebtGuideContent />} />

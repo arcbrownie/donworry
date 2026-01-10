@@ -7,7 +7,7 @@ export default function FinanceGuide() {
       <MainNavigation />
       <section className="bg-category-finance-light py-16">
         <div className="container text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">💰 금융 가이드</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">💰 금융 · 대출 가이드</h1>
           <p className="text-muted-foreground">대출·금리·투자 정보 총정리</p>
         </div>
       </section>

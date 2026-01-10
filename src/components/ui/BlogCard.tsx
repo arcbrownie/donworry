@@ -20,14 +20,22 @@ export default function BlogCard({
 }: BlogCardProps) {
   const categoryColors: Record<string, string> = {
     생활: "bg-category-life/10 text-category-life",
+    "재테크/절약": "bg-category-life/10 text-category-life",
+    "재테크 · 절약": "bg-category-life/10 text-category-life",
     금융: "bg-category-finance/10 text-category-finance",
+    "금융/대출": "bg-category-finance/10 text-category-finance",
+    "금융 · 대출": "bg-category-finance/10 text-category-finance",
     채무조정: "bg-category-debt/10 text-category-debt",
     채무: "bg-category-debt/10 text-category-debt",
   };
 
   const categoryGradient: Record<string, string> = {
     생활: "group-hover:bg-gradient-to-br group-hover:from-category-life-light group-hover:to-card",
+    "재테크/절약": "group-hover:bg-gradient-to-br group-hover:from-category-life-light group-hover:to-card",
+    "재테크 · 절약": "group-hover:bg-gradient-to-br group-hover:from-category-life-light group-hover:to-card",
     금융: "group-hover:bg-gradient-to-br group-hover:from-category-finance-light group-hover:to-card",
+    "금융/대출": "group-hover:bg-gradient-to-br group-hover:from-category-finance-light group-hover:to-card",
+    "금융 · 대출": "group-hover:bg-gradient-to-br group-hover:from-category-finance-light group-hover:to-card",
     채무조정: "group-hover:bg-gradient-to-br group-hover:from-category-debt-light group-hover:to-card",
     채무: "group-hover:bg-gradient-to-br group-hover:from-category-debt-light group-hover:to-card",
   };

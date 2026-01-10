@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Calendar, Zap, Calculator, Users } from "lucide-react";
+import { Calendar, Zap, Calculator, Users, PiggyBank, CreditCard, Scale } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
@@ -8,26 +8,26 @@ import { Button } from "@/components/ui/button";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 const categories = [
   {
-    path: "/life",
-    emoji: "🏠",
-    title: "생활",
-    description: "알바 실수령액, 군인 적금 등 일상 재테크",
+    path: "/savings",
+    icon: PiggyBank,
+    title: "재테크 · 절약",
+    description: "티끌 모아 태산, 똑똑한 소비 습관",
     gradient: "bg-gradient-to-br from-category-life/20 to-category-life/5",
     hoverColor: "group-hover:text-category-life",
   },
   {
     path: "/finance",
-    emoji: "💰",
-    title: "금융",
-    description: "프리랜서 환급, 청년 세금감면 등 금융 정보",
+    icon: CreditCard,
+    title: "금융 · 대출",
+    description: "나에게 딱 맞는 금리와 상품 찾기",
     gradient: "bg-gradient-to-br from-category-finance/20 to-category-finance/5",
     hoverColor: "group-hover:text-category-finance",
   },
   {
     path: "/debt",
-    emoji: "⚖️",
+    icon: Scale,
     title: "채무조정",
-    description: "개인회생, 파산, 채무조정 솔루션",
+    description: "다시 시작하는 경제적 자유, 맞춤형 해결책",
     gradient: "bg-gradient-to-br from-category-debt/20 to-category-debt/5",
     hoverColor: "group-hover:text-category-debt",
   },
@@ -35,21 +35,21 @@ const categories = [
 
 const featuredCalculators = [
   { path: "/debt/test", emoji: "🩺", title: "채무조정 자가진단", description: "나에게 맞는 해결책 찾기", tag: "채무조정", variant: "debt" as const },
-  { path: "/cal/part-time", emoji: "💰", title: "알바 실수령액", description: "2026 최저임금 반영", tag: "생활", variant: "life" as const },
-  { path: "/cal/freelancer", emoji: "💼", title: "프리랜서 환급", description: "3.3% 세금 환급 계산", tag: "금융", variant: "finance" as const },
-  { path: "/cal/youth-tax", emoji: "🎓", title: "청년 세금감면", description: "중기청 90% 감면 혜택", tag: "금융", variant: "finance" as const },
+  { path: "/cal/part-time", emoji: "💰", title: "알바 실수령액", description: "2026 최저임금 반영", tag: "재테크 · 절약", variant: "life" as const },
+  { path: "/cal/freelancer", emoji: "💼", title: "프리랜서 환급", description: "3.3% 세금 환급 계산", tag: "금융 · 대출", variant: "finance" as const },
+  { path: "/cal/youth-tax", emoji: "🎓", title: "청년 세금감면", description: "중기청 90% 감면 혜택", tag: "금융 · 대출", variant: "finance" as const },
 ];
 
 // 히어로 아래 메인 계산기 카드
 const heroCalculators = [
   { path: "/cal/debt-reduction", emoji: "📉", title: "개인회생 탕감액 계산기", description: "채무 탕감 예상액을 미리 확인", tag: "채무조정", variant: "debt" as const },
-  { path: "/cal/interest-saving", emoji: "💵", title: "이자 절감 계산기", description: "대출 이자 절감액 시뮬레이션", tag: "금융", variant: "finance" as const },
+  { path: "/cal/interest-saving", emoji: "💵", title: "이자 절감 계산기", description: "대출 이자 절감액 시뮬레이션", tag: "금융 · 대출", variant: "finance" as const },
 ];
 
 const blogPosts = [
   { emoji: "📊", title: "2026년 달라지는 개인회생 제도", excerpt: "새해부터 적용되는 개인회생 변경사항을 알아보세요.", category: "채무조정", path: "/personal-rehabilitation-2026-changes", isPlaceholder: false },
-  { emoji: "💡", title: "알바생 주휴수당 완벽 가이드", excerpt: "2026년 최저임금 기준 주휴수당 계산법과 지급 조건", category: "생활", path: "/blog/weekly-holiday-pay-guide", isPlaceholder: false },
-  { emoji: "🏦", title: "2030을 위한 첫 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융", path: "/blog/first-loan-guide-2030", isPlaceholder: false },
+  { emoji: "💡", title: "알바생 주휴수당 완벽 가이드", excerpt: "2026년 최저임금 기준 주휴수당 계산법과 지급 조건", category: "재테크 · 절약", path: "/blog/weekly-holiday-pay-guide", isPlaceholder: false },
+  { emoji: "🏦", title: "2030을 위한 첫 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융 · 대출", path: "/blog/first-loan-guide-2030", isPlaceholder: false },
 ];
 
 const benefits = [
@@ -162,7 +162,7 @@ export default function Index() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-3xl md:text-2xl font-bold text-foreground">인기 계산기</h2>
-            <p className="text-muted-foreground text-base mt-1 leading-relaxed">가장 많이 사용하는 금융 계산기</p>
+            <p className="text-muted-foreground text-base mt-1 leading-relaxed">가장 많이 사용하는 계산기</p>
           </div>
           <Link to="/cal" className="text-base font-medium text-primary hover:underline">
             전체보기
@@ -214,7 +214,7 @@ export default function Index() {
             >
               <div className="flex flex-col items-center text-center py-4">
                 <div className="w-20 h-20 rounded-2xl bg-background/80 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-soft mb-4">
-                  <span className="text-5xl">{category.emoji}</span>
+                  {category.icon && <category.icon className="w-10 h-10 text-foreground" strokeWidth={1.5} />}
                 </div>
                 <h2 className={`text-2xl font-bold text-foreground mb-2 transition-colors ${category.hoverColor}`}>
                   {category.title}
@@ -236,7 +236,7 @@ export default function Index() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
-            <p className="text-muted-foreground text-base mt-1 leading-relaxed">알아두면 좋은 금융 정보</p>
+            <p className="text-muted-foreground text-base mt-1 leading-relaxed">알아두면 좋은 재테크 · 금융 정보</p>
           </div>
         </div>
         <div className="grid gap-4 md:grid-cols-3">

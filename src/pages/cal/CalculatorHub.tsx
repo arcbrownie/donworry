@@ -43,11 +43,11 @@ export default function CalculatorHub() {
       description="2030세대를 위한 실용 금융 계산기 모음"
       seoContent="알바 실수령액, 프리랜서 세금환급, 청년 소득세 감면, 군인 적금 등 2030세대에게 꼭 필요한 금융 계산기를 무료로 이용하세요."
     >
-      {/* 생활 계산기 */}
+      {/* 재테크 · 절약 계산기 */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <span className="text-2xl">🔢</span>
-          <h2 className="text-xl font-bold text-foreground">생활 계산기</h2>
+          <h2 className="text-xl font-bold text-foreground">재테크 · 절약 계산기</h2>
         </div>
         {lifeCalculators.map((calc) => (
           <Link
@@ -78,11 +78,11 @@ export default function CalculatorHub() {
         ))}
       </div>
 
-      {/* 금융 계산기 */}
+      {/* 금융 · 대출 계산기 */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <span className="text-2xl">🧮</span>
-          <h2 className="text-xl font-bold text-foreground">금융 계산기</h2>
+          <h2 className="text-xl font-bold text-foreground">금융 · 대출 계산기</h2>
         </div>
         {financeCalculators.map((calc) => (
           <Link

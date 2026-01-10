@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Scale } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
@@ -17,10 +17,18 @@ const debtFeatures = [
     variant: "debt" as const 
   },
   { 
-    path: "/debt/guide", 
-    emoji: "📖", 
-    title: "채무조정 상세 가이드", 
-    description: "절차, 비용, 자격요건 안내",
+    path: "/debt/credit-recovery-committee", 
+    emoji: "🏛️", 
+    title: "신용회복위원회 채무조정", 
+    description: "신용회복위원회를 통한 채무조정 안내",
+    tag: "채무조정",
+    variant: "debt" as const 
+  },
+  { 
+    path: "/debt/personal-rehabilitation-bankruptcy", 
+    emoji: "⚖️", 
+    title: "개인회생 · 개인파산", 
+    description: "법원을 통한 채무 해결 방법",
     tag: "채무조정",
     variant: "debt" as const 
   },
@@ -31,28 +39,31 @@ const blogPosts = [
     emoji: "📊", 
     title: "2026년 달라지는 개인회생 제도", 
     excerpt: "새해부터 적용되는 개인회생 변경사항과 준비 방법",
-    category: "채무",
-    isPlaceholder: true 
+    category: "채무조정",
+    path: "/personal-rehabilitation-2026-changes",
+    isPlaceholder: false 
   },
   { 
     emoji: "⚖️", 
     title: "개인회생 vs 개인파산 비교", 
     excerpt: "두 제도의 차이점과 선택 기준을 알려드립니다",
-    category: "채무",
-    isPlaceholder: true 
+    category: "채무조정",
+    path: "/debt/personal-rehabilitation-bankruptcy",
+    isPlaceholder: false 
   },
   { 
-    emoji: "📝", 
-    title: "신속채무조정 신청 완벽 가이드", 
-    excerpt: "은행 협의 없이 가능한 신속채무조정 절차 안내",
-    category: "채무",
-    isPlaceholder: true 
+    emoji: "🏛️", 
+    title: "신용회복위원회 채무조정 완벽 가이드", 
+    excerpt: "신용회복위원회를 통한 채무조정 절차와 혜택 안내",
+    category: "채무조정",
+    path: "/debt/credit-recovery-committee",
+    isPlaceholder: false 
   },
   { 
     emoji: "💡", 
     title: "채무조정 후 신용회복 로드맵", 
     excerpt: "채무조정 이후 신용점수를 회복하는 현실적인 방법",
-    category: "채무",
+    category: "채무조정",
     isPlaceholder: true 
   },
 ];
@@ -74,11 +85,11 @@ export default function DebtHub() {
         <div className="container py-12 md:py-16">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-14 h-14 rounded-2xl bg-category-debt/20 flex items-center justify-center">
-              <span className="text-3xl">🛡️</span>
+              <Scale className="w-7 h-7 text-category-debt" strokeWidth={1.5} />
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground">채무조정</h1>
-              <p className="text-muted-foreground">개인회생·파산·채무조정</p>
+              <p className="text-muted-foreground">다시 시작하는 경제적 자유, 맞춤형 해결책</p>
             </div>
           </div>
           <p className="text-muted-foreground max-w-2xl mb-6">
@@ -112,10 +123,9 @@ export default function DebtHub() {
                 새로운 시작을 할 수 있습니다.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">개인회생</span>
-                <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">개인파산</span>
-                <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">신속채무조정</span>
-                <span className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">채무통합</span>
+                <Link to="/debt/personal-rehabilitation-bankruptcy" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">개인회생 · 개인파산</Link>
+                <Link to="/debt/credit-recovery-committee" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">신용회복위원회 채무조정</Link>
+                <Link to="/debt/test" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">자가진단</Link>
               </div>
             </div>
           </div>
@@ -131,10 +141,27 @@ export default function DebtHub() {
           </h2>
           <p className="text-sm text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
         </div>
-        <div className="grid gap-3 md:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-3">
           {debtFeatures.map((feature) => (
             <CalculatorWidget key={feature.path} {...feature} />
           ))}
+        </div>
+      </section>
+
+      {/* SEO Content */}
+      <section className="container py-6">
+        <div className="therapy-card">
+          <h3 className="font-semibold text-foreground mb-3 flex items-center gap-3">
+            <Scale className="w-5 h-5 text-category-debt" strokeWidth={1.5} />
+            채무조정이란?
+          </h3>
+          <div className="prose prose-sm max-w-none text-muted-foreground">
+            <p>
+              채무조정은 과도한 빚으로 인해 정상적인 경제활동이 어려운 분들을 위한 법적 제도입니다.
+              개인회생, 개인파산, 신속채무조정 등 다양한 방법 중 본인의 상황에 맞는 최적의 해결책을 찾는 것이 중요합니다.
+              돈워리의 자가진단 도구를 통해 먼저 방향을 잡아보시고, 필요하다면 전문가 상담을 받아보세요.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -151,20 +178,6 @@ export default function DebtHub() {
           {blogPosts.map((post, index) => (
             <BlogCard key={index} {...post} />
           ))}
-        </div>
-      </section>
-
-      {/* SEO Content */}
-      <section className="container py-6">
-        <div className="therapy-card">
-          <h3 className="font-semibold text-foreground mb-3">채무조정이란?</h3>
-          <div className="prose prose-sm max-w-none text-muted-foreground">
-            <p>
-              채무조정은 과도한 빚으로 인해 정상적인 경제활동이 어려운 분들을 위한 법적 제도입니다.
-              개인회생, 개인파산, 신속채무조정 등 다양한 방법 중 본인의 상황에 맞는 최적의 해결책을 찾는 것이 중요합니다.
-              돈워리의 자가진단 도구를 통해 먼저 방향을 잡아보시고, 필요하다면 전문가 상담을 받아보세요.
-            </p>
-          </div>
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
+import TableOfContents from "@/components/ui/TableOfContents";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calculator } from "lucide-react";
 
@@ -90,41 +91,17 @@ export default function PersonalRehabilitation2026() {
         {/* Main Content */}
         <main className="container py-12">
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* Table of Contents - Desktop Only */}
-            <aside className="hidden lg:block lg:w-64 flex-shrink-0">
-              <div className="sticky top-[100px]">
-                <div className="bg-card border border-border rounded-xl p-4 shadow-soft">
-                  <h3 className="font-semibold text-foreground mb-3">목차</h3>
-                  <nav className="space-y-2">
-                    <a href="#intro" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                      1. 매일 아침 독촉 전화에 눈뜨는 당신에게
-                    </a>
-                    <a href="#living-cost" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                      2. 2026년 최저생계비 인상
-                    </a>
-                    <a href="#fast-track" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                      3. 패스트트랙의 일상화
-                    </a>
-                    <a href="#recent-loan" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                      4. 최근 대출 포용적 심사
-                    </a>
-                    <a href="#housing" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                      5. 주거권 보장 강화
-                    </a>
-                    <a href="#check" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                      6. 지금 바로 확인하세요
-                    </a>
-                  </nav>
-                </div>
-              </div>
-            </aside>
+            {/* Table of Contents */}
+            <div className="lg:w-64 flex-shrink-0">
+              <TableOfContents />
+            </div>
 
             {/* Article Content */}
             <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
             {/* Introduction */}
             <section id="intro" className="scroll-mt-20 mb-10">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                1. 매일 아침 독촉 전화에 눈뜨는 당신에게
+              <h2 id="intro-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+                매일 아침 독촉 전화에 눈뜨는 당신에게
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base mb-4">
                 어제보다 오늘 더 무거운 빚더미를 안고 잠에서 깨는 기분, 누구보다 잘 알고 있습니다. 고물가와 고금리가 겹친 2025년을 지나오며 "조금만 더 버티면 되겠지" 했던 희망이 절망으로 바뀌었을지도 모릅니다. 하지만 2026년 새해, 정부와 법원은 당신과 같은 성실한 채무자들이 다시 일어설 수 있도록 개인회생 문턱을 낮추고 혜택을 대폭 강화했습니다.
@@ -136,8 +113,8 @@ export default function PersonalRehabilitation2026() {
 
             {/* Section 2 */}
             <section id="living-cost" className="scroll-mt-20 mb-10">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                2. 2026년 최저생계비 인상: "숨 쉴 구멍이 넓어집니다"
+              <h2 id="living-cost-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+                2026년 최저생계비 인상: "숨 쉴 구멍이 넓어집니다"
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 개인회생을 망설이는 가장 큰 이유는 "빚 갚느라 생활비가 없으면 어떡하지?"라는 불안감입니다. 2026년에는 보건복지부의 기준 중위소득 인상에 따라 법원이 인정해주는 최저생계비가 역대 최고 수준으로 현실화되었습니다.
@@ -179,8 +156,8 @@ export default function PersonalRehabilitation2026() {
 
             {/* Section 3 */}
             <section id="fast-track" className="scroll-mt-20 mb-10">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                3. '패스트트랙'의 일상화: 지루한 기다림은 끝났습니다
+              <h2 id="fast-track-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+                '패스트트랙'의 일상화: 지루한 기다림은 끝났습니다
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 그동안 개인회생을 신청하면 결과가 나오기까지 반년이 넘는 시간을 불안 속에서 보내야 했습니다. 하지만 2026년부터는 <strong className="text-foreground">'디지털 사법 시스템'</strong>의 전면 도입으로 처리 속도가 획기적으로 빨라졌습니다.
@@ -192,8 +169,8 @@ export default function PersonalRehabilitation2026() {
 
             {/* Section 4 */}
             <section id="recent-loan" className="scroll-mt-20 mb-10">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                4. 최근 대출(1년 이내)에 대한 '포용적 심사'
+              <h2 id="recent-loan-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+                최근 대출(1년 이내)에 대한 '포용적 심사'
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 "빌린 지 얼마 안 된 돈이 많아서 기각되면 어쩌죠?" 많은 분이 가장 두려워하는 부분입니다. 예전에는 신청 전 1년 이내의 대출이 많으면 도덕적 해이로 보아 엄격하게 잣대를 들이댔습니다.
@@ -205,8 +182,8 @@ export default function PersonalRehabilitation2026() {
 
             {/* Section 5 */}
             <section id="housing" className="scroll-mt-20 mb-10">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                5. "내 집만은 지키고 싶습니다" : 주거권 보장 강화
+              <h2 id="housing-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+                "내 집만은 지키고 싶습니다" : 주거권 보장 강화
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 빚 때문에 살던 집에서 쫓겨나야 한다면 그 절망감은 말로 다 할 수 없습니다. 2026년부터는 주택담보대출(주담대)을 보유한 채무자를 위해 <strong className="text-foreground">'법원-은행 연계 프로그램'</strong>이 강화되었습니다.
@@ -218,8 +195,8 @@ export default function PersonalRehabilitation2026() {
 
             {/* Section 6 */}
             <section id="check" className="scroll-mt-20 mb-10">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
-                6. 지금 바로 확인하세요, 당신의 내일은 가벼워야 합니다
+              <h2 id="check-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+                지금 바로 확인하세요, 당신의 내일은 가벼워야 합니다
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 개인회생은 단순히 빚을 깎아주는 제도가 아닙니다. 당신의 꺾인 의지를 다시 세워주는 <strong className="text-foreground">'경제적 심폐소생술'</strong>입니다. 혼자 고민하며 밤잠을 설치는 시간에도 이자는 쌓여갑니다.
