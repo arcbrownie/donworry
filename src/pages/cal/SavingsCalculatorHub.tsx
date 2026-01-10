@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
 
-const lifeCalculators = [
+const savingsCalculators = [
   {
     path: "/cal/part-time",
     emoji: "💰",
@@ -19,7 +19,7 @@ const lifeCalculators = [
   },
 ];
 
-export default function LifeCalculatorHub() {
+export default function SavingsCalculatorHub() {
   return (
     <CalculatorLayout
       title="🔢 재테크 · 절약 계산기"
@@ -27,7 +27,7 @@ export default function LifeCalculatorHub() {
       seoContent="알바 실수령액, 군인 적금 등 2030세대 일상에 꼭 필요한 재테크 · 절약 계산기를 무료로 이용하세요. 2026년 최저임금과 최신 정책이 반영되어 있습니다."
     >
       <div className="space-y-4">
-        {lifeCalculators.map((calc) => (
+        {savingsCalculators.map((calc) => (
           <Link
             key={calc.path}
             to={calc.path}

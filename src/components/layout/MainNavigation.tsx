@@ -367,7 +367,7 @@ export default function MainNavigation() {
               {/* Mobile CTA */}
               <div className="p-4 border-t border-border">
                 <Link to="/debt/test" onClick={() => setMobileOpen(false)}>
-                  <Button className="w-full btn-premium px-[18px] py-3 bg-gradient-to-r from-blue-200/80 to-purple-200/80 hover:from-blue-300/80 hover:to-purple-300/80 active:from-blue-400/85 active:to-purple-400/85 text-primary shadow-soft border border-blue-300/30 hover:text-primary/95">
+                  <Button className="w-full px-[18px] py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 active:from-blue-800 active:to-purple-800 text-white shadow-soft hover:shadow-elevated transition-all duration-200 border-0">
                     <span className="relative z-10 flex items-center justify-center gap-3 font-bold">
                       🩺 <span>채무조정 무료 진단</span>
                     </span>

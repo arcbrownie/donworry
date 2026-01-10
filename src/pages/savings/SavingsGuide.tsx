@@ -1,7 +1,7 @@
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 
-export default function LifeGuide() {
+export default function SavingsGuide() {
   return (
     <div className="min-h-screen bg-background">
       <MainNavigation />

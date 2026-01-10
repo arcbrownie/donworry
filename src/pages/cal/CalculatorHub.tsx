@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
 
-const lifeCalculators = [
+const savingsCalculators = [
   {
     path: "/cal/part-time",
     emoji: "💰",
@@ -49,7 +49,7 @@ export default function CalculatorHub() {
           <span className="text-2xl">🔢</span>
           <h2 className="text-xl font-bold text-foreground">재테크 · 절약 계산기</h2>
         </div>
-        {lifeCalculators.map((calc) => (
+        {savingsCalculators.map((calc) => (
           <Link
             key={calc.path}
             to={calc.path}

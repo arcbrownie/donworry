@@ -8,8 +8,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // Category hub pages
-import LifeHub from "./pages/life/LifeHub";
-import LifeGuide from "./pages/life/LifeGuide";
+import SavingsHub from "./pages/savings/SavingsHub";
+import SavingsGuide from "./pages/savings/SavingsGuide";
 import FinanceHub from "./pages/finance/FinanceHub";
 import FinanceGuide from "./pages/finance/FinanceGuide";
 
@@ -31,7 +31,7 @@ import OnePersonHouseholdSavingsDetailed from "./pages/content/OnePersonHousehol
 
 // Calculator pages
 import CalculatorHub from "./pages/cal/CalculatorHub";
-import LifeCalculatorHub from "./pages/cal/LifeCalculatorHub";
+import SavingsCalculatorHub from "./pages/cal/SavingsCalculatorHub";
 import FinanceCalculatorHub from "./pages/cal/FinanceCalculatorHub";
 import PartTimeCalculator from "./pages/cal/PartTimeCalculator";
 import FreelancerCalculator from "./pages/cal/FreelancerCalculator";
@@ -60,8 +60,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           
           {/* Category hub routes */}
-          <Route path="/savings" element={<LifeHub />} />
-          <Route path="/savings/guide" element={<LifeGuide />} />
+          <Route path="/savings" element={<SavingsHub />} />
+          <Route path="/savings/guide" element={<SavingsGuide />} />
           <Route path="/finance" element={<FinanceHub />} />
           <Route path="/finance/guide" element={<FinanceGuide />} />
           
@@ -83,7 +83,7 @@ const App = () => (
           
           {/* Calculator routes */}
           <Route path="/cal" element={<CalculatorHub />} />
-          <Route path="/cal/life" element={<LifeCalculatorHub />} />
+          <Route path="/cal/life" element={<SavingsCalculatorHub />} />
           <Route path="/cal/finance" element={<FinanceCalculatorHub />} />
           <Route path="/cal/part-time" element={<PartTimeCalculator />} />
           <Route path="/cal/freelancer" element={<FreelancerCalculator />} />
