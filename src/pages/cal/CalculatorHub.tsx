@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
@@ -37,6 +38,43 @@ const financeCalculators = [
 ];
 
 export default function CalculatorHub() {
+  useEffect(() => {
+    // SEO Meta Tags
+    document.title = "금융 계산기 모음 | 돈워리 - 일상은 가볍게, 돈 걱정은 없게";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', '알바 실수령액, 프리랜서 세금환급, 청년 소득세 감면, 군인 적금 등 2030세대에게 꼭 필요한 금융 계산기를 무료로 이용하세요. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', '금융 계산기, 알바 실수령액 계산기, 프리랜서 환급 계산기, 청년 세금 계산기, 군인 적금 계산기, 주휴수당 계산기, 세금 계산기');
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute('content', '금융 계산기 모음 | 돈워리');
+
+    let ogDescription = document.querySelector('meta[property="og:description"]');
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute('content', '알바 실수령액, 프리랜서 세금환급, 청년 소득세 감면, 군인 적금 등 2030세대에게 꼭 필요한 금융 계산기를 무료로 이용하세요. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
+  }, []);
+
   return (
     <CalculatorLayout
       title="📊 계산기 모음"

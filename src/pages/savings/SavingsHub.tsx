@@ -103,6 +103,43 @@ export default function SavingsHub() {
   const [canScrollNext, setCanScrollNext] = useState(false);
 
   useEffect(() => {
+    // SEO Meta Tags
+    document.title = "재테크 · 절약 | 돈워리 - 일상은 가볍게, 돈 걱정은 없게";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', '티끌 모아 태산, 똑똑한 소비 습관. 재테크와 절약을 위한 실용적인 정보와 계산기를 제공합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', '재테크, 절약, 생활비 절약, 알바 실수령액, 주휴수당, 가계비 절약, 1인 가구 절약, 절약 팁, 금융 절약');
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute('content', '재테크 · 절약 | 돈워리');
+
+    let ogDescription = document.querySelector('meta[property="og:description"]');
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute('content', '티끌 모아 태산, 똑똑한 소비 습관. 재테크와 절약을 위한 실용적인 정보와 계산기를 제공합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
+  }, []);
+
+  useEffect(() => {
     if (!api) {
       return;
     }

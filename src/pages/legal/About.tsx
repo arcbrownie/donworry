@@ -1,7 +1,36 @@
+import { useEffect } from "react";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
 import { Shield } from "lucide-react";
 
 export default function About() {
+  useEffect(() => {
+    document.title = "돈워리 소개 | 일상은 가볍게, 돈 걱정은 없게";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', '돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 채무조정 안내, 금융 계산기, 금융 가이드를 제공합니다. 일상은 가볍게, 돈 걱정은 없게.');
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute('content', '돈워리 소개 | 일상은 가볍게, 돈 걱정은 없게');
+
+    let ogDescription = document.querySelector('meta[property="og:description"]');
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute('content', '돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 채무조정 안내, 금융 계산기, 금융 가이드를 제공합니다. 일상은 가볍게, 돈 걱정은 없게.');
+  }, []);
+
   return (
     <CalculatorLayout
       title="💙 돈워리 소개"

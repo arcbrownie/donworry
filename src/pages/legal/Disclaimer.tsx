@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
 
 export default function Disclaimer() {
+  useEffect(() => {
+    document.title = "법적 고지 | 돈워리";
+  }, []);
+
   return (
     <CalculatorLayout
       title="⚖️ 법적 고지"

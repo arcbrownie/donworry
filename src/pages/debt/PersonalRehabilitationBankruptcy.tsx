@@ -21,7 +21,7 @@ export default function PersonalRehabilitationBankruptcy() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', '개인회생과 개인파산 제도 상세 안내. 신청 자격, 절차, 비용, 차이점까지 법원을 통한 채무 해결 방법의 모든 것을 알려드립니다.');
+    metaDescription.setAttribute('content', '개인회생과 개인파산 제도 상세 안내. 신청 자격, 절차, 비용, 차이점까지 법원을 통한 채무 해결 방법의 모든 것을 알려드립니다. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
 
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -45,7 +45,7 @@ export default function PersonalRehabilitationBankruptcy() {
       ogDescription.setAttribute('property', 'og:description');
       document.head.appendChild(ogDescription);
     }
-    ogDescription.setAttribute('content', '개인회생과 개인파산 제도 상세 안내. 신청 절차부터 자격 조건까지 한 번에 정리');
+    ogDescription.setAttribute('content', '개인회생과 개인파산 제도 상세 안내. 신청 절차부터 자격 조건까지 한 번에 정리. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
 
     // Scroll progress
     const handleScroll = () => {

@@ -20,7 +20,7 @@ export default function WeeklyHolidayPayGuide() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', '2026년 최저임금 기준 주휴수당 계산법 및 지급 조건 완벽 가이드. 주휴수당이란 무엇인지, 받을 수 있는 조건과 계산 방법을 자세히 알려드립니다.');
+    metaDescription.setAttribute('content', '2026년 최저임금 기준 주휴수당 계산법 및 지급 조건 완벽 가이드. 주휴수당이란 무엇인지, 받을 수 있는 조건과 계산 방법을 자세히 알려드립니다. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
 
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -44,7 +44,7 @@ export default function WeeklyHolidayPayGuide() {
       ogDescription.setAttribute('property', 'og:description');
       document.head.appendChild(ogDescription);
     }
-    ogDescription.setAttribute('content', '2026년 최저임금 기준 주휴수당 계산법 및 지급 조건 완벽 가이드');
+    ogDescription.setAttribute('content', '2026년 최저임금 기준 주휴수당 계산법 및 지급 조건 완벽 가이드. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
 
     // Scroll progress
     const handleScroll = () => {

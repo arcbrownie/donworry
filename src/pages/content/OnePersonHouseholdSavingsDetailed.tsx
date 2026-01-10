@@ -454,7 +454,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', '1인 가구를 위한 생활비 절약 완벽 가이드. 배달 앱, 통신비, 편의점, OTT 등 10가지 절약 방법으로 매달 최소 15만원 이상 확실히 절감하세요. 실질적인 절감액을 계산해보세요.');
+    metaDescription.setAttribute('content', '1인 가구를 위한 생활비 절약 완벽 가이드. 배달 앱, 통신비, 편의점, OTT 등 10가지 절약 방법으로 매달 최소 15만원 이상 확실히 절감하세요. 실질적인 절감액을 계산해보세요. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
 
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {

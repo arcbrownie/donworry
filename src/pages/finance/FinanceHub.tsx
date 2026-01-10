@@ -92,6 +92,43 @@ export default function FinanceHub() {
   const [canScrollNext, setCanScrollNext] = useState(false);
 
   useEffect(() => {
+    // SEO Meta Tags
+    document.title = "금융 · 대출 | 돈워리 - 일상은 가볍게, 돈 걱정은 없게";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', '나에게 딱 맞는 금리와 상품 찾기. 대출 가이드, 프리랜서 세금 환급, 청년 세금감면 등 금융 정보를 제공합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', '금융, 대출, 대출 가이드, 프리랜서 세금, 3.3% 환급, 청년 세금감면, 중기청 소득세 감면, 저금리 대출, 신용점수, DSR');
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute('content', '금융 · 대출 | 돈워리');
+
+    let ogDescription = document.querySelector('meta[property="og:description"]');
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute('content', '나에게 딱 맞는 금리와 상품 찾기. 대출 가이드, 프리랜서 세금 환급, 청년 세금감면 등 금융 정보를 제공합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
+  }, []);
+
+  useEffect(() => {
     if (!api) {
       return;
     }

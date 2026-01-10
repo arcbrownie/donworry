@@ -99,6 +99,43 @@ export default function DebtHub() {
   const [canScrollNext, setCanScrollNext] = useState(false);
 
   useEffect(() => {
+    // SEO Meta Tags
+    document.title = "채무조정 | 돈워리 - 일상은 가볍게, 돈 걱정은 없게";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', '다시 시작하는 경제적 자유, 맞춤형 해결책. 개인회생, 개인파산, 신용회복위원회 채무조정 등 채무 해결 방법을 안내합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', '채무조정, 개인회생, 개인파산, 신용회복위원회, 채무 해결, 빚 탕감, 채무 조정, 신속채무조정, 채무 자가진단');
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute('content', '채무조정 | 돈워리');
+
+    let ogDescription = document.querySelector('meta[property="og:description"]');
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute('content', '다시 시작하는 경제적 자유, 맞춤형 해결책. 개인회생, 개인파산, 신용회복위원회 채무조정 등 채무 해결 방법을 안내합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
+  }, []);
+
+  useEffect(() => {
     if (!api) {
       return;
     }

@@ -21,7 +21,7 @@ export default function PersonalRehabilitation2026() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', '2026년 새롭게 달라지는 개인회생 제도를 확인하세요. 인상된 최저생계비와 단축된 변제 기간, 주택담보대출 보호 강화까지 빚 탕감을 위한 최신 정보를 상세히 알려드립니다.');
+    metaDescription.setAttribute('content', '2026년 새롭게 달라지는 개인회생 제도를 확인하세요. 인상된 최저생계비와 단축된 변제 기간, 주택담보대출 보호 강화까지 빚 탕감을 위한 최신 정보를 상세히 알려드립니다. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
 
     // Update or create meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -47,7 +47,7 @@ export default function PersonalRehabilitation2026() {
       ogDescription.setAttribute('property', 'og:description');
       document.head.appendChild(ogDescription);
     }
-    ogDescription.setAttribute('content', '2026년 새롭게 달라지는 개인회생 제도. 최저생계비 인상, 변제 기간 단축, 주택담보대출 보호 강화까지 상세 안내.');
+    ogDescription.setAttribute('content', '2026년 새롭게 달라지는 개인회생 제도. 최저생계비 인상, 변제 기간 단축, 주택담보대출 보호 강화까지 상세 안내. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
 
     // Scroll progress
     const handleScroll = () => {

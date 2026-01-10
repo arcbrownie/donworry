@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
 
 export default function TermsOfService() {
+  useEffect(() => {
+    document.title = "이용약관 | 돈워리";
+  }, []);
+
   return (
     <CalculatorLayout
       title="📜 이용약관"

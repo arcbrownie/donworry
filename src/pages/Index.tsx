@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Calendar, Zap, Calculator, Users, PiggyBank, CreditCard, Scale } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
@@ -60,6 +61,43 @@ const benefits = [
 ];
 
 export default function Index() {
+  useEffect(() => {
+    // SEO Meta Tags
+    document.title = "돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 어제보다 가벼운 오늘을 만드는 당신의 솔루션";
+    
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', '돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 알바 실수령액, 프리랜서 환급, 청년 세금감면, 군인 적금 계산부터 개인회생, 채무조정 자가진단까지. 복잡한 금융 계산과 절차를 쉽고 따뜻하게 도와드립니다.');
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', '돈워리, 개인회생, 채무조정, 신속채무조정, 알바 시급 계산기, 주휴수당, 프리랜서 세금, 3.3% 환급, 중기청 소득세 감면, 청년 세금, 군인 적금, 장병내일준비적금, 금융 계산기');
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute('content', '돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 어제보다 가벼운 오늘을 만드는 당신의 솔루션');
+
+    let ogDescription = document.querySelector('meta[property="og:description"]');
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta');
+      ogDescription.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute('content', '돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 알바 실수령액, 프리랜서 환급, 청년 세금감면, 군인 적금 계산부터 개인회생, 채무조정 자가진단까지. 복잡한 금융 계산과 절차를 쉽고 따뜻하게 도와드립니다.');
+  }, []);
+
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <MainNavigation />

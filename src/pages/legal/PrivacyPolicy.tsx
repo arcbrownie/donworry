@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
 
 export default function PrivacyPolicy() {
+  useEffect(() => {
+    document.title = "개인정보처리방침 | 돈워리";
+  }, []);
+
   return (
     <CalculatorLayout
       title="🔒 개인정보처리방침"

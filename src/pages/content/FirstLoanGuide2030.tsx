@@ -160,7 +160,7 @@ export default function FirstLoanGuide2030() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', '사회초년생을 위한 대출 완벽 가이드. 신용점수 관리부터 저금리 상품 찾는 법, DSR 체크, 상환 방식 선택까지 대출의 모든 것을 알려드립니다.');
+    metaDescription.setAttribute('content', '사회초년생을 위한 대출 완벽 가이드. 신용점수 관리부터 저금리 상품 찾는 법, DSR 체크, 상환 방식 선택까지 대출의 모든 것을 알려드립니다. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
 
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
