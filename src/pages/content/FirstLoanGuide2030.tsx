@@ -152,7 +152,7 @@ export default function FirstLoanGuide2030() {
 
   useEffect(() => {
     // SEO Meta Tags
-    document.title = "2030 사회초년생을 위한 첫 대출 완벽 가이드: 신용점수 관리부터 저금리 상품 찾는 법까지 | 돈워리";
+    document.title = "사회초년생을 위한 대출 가이드: 신용점수 관리부터 저금리 상품 찾는 법까지 | 돈워리";
     
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -160,7 +160,7 @@ export default function FirstLoanGuide2030() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', '2030 사회초년생을 위한 첫 대출 완벽 가이드. 신용점수 관리부터 저금리 상품 찾는 법, DSR 체크, 상환 방식 선택까지 대출의 모든 것을 알려드립니다.');
+    metaDescription.setAttribute('content', '사회초년생을 위한 대출 완벽 가이드. 신용점수 관리부터 저금리 상품 찾는 법, DSR 체크, 상환 방식 선택까지 대출의 모든 것을 알려드립니다.');
 
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
@@ -168,7 +168,7 @@ export default function FirstLoanGuide2030() {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', '첫 대출, 2030 대출, 신용점수 관리, 저금리 대출, DSR, 대출 계산기, 사회초년생 대출, 햇살론 유스');
+    metaKeywords.setAttribute('content', '첫 대출, 사회초년생 대출, 신용점수 관리, 저금리 대출, DSR, 대출 계산기, 햇살론 유스');
 
     // Scroll progress
     const handleScroll = () => {
@@ -199,7 +199,7 @@ export default function FirstLoanGuide2030() {
         <div className="container relative z-10">
           <div className="text-center text-white">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
-              2030 사회초년생을 위한 첫 대출 완벽 가이드
+              사회초년생을 위한 대출 가이드
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
               신용점수 관리부터 저금리 상품 찾는 법까지
@@ -213,7 +213,15 @@ export default function FirstLoanGuide2030() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Table of Contents */}
           <div className="lg:w-64 flex-shrink-0">
-            <TableOfContents />
+            <TableOfContents
+              headings={[
+                { id: "credit-score", text: "1. 대출의 시작과 끝, '신용점수' 관리의 기술", level: 2 },
+                { id: "loan-products-heading", text: "2. 나에게 맞는 대출 상품 찾기: 정부지원 vs 시중은행", level: 2 },
+                { id: "checklist-heading", text: "3. 대출 전 반드시 체크해야 할 3요소 (DSR, 상환 방식)", level: 2 },
+                { id: "calculator-heading", text: "4. 대출 이자 계산기: 내가 매달 내야 할 금액은?", level: 2 },
+                { id: "solution-heading", text: "5. 돈 걱정 없는 내일을 위한 솔루션", level: 2 },
+              ]}
+            />
           </div>
 
           {/* Article Content */}
@@ -226,7 +234,7 @@ export default function FirstLoanGuide2030() {
                 </p>
               </div>
               <p className="text-muted-foreground leading-relaxed text-base mb-4">
-                사회에 첫발을 내디딘 2030 세대에게 '대출'이라는 단어는 막연한 두려움으로 다가오곤 합니다. "이자가 너무 비싸면 어쩌지?", "신용점수가 떨어지면 어떡하지?"라는 걱정은 당연합니다. 하지만 대출은 단순히 '빚'이 아니라, 적절히 활용하면 인생의 기회를 열어주는 '금융 도구'가 될 수 있습니다.
+                사회에 첫발을 내디딘 사회초년생에게 '대출'이라는 단어는 막연한 두려움으로 다가오곤 합니다. "이자가 너무 비싸면 어쩌지?", "신용점수가 떨어지면 어떡하지?"라는 걱정은 당연합니다. 하지만 대출은 단순히 '빚'이 아니라, 적절히 활용하면 인생의 기회를 열어주는 '금융 도구'가 될 수 있습니다.
               </p>
               <p className="text-muted-foreground leading-relaxed text-base font-medium">
                 오늘은 <strong className="text-primary">donworry.kr</strong>과 함께, 사회초년생이 반드시 알아야 할 대출의 정석과 이자를 한 푼이라도 아끼는 실전 팁을 알아보겠습니다. <strong className="text-primary">"일상은 가볍게, 돈 걱정은 없게"</strong> 만드는 첫걸음, 지금 시작합니다.
@@ -294,7 +302,7 @@ export default function FirstLoanGuide2030() {
               </p>
 
               <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">
-                2030을 위한 추천 대출 리스트
+                사회초년생을 위한 추천 대출 리스트
               </h3>
               <ol className="space-y-4 mb-6">
                 <li className="flex items-start gap-3">

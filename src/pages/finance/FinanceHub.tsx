@@ -1,9 +1,12 @@
+import { useState, useEffect } from "react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
 import CalculatorWidget from "@/components/ui/CalculatorWidget";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import { CreditCard } from "lucide-react";
+import { CreditCard, ChevronLeft, ChevronRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 
 const calculators = [
   { 
@@ -27,10 +30,11 @@ const calculators = [
 const blogPosts = [
   { 
     emoji: "🏦", 
-    title: "2030을 위한 첫 대출 가이드", 
+    title: "사회초년생을 위한 대출 가이드", 
     excerpt: "신용점수 관리부터 유리한 대출 상품 고르는 법까지",
     category: "금융 · 대출",
-    isPlaceholder: true 
+    path: "/blog/first-loan-guide-2030",
+    isPlaceholder: false 
   },
   { 
     emoji: "💳", 
@@ -53,16 +57,54 @@ const blogPosts = [
     category: "금융 · 대출",
     isPlaceholder: true 
   },
-];
+].sort((a, b) => {
+  // 콘텐츠가 있는 것(isPlaceholder: false) 우선 정렬
+  if (a.isPlaceholder === b.isPlaceholder) return 0;
+  return a.isPlaceholder ? 1 : -1;
+});
 
 const financeFAQ = [
-  { question: "프리랜서 3.3% 원천징수", answer: "프리랜서가 용역비를 받을 때 미리 떼는 세금(소득세 3% + 지방소득세 0.3%)입니다. 5월 종합소득세 신고 시 환급받을 수 있습니다." },
-  { question: "청년 소득세 감면 혜택 대상", answer: "만 15~34세 청년이 중소기업에 취업하면 5년간 소득세의 90%를 감면받을 수 있습니다. 군 복무기간은 연령 계산에서 제외됩니다." },
-  { question: "신용점수 향상 방법", answer: "연체 없이 결제하기, 신용카드 적정 사용, 다양한 금융거래 이력 쌓기 등이 도움됩니다. 특히 연체는 신용점수에 치명적입니다." },
-  { question: "적금 vs 투자 선택 기준", answer: "단기 자금은 적금, 장기 목표는 투자가 유리합니다. 안전성과 수익성의 밸런스를 고려해 분산하는 것이 좋습니다." },
+  { 
+    question: "프리랜서 3.3% 원천징수", 
+    answer: "프리랜서가 용역비를 받을 때 미리 떼는 세금(소득세 3% + 지방소득세 0.3%)입니다. 5월 종합소득세 신고 시 환급받을 수 있습니다.",
+    keywords: ["프리랜서", "세금", "환급"]
+  },
+  { 
+    question: "청년 소득세 감면 혜택 대상", 
+    answer: "만 15~34세 청년이 중소기업에 취업하면 5년간 소득세의 90%를 감면받을 수 있습니다. 군 복무기간은 연령 계산에서 제외됩니다.",
+    keywords: ["청년", "세금", "혜택"]
+  },
+  { 
+    question: "신용점수 향상 방법", 
+    answer: "연체 없이 결제하기, 신용카드 적정 사용, 다양한 금융거래 이력 쌓기 등이 도움됩니다. 특히 연체는 신용점수에 치명적입니다.",
+    keywords: ["신용점수", "대출"]
+  },
+  { 
+    question: "적금 vs 투자 선택 기준", 
+    answer: "단기 자금은 적금, 장기 목표는 투자가 유리합니다. 안전성과 수익성의 밸런스를 고려해 분산하는 것이 좋습니다.",
+    keywords: ["적금", "투자", "저축"]
+  },
 ];
 
 export default function FinanceHub() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
+
+    api.on("select", () => {
+      setCanScrollPrev(api.canScrollPrev());
+      setCanScrollNext(api.canScrollNext());
+    });
+  }, [api]);
+
   return (
     <div className="min-h-screen bg-background">
       <MainNavigation />
@@ -111,10 +153,48 @@ export default function FinanceHub() {
           </h2>
           <p className="text-sm text-muted-foreground mt-1">알아두면 돈 되는 금융 · 대출 지식</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
-          ))}
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+              slidesToScroll: 1,
+            }}
+            setApi={setApi}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {blogPosts.slice(0, Math.min(blogPosts.length, 3)).map((post, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 h-full">
+                  <div className="h-full">
+                    <BlogCard {...post} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12 border-category-finance text-category-finance hover:bg-category-finance/10 hover:text-category-finance" />
+            <CarouselNext className="hidden md:flex -right-12 border-category-finance text-category-finance hover:bg-category-finance/10 hover:text-category-finance" />
+            {/* Mobile Navigation */}
+            <div className="flex justify-center gap-2 mt-4 md:hidden">
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-8 w-8 border-category-finance text-category-finance hover:bg-category-finance/10"
+                disabled={!canScrollPrev}
+                onClick={() => api?.scrollPrev()}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-8 w-8 border-category-finance text-category-finance hover:bg-category-finance/10"
+                disabled={!canScrollNext}
+                onClick={() => api?.scrollNext()}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </Carousel>
         </div>
       </section>
 
@@ -124,6 +204,7 @@ export default function FinanceHub() {
         description="금융 · 대출에 관한 자주 묻는 질문"
         items={financeFAQ}
         variant="finance"
+        storageKey="finance-faq-keyword-clicks"
       />
 
       {/* Ad Container */}

@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Scale } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowRight, Scale, ChevronLeft, ChevronRight } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
 import CalculatorWidget from "@/components/ui/CalculatorWidget";
 import { Button } from "@/components/ui/button";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
 const debtFeatures = [
   { 
@@ -69,13 +71,47 @@ const blogPosts = [
 ];
 
 const debtFAQ = [
-  { question: "개인회생과 개인파산의 차이점", answer: "개인회생은 3~5년간 일정 금액을 상환하고 나머지를 탕감받는 제도이고, 개인파산은 모든 재산을 정리하고 면책받는 제도입니다. 소득 유무에 따라 선택이 달라집니다." },
-  { question: "개인회생 신청 자격 조건", answer: "총 채무액이 담보채무 15억원, 무담보채무 10억원 이하이고, 정기적인 수입이 있어야 합니다. 최근 5년 내 면책받은 적이 없어야 합니다." },
-  { question: "채무조정 후 신용회복 기간", answer: "개인회생 면책 후 약 5년, 개인파산 면책 후 약 5~7년 정도 지나면 신용정보가 삭제됩니다. 이후 신용카드 발급 등이 가능해집니다." },
-  { question: "신속채무조정 제도", answer: "금융회사와 협의 없이 신용회복위원회를 통해 진행하는 채무조정입니다. 연체 전이라도 3개월 이상 이자만 납부 중이면 신청 가능합니다." },
+  { 
+    question: "개인회생과 개인파산의 차이점", 
+    answer: "개인회생은 3~5년간 일정 금액을 상환하고 나머지를 탕감받는 제도이고, 개인파산은 모든 재산을 정리하고 면책받는 제도입니다. 소득 유무에 따라 선택이 달라집니다.",
+    keywords: ["개인회생", "개인파산"]
+  },
+  { 
+    question: "개인회생 신청 자격 조건", 
+    answer: "총 채무액이 담보채무 15억원, 무담보채무 10억원 이하이고, 정기적인 수입이 있어야 합니다. 최근 5년 내 면책받은 적이 없어야 합니다.",
+    keywords: ["개인회생", "신청자격"]
+  },
+  { 
+    question: "채무조정 후 신용회복 기간", 
+    answer: "개인회생 면책 후 약 5년, 개인파산 면책 후 약 5~7년 정도 지나면 신용정보가 삭제됩니다. 이후 신용카드 발급 등이 가능해집니다.",
+    keywords: ["신용회복"]
+  },
+  { 
+    question: "신속채무조정 제도", 
+    answer: "금융회사와 협의 없이 신용회복위원회를 통해 진행하는 채무조정입니다. 연체 전이라도 3개월 이상 이자만 납부 중이면 신청 가능합니다.",
+    keywords: ["신용회복", "채무조정"]
+  },
 ];
 
 export default function DebtHub() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
+
+    api.on("select", () => {
+      setCanScrollPrev(api.canScrollPrev());
+      setCanScrollNext(api.canScrollNext());
+    });
+  }, [api]);
+
   return (
     <div className="min-h-screen bg-background">
       <MainNavigation />
@@ -174,10 +210,48 @@ export default function DebtHub() {
           </h2>
           <p className="text-sm text-muted-foreground mt-1">알아두면 도움이 되는 채무 관련 정보</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
-          ))}
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+              slidesToScroll: 1,
+            }}
+            setApi={setApi}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {blogPosts.slice(0, Math.min(blogPosts.length, 3)).map((post, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 h-full">
+                  <div className="h-full">
+                    <BlogCard {...post} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12 border-category-debt text-category-debt hover:bg-category-debt/10 hover:text-category-debt" />
+            <CarouselNext className="hidden md:flex -right-12 border-category-debt text-category-debt hover:bg-category-debt/10 hover:text-category-debt" />
+            {/* Mobile Navigation */}
+            <div className="flex justify-center gap-2 mt-4 md:hidden">
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-8 w-8 border-category-debt text-category-debt hover:bg-category-debt/10"
+                disabled={!canScrollPrev}
+                onClick={() => api?.scrollPrev()}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-8 w-8 border-category-debt text-category-debt hover:bg-category-debt/10"
+                disabled={!canScrollNext}
+                onClick={() => api?.scrollNext()}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </Carousel>
         </div>
       </section>
 
@@ -187,6 +261,7 @@ export default function DebtHub() {
         description="채무조정에 관한 자주 묻는 질문"
         items={debtFAQ}
         variant="debt"
+        storageKey="debt-faq-keyword-clicks"
       />
 
       {/* Ad Container */}

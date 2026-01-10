@@ -43,31 +43,34 @@ export default function BlogCard({
   const CardContent = () => (
     <>
       {/* Content */}
-      <div className={`p-4 transition-all duration-300 ${categoryGradient[category] || ""}`}>
+      <div className={`p-4 transition-all duration-300 h-full flex flex-col ${categoryGradient[category] || ""}`}>
         <div className="flex items-start gap-3 mb-3">
           <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
             <span className="text-2xl">{emoji}</span>
           </div>
           <div className="flex-1">
-            <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
+            <span className={`text-xs font-medium px-2 py-0.5 rounded-full inline-block ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
               {category}
             </span>
             {isPlaceholder && (
               <div className="mt-2">
-                <span className="text-xs text-muted-foreground bg-background/80 px-2 py-1 rounded">
+                <span className="text-xs text-muted-foreground bg-background/80 px-2 py-1 rounded inline-block">
                   콘텐츠 준비중
                 </span>
               </div>
             )}
+            {!isPlaceholder && (
+              <div className="mt-2 h-[24px]"></div>
+            )}
           </div>
         </div>
-        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors text-sm md:text-base">
+        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors text-sm md:text-base min-h-[3rem]">
           {title}
         </h3>
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+        <p className="text-sm text-muted-foreground line-clamp-2 mb-3 min-h-[2.5rem]">
           {excerpt}
         </p>
-        <div className="flex items-center text-sm text-primary font-medium">
+        <div className="flex items-center text-sm text-primary font-medium mt-auto pt-1">
           자세히 보기
           <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
         </div>

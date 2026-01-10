@@ -25,7 +25,7 @@ const navigationItems = [
     hoverColor: "hover:bg-category-debt/10 hover:text-category-debt",
     hoverBg: "hover:bg-category-debt/10",
     items: [
-      { path: "/savings", label: "재테크 · 절약 정보", emoji: "🏡", description: "티끌 모아 태산, 똑똑한 소비 습관" },
+      { path: "/savings", label: "재테크 · 절약 정보", emoji: "💰", description: "티끌 모아 태산, 똑똑한 소비 습관" },
       { 
         label: "재테크 · 절약 계산기", 
         emoji: "🔢", 
@@ -71,10 +71,10 @@ const navigationItems = [
     hoverColor: "hover:bg-category-debt/10 hover:text-category-debt",
     hoverBg: "hover:bg-category-debt/10",
     items: [
-      { path: "/debt", label: "채무조정 정보", emoji: "📋", description: "다시 시작하는 경제적 자유, 맞춤형 해결책" },
-      { path: "/debt/test", label: "채무조정 자가진단", emoji: "🩺", description: "맞춤 해결책 찾기" },
+      { path: "/debt", label: "채무조정 정보", emoji: "📋", description: "맞춤형 채무 해결책" },
       { path: "/debt/credit-recovery-committee", label: "신용회복위원회 채무조정", emoji: "🏛️", description: "신용회복위원회를 통한 채무조정 안내" },
       { path: "/debt/personal-rehabilitation-bankruptcy", label: "개인회생 · 개인파산", emoji: "⚖️", description: "법원을 통한 채무 해결, 새로운 시작" },
+      { path: "/debt/test", label: "채무조정 자가진단", emoji: "🩺", description: "맞춤 해결책 찾기" },
       { 
         label: "채무조정 계산기", 
         emoji: "🧮", 

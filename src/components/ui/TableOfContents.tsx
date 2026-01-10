@@ -24,8 +24,8 @@ export default function TableOfContents({ headings, className = "" }: TableOfCon
     if (headings && headings.length > 0) {
       setItems(headings);
     } else {
-      // DOM에서 자동으로 H2, H3 추출
-      const headingElements = document.querySelectorAll('article h2, article h3, main h2, main h3');
+      // DOM에서 자동으로 H2만 추출
+      const headingElements = document.querySelectorAll('article h2, main h2');
       const extractedHeadings: TocItem[] = [];
       
       headingElements.forEach((heading, index) => {
@@ -35,7 +35,7 @@ export default function TableOfContents({ headings, className = "" }: TableOfCon
         }
         
         const text = heading.textContent?.trim() || "";
-        const level = heading.tagName === "H2" ? 2 : 3;
+        const level = 2; // H2만 추출
         
         extractedHeadings.push({ id, text, level });
       });
@@ -97,19 +97,18 @@ export default function TableOfContents({ headings, className = "" }: TableOfCon
   }
 
   const TocContent = () => {
+    // H2만 필터링 (명시적 headings prop이 있을 경우에도)
+    const h2Items = items.filter(item => item.level === 2);
     let h2Counter = 0;
     
     return (
       <nav className="space-y-1">
-        {items.map((item) => {
-          // H2일 때만 번호 추가
-          if (item.level === 2) {
-            h2Counter++;
-          }
+        {h2Items.map((item) => {
+          h2Counter++;
           
           // 텍스트에서 기존 번호 패턴 제거 (예: "1. ", "2. ", "10. " 등)
           const cleanText = item.text.replace(/^\d+\.\s*/, "");
-          const displayText = item.level === 2 ? `${h2Counter}. ${cleanText}` : item.text;
+          const displayText = `${h2Counter}. ${cleanText}`;
           
           return (
             <a
@@ -119,9 +118,7 @@ export default function TableOfContents({ headings, className = "" }: TableOfCon
                 e.preventDefault();
                 scrollToHeading(item.id);
               }}
-              className={`block text-sm transition-colors rounded-md px-2 py-1.5 ${
-                item.level === 3 ? "pl-6" : "pl-2"
-              } ${
+              className={`block text-sm transition-colors rounded-md px-2 py-1.5 pl-2 ${
                 activeId === item.id
                   ? "text-primary font-semibold bg-primary/10"
                   : "text-muted-foreground hover:text-primary hover:bg-muted"

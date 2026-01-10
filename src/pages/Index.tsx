@@ -49,7 +49,7 @@ const heroCalculators = [
 const blogPosts = [
   { emoji: "📊", title: "2026년 달라지는 개인회생 제도", excerpt: "새해부터 적용되는 개인회생 변경사항을 알아보세요.", category: "채무조정", path: "/personal-rehabilitation-2026-changes", isPlaceholder: false },
   { emoji: "💡", title: "알바생 주휴수당 완벽 가이드", excerpt: "2026년 최저임금 기준 주휴수당 계산법과 지급 조건", category: "재테크 · 절약", path: "/blog/weekly-holiday-pay-guide", isPlaceholder: false },
-  { emoji: "🏦", title: "2030을 위한 첫 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융 · 대출", path: "/blog/first-loan-guide-2030", isPlaceholder: false },
+  { emoji: "🏦", title: "사회초년생을 위한 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융 · 대출", path: "/blog/first-loan-guide-2030", isPlaceholder: false },
 ];
 
 const benefits = [
