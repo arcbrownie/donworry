@@ -15,8 +15,8 @@ const footerLinks = {
   ],
   info: [
     { label: "서비스 소개", path: "/about" },
-    { label: "개인정보처리방침", path: "/privacy" },
     { label: "이용약관", path: "/terms" },
+    { label: "개인정보처리방침", path: "/privacy" },
     { label: "법적 고지", path: "/disclaimer" },
   ],
 };
