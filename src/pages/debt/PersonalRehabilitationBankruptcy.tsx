@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
@@ -10,8 +11,12 @@ import { Card } from "@/components/ui/card";
 
 export default function PersonalRehabilitationBankruptcy() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "개인회생 · 개인파산 완벽 가이드: 신청 절차부터 차이점까지 | 돈워리";
     
@@ -56,7 +61,7 @@ export default function PersonalRehabilitationBankruptcy() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">

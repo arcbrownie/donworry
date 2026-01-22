@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
+import { setCanonicalTag } from "@/lib/utils";
 
 export default function ContentHub() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+  }, [location.pathname]);
   return (
     <div className="min-h-screen bg-background">
       <MainNavigation />

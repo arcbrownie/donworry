@@ -1,10 +1,17 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
+import { setCanonicalTag } from "@/lib/utils";
 
 export default function Disclaimer() {
+  const location = useLocation();
+
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     document.title = "법적 고지 | 돈워리";
-  }, []);
+  }, [location.pathname]);
 
   return (
     <CalculatorLayout

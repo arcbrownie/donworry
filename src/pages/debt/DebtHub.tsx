@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { setCanonicalTag } from "@/lib/utils";
 import { ArrowRight, Scale, ChevronLeft, ChevronRight } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
@@ -97,8 +98,12 @@ export default function DebtHub() {
   const [api, setApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "채무조정 | 돈워리 - 일상은 가볍게, 돈 걱정은 없게";
     
@@ -133,7 +138,7 @@ export default function DebtHub() {
       document.head.appendChild(ogDescription);
     }
     ogDescription.setAttribute('content', '다시 시작하는 경제적 자유, 맞춤형 해결책. 개인회생, 개인파산, 신용회복위원회 채무조정 등 채무 해결 방법을 안내합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!api) {

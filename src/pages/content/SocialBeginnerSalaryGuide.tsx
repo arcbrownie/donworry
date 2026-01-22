@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
@@ -135,8 +136,12 @@ function BudgetCalculator() {
 export default function SocialBeginnerSalaryGuide() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [email, setEmail] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추 | 돈워리";
     
@@ -165,7 +170,7 @@ export default function SocialBeginnerSalaryGuide() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();

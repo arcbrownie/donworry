@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { setCanonicalTag } from "@/lib/utils";
 import { ArrowRight, PiggyBank, ChevronLeft, ChevronRight } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
@@ -101,8 +102,12 @@ export default function SavingsHub() {
   const [api, setApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "재테크 · 절약 | 돈워리 - 일상은 가볍게, 돈 걱정은 없게";
     
@@ -137,7 +142,7 @@ export default function SavingsHub() {
       document.head.appendChild(ogDescription);
     }
     ogDescription.setAttribute('content', '티끌 모아 태산, 똑똑한 소비 습관. 재테크와 절약을 위한 실용적인 정보와 계산기를 제공합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!api) {

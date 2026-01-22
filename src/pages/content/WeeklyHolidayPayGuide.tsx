@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
@@ -9,8 +10,12 @@ import { Calculator, ArrowRight } from "lucide-react";
 
 export default function WeeklyHolidayPayGuide() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "2026년 최신 알바생 주휴수당 완벽 가이드: 계산법부터 조건까지 한 번에 정리 | 돈워리";
     
@@ -55,7 +60,7 @@ export default function WeeklyHolidayPayGuide() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">

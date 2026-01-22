@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { setCanonicalTag } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
 
@@ -38,7 +39,12 @@ const financeCalculators = [
 ];
 
 export default function CalculatorHub() {
+  const location = useLocation();
+
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "금융 계산기 모음 | 돈워리 - 일상은 가볍게, 돈 걱정은 없게";
     
@@ -73,7 +79,7 @@ export default function CalculatorHub() {
       document.head.appendChild(ogDescription);
     }
     ogDescription.setAttribute('content', '알바 실수령액, 프리랜서 세금환급, 청년 소득세 감면, 군인 적금 등 2030세대에게 꼭 필요한 금융 계산기를 무료로 이용하세요. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
-  }, []);
+  }, [location.pathname]);
 
   return (
     <CalculatorLayout

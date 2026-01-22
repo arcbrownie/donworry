@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { setCanonicalTag } from "@/lib/utils";
 import { Calendar, Zap, Calculator, Users, PiggyBank, CreditCard, Scale } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
@@ -61,7 +62,12 @@ const benefits = [
 ];
 
 export default function Index() {
+  const location = useLocation();
+
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 어제보다 가벼운 오늘을 만드는 당신의 솔루션";
     
@@ -96,7 +102,7 @@ export default function Index() {
       document.head.appendChild(ogDescription);
     }
     ogDescription.setAttribute('content', '돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 알바 실수령액, 프리랜서 환급, 청년 세금감면, 군인 적금 계산부터 개인회생, 채무조정 자가진단까지. 복잡한 금융 계산과 절차를 쉽고 따뜻하게 도와드립니다.');
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">

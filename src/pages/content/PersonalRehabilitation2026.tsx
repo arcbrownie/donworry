@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
@@ -9,8 +10,12 @@ import { ArrowRight, Calculator } from "lucide-react";
 
 export default function PersonalRehabilitation2026() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "2026년 달라지는 개인회생 제도 총정리 (최신 업데이트) | 돈워리";
     
@@ -58,7 +63,7 @@ export default function PersonalRehabilitation2026() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">

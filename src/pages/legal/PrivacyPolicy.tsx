@@ -1,10 +1,17 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
+import { setCanonicalTag } from "@/lib/utils";
 
 export default function PrivacyPolicy() {
+  const location = useLocation();
+
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     document.title = "개인정보처리방침 | 돈워리";
-  }, []);
+  }, [location.pathname]);
 
   return (
     <CalculatorLayout

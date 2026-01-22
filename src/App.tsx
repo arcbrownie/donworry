@@ -28,6 +28,8 @@ import WeeklyHolidayPayGuide from "./pages/content/WeeklyHolidayPayGuide";
 import FirstLoanGuide2030 from "./pages/content/FirstLoanGuide2030";
 import SocialBeginnerSalaryGuide from "./pages/content/SocialBeginnerSalaryGuide";
 import OnePersonHouseholdSavingsDetailed from "./pages/content/OnePersonHouseholdSavingsDetailed";
+import CreditCardVsCheckCard from "./pages/content/CreditCardVsCheckCard";
+import InvestmentGuideForBeginners from "./pages/content/InvestmentGuideForBeginners";
 
 // Calculator pages
 import CalculatorHub from "./pages/cal/CalculatorHub";
@@ -72,6 +74,8 @@ const App = () => (
           <Route path="/blog/first-loan-guide-2030" element={<FirstLoanGuide2030 />} />
           <Route path="/blog/social-beginner-salary-guide" element={<SocialBeginnerSalaryGuide />} />
           <Route path="/blog/one-person-household-savings-detailed" element={<OnePersonHouseholdSavingsDetailed />} />
+          <Route path="/blog/credit-card-vs-check-card" element={<CreditCardVsCheckCard />} />
+          <Route path="/blog/investment-guide-for-beginners" element={<InvestmentGuideForBeginners />} />
           
           {/* Debt routes */}
           <Route path="/debt" element={<DebtHub />} />

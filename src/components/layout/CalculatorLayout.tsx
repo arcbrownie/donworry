@@ -1,7 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import MainNavigation from "./MainNavigation";
 import Footer from "./Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
+import { setCanonicalTag } from "@/lib/utils";
 
 interface CalculatorLayoutProps {
   children: ReactNode;
@@ -11,6 +13,13 @@ interface CalculatorLayoutProps {
 }
 
 export function CalculatorLayout({ children, title, description, seoContent }: CalculatorLayoutProps) {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
       <MainNavigation />

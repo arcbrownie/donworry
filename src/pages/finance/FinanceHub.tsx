@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
@@ -126,7 +128,7 @@ export default function FinanceHub() {
       document.head.appendChild(ogDescription);
     }
     ogDescription.setAttribute('content', '나에게 딱 맞는 금리와 상품 찾기. 대출 가이드, 프리랜서 세금 환급, 청년 세금감면 등 금융 정보를 제공합니다. 어제보다 가벼운 오늘을 만드는 당신의 솔루션, 돈워리.');
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!api) {

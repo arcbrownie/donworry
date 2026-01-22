@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
@@ -443,8 +444,12 @@ function HouseholdExpenseSavingsCalculator() {
 
 export default function OnePersonHouseholdSavingsDetailed() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "1인 가구 생활비 절약 꿀팁 10가지: 매달 최소 15만원 확정 절감 가이드 | 돈워리";
     
@@ -473,7 +478,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">
