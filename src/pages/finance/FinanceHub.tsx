@@ -43,14 +43,16 @@ const blogPosts = [
     title: "신용카드 vs 체크카드 비교", 
     excerpt: "소비 패턴에 따른 최적의 카드 선택법",
     category: "금융 · 대출",
-    isPlaceholder: true 
+    path: "/blog/credit-card-vs-check-card",
+    isPlaceholder: false 
   },
   { 
     emoji: "📈", 
     title: "사회초년생을 위한 투자 입문서", 
     excerpt: "적금만으로는 부족하다! 첫 투자를 시작하는 방법",
     category: "금융 · 대출",
-    isPlaceholder: true 
+    path: "/blog/investment-guide-for-beginners",
+    isPlaceholder: false 
   },
   { 
     emoji: "💰", 
@@ -92,8 +94,12 @@ export default function FinanceHub() {
   const [api, setApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
+
     // SEO Meta Tags
     document.title = "금융 · 대출 | 돈워리 - 일상은 가볍게, 돈 걱정은 없게";
     
