@@ -174,22 +174,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* 3. 최신 콘텐츠/블로그 리스트 (SEO) */}
-      <section className="container py-16">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
-            <p className="text-muted-foreground text-base mt-1 leading-relaxed">알아두면 좋은 재테크 · 금융 정보</p>
-          </div>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
-          ))}
-        </div>
-      </section>
-
-      {/* 4. 카테고리별 바로가기 */}
+      {/* 3. 카테고리별 바로가기 */}
       <section className="container py-16">
         <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-foreground">카테고리별 바로가기</h2>
@@ -218,6 +203,21 @@ export default function Index() {
                 </div>
               </div>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. 최신 콘텐츠/블로그 리스트 (SEO) */}
+      <section className="container py-16">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
+            <p className="text-muted-foreground text-base mt-1 leading-relaxed">알아두면 좋은 재테크 · 금융 정보</p>
+          </div>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {blogPosts.map((post, index) => (
+            <BlogCard key={index} {...post} />
           ))}
         </div>
       </section>
