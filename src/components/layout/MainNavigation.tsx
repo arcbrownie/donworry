@@ -189,7 +189,7 @@ export default function MainNavigation() {
                 {category.items.map((item, idx) => (
                   item.isFolder ? (
                     <DropdownMenuSub key={item.label}>
-                      <DropdownMenuSubTrigger className="flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors hover:bg-slate-200">
+                      <DropdownMenuSubTrigger className="flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors hover:bg-slate-200 focus:bg-slate-200 data-[state=open]:bg-slate-200">
                         <span className="text-xl mt-0.5">{item.emoji}</span>
                         <div className="flex flex-col flex-1">
                           <span className="font-medium text-foreground tracking-tight" style={{ letterSpacing: item.label.includes('·') ? '-0.01em' : 'normal' }}>{item.label}</span>
@@ -202,10 +202,10 @@ export default function MainNavigation() {
                             <DropdownMenuItem key={subItem.path} asChild>
                               <Link
                                 to={subItem.path}
-                                className={`flex items-start gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${
+                                className={`flex items-start gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors hover:bg-slate-200 focus:bg-slate-200 ${
                                   isActive(subItem.path)
                                     ? "bg-slate-200 text-foreground"
-                                    : "hover:bg-slate-200"
+                                    : ""
                                 }`}
                               >
                                 <span className="text-lg">{subItem.emoji}</span>
@@ -226,10 +226,10 @@ export default function MainNavigation() {
                     <DropdownMenuItem key={item.path} asChild>
                       <Link
                         to={item.path!}
-                        className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors ${
+                        className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors hover:bg-slate-200 focus:bg-slate-200 ${
                           isActive(item.path!)
                             ? "bg-slate-200 text-foreground"
-                            : "hover:bg-slate-200"
+                            : ""
                         }`}
                       >
                         <span className="text-xl mt-0.5">{item.emoji}</span>
