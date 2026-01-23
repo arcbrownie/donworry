@@ -152,7 +152,7 @@ export default function MainNavigation() {
                           ? item.subItems?.some(sub => isActive(sub.path))
                           : isActive(item.path)
                       )
-                        ? `${category.bgColor} ${category.color}`
+                        ? "bg-slate-100 text-foreground"
                         : ""
                     }`}
                     onClick={(e) => {
@@ -204,7 +204,7 @@ export default function MainNavigation() {
                                 to={subItem.path}
                                 className={`flex items-start gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${
                                   isActive(subItem.path)
-                                    ? `${category.bgColor} ${category.color}`
+                                    ? "bg-slate-100 text-foreground"
                                     : category.hoverBg
                                 }`}
                               >
@@ -214,7 +214,7 @@ export default function MainNavigation() {
                                   <span className="text-xs text-muted-foreground">{subItem.description}</span>
                                 </div>
                                 {isActive(subItem.path) && (
-                                  <CheckCircle className={`w-4 h-4 ${category.color} ml-auto mt-1`} />
+                                  <CheckCircle className="w-4 h-4 text-foreground ml-auto mt-1" />
                                 )}
                               </Link>
                             </DropdownMenuItem>
@@ -228,7 +228,7 @@ export default function MainNavigation() {
                         to={item.path!}
                         className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors ${
                           isActive(item.path!)
-                            ? `${category.bgColor} ${category.color}`
+                            ? "bg-slate-100 text-foreground"
                             : category.hoverBg
                         }`}
                       >
@@ -238,7 +238,7 @@ export default function MainNavigation() {
                           <span className="text-xs text-muted-foreground">{item.description}</span>
                         </div>
                         {isActive(item.path!) && (
-                          <CheckCircle className={`w-4 h-4 ${category.color} ml-auto mt-1`} />
+                          <CheckCircle className="w-4 h-4 text-foreground ml-auto mt-1" />
                         )}
                       </Link>
                     </DropdownMenuItem>
@@ -326,7 +326,7 @@ export default function MainNavigation() {
                                   onClick={() => setMobileOpen(false)}
                                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                                     isActive(subItem.path)
-                                      ? `${category.bgColor} ${category.color}`
+                                      ? "bg-slate-100 text-foreground"
                                       : category.hoverBg
                                   }`}
                                 >
@@ -346,7 +346,7 @@ export default function MainNavigation() {
                             onClick={() => setMobileOpen(false)}
                             className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
                               isActive(item.path!)
-                                ? `${category.bgColor} ${category.color}`
+                                ? "bg-slate-100 text-foreground"
                                 : category.hoverBg
                             }`}
                           >

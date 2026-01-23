@@ -16,6 +16,10 @@ const MONTHLY_SALARY_2026 = {
 // 장병내일준비적금 정부 지원금 매칭비율
 const GOVERNMENT_MATCH_RATE = 1; // 100% 매칭
 
+// 2026년 장병내일준비적금 한도
+const MAX_MONTHLY_DEPOSIT = 550000; // 월 최대 55만원
+const BANK_LIMIT = 300000; // 은행당 30만원
+
 // 복무기간 (개월)
 const SERVICE_PERIOD = {
   army: 18,      // 육군
@@ -24,12 +28,40 @@ const SERVICE_PERIOD = {
   marine: 18,    // 해병대
 };
 
+// 군별 색상
+const BRANCH_COLORS: Record<ServiceBranch, { bg: string; text: string; hover: string; selected: string }> = {
+  army: {
+    bg: "bg-green-50 dark:bg-green-950/30",
+    text: "text-green-700 dark:text-green-400",
+    hover: "hover:bg-green-100 dark:hover:bg-green-950/50",
+    selected: "bg-green-600 text-white hover:bg-green-700",
+  },
+  navy: {
+    bg: "bg-blue-50 dark:bg-blue-950/30",
+    text: "text-blue-700 dark:text-blue-400",
+    hover: "hover:bg-blue-100 dark:hover:bg-blue-950/50",
+    selected: "bg-blue-600 text-white hover:bg-blue-700",
+  },
+  airforce: {
+    bg: "bg-sky-50 dark:bg-sky-950/30",
+    text: "text-sky-700 dark:text-sky-400",
+    hover: "hover:bg-sky-100 dark:hover:bg-sky-950/50",
+    selected: "bg-sky-600 text-white hover:bg-sky-700",
+  },
+  marine: {
+    bg: "bg-red-50 dark:bg-red-950/30",
+    text: "text-red-700 dark:text-red-400",
+    hover: "hover:bg-red-100 dark:hover:bg-red-950/50",
+    selected: "bg-red-600 text-white hover:bg-red-700",
+  },
+};
+
 type ServiceBranch = keyof typeof SERVICE_PERIOD;
 
 export default function SoldierCalculator() {
   const [enlistmentDate, setEnlistmentDate] = useState("2025-06-01");
   const [serviceBranch, setServiceBranch] = useState<ServiceBranch>("army");
-  const [monthlySaving, setMonthlySaving] = useState(400000);
+  const [monthlySaving, setMonthlySaving] = useState(550000);
 
   const result = useMemo(() => {
     const period = SERVICE_PERIOD[serviceBranch];
@@ -54,8 +86,8 @@ export default function SoldierCalculator() {
     const totalDeposit = monthlySaving * period;
     const governmentMatch = totalDeposit * GOVERNMENT_MATCH_RATE;
     
-    // 이자 계산 (연 5% 가정, 단순 이자)
-    const interestRate = 0.05;
+    // 이자 계산 (연 5% 가정, 단순 이자 - 기본 4%대, 우대 포함 최고 7%대)
+    const interestRate = 0.05; // 기본 5% 가정
     const averageMonths = period / 2;
     const interest = totalDeposit * interestRate * (averageMonths / 12);
     
@@ -87,7 +119,7 @@ export default function SoldierCalculator() {
     <CalculatorLayout
       title="🎖️ 군 장병 적금 & 전역일 계산기"
       description="전역 시 받을 목돈을 미리 계산해보세요"
-      seoContent="장병내일준비적금은 병역 의무를 이행하는 장병들이 전역 후 사회에 안정적으로 복귀할 수 있도록 지원하는 제도입니다. 월 최대 40만원까지 저축할 수 있으며, 정부가 1:1 매칭 지원금을 제공합니다. 2026년 병사 월급은 병장 기준 약 125만원으로 인상될 예정이며, 적금과 월급을 합하면 전역 시 상당한 목돈을 마련할 수 있습니다."
+      seoContent="장병내일준비적금은 병역 의무를 이행하는 장병들이 전역 후 사회에 안정적으로 복귀할 수 있도록 지원하는 제도입니다. 2026년 월 최대 55만원까지 저축할 수 있으며(은행당 30만원), 정부가 1:1 매칭 지원금을 제공합니다. 잔여 복무 1개월 이상이면 가입 가능하며, 기본금리 4%대, 우대 포함 시 최고 7%대까지 가능합니다. 2026년 병사 월급은 병장 기준 약 125만원으로 인상될 예정이며, 적금과 월급을 합하면 전역 시 상당한 목돈을 마련할 수 있습니다."
     >
       {/* 입력 폼 */}
       <div className="therapy-card space-y-6">
@@ -122,14 +154,15 @@ export default function SoldierCalculator() {
                   airforce: "공군",
                   marine: "해병",
                 };
+                const colors = BRANCH_COLORS[branch];
                 return (
                   <button
                     key={branch}
                     onClick={() => setServiceBranch(branch)}
                     className={`py-3 rounded-xl font-medium transition-colors ${
                       serviceBranch === branch
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                        ? colors.selected
+                        : `${colors.bg} ${colors.text} ${colors.hover}`
                     }`}
                   >
                     {labels[branch]}
@@ -138,7 +171,7 @@ export default function SoldierCalculator() {
               })}
             </div>
             <p className="text-xs text-muted-foreground mt-2">
-              복무기간: {SERVICE_PERIOD[serviceBranch]}개월
+              복무기간: {SERVICE_PERIOD[serviceBranch]}개월 (최대 가입 가능 기간)
             </p>
           </div>
 
@@ -147,12 +180,15 @@ export default function SoldierCalculator() {
             <Input
               type="number"
               value={monthlySaving}
-              onChange={(e) => setMonthlySaving(Math.min(400000, Number(e.target.value)))}
+              onChange={(e) => setMonthlySaving(Math.min(MAX_MONTHLY_DEPOSIT, Number(e.target.value)))}
               className="therapy-input"
-              max={400000}
+              max={MAX_MONTHLY_DEPOSIT}
             />
             <p className="text-xs text-muted-foreground mt-1">
-              월 최대 40만원까지 가능 (정부 1:1 매칭)
+              2026년 월 최대 55만원까지 가능 (은행당 30만원, 2개 은행 분산 가입 시 최대 55만원)
+            </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              정부 1:1 매칭 지원 (본인 납입액과 동일한 금액 추가 적립)
             </p>
           </div>
         </div>
@@ -196,9 +232,14 @@ export default function SoldierCalculator() {
             <span className="font-medium text-foreground">장병내일준비적금</span>
           </div>
           <ResultItem label={`내 적금 (${result.period}개월)`} value={`${result.totalDeposit.toLocaleString()}원`} />
-          <ResultItem label="정부 매칭 지원금" value={`+${result.governmentMatch.toLocaleString()}원`} />
-          <ResultItem label="예상 이자 (연 5%)" value={`+${result.interest.toLocaleString()}원`} />
+          <ResultItem label="정부 매칭 지원금 (1:1)" value={`+${result.governmentMatch.toLocaleString()}원`} />
+          <ResultItem label="예상 이자 (연 5% 기준)" value={`+${result.interest.toLocaleString()}원`} />
           <ResultItem label="적금 합계" value={`${result.totalSavings.toLocaleString()}원`} highlight />
+          <p className="text-xs text-muted-foreground mt-3 pt-3 border-t border-border/30">
+            ※ 금리는 은행·가입 기간별로 다르며, 기본 4%대, 우대 포함 시 최고 7%대까지 가능합니다.
+            <br />
+            ※ 잔여 복무 1개월 이상이면 가입 가능합니다.
+          </p>
         </div>
       </ResultCard>
 

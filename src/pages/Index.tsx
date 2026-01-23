@@ -219,30 +219,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* 3. 무료 채무진단 배너 (CTA) */}
-      <section className="container py-8">
-        <div className="relative overflow-hidden rounded-3xl gradient-hero p-8 md:p-12">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
-          <div className="relative text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              지금 바로 무료 채무진단을 받아보세요
-            </h2>
-            <p className="text-white/80 mb-6 max-w-xl mx-auto leading-relaxed">
-              개인회생, 파산, 신속채무조정 중 나에게 맞는 해결책을 찾아드립니다.
-              <br />
-              전문가 상담 전 자가진단으로 방향을 잡아보세요.
-            </p>
-            <Link to="/debt/test">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-elevated px-5 py-6">
-                <span className="text-xl">🩺</span>
-                <span className="text-lg font-bold ml-2">무료 진단 시작하기</span>
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. 카테고리별 바로가기 (최신 콘텐츠 위로 이동) */}
+      {/* 3. 카테고리별 바로가기 (최신 콘텐츠 위로 이동) */}
       <section className="container py-16">
         <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-foreground">카테고리별 바로가기</h2>
@@ -275,7 +252,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* 5. 최신 콘텐츠/블로그 리스트 (SEO) */}
+      {/* 4. 최신 콘텐츠/블로그 리스트 (SEO) */}
       <section className="container py-16">
         <div className="flex items-center justify-between mb-6">
           <div>

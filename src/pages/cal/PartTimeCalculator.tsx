@@ -5,18 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
-import { Calculator, Clock, Coins } from "lucide-react";
+import { Calculator, Clock } from "lucide-react";
 
 // 2026년 최저시급 (예상치 - 실제 발표 시 수정 필요)
 const MINIMUM_WAGE_2026 = 10030;
-const INCOME_TAX_RATE = 0.033; // 3.3% 원천징수
 
 export default function PartTimeCalculator() {
   const [hourlyWage, setHourlyWage] = useState(MINIMUM_WAGE_2026);
   const [hoursPerDay, setHoursPerDay] = useState(8);
   const [daysPerWeek, setDaysPerWeek] = useState(5);
   const [includeWeeklyHoliday, setIncludeWeeklyHoliday] = useState(true);
-  const [apply33Tax, setApply33Tax] = useState(true);
 
   const result = useMemo(() => {
     const weeklyHours = hoursPerDay * daysPerWeek;
@@ -29,8 +27,9 @@ export default function PartTimeCalculator() {
     const totalWeeklyWage = weeklyWage + weeklyHolidayPay;
     const monthlyWage = totalWeeklyWage * 4.345; // 월 평균 주수
     
-    const taxAmount = apply33Tax ? monthlyWage * INCOME_TAX_RATE : 0;
-    const netMonthlyWage = monthlyWage - taxAmount;
+    // 알바생은 근로소득이므로 3.3% 원천징수는 적용되지 않음
+    // 근로소득은 일용직/상용직에 따라 별도 세율 구조 적용
+    const netMonthlyWage = monthlyWage;
     
     // 실질 시급 계산
     const totalMonthlyHours = weeklyHours * 4.345;
@@ -42,17 +41,16 @@ export default function PartTimeCalculator() {
       weeklyHolidayHours: Math.round(weeklyHolidayHours * 10) / 10,
       weeklyHolidayPay: Math.round(weeklyHolidayPay),
       monthlyWage: Math.round(monthlyWage),
-      taxAmount: Math.round(taxAmount),
       netMonthlyWage: Math.round(netMonthlyWage),
       effectiveHourlyWage: Math.round(effectiveHourlyWage),
     };
-  }, [hourlyWage, hoursPerDay, daysPerWeek, includeWeeklyHoliday, apply33Tax]);
+  }, [hourlyWage, hoursPerDay, daysPerWeek, includeWeeklyHoliday]);
 
   return (
     <CalculatorLayout
       title="💰 2026 알바 실수령액 계산기"
-      description="주휴수당과 3.3% 세금을 반영한 진짜 시급을 확인하세요"
-      seoContent="2026년 최저임금은 시간당 10,030원(예상)입니다. 주 15시간 이상 근무하면 주휴수당을 받을 수 있으며, 이는 1주일 동안 개근한 근로자에게 유급 휴일을 주는 제도입니다. 아르바이트생도 4대보험 미가입 시 3.3% 원천징수 대상이 될 수 있으니, 실수령액을 미리 계산해보는 것이 좋습니다."
+      description="주휴수당을 반영한 진짜 시급을 확인하세요"
+      seoContent="2026년 최저임금은 시간당 10,030원(예상)입니다. 주 15시간 이상 근무하면 주휴수당을 받을 수 있으며, 이는 1주일 동안 개근한 근로자에게 유급 휴일을 주는 제도입니다. 알바생은 근로소득으로 처리되므로 일용직/상용직에 따라 별도 세율 구조가 적용됩니다. 실수령액을 미리 계산해보는 것이 좋습니다."
     >
       {/* 입력 폼 */}
       <div className="therapy-card space-y-6">
@@ -112,7 +110,7 @@ export default function PartTimeCalculator() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between py-3 px-4 bg-secondary rounded-xl">
+          <div className="flex items-center justify-between py-3 px-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-border/50">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-muted-foreground" />
               <span className="text-sm font-medium text-foreground">주휴수당 포함</span>
@@ -120,17 +118,6 @@ export default function PartTimeCalculator() {
             <Switch
               checked={includeWeeklyHoliday}
               onCheckedChange={setIncludeWeeklyHoliday}
-            />
-          </div>
-
-          <div className="flex items-center justify-between py-3 px-4 bg-secondary rounded-xl">
-            <div className="flex items-center gap-2">
-              <Coins className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm font-medium text-foreground">3.3% 원천징수 적용</span>
-            </div>
-            <Switch
-              checked={apply33Tax}
-              onCheckedChange={setApply33Tax}
             />
           </div>
         </div>
@@ -149,9 +136,10 @@ export default function PartTimeCalculator() {
           )}
           <div className="border-t border-border/50 my-3" />
           <ResultItem label="월 급여 (세전)" value={`${result.monthlyWage.toLocaleString()}원`} />
-          {apply33Tax && (
-            <ResultItem label="3.3% 원천징수" value={`-${result.taxAmount.toLocaleString()}원`} />
-          )}
+          <p className="text-xs text-muted-foreground mt-2 pt-2 border-t border-border/30">
+            ※ 알바생은 근로소득으로 처리되며, 일용직/상용직에 따라 별도 세율 구조가 적용됩니다. 
+            실제 세금은 근로 형태와 소득에 따라 달라질 수 있습니다.
+          </p>
         </div>
       </ResultCard>
 
