@@ -146,13 +146,13 @@ export default function MainNavigation() {
                 >
                   <Link
                     to={firstMenuPath}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${category.hoverColor} ${
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors hover:bg-slate-200 ${
                       category.items.some((item) => 
                         item.isFolder 
                           ? item.subItems?.some(sub => isActive(sub.path))
                           : isActive(item.path)
                       )
-                        ? "bg-slate-100 text-foreground"
+                        ? "bg-slate-200 text-foreground"
                         : ""
                     }`}
                     onClick={(e) => {
@@ -189,7 +189,7 @@ export default function MainNavigation() {
                 {category.items.map((item, idx) => (
                   item.isFolder ? (
                     <DropdownMenuSub key={item.label}>
-                      <DropdownMenuSubTrigger className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors ${category.hoverBg}`}>
+                      <DropdownMenuSubTrigger className="flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors hover:bg-slate-200">
                         <span className="text-xl mt-0.5">{item.emoji}</span>
                         <div className="flex flex-col flex-1">
                           <span className="font-medium text-foreground tracking-tight" style={{ letterSpacing: item.label.includes('·') ? '-0.01em' : 'normal' }}>{item.label}</span>
@@ -204,8 +204,8 @@ export default function MainNavigation() {
                                 to={subItem.path}
                                 className={`flex items-start gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${
                                   isActive(subItem.path)
-                                    ? "bg-slate-100 text-foreground"
-                                    : category.hoverBg
+                                    ? "bg-slate-200 text-foreground"
+                                    : "hover:bg-slate-200"
                                 }`}
                               >
                                 <span className="text-lg">{subItem.emoji}</span>
@@ -228,8 +228,8 @@ export default function MainNavigation() {
                         to={item.path!}
                         className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors ${
                           isActive(item.path!)
-                            ? "bg-slate-100 text-foreground"
-                            : category.hoverBg
+                            ? "bg-slate-200 text-foreground"
+                            : "hover:bg-slate-200"
                         }`}
                       >
                         <span className="text-xl mt-0.5">{item.emoji}</span>
@@ -310,7 +310,7 @@ export default function MainNavigation() {
                       {category.items.map((item, idx) => (
                         item.isFolder ? (
                           <Collapsible key={item.label} className="space-y-1">
-                            <CollapsibleTrigger className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${category.hoverBg} w-full`}>
+                            <CollapsibleTrigger className="flex items-center gap-3 px-3 py-3 rounded-lg transition-colors hover:bg-slate-200 w-full">
                               <span className="text-lg">{item.emoji}</span>
                               <div className="flex flex-col flex-1 text-left">
                                 <span className="font-medium text-sm tracking-tight" style={{ letterSpacing: item.label.includes('·') ? '-0.01em' : 'normal' }}>{item.label}</span>
@@ -326,8 +326,8 @@ export default function MainNavigation() {
                                   onClick={() => setMobileOpen(false)}
                                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                                     isActive(subItem.path)
-                                      ? "bg-slate-100 text-foreground"
-                                      : category.hoverBg
+                                      ? "bg-slate-200 text-foreground"
+                                      : "hover:bg-slate-200"
                                   }`}
                                 >
                                   <span className="text-base">{subItem.emoji}</span>
@@ -346,8 +346,8 @@ export default function MainNavigation() {
                             onClick={() => setMobileOpen(false)}
                             className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
                               isActive(item.path!)
-                                ? "bg-slate-100 text-foreground"
-                                : category.hoverBg
+                                ? "bg-slate-200 text-foreground"
+                                : "hover:bg-slate-200"
                             }`}
                           >
                             <span className="text-lg">{item.emoji}</span>
