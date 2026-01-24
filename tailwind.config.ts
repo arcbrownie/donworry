@@ -14,7 +14,20 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["'Noto Sans KR'", "sans-serif"],
+        // 시스템 기본 폰트 사용 (성능 최적화)
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "'Segoe UI'",
+          "Roboto",
+          "Oxygen",
+          "Ubuntu",
+          "Cantarell",
+          "'Fira Sans'",
+          "'Droid Sans'",
+          "'Helvetica Neue'",
+          "sans-serif",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",

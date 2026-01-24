@@ -19,14 +19,14 @@ export default function BlogCard({
   isPlaceholder = false,
 }: BlogCardProps) {
   const categoryColors: Record<string, string> = {
-    생활: "bg-category-life/10 text-category-life",
-    "재테크/절약": "bg-category-life/10 text-category-life",
-    "재테크 · 절약": "bg-category-life/10 text-category-life",
-    금융: "bg-category-finance/10 text-category-finance",
-    "금융/대출": "bg-category-finance/10 text-category-finance",
-    "금융 · 대출": "bg-category-finance/10 text-category-finance",
-    채무조정: "bg-category-debt/10 text-category-debt",
-    채무: "bg-category-debt/10 text-category-debt",
+    생활: "bg-category-life/25 text-category-life",
+    "재테크/절약": "bg-category-life/25 text-category-life",
+    "재테크 · 절약": "bg-category-life/25 text-category-life",
+    금융: "bg-category-finance/25 text-category-finance",
+    "금융/대출": "bg-category-finance/25 text-category-finance",
+    "금융 · 대출": "bg-category-finance/25 text-category-finance",
+    채무조정: "bg-category-debt/25 text-category-debt",
+    채무: "bg-category-debt/25 text-category-debt",
   };
 
   const categoryGradient: Record<string, string> = {

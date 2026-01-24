@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight, CheckCircle, Shield, PiggyBank, CreditCard, Scale } from "lucide-react";
 import {
   DropdownMenu,
@@ -93,6 +93,7 @@ export default function MainNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState<{ [key: string]: boolean }>({});
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -139,45 +140,36 @@ export default function MainNavigation() {
               }}
             >
               <DropdownMenuTrigger asChild>
-                <div 
-                  className="relative flex items-center group cursor-pointer"
+                <button
+                  type="button"
+                  className={`relative flex items-center gap-3 px-4 py-3 rounded-xl transition-colors hover:bg-slate-200 group cursor-pointer bg-transparent border-0 ${
+                    category.items.some((item) => 
+                      item.isFolder 
+                        ? item.subItems?.some(sub => isActive(sub.path))
+                        : isActive(item.path)
+                    )
+                      ? "bg-slate-200 text-foreground"
+                      : ""
+                  }`}
                   onMouseEnter={() => setOpenDropdowns(prev => ({ ...prev, [category.label]: true }))}
                   onMouseLeave={() => setOpenDropdowns(prev => ({ ...prev, [category.label]: false }))}
+                  aria-label={`${category.label} 메뉴`}
+                  onClick={(e) => {
+                    // 드롭다운이 열려있지 않으면 첫 번째 메뉴로 이동
+                    if (!openDropdowns[category.label]) {
+                      navigate(firstMenuPath);
+                    }
+                  }}
                 >
-                  <Link
-                    to={firstMenuPath}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors hover:bg-slate-200 ${
-                      category.items.some((item) => 
-                        item.isFolder 
-                          ? item.subItems?.some(sub => isActive(sub.path))
-                          : isActive(item.path)
-                      )
-                        ? "bg-slate-200 text-foreground"
-                        : ""
-                    }`}
-                    onClick={(e) => {
-                      // Link 클릭은 네비게이션만 수행
-                    }}
+                  {category.icon && <category.icon className="w-6 h-6" strokeWidth={1.5} />}
+                  <span 
+                    className={`font-bold text-xl ${category.label === '채무조정' ? 'tracking-normal' : 'tracking-tight'}`} 
+                    style={{ letterSpacing: category.label === '채무조정' ? '0' : '-0.02em' }}
                   >
-                    {category.icon && <category.icon className="w-6 h-6" strokeWidth={1.5} />}
-                    <span 
-                      className={`font-bold text-xl ${category.label === '채무조정' ? 'tracking-normal' : 'tracking-tight'}`} 
-                      style={{ letterSpacing: category.label === '채무조정' ? '0' : '-0.02em' }}
-                    >
-                      {category.label}
-                    </span>
-                  </Link>
-                  <button
-                    type="button"
-                    className="w-6 h-6 -ml-1 p-0 opacity-70 hover:opacity-100 flex items-center justify-center rounded hover:bg-muted/50 transition-colors pointer-events-auto"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                    }}
-                  >
-                    <ChevronDown className="w-4 h-4 text-muted-foreground" />
-                  </button>
-                </div>
+                    {category.label}
+                  </span>
+                  <ChevronDown className="w-4 h-4 ml-1 opacity-60" />
+                </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent 
                 align="start" 

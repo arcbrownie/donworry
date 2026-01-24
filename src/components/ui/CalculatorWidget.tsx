@@ -24,9 +24,9 @@ export default function CalculatorWidget({
   };
 
   const tagStyles = {
-    life: "text-category-life bg-category-life/10",
-    finance: "text-category-finance bg-category-finance/10",
-    debt: "text-category-debt bg-category-debt/10",
+    life: "text-category-life bg-category-life/25",
+    finance: "text-category-finance bg-category-finance/25",
+    debt: "text-category-debt bg-category-debt/25",
   };
 
   return (

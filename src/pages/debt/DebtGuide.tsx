@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { CalculatorLayout } from "@/components/layout/CalculatorLayout";
+import { addStructuredData, createFAQPageSchema } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,
@@ -79,6 +81,14 @@ const faq = [
 ];
 
 export default function DebtGuide() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // FAQPage 구조화된 데이터
+    const faqSchema = createFAQPageSchema(faq);
+    addStructuredData(faqSchema);
+  }, [location.pathname]);
+
   return (
     <CalculatorLayout
       title="📖 채무조정 완벽 가이드"

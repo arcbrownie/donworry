@@ -1,10 +1,13 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { setCanonicalTag } from "@/lib/utils";
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Canonical Tag
+    setCanonicalTag(location.pathname);
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 

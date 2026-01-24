@@ -105,7 +105,7 @@ export default function CalculatorHub() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-medium text-category-life bg-category-life/10 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-medium text-category-life bg-category-life/25 px-2 py-0.5 rounded-full">
                     {calc.tag}
                   </span>
                 </div>
@@ -140,7 +140,7 @@ export default function CalculatorHub() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-medium text-category-finance bg-category-finance/10 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-medium text-category-finance bg-category-finance/25 px-2 py-0.5 rounded-full">
                     {calc.tag}
                   </span>
                 </div>

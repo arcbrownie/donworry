@@ -24,3 +24,71 @@ export function setCanonicalTag(path: string, baseUrl?: string) {
   }
   canonicalLink.setAttribute('href', canonicalUrl);
 }
+
+/**
+ * 구조화된 데이터 (JSON-LD)를 추가하는 함수
+ * @param schema - 구조화된 데이터 객체
+ */
+export function addStructuredData(schema: object) {
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify(schema);
+  script.id = `structured-data-${Date.now()}`;
+  document.head.appendChild(script);
+}
+
+/**
+ * Article 구조화된 데이터를 생성하는 함수
+ */
+export function createArticleSchema(data: {
+  headline: string;
+  description: string;
+  image?: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: {
+    name: string;
+    url?: string;
+  };
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": data.headline,
+    "description": data.description,
+    "image": data.image || "https://donworry.kr/og-image.png",
+    "datePublished": data.datePublished,
+    "dateModified": data.dateModified || data.datePublished,
+    "author": {
+      "@type": "Person",
+      "name": data.author?.name || "돈워리",
+      "url": data.author?.url || "https://donworry.kr"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "돈워리",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://donworry.kr/favicon.svg"
+      }
+    }
+  };
+}
+
+/**
+ * FAQPage 구조화된 데이터를 생성하는 함수
+ */
+export function createFAQPageSchema(faqs: Array<{ question: string; answer: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+}

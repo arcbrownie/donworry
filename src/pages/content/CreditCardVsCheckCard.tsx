@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { setCanonicalTag } from "@/lib/utils";
+import { setCanonicalTag, addStructuredData, createArticleSchema } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
@@ -35,6 +35,15 @@ export default function CreditCardVsCheckCard() {
       document.head.appendChild(metaKeywords);
     }
     metaKeywords.setAttribute('content', '신용카드, 체크카드, 카드 선택, 사회초년생 카드, 연말정산 소득공제, 신용점수 관리, 카드 혜택 비교');
+
+    // Article 구조화된 데이터
+    const articleSchema = createArticleSchema({
+      headline: "신용카드 vs 체크카드 완벽 가이드: 사회초년생을 위한 선택법과 연말정산 전략",
+      description: "신용카드와 체크카드의 차이점부터 혜택 비교, 사회초년생 선택법, 신용관리, 연말정산 소득공제 전략까지 완벽 정리",
+      datePublished: "2026-01-06",
+      dateModified: "2026-01-06"
+    });
+    addStructuredData(articleSchema);
 
     // Scroll progress
     const handleScroll = () => {
