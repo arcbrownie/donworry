@@ -18,32 +18,36 @@ export default defineConfig({
     // 코드 스플리팅 최적화
     rollupOptions: {
       output: {
-        manualChunks: {
-          // React 관련 라이브러리
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          // UI 라이브러리
-          'ui-vendor': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-select',
-            '@radix-ui/react-tabs',
-          ],
-          // 차트 및 데이터 시각화
-          'chart-vendor': ['recharts'],
-          // 폼 관련
-          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
+        manualChunks: (id) => {
+          // node_modules 분리
+          if (id.includes('node_modules')) {
+            // React 코어
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'react-vendor';
+            }
+            // Radix UI (큰 라이브러리)
+            if (id.includes('@radix-ui')) {
+              return 'radix-vendor';
+            }
+            // 차트 (사용 빈도 낮음)
+            if (id.includes('recharts')) {
+              return 'chart-vendor';
+            }
+            // 폼 관련
+            if (id.includes('react-hook-form') || id.includes('@hookform') || id.includes('zod')) {
+              return 'form-vendor';
+            }
+            // 기타 vendor
+            return 'vendor';
+          }
         },
       },
     },
-    // 청크 크기 경고 임계값 증가 (큰 라이브러리 포함)
-    chunkSizeWarningLimit: 1000,
+    // 청크 크기 경고 임계값 (모바일 최적화)
+    chunkSizeWarningLimit: 500,
     // CSS 코드 스플리팅
     cssCodeSplit: true,
     // 소스맵 설정
-    // 프로덕션: false (보안 및 성능)
-    // 개발: true (디버깅)
-    // 'hidden' 옵션: 소스맵 생성하지만 .map 파일은 서버에만 저장 (보안 유지)
     sourcemap: false, // 프로덕션에서는 비활성화 (보안)
     // Minify 설정 (esbuild 사용, 더 빠름)
     minify: 'esbuild',

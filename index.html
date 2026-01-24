@@ -11,22 +11,57 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     
-    <!-- Google Tag Manager (defer with error handling) -->
+    <!-- Google Tag Manager (lazy load on idle) -->
     <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      j.onerror=function(){console.warn('GTM failed to load');};
-      if(f&&f.parentNode){f.parentNode.insertBefore(j,f);}else{d.head.appendChild(j);}
-      })(window,document,'script','dataLayer','GTM-MC3G2FBF');
+      // GTM을 requestIdleCallback으로 지연 로딩 (모바일 성능 개선)
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          j.onerror=function(){console.warn('GTM failed to load');};
+          if(f&&f.parentNode){f.parentNode.insertBefore(j,f);}else{d.head.appendChild(j);}
+          })(window,document,'script','dataLayer','GTM-MC3G2FBF');
+        }, { timeout: 2000 });
+      } else {
+        // requestIdleCallback 미지원 브라우저는 setTimeout으로 지연
+        setTimeout(function() {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          j.onerror=function(){console.warn('GTM failed to load');};
+          if(f&&f.parentNode){f.parentNode.insertBefore(j,f);}else{d.head.appendChild(j);}
+          })(window,document,'script','dataLayer','GTM-MC3G2FBF');
+        }, 2000);
+      }
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Google AdSense (defer with error handling) -->
-    <script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473"
-      crossorigin="anonymous"
-      onerror="console.warn('AdSense failed to load')"></script>
+    <!-- Google AdSense (lazy load on idle) -->
+    <script>
+      // AdSense를 requestIdleCallback으로 지연 로딩 (모바일 성능 개선)
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          var script = document.createElement('script');
+          script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473';
+          script.crossOrigin = 'anonymous';
+          script.defer = true;
+          script.onerror = function(){console.warn('AdSense failed to load');};
+          document.head.appendChild(script);
+        }, { timeout: 3000 });
+      } else {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473';
+          script.crossOrigin = 'anonymous';
+          script.defer = true;
+          script.onerror = function(){console.warn('AdSense failed to load');};
+          document.head.appendChild(script);
+        }, 3000);
+      }
+    </script>
 
     <title>돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 어제보다 가벼운 오늘을 만드는 당신의 솔루션</title>
     <meta name="description" content="돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 알바 실수령액, 프리랜서 환급, 청년 세금감면, 군인 적금 계산부터 개인회생, 채무조정 자가진단까지. 복잡한 금융 계산과 절차를 쉽고 따뜻하게 도와드립니다.">
