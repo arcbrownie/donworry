@@ -13,6 +13,8 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    // React 중복 로드 방지
+    dedupe: ['react', 'react-dom'],
   },
   build: {
     // 코드 스플리팅 최적화
@@ -21,8 +23,14 @@ export default defineConfig({
         manualChunks: (id) => {
           // node_modules 분리
           if (id.includes('node_modules')) {
-            // React 코어 - 단일 청크로 유지하여 createContext 에러 방지
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+            // React와 react-dom을 명확히 분리하여 단일 인스턴스 보장
+            if (id.includes('react/') || id === 'react' || id.includes('react/index')) {
+              return 'react-vendor';
+            }
+            if (id.includes('react-dom/') || id === 'react-dom' || id.includes('react-dom/index')) {
+              return 'react-vendor';
+            }
+            if (id.includes('react-router') || id.includes('react-router-dom')) {
               return 'react-vendor';
             }
             // Radix UI (큰 라이브러리)
@@ -60,6 +68,10 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
     exclude: [],
+    esbuildOptions: {
+      // React를 단일 인스턴스로 보장
+      dedupe: ['react', 'react-dom'],
+    },
   },
   // 정적 에셋 최적화
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],
