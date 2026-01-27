@@ -51,6 +51,10 @@ const UnemploymentCalculator = lazy(() => import("./pages/cal/UnemploymentCalcul
 const DebtReductionCalculator = lazy(() => import("./pages/cal/DebtReductionCalculator"));
 const InterestSavingCalculator = lazy(() => import("./pages/cal/InterestSavingCalculator"));
 
+// Expert pages - Lazy loaded
+const ExpertsHub = lazy(() => import("./pages/experts/ExpertsHub"));
+const ExpertDetail = lazy(() => import("./pages/experts/ExpertDetail"));
+
 // Legal pages - Lazy loaded
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/legal/TermsOfService"));
@@ -85,6 +89,10 @@ const App = () => (
             <Route path="/blog/one-person-household-savings-detailed" element={<OnePersonHouseholdSavingsDetailed />} />
             <Route path="/blog/credit-card-vs-check-card" element={<CreditCardVsCheckCard />} />
             <Route path="/blog/investment-guide-for-beginners" element={<InvestmentGuideForBeginners />} />
+            
+            {/* Expert routes */}
+            <Route path="/experts" element={<ExpertsHub />} />
+            <Route path="/experts/:id" element={<ExpertDetail />} />
             
             {/* Debt routes */}
             <Route path="/debt" element={<DebtHub />} />

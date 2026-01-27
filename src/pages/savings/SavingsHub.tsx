@@ -9,6 +9,7 @@ import CalculatorWidget from "@/components/ui/CalculatorWidget";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import AdSenseMultiplex from "@/components/adsense/AdSenseMultiplex";
 
 const calculators = [
   { 
@@ -163,18 +164,18 @@ export default function SavingsHub() {
       <MainNavigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-category-life/10">
+      <section className="relative overflow-hidden bg-gradient-to-br from-category-life via-category-life/90 to-category-life/80">
         <div className="container py-12 md:py-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-2xl bg-category-life/20 flex items-center justify-center">
-              <PiggyBank className="w-7 h-7 text-category-life" strokeWidth={1.5} />
+            <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center backdrop-blur-sm">
+              <PiggyBank className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground">재테크 · 절약</h1>
-              <p className="text-muted-foreground">티끌 모아 태산, 똑똑한 소비 습관</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-white">재테크 · 절약</h1>
+              <p className="text-white/90">티끌 모아 태산, 똑똑한 소비 습관</p>
             </div>
           </div>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="text-white/90 max-w-2xl">
             알바 실수령액, 군인 적금 등 2030 세대를 위한 재테크 · 절약 정보를 제공합니다.
             티끌 모아 태산, 똑똑한 소비 습관을 만들어보세요.
           </p>
@@ -262,9 +263,7 @@ export default function SavingsHub() {
 
       {/* Ad Container */}
       <section className="container py-6">
-        <div className="ad-container py-10">
-          <span>광고 영역 (AdSense)</span>
-        </div>
+        <AdSenseMultiplex slot="8118714776" />
       </section>
 
       <Footer />

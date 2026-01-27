@@ -5,11 +5,13 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
+import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
+import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
 import { 
   Wallet, 
   Utensils, 
@@ -806,11 +808,18 @@ export default function OnePersonHouseholdSavingsDetailed() {
           </Card>
         </div>
 
+        {/* Author Section */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <ArticleAuthor 
+            expertId="expert-savings-02"
+            publishedDate="2025-12-25"
+            lastUpdated="2026-01-27"
+          />
+        </div>
+
         {/* Ad Container */}
         <div className="max-w-4xl mx-auto mt-10">
-          <div className="ad-container py-8">
-            <span>광고 영역 (AdSense)</span>
-          </div>
+          <AdSenseDisplay slot="8564710988" />
         </div>
       </main>
 

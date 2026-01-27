@@ -5,8 +5,10 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
+import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calculator } from "lucide-react";
+import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
 
 export default function PersonalRehabilitation2026() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -237,11 +239,18 @@ export default function PersonalRehabilitation2026() {
             </article>
           </div>
 
+          {/* Author Section */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <ArticleAuthor 
+              expertId="expert-debt-01"
+              publishedDate="2025-12-10"
+              lastUpdated="2026-01-27"
+            />
+          </div>
+
           {/* Ad Container */}
           <div className="max-w-4xl mx-auto mt-10">
-            <div className="ad-container py-8">
-              <span>광고 영역 (AdSense)</span>
-            </div>
+            <AdSenseDisplay slot="8564710988" />
           </div>
         </main>
 

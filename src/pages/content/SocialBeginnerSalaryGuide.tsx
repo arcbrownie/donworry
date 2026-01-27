@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { setCanonicalTag } from "@/lib/utils";
+import { setCanonicalTag, addStructuredData, createExpertArticleSchema, setSEOMetaTags } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
+import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Wallet, ShieldCheck, TrendingUp, Calculator, ArrowRight } from "lucide-react";
+import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
 
 // 50/30/20 예산 계산기 위젯
 function BudgetCalculator() {
@@ -143,23 +146,38 @@ export default function SocialBeginnerSalaryGuide() {
     setCanonicalTag(location.pathname);
 
     // SEO Meta Tags
-    document.title = "사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추 | 돈워리";
+    const title = "사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추 | 돈워리";
+    const description = '사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.';
+    const keywords = '사회초년생 월급 관리, 첫 월급, 예산 관리, 50/30/20 법칙, 월급 저축, 신용점수 관리, 비상금';
     
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', '사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다. 일상은 가볍게, 돈 걱정은 없게 - 돈워리.');
+    // SEO 메타 태그 설정 (OpenGraph, Twitter 포함)
+    setSEOMetaTags({
+      title,
+      description,
+      keywords,
+      image: 'https://donworry.kr/og-image.png',
+      url: typeof window !== "undefined" ? window.location.href : `https://donworry.kr${location.pathname}`,
+      type: 'article',
+      author: '김민지 (재테크 전문가)'
+    });
 
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', '사회초년생 월급 관리, 첫 월급, 예산 관리, 50/30/20 법칙, 월급 저축, 신용점수 관리, 비상금');
+    // 전문가 정보를 포함한 구조화된 데이터 추가
+    const expert = {
+      id: 'expert-savings-01',
+      name: '김민지',
+      title: '재테크 전문가',
+      url: 'https://donworry.kr/experts/expert-savings-01'
+    };
+    
+    const articleSchema = createExpertArticleSchema({
+      headline: title,
+      description: description,
+      datePublished: '2026-01-15',
+      dateModified: '2026-01-27',
+      expert: expert
+    });
+    
+    addStructuredData(articleSchema);
 
     // Scroll progress
     const handleScroll = () => {
@@ -210,9 +228,17 @@ export default function SocialBeginnerSalaryGuide() {
       {/* Main Content */}
       <main className="container py-12">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Table of Contents */}
-          <div className="lg:w-64 flex-shrink-0">
+          {/* Table of Contents & Share Buttons */}
+          <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
+            {/* Desktop: Sticky Share Buttons */}
+            <div className="hidden lg:block">
+              <BlogShareButtons
+                title="사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추"
+                description="사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다."
+                variant="sticky"
+              />
+            </div>
           </div>
 
           {/* Article Content */}
@@ -402,6 +428,23 @@ export default function SocialBeginnerSalaryGuide() {
           </article>
         </div>
 
+        {/* Author Section */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <ArticleAuthor 
+            expertId="expert-savings-01"
+            publishedDate="2026-01-15"
+            lastUpdated="2026-01-27"
+          />
+
+          {/* Share Buttons */}
+          <BlogShareButtons
+            title="사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추"
+            description="사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다."
+            variant="inline"
+            className="mt-8"
+          />
+        </div>
+
         {/* Newsletter Subscribe Section */}
         <div className="max-w-4xl mx-auto mt-16 mb-10">
           <Card className="p-8 bg-gradient-to-br from-[#1A237E]/5 via-[#4A148C]/5 to-[#1A237E]/5 border-2 border-[#1A237E]/20">
@@ -439,14 +482,21 @@ export default function SocialBeginnerSalaryGuide() {
 
         {/* Ad Container */}
         <div className="max-w-4xl mx-auto mt-10">
-          <div className="ad-container py-8">
-            <span>광고 영역 (AdSense)</span>
-          </div>
+          <AdSenseDisplay slot="8564710988" />
         </div>
       </main>
 
       <Footer />
       <MobileFloatingCTA />
+      
+      {/* Mobile: Bottom Fixed Share Buttons */}
+      <div className="lg:hidden">
+        <BlogShareButtons
+          title="사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추"
+          description="사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다."
+          variant="bottom-fixed"
+        />
+      </div>
     </div>
   );
 }

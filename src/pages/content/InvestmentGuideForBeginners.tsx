@@ -5,9 +5,11 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
+import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Shield, AlertTriangle, Target, PiggyBank, BarChart3, Calculator, ArrowRight, Wallet } from "lucide-react";
+import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
 
 export default function InvestmentGuideForBeginners() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -560,11 +562,18 @@ export default function InvestmentGuideForBeginners() {
           </article>
         </div>
 
+        {/* Author Section */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <ArticleAuthor 
+            expertId="expert-savings-03"
+            publishedDate="2026-01-10"
+            lastUpdated="2026-01-27"
+          />
+        </div>
+
         {/* Ad Container */}
         <div className="max-w-4xl mx-auto mt-10">
-          <div className="ad-container py-8">
-            <span>광고 영역 (AdSense)</span>
-          </div>
+          <AdSenseDisplay slot="8564710988" />
         </div>
       </main>
 

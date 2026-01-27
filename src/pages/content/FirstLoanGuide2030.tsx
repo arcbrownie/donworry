@@ -5,11 +5,14 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
+import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Calculator, ArrowRight, CreditCard, TrendingUp, Shield } from "lucide-react";
+import AdSenseInArticle from "@/components/adsense/AdSenseInArticle";
+import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
 
 // 대출 이자 계산기 컴포넌트
 function LoanCalculator() {
@@ -291,11 +294,7 @@ export default function FirstLoanGuide2030() {
             </section>
 
             {/* Ad Container - Middle */}
-            <div className="my-10">
-              <div className="ad-container py-8">
-                <span>광고 영역 (AdSense)</span>
-              </div>
-            </div>
+            <AdSenseInArticle slot="9686220962" />
 
             {/* Section 2 */}
             <section id="loan-products" className="mb-10 scroll-mt-20">
@@ -420,11 +419,18 @@ export default function FirstLoanGuide2030() {
           </article>
         </div>
 
+        {/* Author Section */}
+        <div className="max-w-4xl mx-auto mt-12">
+          <ArticleAuthor 
+            expertId="expert-finance-01"
+            publishedDate="2025-12-20"
+            lastUpdated="2026-01-27"
+          />
+        </div>
+
         {/* Ad Container - Bottom */}
         <div className="max-w-4xl mx-auto mt-10">
-          <div className="ad-container py-8">
-            <span>광고 영역 (AdSense)</span>
-          </div>
+          <AdSenseDisplay slot="8564710988" />
         </div>
       </main>
 

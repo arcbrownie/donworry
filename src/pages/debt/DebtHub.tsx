@@ -9,6 +9,7 @@ import CalculatorWidget from "@/components/ui/CalculatorWidget";
 import { Button } from "@/components/ui/button";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
+import AdSenseMultiplex from "@/components/adsense/AdSenseMultiplex";
 
 const debtFeatures = [
   { 
@@ -159,24 +160,24 @@ export default function DebtHub() {
       <MainNavigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-category-debt/10">
+      <section className="relative overflow-hidden bg-gradient-to-br from-category-debt via-category-debt/90 to-category-debt/80">
         <div className="container py-12 md:py-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-2xl bg-category-debt/20 flex items-center justify-center">
-              <Scale className="w-7 h-7 text-category-debt" strokeWidth={1.5} />
+            <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center backdrop-blur-sm">
+              <Scale className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground">채무조정</h1>
-              <p className="text-muted-foreground">다시 시작하는 경제적 자유, 맞춤형 해결책</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-white">채무조정</h1>
+              <p className="text-white/90">다시 시작하는 경제적 자유, 맞춤형 해결책</p>
             </div>
           </div>
-          <p className="text-muted-foreground max-w-2xl mb-6">
+          <p className="text-white/90 max-w-2xl mb-6">
             과도한 빚으로 힘드신가요? 개인회생, 파산, 신속채무조정 등 
             법적으로 보호받을 수 있는 다양한 해결책이 있습니다.
             돈워리가 새로운 시작을 응원합니다.
           </p>
           <Link to="/debt/test">
-            <Button className="btn-premium">
+            <Button className="bg-white text-category-debt hover:bg-white/90 shadow-xl px-6 py-6 rounded-xl font-semibold">
               <span className="relative z-10 flex items-center gap-2">
                 🩺 무료 자가진단 시작하기
                 <ArrowRight className="w-4 h-4" />
@@ -308,9 +309,7 @@ export default function DebtHub() {
 
       {/* Ad Container */}
       <section className="container py-6">
-        <div className="ad-container py-10">
-          <span>광고 영역 (AdSense)</span>
-        </div>
+        <AdSenseMultiplex slot="8118714776" />
       </section>
 
       <Footer />

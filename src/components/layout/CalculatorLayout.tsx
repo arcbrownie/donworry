@@ -4,6 +4,7 @@ import MainNavigation from "./MainNavigation";
 import Footer from "./Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import { setCanonicalTag } from "@/lib/utils";
+import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
 
 interface CalculatorLayoutProps {
   children: ReactNode;
@@ -43,9 +44,7 @@ export function CalculatorLayout({ children, title, description, seoContent }: C
 
         {/* Ad Container */}
         <div className="max-w-2xl mx-auto mt-10">
-          <div className="ad-container py-8">
-            <span>광고 영역 (AdSense)</span>
-          </div>
+          <AdSenseDisplay slot="8564710988" />
         </div>
 
         {/* SEO Content */}
