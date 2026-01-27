@@ -81,10 +81,10 @@ export default function PersonalRehabilitationBankruptcy() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
               개인회생 · 개인파산 완벽 가이드
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
               법원을 통한 채무 해결, 새로운 시작을 위한 선택
             </p>
           </div>
@@ -100,13 +100,13 @@ export default function PersonalRehabilitationBankruptcy() {
           </div>
 
           {/* Article Content */}
-          <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+          <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             {/* Introduction */}
             <section className="mb-10">
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 매일 아침 독촉 전화에 눈뜨는 기분, 누구보다 잘 알고 있습니다. 고물가와 고금리가 겹친 현실 속에서 "조금만 더 버티면 되겠지" 했던 희망이 절망으로 바뀌었을지도 모릅니다. 하지만 <strong className="text-primary">개인회생과 개인파산</strong>은 성실한 채무자들이 다시 일어설 수 있도록 도와주는 법적 제도입니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-base font-medium">
+              <p className="text-muted-foreground leading-relaxed text-lg font-medium">
                 오늘 돈워리에서는 개인회생과 개인파산 제도의 모든 것을 상세히 알려드립니다. 두 제도의 차이점부터 신청 자격, 절차, 비용까지, 법원을 통한 채무 해결 방법을 완벽하게 정리했습니다.
               </p>
             </section>
@@ -117,7 +117,7 @@ export default function PersonalRehabilitationBankruptcy() {
                 <FileText className="w-6 h-6 text-primary" />
                 개인회생과 개인파산이란?
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 <strong className="text-foreground">개인회생</strong>과 <strong className="text-foreground">개인파산</strong>은 모두 법원을 통한 채무 해결 제도이지만, 대상과 절차, 결과가 다릅니다. 자신의 상황에 맞는 제도를 선택하는 것이 중요합니다.
               </p>
               <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-r-lg my-6">
@@ -136,7 +136,7 @@ export default function PersonalRehabilitationBankruptcy() {
                 <Shield className="w-6 h-6 text-primary" />
                 개인회생 제도 상세 안내
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인회생은 정기적인 수입이 있는 개인 채무자가 법원의 감독 하에 3~5년간 채무의 일부를 변제하고, 나머지 채무를 면책받는 제도입니다.
               </p>
 
@@ -228,7 +228,7 @@ export default function PersonalRehabilitationBankruptcy() {
                 <Scale className="w-6 h-6 text-primary" />
                 개인파산 제도 상세 안내
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인파산은 채무자가 자신의 재산으로 모든 채무를 변제할 수 없는 상태에서 법원에 파산을 신청하여 채무를 면책받는 제도입니다.
               </p>
 
@@ -352,7 +352,7 @@ export default function PersonalRehabilitationBankruptcy() {
                 <Clock className="w-6 h-6 text-primary" />
                 신청 절차 및 진행 과정
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인회생과 개인파산 신청 절차는 유사합니다. 법원에 신청서를 제출하고 심리를 거쳐 결정을 받게 됩니다.
               </p>
 
@@ -427,7 +427,7 @@ export default function PersonalRehabilitationBankruptcy() {
                 <FileText className="w-6 h-6 text-primary" />
                 비용 및 준비사항
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인회생과 개인파산 신청 시 필요한 비용과 준비해야 할 서류를 정리했습니다.
               </p>
 
@@ -509,7 +509,7 @@ export default function PersonalRehabilitationBankruptcy() {
                   </li>
                 </ul>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 정확한 판단은 전문가 상담을 통해 받으시는 것이 좋습니다. 돈워리의 채무조정 자가진단을 통해 나에게 맞는 해결책을 찾아보세요.
               </p>
             </section>

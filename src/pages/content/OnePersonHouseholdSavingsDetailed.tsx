@@ -500,10 +500,10 @@ export default function OnePersonHouseholdSavingsDetailed() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
               1인 가구 생활비 절약 꿀팁 10가지: 매달 최소 15만원 확정 절감 가이드
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
               "숨만 쉬어도 나가는 돈?" 구체적인 실천 사례로 통장 로그아웃을 막아드립니다.
             </p>
           </div>
@@ -519,10 +519,10 @@ export default function OnePersonHouseholdSavingsDetailed() {
           </div>
 
           {/* Article Content */}
-          <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+          <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             {/* Introduction */}
             <section className="mb-10">
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 2026년 현재, 대한민국 1인 가구의 월평균 생활비는 주거비를 제외하고도 150만 원을 훌쩍 넘어섰습니다. 치솟는 외식 물가와 공공요금 인상은 혼자 사는 이들에게 더 가혹하게 다가옵니다. 돈워리에서 매달 최소 15만 원 이상의 실질적인 여유 자금을 확보할 수 있는 구체적 실천법 10가지를 전해드립니다.
               </p>
             </section>
@@ -533,7 +533,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <Utensils className="w-7 h-7 text-[#1A237E]" />
                 배달 앱 '중독'에서 '선택'으로: 월 12만 원 절약
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 주 4회 배달을 주 1회로 줄인다면? 배달비 4,000원 x 12회 = 48,000원, 과잉 지출 방어 120,000원. <strong className="text-[#1A237E]">총 16만 8천 원의 식비를 즉시 아낄 수 있습니다.</strong> 배달 앱 삭제가 어렵다면 '포장 할인'이나 밀키트 루틴을 만드세요.
               </p>
               <a 
@@ -555,7 +555,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <Smartphone className="w-7 h-7 text-[#4A148C]" />
                 통신비의 대반전, 알뜰폰 e-SIM 활용: 월 5만 원 절약
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 월 89,000원 요금제 대신 15,000원 알뜰폰 요금제로 갈아타면 <strong className="text-[#1A237E]">매달 74,000원이 남습니다.</strong> 1년이면 88만 원으로, 최신 스마트폰 한 대 값입니다.
               </p>
               <a 
@@ -577,7 +577,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <ShoppingCart className="w-7 h-7 text-[#1A237E]" />
                 편의점 1+1의 심리학과 '장보기 거점' 변경
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 편의점은 편리하지만 가장 비쌉니다. 생필품은 무조건 온라인 '정기 배송'이나 마트 마감 세일을 이용하세요. 편의점 방문 횟수만 절반으로 줄여도 월 3~5만 원이 굳습니다.
               </p>
               <a 
@@ -599,7 +599,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <Zap className="w-7 h-7 text-[#4A148C]" />
                 OTT 뱀파이어 구독 다이어트: 월 2만 원 절약
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 넷플릭스 등 OTT를 공유 플랫폼(링키드 등)으로 전환하여 1/4 가격으로 낮추세요. 안 보는 서비스는 즉시 해지하고 필요할 때만 가입하는 '철새형 구독'이 1인 가구에게 유리합니다.
               </p>
               <a 
@@ -621,7 +621,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <Bus className="w-7 h-7 text-[#1A237E]" />
                 교통비 환급 제도의 끝판왕, K-패스 활용
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 월 15회 이상 이용 시 지출액의 20~53%를 환급해주는 K-패스는 필수입니다. 서울 거주자라면 기후동행카드와 혜택을 반드시 비교하여 월 2~3만 원을 확보하세요.
               </p>
               <a 
@@ -643,7 +643,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <Zap className="w-7 h-7 text-[#4A148C]" />
                 '대기 전력'과 '에너지 캐쉬백' 잡기
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 셋톱박스는 TV보다 전기를 더 많이 먹습니다. 외출 시 셋톱박스 전원만 꺼도 월 커피 한 잔 값이 절약됩니다. '에너지 캐쉬백' 가입을 통해 절감량만큼 현금으로 돌려받으세요.
               </p>
               <a 
@@ -665,7 +665,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <Home className="w-7 h-7 text-[#1A237E]" />
                 당근마켓: '충동구매' 방지턱으로 활용하기
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 1인 가구는 공간이 곧 돈입니다. 'One-in One-out' 원칙을 세워 물건 하나를 사면 하나를 파세요. 중고 거래를 적극 활용하면 가구/가전 구입비를 70% 이상 절감할 수 있습니다.
               </p>
               <a 
@@ -687,7 +687,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <Receipt className="w-7 h-7 text-[#4A148C]" />
                 냉장고 지도와 '소분'의 기술
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 장을 본 후 재료를 즉시 1인분씩 소분하여 냉동 보관하세요. 냉장고 문에 '냉장고 지도'를 붙여 중복 구매를 차단하면 버려지는 식비를 월 2만 원 이상 아낄 수 있습니다.
               </p>
               <a 
@@ -709,7 +709,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <Map className="w-7 h-7 text-[#1A237E]" />
                 지역사랑상품권 7~10% 상시 할인 받기
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 거주 지역의 '지역사랑상품권'을 미리 구매하세요. 10만 원을 9만 원에 사는 셈이며, 연말정산 시 소득공제 혜택도 신용카드보다 월등히 높습니다.
               </p>
               <a 
@@ -731,7 +731,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
                 <ArrowDownToLine className="w-7 h-7 text-[#4A148C]" />
                 숨은 이자 도둑 잡기: 월 5만 원 이상 절감
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 고금리 이자는 절약의 최대 적입니다. 500만 원 카드론을 저금리 대환대출로 갈아타면 앉은 자리에서 월 3만 원 이상의 이자를 아낄 수 있습니다. 돈워리의 '이자 절감 계산기'를 활용해 보세요.
               </p>
               <a 
@@ -754,7 +754,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
 
             {/* Closing */}
             <section className="mb-10">
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 절약은 당신의 꿈에 자금을 재배치하는 과정입니다. <strong className="text-[#1A237E]">당신의 일상은 가볍게, 돈 걱정은 없게. 돈워리가 함께하겠습니다.</strong>
               </p>
             </section>
@@ -794,7 +794,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
               <Receipt className="w-5 h-5 text-muted-foreground" />
               법적 면책 조항
             </h3>
-            <div className="prose prose-sm text-muted-foreground max-w-none">
+            <div className="prose prose-base text-muted-foreground max-w-none">
               <p className="mb-2">
                 본 페이지에서 제공하는 절약 정보 및 계산 결과는 일반적인 참고용 정보이며, 실제 절감액은 개인의 생활 패턴, 지역, 사용량 등에 따라 달라질 수 있습니다.
               </p>

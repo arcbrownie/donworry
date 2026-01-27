@@ -44,10 +44,10 @@ export default function CalculatorWidget({
               {tag}
             </span>
           )}
-          <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm md:text-base">
+          <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-base md:text-lg">
             {title}
           </h3>
-          <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">
+          <p className="text-sm text-muted-foreground mt-0.5 line-clamp-1">
             {description}
           </p>
         </div>

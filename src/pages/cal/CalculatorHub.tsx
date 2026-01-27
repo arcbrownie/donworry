@@ -91,7 +91,7 @@ export default function CalculatorHub() {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <span className="text-2xl">🔢</span>
-          <h2 className="text-xl font-bold text-foreground">재테크 · 절약 계산기</h2>
+          <h2 className="text-2xl font-bold text-foreground">재테크 · 절약 계산기</h2>
         </div>
         {savingsCalculators.map((calc) => (
           <Link
@@ -109,10 +109,10 @@ export default function CalculatorHub() {
                     {calc.tag}
                   </span>
                 </div>
-                <h3 className="font-semibold text-foreground mb-1 group-hover:text-category-life transition-colors">
+                <h3 className="font-semibold text-foreground mb-1 group-hover:text-category-life transition-colors text-lg">
                   {calc.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   {calc.description}
                 </p>
               </div>
@@ -126,7 +126,7 @@ export default function CalculatorHub() {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <span className="text-2xl">🧮</span>
-          <h2 className="text-xl font-bold text-foreground">금융 · 대출 계산기</h2>
+          <h2 className="text-2xl font-bold text-foreground">금융 · 대출 계산기</h2>
         </div>
         {financeCalculators.map((calc) => (
           <Link
@@ -144,10 +144,10 @@ export default function CalculatorHub() {
                     {calc.tag}
                   </span>
                 </div>
-                <h3 className="font-semibold text-foreground mb-1 group-hover:text-category-finance transition-colors">
+                <h3 className="font-semibold text-foreground mb-1 group-hover:text-category-finance transition-colors text-lg">
                   {calc.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   {calc.description}
                 </p>
               </div>
@@ -160,10 +160,10 @@ export default function CalculatorHub() {
       {/* Info Card */}
       <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5">
         <span className="text-4xl mb-4 block">📊</span>
-        <h2 className="text-lg font-semibold text-foreground mb-2">
+        <h2 className="text-xl font-semibold text-foreground mb-2">
           2026년 최신 기준 적용
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground text-base">
           모든 계산기는 2026년 최저임금, 세율, 정책을 반영하고 있어요.<br />
           변경사항이 있으면 바로 업데이트됩니다.
         </p>

@@ -85,10 +85,10 @@ export default function PersonalRehabilitation2026() {
           <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
           <div className="container relative z-10">
             <div className="text-center text-white">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
                 2026년 달라지는 개인회생 제도 <span className="text-yellow-300">총정리</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
                 당신의 잘못이 아닙니다, 이제 다시 시작할 시간
               </p>
             </div>
@@ -104,16 +104,16 @@ export default function PersonalRehabilitation2026() {
             </div>
 
             {/* Article Content */}
-            <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+            <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             {/* Introduction */}
             <section id="intro" className="scroll-mt-20 mb-10">
               <h2 id="intro-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
                 매일 아침 독촉 전화에 눈뜨는 당신에게
               </h2>
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 어제보다 오늘 더 무거운 빚더미를 안고 잠에서 깨는 기분, 누구보다 잘 알고 있습니다. 고물가와 고금리가 겹친 2025년을 지나오며 "조금만 더 버티면 되겠지" 했던 희망이 절망으로 바뀌었을지도 모릅니다. 하지만 2026년 새해, 정부와 법원은 당신과 같은 성실한 채무자들이 다시 일어설 수 있도록 개인회생 문턱을 낮추고 혜택을 대폭 강화했습니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-base font-medium">
+              <p className="text-muted-foreground leading-relaxed text-lg font-medium">
                 "당신이 게을러서 빚이 생긴 게 아닙니다." 세상의 변화에 대응하느라 잠시 넘어졌을 뿐입니다. 이제 2026년 새롭게 바뀐 제도를 통해 어떻게 다시 평범한 일상으로 돌아갈 수 있을지 함께 살펴보겠습니다.
               </p>
             </section>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
@@ -7,7 +7,9 @@ import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { experts, getExpertsByCategory } from "@/lib/experts";
-import { PiggyBank, CreditCard, Scale } from "lucide-react";
+import { PiggyBank, CreditCard, Scale, ChevronLeft, ChevronRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 
 const categoryInfo = {
   savings: {
@@ -32,6 +34,8 @@ const categoryInfo = {
 
 export default function ExpertsHub() {
   const location = useLocation();
+  const [carouselApis, setCarouselApis] = useState<Record<string, CarouselApi>>({});
+  const [canScrollStates, setCanScrollStates] = useState<Record<string, { prev: boolean; next: boolean }>>({});
 
   useEffect(() => {
     setCanonicalTag(location.pathname);
@@ -46,6 +50,25 @@ export default function ExpertsHub() {
     }
     metaDescription.setAttribute('content', '돈워리의 금융 전문가들을 소개합니다. 재테크, 대출, 채무조정 분야의 전문가들이 신뢰할 수 있는 정보를 제공합니다.');
   }, [location.pathname]);
+
+  const handleCarouselApi = (category: string, api: CarouselApi | undefined) => {
+    if (api) {
+      setCarouselApis(prev => ({ ...prev, [category]: api }));
+      
+      const updateScrollState = () => {
+        setCanScrollStates(prev => ({
+          ...prev,
+          [category]: {
+            prev: api.canScrollPrev(),
+            next: api.canScrollNext(),
+          },
+        }));
+      };
+      
+      updateScrollState();
+      api.on("select", updateScrollState);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -80,58 +103,100 @@ export default function ExpertsHub() {
                   </h2>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6">
-                  {categoryExperts.map((expert) => {
-                    const initials = expert.name
-                      .split(' ')
-                      .map(n => n[0])
-                      .join('')
-                      .toUpperCase()
-                      .slice(0, 2);
+                {categoryExperts.length > 0 && (
+                  <div className="relative">
+                    <Carousel
+                      opts={{
+                        align: "start",
+                        slidesToScroll: 1,
+                      }}
+                      setApi={(api) => handleCarouselApi(category, api)}
+                      className="w-full"
+                    >
+                      <CarouselContent className="-ml-2 md:-ml-4">
+                        {categoryExperts.map((expert) => {
+                          const initials = expert.name
+                            .split(' ')
+                            .map(n => n[0])
+                            .join('')
+                            .toUpperCase()
+                            .slice(0, 2);
 
-                    return (
-                      <Link key={expert.id} to={`/experts/${expert.id}`}>
-                        <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
-                          <div className="flex flex-col items-center text-center">
-                            <Avatar className="w-20 h-20 mb-4 border-2 border-primary/30">
-                              {expert.profileImage ? (
-                                <img src={expert.profileImage} alt={expert.name} />
-                              ) : (
-                                <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-white font-bold text-xl">
-                                  {initials}
-                                </AvatarFallback>
-                              )}
-                            </Avatar>
+                          return (
+                            <CarouselItem key={expert.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 h-full">
+                              <Link to={`/experts/${expert.id}`} className="h-full block">
+                                <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
+                                  <div className="flex flex-col items-center text-center">
+                                    <Avatar className="w-20 h-20 mb-4 border-2 border-primary/30">
+                                      {expert.profileImage ? (
+                                        <img src={expert.profileImage} alt={expert.name} />
+                                      ) : (
+                                        <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-white font-bold text-xl">
+                                          {initials}
+                                        </AvatarFallback>
+                                      )}
+                                    </Avatar>
 
-                            <h3 className="text-lg font-bold text-foreground mb-1">
-                              {expert.name}
-                            </h3>
-                            <p className="text-sm text-muted-foreground font-medium mb-3">
-                              {expert.title}
-                            </p>
-                            <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                              {expert.bio}
-                            </p>
+                                    <h3 className="text-lg font-bold text-foreground mb-1">
+                                      {expert.name}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground font-medium mb-3">
+                                      {expert.title}
+                                    </p>
+                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                                      {expert.bio}
+                                    </p>
 
-                            {expert.specialty && (
-                              <div className="flex flex-wrap gap-1 justify-center">
-                                {expert.specialty.split(', ').map((item, index) => (
-                                  <Badge
-                                    key={index}
-                                    variant="secondary"
-                                    className="text-xs bg-primary/10 text-primary border-primary/20"
-                                  >
-                                    {item.trim()}
-                                  </Badge>
-                                ))}
-                              </div>
-                            )}
+                                    {expert.specialty && (
+                                      <div className="flex flex-wrap gap-1 justify-center">
+                                        {expert.specialty.split(', ').map((item, index) => (
+                                          <Badge
+                                            key={index}
+                                            variant="secondary"
+                                            className="text-xs bg-primary/10 text-primary border-primary/20"
+                                          >
+                                            {item.trim()}
+                                          </Badge>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                </Card>
+                              </Link>
+                            </CarouselItem>
+                          );
+                        })}
+                      </CarouselContent>
+                      {categoryExperts.length > 1 && (
+                        <>
+                          <CarouselPrevious className="hidden md:flex -left-12 border-primary text-primary hover:bg-primary/10 hover:text-primary" />
+                          <CarouselNext className="hidden md:flex -right-12 border-primary text-primary hover:bg-primary/10 hover:text-primary" />
+                          {/* Mobile Navigation */}
+                          <div className="flex justify-center gap-2 mt-4 md:hidden">
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              className="h-8 w-8 border-primary text-primary hover:bg-primary/10"
+                              disabled={!canScrollStates[category]?.prev}
+                              onClick={() => carouselApis[category]?.scrollPrev()}
+                            >
+                              <ChevronLeft className="h-4 w-4" />
+                            </Button>
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              className="h-8 w-8 border-primary text-primary hover:bg-primary/10"
+                              disabled={!canScrollStates[category]?.next}
+                              onClick={() => carouselApis[category]?.scrollNext()}
+                            >
+                              <ChevronRight className="h-4 w-4" />
+                            </Button>
                           </div>
-                        </Card>
-                      </Link>
-                    );
-                  })}
-                </div>
+                        </>
+                      )}
+                    </Carousel>
+                  </div>
+                )}
               </div>
             );
           })}

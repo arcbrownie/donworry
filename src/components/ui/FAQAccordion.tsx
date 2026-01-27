@@ -142,11 +142,11 @@ export default function FAQAccordion({
     <section className="container py-12">
       <div className={`therapy-card ${styles.bg} ${styles.border}`}>
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             ❓ {title}
           </h2>
           {description && (
-            <p className="text-sm text-muted-foreground mt-1">{description}</p>
+            <p className="text-base text-muted-foreground mt-1">{description}</p>
           )}
         </div>
 

@@ -67,10 +67,10 @@ export default function InvestmentGuideForBeginners() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
               사회초년생을 위한 투자 입문서
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
               "얼마를 벌까?"보다 "얼마까지 잃어도 되는가?"를 먼저 정하는 투자의 기초
             </p>
           </div>
@@ -95,10 +95,10 @@ export default function InvestmentGuideForBeginners() {
           </div>
 
           {/* Article Content */}
-          <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+          <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             {/* Introduction */}
             <section className="mb-10">
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 사회초년생이 투자를 시작할 때는 "얼마를 벌까?"보다 "얼마까지 잃어도 되는가?"를 먼저 정하는 것이 핵심입니다. 투자위험도에 따라 단계를 나누고, 월급에서 얼마를 어떻게 나누면 좋을지 사례와 함께 정리해 보겠습니다.
               </p>
               <p className="text-muted-foreground leading-relaxed text-base font-medium">
@@ -112,7 +112,7 @@ export default function InvestmentGuideForBeginners() {
                 <Shield className="w-7 h-7 text-[#1A237E]" />
                 시작 전 체크리스트
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 사회초년생에게 투자는 '속도'보다 기초가 중요합니다. 투자를 시작하기 전에 반드시 확인해야 할 세 가지가 있어요.
               </p>
 
@@ -162,7 +162,7 @@ export default function InvestmentGuideForBeginners() {
                 <BarChart3 className="w-7 h-7 text-[#4A148C]" />
                 위험도별 대표 상품 이해하기
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 투자 상품은 위험도에 따라 크게 5단계로 나눌 수 있어요. 각 단계의 특징을 이해하면 본인에게 맞는 투자 전략을 세울 수 있습니다.
               </p>
 
@@ -277,7 +277,7 @@ export default function InvestmentGuideForBeginners() {
                 <Target className="w-7 h-7 text-[#1A237E]" />
                 사회초년생 자산배분 기본 틀
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 여러 전문가·재테크 글에서 공통적으로 말하는 것은 <strong className="text-foreground">"저축과 투자 비율을 나눈 뒤, 투자 안에서도 위험도별로 나누라"</strong>는 것입니다.
               </p>
 
@@ -357,10 +357,10 @@ export default function InvestmentGuideForBeginners() {
               <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">
                 1) 예금·적금·CMA 활용 사례
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 한 재테크 입문 가이드는 <strong className="text-foreground">"최소 3개월치 생활비 비상금을 CMA나 자유입출금 계좌에"</strong> 두라고 제안합니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 예적금은 금리가 낮아도 원금 보장이 확실하고, 예금자보호법으로 1인당 5천만 원까지 보호됩니다.
               </p>
               <div className="bg-gradient-to-r from-[#1A237E]/10 to-[#4A148C]/10 border-l-4 border-[#1A237E] p-6 rounded-r-lg my-6">
@@ -376,13 +376,13 @@ export default function InvestmentGuideForBeginners() {
               <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">
                 2) 채권·채권 ETF·단기채 신탁
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 고금리에서 금리가 내려가는 구간에는 채권·채권ETF가 주식보다 변동성이 작으면서도 매력적인 수단으로 소개됩니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 국고채·우량 회사채 위주의 채권 ETF는 개별 채권보다 분산이 잘 되어 있어 위험이 상대적으로 낮습니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 시중은행들의 단기채 신탁(파킹형 상품)은 예·적금보다 약간 높은 이자를 주면서, 필요할 때 자유롭게 인출이 가능합니다.
               </p>
               <div className="bg-gradient-to-r from-[#4A148C]/10 to-[#1A237E]/10 border-l-4 border-[#4A148C] p-6 rounded-r-lg my-6">
@@ -394,7 +394,7 @@ export default function InvestmentGuideForBeginners() {
               <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">
                 3) 지수형 ETF 중심의 장기 투자
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 ETF 입문 가이드는 사회초년생에게 <strong className="text-foreground">"국내·해외 지수형 ETF를 첫 투자"</strong>로 추천합니다.
               </p>
               <ul className="space-y-3 mb-4">
@@ -437,7 +437,7 @@ export default function InvestmentGuideForBeginners() {
                 <Target className="w-7 h-7 text-[#1A237E]" />
                 투자 마인드와 실수 방지 팁
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 여러 입문 가이드에서 강조하는 사회초년생 필수 원칙은 다음과 같습니다.
               </p>
 
@@ -485,7 +485,7 @@ export default function InvestmentGuideForBeginners() {
                 <Calculator className="w-7 h-7 text-[#4A148C]" />
                 한 줄로 정리하는 입문서 구조
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 사회초년생 투자 입문을 단계별로 정리하면 다음과 같아요.
               </p>
 
@@ -529,7 +529,7 @@ export default function InvestmentGuideForBeginners() {
                 </ol>
               </div>
 
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 원한다면, 월 소득·지출 규모를 알려주면 여기에 맞춰 <strong className="text-foreground">"나만의 위험도별 포트폴리오 예시"</strong>도 만들어 줄 수 있습니다.
               </p>
             </section>

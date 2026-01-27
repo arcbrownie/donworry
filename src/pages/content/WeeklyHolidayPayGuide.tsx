@@ -82,10 +82,10 @@ export default function WeeklyHolidayPayGuide() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
               2026년 최신 알바생 주휴수당 완벽 가이드
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
               계산법부터 조건까지 한 번에 정리
             </p>
           </div>
@@ -101,13 +101,13 @@ export default function WeeklyHolidayPayGuide() {
           </div>
 
           {/* Article Content */}
-          <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+          <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
           {/* Introduction */}
           <section className="mb-10">
-            <p className="text-muted-foreground leading-relaxed text-base mb-4">
+            <p className="text-muted-foreground leading-relaxed text-lg mb-4">
               어제도 늦은 시간까지 카페에서, 편의점에서 땀 흘리며 일하신 여러분, 정말 고생 많으셨습니다. 월급날 통장에 찍힌 숫자를 보며 '내가 일한 만큼 제대로 들어온 게 맞나?' 하는 의구심이 든 적 없으신가요? 특히 많은 분이 헷갈려 하시는 주휴수당은 정당한 노동의 대가임에도 불구하고, 계산법이 복잡하다는 이유로 놓치기 쉽습니다.
             </p>
-            <p className="text-muted-foreground leading-relaxed text-base font-medium">
+            <p className="text-muted-foreground leading-relaxed text-lg font-medium">
               오늘 <strong className="text-primary">돈워리(donworry.kr)</strong>에서는 2026년 인상된 최저임금을 바탕으로, 알바생이라면 반드시 알아야 할 주휴수당의 모든 것을 따뜻하고 전문적으로 풀어드립니다. 돈 걱정 없는 일상을 위한 첫걸음, 지금 시작합니다.
             </p>
           </section>

@@ -206,10 +206,10 @@ export default function FirstLoanGuide2030() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
               사회초년생을 위한 대출 가이드
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
               신용점수 관리부터 저금리 상품 찾는 법까지
             </p>
           </div>
@@ -233,7 +233,7 @@ export default function FirstLoanGuide2030() {
           </div>
 
           {/* Article Content */}
-          <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+          <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             {/* Introduction */}
             <section className="mb-10">
               <div className="bg-gradient-to-r from-indigo-50 to-blue-50 border-l-4 border-indigo-600 p-6 rounded-r-lg mb-6">
@@ -241,7 +241,7 @@ export default function FirstLoanGuide2030() {
                   "내 집 마련, 학자금, 혹은 예상치 못한 생활비까지... 첫 대출 앞에서 막막하신가요?"
                 </p>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 사회에 첫발을 내디딘 사회초년생에게 '대출'이라는 단어는 막연한 두려움으로 다가오곤 합니다. "이자가 너무 비싸면 어쩌지?", "신용점수가 떨어지면 어떡하지?"라는 걱정은 당연합니다. 하지만 대출은 단순히 '빚'이 아니라, 적절히 활용하면 인생의 기회를 열어주는 '금융 도구'가 될 수 있습니다.
               </p>
               <p className="text-muted-foreground leading-relaxed text-base font-medium">
@@ -254,14 +254,14 @@ export default function FirstLoanGuide2030() {
               <h2 id="credit-score" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
                 대출의 시작과 끝, '신용점수' 관리의 기술
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출을 받을 때 은행이 가장 먼저 보는 것은 여러분의 '상환 능력'이며, 이를 수치화한 것이 바로 <strong className="text-foreground">신용점수</strong>입니다. 신용점수가 높을수록 대출 한도는 늘어나고 금리는 낮아집니다.
               </p>
 
               <h3 className="text-xl font-semibold text-slate-900 mt-6 mb-3">
                 신용점수와 금리의 관계
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 은행은 리스크를 관리합니다. 신용점수가 높은 사람은 빌린 돈을 제때 갚을 확률이 높다고 판단하여 낮은 이자(우대금리)를 적용합니다. 반면, 점수가 낮으면 위험 수당(가산금리)이 붙어 매달 내야 하는 이자 부담이 커집니다.
               </p>
 
@@ -301,7 +301,7 @@ export default function FirstLoanGuide2030() {
               <h2 id="loan-products-heading" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
                 나에게 맞는 대출 상품 찾기: 정부지원 vs 시중은행
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 첫 대출일수록 <strong className="text-foreground">정부 지원 서민금융 상품</strong>을 먼저 살펴보는 것이 유리합니다. 시중은행보다 조건이 완만하고 금리가 저렴하기 때문입니다.
               </p>
 
@@ -344,7 +344,7 @@ export default function FirstLoanGuide2030() {
               <h2 id="checklist-heading" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
                 대출 전 반드시 체크해야 할 3요소 (DSR, 상환 방식)
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 실행 버튼을 누르기 전, 다음 세 가지는 반드시 확인해야 합니다.
               </p>
               <ul className="space-y-4 mb-6">
@@ -389,7 +389,7 @@ export default function FirstLoanGuide2030() {
               <h2 id="solution-heading" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
                 돈 걱정 없는 내일을 위한 솔루션
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이미 여러 곳에서 대출을 받아 관리가 어렵거나, 고금리 채무로 인해 고민 중이신가요? 혼자 고민하지 마세요. <strong className="text-foreground">개인회생</strong>이나 <strong className="text-foreground">채무 통합</strong> 같은 법적 제도나 금융 솔루션이 여러분의 재기를 도울 수 있습니다. 신용점수가 낮아 고민이라면 지금 바로 <strong className="text-primary">신용점수 관리 서비스</strong>를 시작하고, 나에게 가장 유리한 대출 금리를 비교해 보세요.
               </p>
             </section>

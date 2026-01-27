@@ -103,7 +103,7 @@ export default function DebtGuide() {
               <span className="text-2xl">{guide.emoji}</span>
               {guide.title}
             </h2>
-            <div className="prose prose-sm text-muted-foreground leading-relaxed">
+            <div className="prose prose-base text-muted-foreground leading-relaxed">
               {guide.title === "개인회생 · 개인파산 제도" ? (
                 <>
                   <p><strong>개인회생:</strong> 정기적인 수입이 있는 채무자가 3~5년간 일정 금액을 상환하고 나머지 채무를 면책받는 제도입니다. 최대 90%까지 탕감 가능하며, 2026년부터 디지털 사법 시스템 도입으로 처리 속도가 빨라졌습니다.</p>

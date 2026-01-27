@@ -81,10 +81,10 @@ export default function CreditRecoveryCommittee() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
               신용회복위원회 채무조정 완벽 가이드
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
               신청 절차부터 자격 조건까지 한 번에 정리
             </p>
           </div>
@@ -108,13 +108,13 @@ export default function CreditRecoveryCommittee() {
           </div>
 
           {/* Article Content */}
-          <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+          <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             {/* Introduction */}
             <section className="mb-10">
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 여러 은행과 카드사에 흩어진 채무로 인해 매달 이자를 갚기만 하느라 원금이 줄어들지 않는 상황이신가요? 법원을 통한 개인회생이 부담스럽거나 신청 자격이 안 되는 분들을 위해, <strong className="text-primary">신용회복위원회</strong>에서 제공하는 채무조정 제도가 있습니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-base font-medium">
+              <p className="text-muted-foreground leading-relaxed text-lg font-medium">
                 오늘 돈워리에서는 신용회복위원회 채무조정 제도의 모든 것을 상세히 알려드립니다. 신청 자격부터 절차, 비용, 개인회생과의 차이점까지, 채무 문제 해결을 위한 실질적인 정보를 전해드립니다.
               </p>
             </section>
@@ -125,7 +125,7 @@ export default function CreditRecoveryCommittee() {
                 <Building2 className="w-6 h-6 text-primary" />
                 신용회복위원회란 무엇인가?
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 <strong className="text-foreground">신용회복위원회</strong>는 1997년 외환위기 이후 개인 채무자들의 경제적 재기를 돕기 위해 설립된 공공기관입니다. 금융감독원 산하 기관으로, 개인 채무자들의 채무조정을 중재하고 지원하는 역할을 합니다.
               </p>
               <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-r-lg my-6">
@@ -164,7 +164,7 @@ export default function CreditRecoveryCommittee() {
                 <Users className="w-6 h-6 text-primary" />
                 신청 자격 및 조건
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용회복위원회 채무조정을 신청하기 위해서는 다음 조건을 충족해야 합니다.
               </p>
 
@@ -221,7 +221,7 @@ export default function CreditRecoveryCommittee() {
                 <Clock className="w-6 h-6 text-primary" />
                 신청 절차 및 진행 과정
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용회복위원회 채무조정 신청 절차는 다음과 같습니다. 법원을 통한 개인회생보다 훨씬 간단하고 신속합니다.
               </p>
 
@@ -464,10 +464,10 @@ export default function CreditRecoveryCommittee() {
               <h2 id="conclusion-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
                 마치며: 나에게 맞는 채무 해결책 선택하기
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용회복위원회 채무조정은 법원을 통한 개인회생보다 간단하고 빠르지만, 원금 탕감 측면에서는 제한적입니다. 자신의 상황을 정확히 파악하고, 전문가 상담을 통해 최적의 해결책을 선택하는 것이 중요합니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 돈워리는 여러분의 채무 문제 해결을 위한 첫걸음을 응원합니다. <strong className="text-primary">지금 바로 채무조정 자가진단을 통해 나에게 맞는 해결책을 찾아보세요!</strong>
               </p>
             </section>

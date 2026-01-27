@@ -118,7 +118,7 @@ export default function TableOfContents({ headings, className = "" }: TableOfCon
                 e.preventDefault();
                 scrollToHeading(item.id);
               }}
-              className={`block text-sm transition-colors rounded-md px-2 py-1.5 pl-2 ${
+              className={`block text-base transition-colors rounded-md px-2 py-1.5 pl-2 ${
                 activeId === item.id
                   ? "text-primary font-semibold bg-primary/10"
                   : "text-muted-foreground hover:text-primary hover:bg-muted"
@@ -138,7 +138,7 @@ export default function TableOfContents({ headings, className = "" }: TableOfCon
       <aside className="hidden lg:block">
         <div className="sticky top-[100px]">
           <div className="bg-card border border-border rounded-xl p-4 shadow-soft">
-            <h3 className="font-semibold text-foreground mb-3 text-base">목차</h3>
+            <h3 className="font-semibold text-foreground mb-3 text-lg">목차</h3>
             <TocContent />
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function TableOfContents({ headings, className = "" }: TableOfCon
         <Collapsible open={mobileOpen} onOpenChange={setMobileOpen}>
           <CollapsibleTrigger className="w-full">
             <div className="bg-card border border-border rounded-xl p-4 shadow-soft flex items-center justify-between">
-              <h3 className="font-semibold text-foreground text-base">목차</h3>
+              <h3 className="font-semibold text-foreground text-lg">목차</h3>
               {mobileOpen ? (
                 <ChevronUp className="w-5 h-5 text-muted-foreground" />
               ) : (

@@ -157,17 +157,17 @@ export default function FinanceHub() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-category-finance via-category-finance/90 to-category-finance/80">
-        <div className="container py-12 md:py-16">
+        <div className="container py-16 md:py-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center backdrop-blur-sm">
               <CreditCard className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">금융 · 대출</h1>
-              <p className="text-white/90">나에게 딱 맞는 금리와 상품 찾기</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-white">금융 · 대출</h1>
+              <p className="text-white/90 text-lg">나에게 딱 맞는 금리와 상품 찾기</p>
             </div>
           </div>
-          <p className="text-white/90 max-w-2xl">
+          <p className="text-white/90 max-w-2xl text-lg">
             프리랜서 세금 환급, 청년 세금감면 등 2030 세대를 위한 실용적인 금융 · 대출 정보를 제공합니다.
             나에게 딱 맞는 금리와 상품을 찾아보세요.
           </p>
@@ -175,13 +175,13 @@ export default function FinanceHub() {
       </section>
 
       {/* Calculators */}
-      <section className="container py-12">
+      <section className="container py-12 mt-8">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
             <span>🧮</span>
             <span>금융 · 대출 계산기</span>
           </h2>
-          <p className="text-sm text-muted-foreground mt-1">세금과 금리를 쉽게 계산하세요</p>
+          <p className="text-base text-muted-foreground mt-1">세금과 금리를 쉽게 계산하세요</p>
         </div>
         <div className="grid gap-3 md:grid-cols-2">
           {calculators.map((calc) => (
@@ -193,11 +193,11 @@ export default function FinanceHub() {
       {/* Blog */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
             <span>📚</span>
             <span>금융 · 대출 가이드</span>
           </h2>
-          <p className="text-sm text-muted-foreground mt-1">알아두면 돈 되는 금융 · 대출 지식</p>
+          <p className="text-base text-muted-foreground mt-1">알아두면 돈 되는 금융 · 대출 지식</p>
         </div>
         <div className="relative">
           <Carousel

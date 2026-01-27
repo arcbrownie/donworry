@@ -34,7 +34,7 @@ export function ResultCard({
       variantStyles[variant],
       className
     )}>
-      <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
+      <h3 className="text-xl font-semibold text-foreground mb-4">{title}</h3>
       {children}
       {showShare && (
         <ShareButtons 

@@ -165,17 +165,17 @@ export default function SavingsHub() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-category-life via-category-life/90 to-category-life/80">
-        <div className="container py-12 md:py-16">
+        <div className="container py-16 md:py-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center backdrop-blur-sm">
               <PiggyBank className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">재테크 · 절약</h1>
-              <p className="text-white/90">티끌 모아 태산, 똑똑한 소비 습관</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-white">재테크 · 절약</h1>
+              <p className="text-white/90 text-lg">티끌 모아 태산, 똑똑한 소비 습관</p>
             </div>
           </div>
-          <p className="text-white/90 max-w-2xl">
+          <p className="text-white/90 max-w-2xl text-lg">
             알바 실수령액, 군인 적금 등 2030 세대를 위한 재테크 · 절약 정보를 제공합니다.
             티끌 모아 태산, 똑똑한 소비 습관을 만들어보세요.
           </p>
@@ -183,13 +183,13 @@ export default function SavingsHub() {
       </section>
 
       {/* Calculators */}
-      <section className="container py-12">
+      <section className="container py-12 mt-8">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
             <span>🔢</span>
             <span>재테크 · 절약 계산기</span>
           </h2>
-          <p className="text-sm text-muted-foreground mt-1">재테크 · 절약에 필요한 필수 계산기</p>
+          <p className="text-base text-muted-foreground mt-1">재테크 · 절약에 필요한 필수 계산기</p>
         </div>
         <div className="grid gap-3 md:grid-cols-2">
           {calculators.map((calc) => (
@@ -201,11 +201,11 @@ export default function SavingsHub() {
       {/* Blog */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
             <span>📚</span>
             <span>재테크 · 절약 가이드</span>
           </h2>
-          <p className="text-sm text-muted-foreground mt-1">일상에서 바로 적용할 수 있는 재테크 · 절약 팁</p>
+          <p className="text-base text-muted-foreground mt-1">일상에서 바로 적용할 수 있는 재테크 · 절약 팁</p>
         </div>
         <div className="relative">
           <Carousel

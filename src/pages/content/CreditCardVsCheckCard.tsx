@@ -76,10 +76,10 @@ export default function CreditCardVsCheckCard() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
               신용카드 vs 체크카드: 사회초년생을 위한 완벽 가이드
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
               결제 수단으로 보이지만, 혜택과 신용관리, 연말정산까지 큰 차이가 있어요
             </p>
           </div>
@@ -104,10 +104,10 @@ export default function CreditCardVsCheckCard() {
           </div>
 
           {/* Article Content */}
-          <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+          <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             {/* Introduction */}
             <section className="mb-10">
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용카드와 체크카드는 결제 수단으로 보이지만, 혜택과 신용관리, 연말정산까지 큰 차이가 있어요. 사회초년생이라면 어떤 카드를 써야 할지, 소득공제는 어떻게 챙기고, 위험성은 어떻게 피하는지 정리해 드립니다.
               </p>
               <p className="text-muted-foreground leading-relaxed text-base font-medium">
@@ -121,10 +121,10 @@ export default function CreditCardVsCheckCard() {
                 <CreditCard className="w-7 h-7 text-[#1A237E]" />
                 신용카드 vs 체크카드 기본 차이
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 <strong className="text-foreground">신용카드</strong>는 이번 달 카드로 쓰고 다음 달에 한 번에 결제금을 내는 방식이에요. 즉, '신용'을 쓰는 후불식 카드입니다. 반면 <strong className="text-foreground">체크카드</strong>는 카드로 결제하는 순간 통장에서 바로 돈이 빠져나가는 선불식 카드예요.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 결제 방식 외에도 연회비, 신용등급 영향, 소득공제율, 혜택의 깊이 등 여러 면에서 다릅니다. 이 차이점을 제대로 이해해야 내게 맞는 카드를 선택할 수 있어요.
               </p>
             </section>
@@ -135,7 +135,7 @@ export default function CreditCardVsCheckCard() {
                 <TrendingUp className="w-7 h-7 text-[#4A148C]" />
                 혜택 비교 (2026년 기준)
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용카드와 체크카드의 혜택을 구체적으로 비교해보면, 선택의 기준이 명확해집니다.
               </p>
 
@@ -179,10 +179,10 @@ export default function CreditCardVsCheckCard() {
                 </table>
               </div>
 
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용카드는 생활비 관련 혜택(통신비, 월세, OTT, 편의점, 교통·배달앱 할인)이 풍부하고, 연간 수십만 원 이상 절약할 수 있어요. 최근에는 통신비·월세·공과금에도 5~20% 할인되는 카드가 많아서 고정비 절감에 유리합니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 체크카드는 혜택 폭이 좁지만, 대부분 무실적·무연회비 제품이 많고, 소비 자체가 통장에서 바로 빠져나가기 때문에 과소비가 덜 하죠.
               </p>
             </section>
@@ -193,7 +193,7 @@ export default function CreditCardVsCheckCard() {
                 <Wallet className="w-7 h-7 text-[#1A237E]" />
                 사회초년생에게 적합한 카드 선택법
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 사회초년생은 월급이 크지 않고, 신용이 짧거나 대출이 필요할 수도 있습니다. 이런 상황에서 카드를 고르는 핵심은 다음과 같아요.
               </p>
 
@@ -251,7 +251,7 @@ export default function CreditCardVsCheckCard() {
                 </li>
               </ol>
 
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 실제로는 연봉 3천~4천만 원 사이 사회초년생이라면, 월 20~30만 원 정도만 써도 실적이 채워지고, 연간 10~20만 원 이상 실질 할인을 받을 수 있는 카드가 대부분입니다.
               </p>
             </section>
@@ -315,13 +315,13 @@ export default function CreditCardVsCheckCard() {
               <h3 className="text-xl font-semibold text-foreground mt-6 mb-3">
                 (3) 체크카드의 장점과 한계
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 <strong className="text-foreground">과소비 제어:</strong> 통장 잔액이 없으면 쓰지 못하므로, 소비가 자동으로 제한됩니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 <strong className="text-foreground">신용등급에는 영향이 작음:</strong> 체크카드 사용도 신용평가에 반영되지만, 신용카드보다는 가산점 효과가 작고, 신용활동 이력으로 보기 어렵습니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 즉, 체크카드만 쓰면 신용관리 측면에서는 '안전'하지만, '신용을 쌓는 데는 약점'이에요.
               </p>
             </section>
@@ -332,7 +332,7 @@ export default function CreditCardVsCheckCard() {
                 <Calculator className="w-7 h-7 text-[#1A237E]" />
                 연말정산과 소득공제 전략 (2026년 기준)
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 2026년 연말정산(2025년 1~12월 사용액 기준)에서 신용카드·체크카드는 소득공제를 받는 핵심 항목이에요.
               </p>
 
@@ -373,10 +373,10 @@ export default function CreditCardVsCheckCard() {
                 </table>
               </div>
 
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 <strong className="text-foreground">공제 조건:</strong> 총급여의 25%를 넘는 사용액부터 적용됩니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 예: 연봉 4천만 원이면 연간 1천만 원까진 공제율이 높아도 실제 소득공제는 받지 못함.
               </p>
 
@@ -438,7 +438,7 @@ export default function CreditCardVsCheckCard() {
                 <Wallet className="w-7 h-7 text-[#4A148C]" />
                 실전 조언: 사회초년생에게 맞는 전략
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용카드 1개 + 체크카드 1개 조합이 현실적이에요. 월 30~50만 원 정도 지출이 예상된다면, 혜택 좋은 신용카드 1개로 대부분 쓰고, 공제 구간에선 체크카드를 활성화하는 게 좋습니다.
               </p>
 
@@ -460,7 +460,7 @@ export default function CreditCardVsCheckCard() {
                 </ul>
               </div>
 
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 어떤 카드를 쓰는지에 따라 연간 수십만 원 이상의 실질적 이득과 절세 혜택이 나눌 수 있으니, 지금 바로 본인의 소비 패턴과 월급 수준에 맞는 1~2개 카드를 정리해 보는 게 좋습니다.
               </p>
             </section>

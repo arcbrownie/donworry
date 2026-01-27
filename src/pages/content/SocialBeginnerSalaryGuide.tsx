@@ -215,10 +215,10 @@ export default function SocialBeginnerSalaryGuide() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
               사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
               월급날만 기다리지 말고, 똑똑하게 관리하는 방법을 알려드립니다.
             </p>
           </div>
@@ -242,10 +242,10 @@ export default function SocialBeginnerSalaryGuide() {
           </div>
 
           {/* Article Content */}
-          <article className="flex-1 max-w-4xl prose prose-lg prose-slate max-w-none">
+          <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             {/* Introduction */}
             <section className="mb-10">
-              <p className="text-muted-foreground leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 첫 출근의 설렘이 채 가시기도 전에 통장에 찍힌 '첫 월급'. 부모님 선물도 사드리고 싶고, 그동안 고생한 나를 위해 근사한 곳에서 식사도 하고 싶으실 겁니다. 하지만 기억하세요. 첫 월급은 단순한 보상이 아니라, 앞으로 수십 년간 이어질 당신의 경제적 독립을 결정짓는 가장 중요한 '씨앗'입니다.
               </p>
               <p className="text-muted-foreground leading-relaxed text-base font-medium">
@@ -259,10 +259,10 @@ export default function SocialBeginnerSalaryGuide() {
                 <Wallet className="w-7 h-7 text-[#1A237E]" />
                 첫 월급의 유혹과 현실: "로그아웃"을 막아라
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 "월급이 통장을 스쳐 지나간다"는 말은 농담이 아닙니다. 카드값, 통신비, 월세, 보험료... 하나둘 빠져나가다 보면 어느새 잔고는 바닥을 보이죠. 사회초년생들이 가장 많이 범하는 실수는 '일단 쓰고 남은 돈을 저축하는 것'입니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 하지만 자산 관리의 제1원칙은 <strong className="text-[#1A237E]">'먼저 저축하고 남은 돈을 쓰는 것'</strong>입니다. 첫 월급부터 강제 저축 습관을 들이지 않으면, 연봉이 올라도 소비 수준이 함께 올라가며 자산은 제자리걸음을 반복하게 됩니다.
               </p>
             </section>
@@ -273,7 +273,7 @@ export default function SocialBeginnerSalaryGuide() {
                 <TrendingUp className="w-7 h-7 text-[#4A148C]" />
                 50/30/20 법칙: 황금 비율로 나누는 예산 관리
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 전문가들이 추천하는 사회초년생의 가장 이상적인 월급 배분 공식은 '50/30/20' 법칙입니다.
               </p>
               <ul className="space-y-3 mb-6">
@@ -310,10 +310,10 @@ export default function SocialBeginnerSalaryGuide() {
                 <ShieldCheck className="w-7 h-7 text-[#1A237E]" />
                 비상금 파이프라인 구축: 3개월의 방어막
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 삶은 예상치 못한 변수의 연속입니다. 갑작스러운 경조사, 병원비, 혹은 이직 기간의 공백 등 돈이 급히 필요한 순간이 옵니다. 이때 비상금이 없다면 결국 고금리 카드론이나 서비스 대출에 손을 대게 되고, 이는 곧 채무의 늪으로 빠지는 지름길이 됩니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 월급의 10% 정도를 따로 떼어 <strong className="text-[#1A237E]">월급의 3~6배 정도 되는 금액을 '비상금 통장(CMA 등)'에 먼저 채우세요.</strong> 이 방어막이 있어야 투자를 할 때도, 일상을 살 때도 심리적 안정을 얻을 수 있습니다.
               </p>
             </section>
@@ -323,7 +323,7 @@ export default function SocialBeginnerSalaryGuide() {
               <h2 id="credit-score" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
                 신용점수 관리: 미래의 나에게 주는 선물
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 지금 당장은 대출받을 일이 없다고 신용점수를 방치해서는 안 됩니다. 나중에 전세자금대출이나 주택담보대출을 받을 때, 사회초년생 시절의 신용 관리 습관이 수천만 원의 이자 차이를 만듭니다.
               </p>
               <ul className="space-y-3 mb-4">
@@ -356,10 +356,10 @@ export default function SocialBeginnerSalaryGuide() {
               <h2 id="debt-management" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
                 채무가 있다면? '눈덩이'가 되기 전에 해결하라
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 학자금 대출이나 소액 대출이 있는 상태에서 사회생활을 시작하는 분들이 많습니다. "천천히 갚으면 되겠지"라는 생각은 위험합니다. 특히 2금융권이나 고금리 대출이 있다면, 저축보다 '대출 상환'이 먼저입니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 만약 여러 곳에 흩어진 대출로 관리가 어렵거나 이자 부담이 크다면, 정부지원 대환대출이나 채무조정 제도를 적극적으로 알아봐야 합니다. 돈워리의 '대출 이자 계산기'를 활용해 내가 내는 이자가 적정한지 지금 바로 점검해 보세요.
               </p>
             </section>
@@ -392,10 +392,10 @@ export default function SocialBeginnerSalaryGuide() {
               <h2 id="conclusion" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
                 마치며: 당신의 일상은 가볍게, 돈 걱정은 없게
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 첫 월급은 경제적 자유라는 긴 여정의 첫걸음입니다. 지금 당장 큰돈을 벌 수는 없지만, 지금 만드는 '돈을 대하는 습관'은 10년 뒤 당신의 자산 가치를 결정합니다.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 돈워리는 당신의 소중한 첫 월급이 헛되이 사라지지 않도록, 그리고 혹시 모를 금융 고민이 생겼을 때 가장 먼저 기댈 수 있는 든든한 파트너가 되어 드리겠습니다. <strong className="text-[#1A237E]">지금 바로 돈워리의 '월급 관리 시뮬레이터'를 통해 나만의 황금 비율을 찾아보세요!</strong>
               </p>
             </section>

@@ -161,17 +161,17 @@ export default function DebtHub() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-category-debt via-category-debt/90 to-category-debt/80">
-        <div className="container py-12 md:py-16">
+        <div className="container py-16 md:py-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center backdrop-blur-sm">
               <Scale className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">채무조정</h1>
-              <p className="text-white/90">다시 시작하는 경제적 자유, 맞춤형 해결책</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-white">채무조정</h1>
+              <p className="text-white/90 text-lg">다시 시작하는 경제적 자유, 맞춤형 해결책</p>
             </div>
           </div>
-          <p className="text-white/90 max-w-2xl mb-6">
+          <p className="text-white/90 max-w-2xl mb-6 text-lg">
             과도한 빚으로 힘드신가요? 개인회생, 파산, 신속채무조정 등 
             법적으로 보호받을 수 있는 다양한 해결책이 있습니다.
             돈워리가 새로운 시작을 응원합니다.
@@ -188,15 +188,15 @@ export default function DebtHub() {
       </section>
 
       {/* Info Card */}
-      <section className="container py-6">
+      <section className="container py-6 mt-8">
         <div className="therapy-card bg-gradient-to-br from-secondary/5 to-primary/5 border-secondary/20">
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center shrink-0">
               <span className="text-2xl">💬</span>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">혼자 고민하지 마세요</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+              <h3 className="font-semibold text-foreground mb-2 text-lg">혼자 고민하지 마세요</h3>
+              <p className="text-base text-muted-foreground mb-4">
                 채무 문제는 부끄러운 것이 아닙니다. 대한민국 법은 경제적으로 어려운 분들을 위한 
                 다양한 구제 제도를 마련해두고 있습니다. 개인회생을 통해 최대 90%까지 채무를 감면받고,
                 새로운 시작을 할 수 있습니다.
@@ -214,11 +214,11 @@ export default function DebtHub() {
       {/* Features */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
             <span>🔧</span>
             <span>채무 해결 도구</span>
           </h2>
-          <p className="text-sm text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
+          <p className="text-base text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
         </div>
         <div className="grid gap-3 md:grid-cols-3">
           {debtFeatures.map((feature) => (
@@ -234,7 +234,7 @@ export default function DebtHub() {
             <Scale className="w-5 h-5 text-category-debt" strokeWidth={1.5} />
             채무조정이란?
           </h3>
-          <div className="prose prose-sm max-w-none text-muted-foreground">
+          <div className="prose prose-base max-w-none text-muted-foreground">
             <p>
               채무조정은 과도한 빚으로 인해 정상적인 경제활동이 어려운 분들을 위한 법적 제도입니다.
               개인회생, 개인파산, 신속채무조정 등 다양한 방법 중 본인의 상황에 맞는 최적의 해결책을 찾는 것이 중요합니다.
@@ -247,11 +247,11 @@ export default function DebtHub() {
       {/* Blog */}
       <section className="container py-12">
         <div className="mb-6">
-          <h2 className="text-xl font-bold text-foreground flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
             <span>📚</span>
             <span>채무조정 가이드</span>
           </h2>
-          <p className="text-sm text-muted-foreground mt-1">알아두면 도움이 되는 채무 관련 정보</p>
+          <p className="text-base text-muted-foreground mt-1">알아두면 도움이 되는 채무 관련 정보</p>
         </div>
         <div className="relative">
           <Carousel

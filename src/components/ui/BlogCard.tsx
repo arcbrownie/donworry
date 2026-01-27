@@ -64,10 +64,10 @@ export default function BlogCard({
             )}
           </div>
         </div>
-        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors text-sm md:text-base min-h-[3rem]">
+        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors text-base md:text-lg min-h-[3rem]">
           {title}
         </h3>
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-3 min-h-[2.5rem]">
+        <p className="text-base text-muted-foreground line-clamp-2 mb-3 min-h-[2.5rem]">
           {excerpt}
         </p>
         <div className="flex items-center text-sm text-primary font-medium mt-auto pt-1">

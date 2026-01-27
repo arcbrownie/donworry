@@ -109,15 +109,118 @@ export function getExpertById(id: string): Expert | undefined {
   return experts.find(expert => expert.id === id);
 }
 
-// 전문가별 관련 글 매핑 (나중에 확장 가능)
+// 글 정보 타입
+export interface ArticleInfo {
+  path: string;
+  title: string;
+  excerpt: string;
+  emoji: string;
+  category: string;
+}
+
+// 경로별 글 정보 매핑
+const articleInfoMap: Record<string, ArticleInfo> = {
+  '/blog/social-beginner-salary-guide': {
+    path: '/blog/social-beginner-salary-guide',
+    title: '사회초년생 첫 월급 관리법',
+    excerpt: '월급날만 기다리지 말고, 똑똑하게 관리하는 방법을 알려드립니다.',
+    emoji: '📊',
+    category: '재테크 · 절약',
+  },
+  '/blog/one-person-household-savings-detailed': {
+    path: '/blog/one-person-household-savings-detailed',
+    title: '1인 가구 생활비 절약 꿀팁 10가지',
+    excerpt: '매달 10만원 이상 아끼는 실천 가능한 방법들',
+    emoji: '🏠',
+    category: '재테크 · 절약',
+  },
+  '/blog/investment-guide-for-beginners': {
+    path: '/blog/investment-guide-for-beginners',
+    title: '사회초년생을 위한 투자 입문서',
+    excerpt: '적금만으로는 부족하다! 첫 투자를 시작하는 방법',
+    emoji: '📈',
+    category: '금융 · 대출',
+  },
+  '/blog/first-loan-guide-2030': {
+    path: '/blog/first-loan-guide-2030',
+    title: '사회초년생을 위한 대출 가이드',
+    excerpt: '신용점수 관리부터 유리한 대출 상품까지',
+    emoji: '🏦',
+    category: '금융 · 대출',
+  },
+  '/blog/credit-card-vs-check-card': {
+    path: '/blog/credit-card-vs-check-card',
+    title: '신용카드 vs 체크카드 비교',
+    excerpt: '소비 패턴에 따른 최적의 카드 선택법',
+    emoji: '💳',
+    category: '금융 · 대출',
+  },
+  '/cal/freelancer': {
+    path: '/cal/freelancer',
+    title: '프리랜서 3.3% 환급 계산기',
+    excerpt: '매달 떼인 세금, 얼마나 돌려받을 수 있을까요?',
+    emoji: '💼',
+    category: '금융 · 대출',
+  },
+  '/cal/youth-tax': {
+    path: '/cal/youth-tax',
+    title: '청년 세금감면 계산기',
+    excerpt: '중기청 90% 감면 혜택을 확인하세요',
+    emoji: '🎓',
+    category: '금융 · 대출',
+  },
+  '/personal-rehabilitation-2026-changes': {
+    path: '/personal-rehabilitation-2026-changes',
+    title: '2026년 달라지는 개인회생 제도',
+    excerpt: '새해부터 적용되는 개인회생 변경사항을 알아보세요.',
+    emoji: '📊',
+    category: '채무조정',
+  },
+  '/debt/personal-rehabilitation-bankruptcy': {
+    path: '/debt/personal-rehabilitation-bankruptcy',
+    title: '개인회생 · 개인파산 완벽 가이드',
+    excerpt: '법원을 통한 채무 해결, 새로운 시작을 위한 선택',
+    emoji: '⚖️',
+    category: '채무조정',
+  },
+  '/debt/credit-recovery-committee': {
+    path: '/debt/credit-recovery-committee',
+    title: '신용회복위원회 채무조정 완벽 가이드',
+    excerpt: '신용회복위원회를 통한 채무조정 절차와 혜택 안내',
+    emoji: '🏛️',
+    category: '채무조정',
+  },
+  '/debt/guide': {
+    path: '/debt/guide',
+    title: '채무조정 가이드',
+    excerpt: '채무 해결을 위한 종합 가이드',
+    emoji: '📖',
+    category: '채무조정',
+  },
+};
+
+// 전문가별 관련 글 매핑
 export const expertArticles: Record<string, string[]> = {
-  'expert-savings-01': ['/content/social-beginner-salary-guide', '/content/one-person-household-savings'],
-  'expert-savings-02': ['/content/one-person-household-savings'],
-  'expert-savings-03': ['/content/investment-guide-for-beginners'],
-  'expert-finance-01': ['/content/first-loan-guide-2030'],
-  'expert-finance-02': ['/content/credit-card-vs-check-card'],
+  'expert-savings-01': ['/blog/social-beginner-salary-guide', '/blog/one-person-household-savings-detailed'],
+  'expert-savings-02': ['/blog/one-person-household-savings-detailed'],
+  'expert-savings-03': ['/blog/investment-guide-for-beginners'],
+  'expert-finance-01': ['/blog/first-loan-guide-2030'],
+  'expert-finance-02': ['/blog/credit-card-vs-check-card'],
   'expert-finance-03': ['/cal/freelancer', '/cal/youth-tax'],
-  'expert-debt-01': ['/content/personal-rehabilitation-2026', '/debt/personal-rehabilitation-bankruptcy'],
+  'expert-debt-01': ['/personal-rehabilitation-2026-changes', '/debt/personal-rehabilitation-bankruptcy'],
   'expert-debt-02': ['/debt/credit-recovery-committee'],
   'expert-debt-03': ['/debt/guide'],
 };
+
+// 경로로 글 정보 가져오기
+export function getArticleInfo(path: string): ArticleInfo | null {
+  return articleInfoMap[path] || null;
+}
+
+// 전문가별 글 정보 가져오기
+export function getExpertArticles(expertId: string): ArticleInfo[] {
+  const paths = expertArticles[expertId] || [];
+  return paths
+    .map(path => getArticleInfo(path))
+    .filter((info): info is ArticleInfo => info !== null);
+}

@@ -106,10 +106,10 @@ export default function Index() {
       {/* 1. 왜 돈워리일까요? (강점 소개) - 첫 번째 섹션 */}
       <section className="container py-16">
         <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5 py-12 px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             당신의 행복을 지키는 <span className="text-secondary font-extrabold">돈워리</span>만의 특별함 ✨
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
             어제보다 가벼운 오늘을 만드는 금융 솔루션
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
@@ -118,8 +118,8 @@ export default function Index() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center">
                   <item.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground text-base">{item.title}</h3>
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <h3 className="font-semibold text-foreground text-lg">{item.title}</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -137,12 +137,12 @@ export default function Index() {
             <div className="text-center md:text-left">
               <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 mb-4">
                 <span className="text-2xl">⏱️</span>
-                <span className="text-white font-bold text-sm">30초면 충분해요</span>
+                <span className="text-white font-bold text-base">30초면 충분해요</span>
               </div>
-              <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-3">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-3">
                 채무 건강 상태를 확인해보세요
               </h2>
-              <p className="text-white/80 text-lg max-w-xl">
+              <p className="text-white/80 text-xl max-w-xl">
                 간단한 질문으로 나에게 맞는 채무 해결 방법을 찾아드립니다.
               </p>
             </div>
@@ -160,8 +160,8 @@ export default function Index() {
       <section className="container py-16">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-foreground">최신 콘텐츠</h2>
-            <p className="text-muted-foreground text-base mt-1 leading-relaxed">알아두면 좋은 재테크 · 금융 정보</p>
+            <h2 className="text-3xl font-bold text-foreground">최신 콘텐츠</h2>
+            <p className="text-muted-foreground text-lg mt-1 leading-relaxed">알아두면 좋은 재테크 · 금융 정보</p>
           </div>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
@@ -175,10 +175,10 @@ export default function Index() {
       <section className="container py-16">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-3xl md:text-2xl font-bold text-foreground">인기 계산기</h2>
-            <p className="text-muted-foreground text-base mt-1 leading-relaxed">가장 많이 사용하는 계산기</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">인기 계산기</h2>
+            <p className="text-muted-foreground text-lg mt-1 leading-relaxed">가장 많이 사용하는 계산기</p>
           </div>
-          <Link to="/cal" className="text-base font-medium text-primary hover:underline">
+          <Link to="/cal" className="text-lg font-medium text-primary hover:underline">
             전체보기
           </Link>
         </div>
@@ -192,8 +192,8 @@ export default function Index() {
       {/* 3. 카테고리별 바로가기 */}
       <section className="container py-16">
         <div className="mb-6 text-center">
-          <h2 className="text-2xl font-bold text-foreground">카테고리별 바로가기</h2>
-          <p className="text-muted-foreground text-base mt-1 leading-relaxed">원하는 카테고리를 선택하세요</p>
+          <h2 className="text-3xl font-bold text-foreground">카테고리별 바로가기</h2>
+          <p className="text-muted-foreground text-lg mt-1 leading-relaxed">원하는 카테고리를 선택하세요</p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {categories.map((category, index) => (
@@ -207,13 +207,13 @@ export default function Index() {
                 <div className="w-20 h-20 rounded-2xl bg-background/80 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-soft mb-4">
                   {category.icon && <category.icon className="w-10 h-10 text-foreground" strokeWidth={1.5} />}
                 </div>
-                <h2 className={`text-2xl font-bold text-foreground mb-2 transition-colors ${category.hoverColor}`}>
+                <h2 className={`text-3xl font-bold text-foreground mb-2 transition-colors ${category.hoverColor}`}>
                   {category.title}
                 </h2>
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {category.description}
                 </p>
-                <div className={`mt-4 flex items-center gap-1 font-medium text-base text-muted-foreground ${category.hoverColor}`}>
+                <div className={`mt-4 flex items-center gap-1 font-medium text-lg text-muted-foreground ${category.hoverColor}`}>
                   자세히 보기
                 </div>
               </div>

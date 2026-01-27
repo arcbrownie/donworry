@@ -26,19 +26,19 @@ export function CalculatorLayout({ children, title, description, seoContent }: C
       <MainNavigation />
 
       {/* Main Content */}
-      <main className="container py-8">
+      <main className="container py-10">
         {/* Page Header */}
-        <div className="text-center mb-8 animate-fade-in">
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+        <div className="text-center mb-10 animate-fade-in">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
             {title}
           </h1>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground max-w-xl mx-auto text-lg">
             {description}
           </p>
         </div>
 
         {/* Calculator Content */}
-        <div className="max-w-2xl mx-auto space-y-6 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+        <div className="max-w-2xl mx-auto space-y-6 animate-slide-up mt-4" style={{ animationDelay: "0.1s" }}>
           {children}
         </div>
 
@@ -50,8 +50,8 @@ export function CalculatorLayout({ children, title, description, seoContent }: C
         {/* SEO Content */}
         {seoContent && (
           <section className="max-w-2xl mx-auto mt-10 p-6 bg-therapy-soft rounded-2xl">
-            <h2 className="text-lg font-semibold text-foreground mb-4">관련 정보</h2>
-            <div className="prose prose-sm text-muted-foreground leading-relaxed">
+            <h2 className="text-xl font-semibold text-foreground mb-4">관련 정보</h2>
+            <div className="prose prose-base text-muted-foreground leading-relaxed">
               {seoContent}
             </div>
           </section>

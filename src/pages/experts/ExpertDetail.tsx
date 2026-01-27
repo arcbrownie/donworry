@@ -1,19 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import { AuthorCard } from "@/components/ui/AuthorCard";
 import { Badge } from "@/components/ui/badge";
-import { getExpertById, expertArticles } from "@/lib/experts";
-import { ArrowLeft, FileText } from "lucide-react";
+import { getExpertById, getExpertArticles } from "@/lib/experts";
+import { ArrowLeft, FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BlogCard from "@/components/ui/BlogCard";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
 export default function ExpertDetail() {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
   const expert = id ? getExpertById(id) : undefined;
+  const [api, setApi] = useState<CarouselApi>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
 
   useEffect(() => {
     if (expert) {
@@ -21,6 +25,20 @@ export default function ExpertDetail() {
       document.title = `${expert.name} ${expert.title} | 돈워리 전문가`;
     }
   }, [expert, location.pathname]);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
+
+    api.on("select", () => {
+      setCanScrollPrev(api.canScrollPrev());
+      setCanScrollNext(api.canScrollNext());
+    });
+  }, [api]);
 
   if (!expert) {
     return (
@@ -37,7 +55,7 @@ export default function ExpertDetail() {
     );
   }
 
-  const relatedArticles = expertArticles[expert.id] || [];
+  const relatedArticles = expert ? getExpertArticles(expert.id) : [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -95,21 +113,62 @@ export default function ExpertDetail() {
 
             {relatedArticles.length > 0 && (
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
                   <FileText className="w-5 h-5" />
                   작성한 글
                 </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {relatedArticles.map((articlePath) => (
-                    <BlogCard
-                      key={articlePath}
-                      title="관련 글"
-                      excerpt="전문가가 작성한 글을 확인하세요"
-                      emoji="📝"
-                      category="content"
-                      path={articlePath}
-                    />
-                  ))}
+                <div className="relative">
+                  <Carousel
+                    opts={{
+                      align: "start",
+                      slidesToScroll: 1,
+                    }}
+                    setApi={setApi}
+                    className="w-full"
+                  >
+                    <CarouselContent className="-ml-2 md:-ml-4">
+                      {relatedArticles.map((article, index) => (
+                        <CarouselItem key={article.path} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 h-full">
+                          <div className="h-full">
+                            <BlogCard
+                              title={article.title}
+                              excerpt={article.excerpt}
+                              emoji={article.emoji}
+                              category={article.category}
+                              path={article.path}
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    {relatedArticles.length > 1 && (
+                      <>
+                        <CarouselPrevious className="hidden md:flex -left-12 border-primary text-primary hover:bg-primary/10 hover:text-primary" />
+                        <CarouselNext className="hidden md:flex -right-12 border-primary text-primary hover:bg-primary/10 hover:text-primary" />
+                        {/* Mobile Navigation */}
+                        <div className="flex justify-center gap-2 mt-4 md:hidden">
+                          <Button
+                            variant="outline"
+                            size="icon"
+                            className="h-8 w-8 border-primary text-primary hover:bg-primary/10"
+                            disabled={!canScrollPrev}
+                            onClick={() => api?.scrollPrev()}
+                          >
+                            <ChevronLeft className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="icon"
+                            className="h-8 w-8 border-primary text-primary hover:bg-primary/10"
+                            disabled={!canScrollNext}
+                            onClick={() => api?.scrollNext()}
+                          >
+                            <ChevronRight className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </>
+                    )}
+                  </Carousel>
                 </div>
               </div>
             )}
