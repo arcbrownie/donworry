@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -47,11 +48,6 @@ export default function RootLayout({
         <link rel="alternate icon" href="/favicon.ico" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473"
-          crossOrigin="anonymous"
-        />
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -86,6 +82,12 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Providers>
           {children}
           <Toaster />

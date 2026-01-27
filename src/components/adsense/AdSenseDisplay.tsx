@@ -10,9 +10,24 @@ interface AdSenseDisplayProps {
 export default function AdSenseDisplay({ slot, className = '' }: AdSenseDisplayProps) {
   useEffect(() => {
     try {
-      if (typeof window !== 'undefined') {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      }
+      if (typeof window === 'undefined') return;
+      
+      // AdSense 스크립트가 로드될 때까지 대기 (최대 50회 재시도 = 5초)
+      let retryCount = 0;
+      const maxRetries = 50;
+      
+      const checkAdSense = () => {
+        if (window.adsbygoogle && Array.isArray(window.adsbygoogle)) {
+          window.adsbygoogle.push({});
+        } else if (retryCount < maxRetries) {
+          retryCount++;
+          setTimeout(checkAdSense, 100);
+        } else {
+          console.warn('AdSense script failed to load after maximum retries');
+        }
+      };
+      
+      checkAdSense();
     } catch (e) {
       console.error('AdSense error', e);
     }
