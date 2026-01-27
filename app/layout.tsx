@@ -82,17 +82,18 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <Providers>
           {children}
           <Toaster />
           <Sonner />
         </Providers>
+        {/* 애드센스 스크립트를 가장 마지막에, React 로드 후에 실행 */}
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473"
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   );
