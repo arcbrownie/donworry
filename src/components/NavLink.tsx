@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-"use client";
-
 import React, { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 

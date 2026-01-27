@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:hsl(232, 68%, 35%);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:hsl(280, 78%, 40%);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- 배경 (그라디언트) -->
+  <rect width="32" height="32" rx="7.2" fill="url(#shieldGradient)"/>
+  <!-- 방패 아이콘 (lucide-react Shield 스타일) -->
+  <path d="M16 5L9 8V14.5C9 19.5 11.5 23.5 16 26C20.5 23.5 23 19.5 23 14.5V8L16 5Z" fill="white" fill-opacity="0.9" stroke="white" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- 내부 하이라이트 (fill-opacity 0.3) -->
+  <path d="M16 5L9 8V14.5C9 19.5 11.5 23.5 16 26C20.5 23.5 23 19.5 23 14.5V8L16 5Z" fill="white" fill-opacity="0.3"/>
+</svg>
