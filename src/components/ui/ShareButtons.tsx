@@ -1,3 +1,5 @@
+"use client";
+
 import { Share2, MessageCircle } from "lucide-react";
 import { Button } from "./button";
 
