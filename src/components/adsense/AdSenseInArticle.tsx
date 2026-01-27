@@ -6,20 +6,42 @@ interface AdSenseInArticleProps {
 }
 
 export default function AdSenseInArticle({ slot, className = '' }: AdSenseInArticleProps) {
-  const adRef = useRef<HTMLDivElement>(null);
+  const adRef = useRef<HTMLElement>(null);
   const pushedRef = useRef(false);
 
   useEffect(() => {
     // 광고가 이미 푸시되었는지 확인
     if (pushedRef.current) return;
     
-    try {
-      if (typeof window !== 'undefined') {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        pushedRef.current = true;
+    const tryPushAd = () => {
+      try {
+        if (typeof window !== 'undefined' && window.adsbygoogle && adRef.current) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          pushedRef.current = true;
+        }
+      } catch (e) {
+        console.error('AdSense error', e);
       }
-    } catch (e) {
-      console.error('AdSense error', e);
+    };
+
+    // 스크립트가 로드되었는지 확인
+    if (typeof window !== 'undefined' && window.adsbygoogle) {
+      // 이미 로드된 경우 바로 실행
+      tryPushAd();
+    } else {
+      // 스크립트 로드 대기 (최대 5초)
+      let attempts = 0;
+      const checkInterval = setInterval(() => {
+        attempts++;
+        if (typeof window !== 'undefined' && window.adsbygoogle) {
+          clearInterval(checkInterval);
+          tryPushAd();
+        } else if (attempts > 50) {
+          // 5초 후 타임아웃
+          clearInterval(checkInterval);
+          console.warn('AdSense script loading timeout');
+        }
+      }, 100);
     }
   }, []);
 
