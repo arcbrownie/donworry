@@ -21,7 +21,7 @@ export default defineConfig({
         manualChunks: (id) => {
           // node_modules 분리
           if (id.includes('node_modules')) {
-            // React 코어
+            // React 코어 - 단일 청크로 유지하여 createContext 에러 방지
             if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
               return 'react-vendor';
             }
@@ -51,6 +51,15 @@ export default defineConfig({
     sourcemap: false, // 프로덕션에서는 비활성화 (보안)
     // Minify 설정 (esbuild 사용, 더 빠름)
     minify: 'esbuild',
+    // CommonJS 변환 최적화
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true,
+    },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+    exclude: [],
   },
   // 정적 에셋 최적화
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],

@@ -7,37 +7,7 @@
     <link rel="alternate icon" href="/favicon.ico" />
     
     <!-- DNS Prefetch & Preconnect for external resources -->
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-    
-    <!-- Google Tag Manager (lazy load on idle) -->
-    <script>
-      // GTM을 requestIdleCallback으로 지연 로딩 (모바일 성능 개선)
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(function() {
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          j.onerror=function(){console.warn('GTM failed to load');};
-          if(f&&f.parentNode){f.parentNode.insertBefore(j,f);}else{d.head.appendChild(j);}
-          })(window,document,'script','dataLayer','GTM-MC3G2FBF');
-        }, { timeout: 2000 });
-      } else {
-        // requestIdleCallback 미지원 브라우저는 setTimeout으로 지연
-        setTimeout(function() {
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          j.onerror=function(){console.warn('GTM failed to load');};
-          if(f&&f.parentNode){f.parentNode.insertBefore(j,f);}else{d.head.appendChild(j);}
-          })(window,document,'script','dataLayer','GTM-MC3G2FBF');
-        }, 2000);
-      }
-    </script>
-    <!-- End Google Tag Manager -->
 
     <!-- Google AdSense -->
     <script
@@ -95,10 +65,6 @@
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC3G2FBF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

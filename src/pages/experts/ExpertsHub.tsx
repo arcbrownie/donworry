@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { setCanonicalTag } from "@/lib/utils";
 import MainNavigation from "@/components/layout/MainNavigation";
@@ -51,24 +51,41 @@ export default function ExpertsHub() {
     metaDescription.setAttribute('content', '돈워리의 금융 전문가들을 소개합니다. 재테크, 대출, 채무조정 분야의 전문가들이 신뢰할 수 있는 정보를 제공합니다.');
   }, [location.pathname]);
 
-  const handleCarouselApi = (category: string, api: CarouselApi | undefined) => {
+  const handleCarouselApi = useCallback((category: string, api: CarouselApi | undefined) => {
     if (api) {
       setCarouselApis(prev => ({ ...prev, [category]: api }));
-      
-      const updateScrollState = () => {
-        setCanScrollStates(prev => ({
-          ...prev,
-          [category]: {
-            prev: api.canScrollPrev(),
-            next: api.canScrollNext(),
-          },
-        }));
-      };
-      
-      updateScrollState();
-      api.on("select", updateScrollState);
     }
-  };
+  }, []);
+
+  // 각 카테고리별 Carousel API 상태 업데이트
+  useEffect(() => {
+    const cleanupFunctions: (() => void)[] = [];
+    
+    Object.entries(carouselApis).forEach(([category, api]) => {
+      if (api) {
+        const updateScrollState = () => {
+          setCanScrollStates(prev => ({
+            ...prev,
+            [category]: {
+              prev: api.canScrollPrev(),
+              next: api.canScrollNext(),
+            },
+          }));
+        };
+        
+        updateScrollState();
+        api.on("select", updateScrollState);
+        
+        cleanupFunctions.push(() => {
+          api.off("select", updateScrollState);
+        });
+      }
+    });
+    
+    return () => {
+      cleanupFunctions.forEach(cleanup => cleanup());
+    };
+  }, [carouselApis]);
 
   return (
     <div className="min-h-screen bg-background">
