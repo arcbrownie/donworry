@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface BlogCardProps {
@@ -87,7 +89,7 @@ export default function BlogCard({
   }
 
   return (
-    <Link to={path} className="blog-card group">
+    <Link href={path} className="blog-card group">
       <CardContent />
     </Link>
   );

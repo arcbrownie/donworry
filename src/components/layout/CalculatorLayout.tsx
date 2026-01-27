@@ -1,25 +1,19 @@
-import { ReactNode, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+"use client";
+
+import { ReactNode } from "react";
 import MainNavigation from "./MainNavigation";
 import Footer from "./Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
-import { setCanonicalTag } from "@/lib/utils";
 import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
 
 interface CalculatorLayoutProps {
   children: ReactNode;
   title: string;
   description: string;
-  seoContent?: string;
+  seoContent?: ReactNode;
 }
 
 export function CalculatorLayout({ children, title, description, seoContent }: CalculatorLayoutProps) {
-  const location = useLocation();
-
-  useEffect(() => {
-    // Canonical Tag
-    setCanonicalTag(location.pathname);
-  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background pb-24 md:pb-0">

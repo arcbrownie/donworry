@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 
 interface CalculatorWidgetProps {
   title: string;
@@ -31,7 +33,7 @@ export default function CalculatorWidget({
 
   return (
     <Link
-      to={path}
+      href={path}
       className={`group block p-4 rounded-xl ${variantStyles[variant]} shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1`}
     >
       <div className="flex items-start gap-4">

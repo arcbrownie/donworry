@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -23,13 +25,9 @@ export function AuthorCard({ expert, showFullInfo = true }: AuthorCardProps) {
       <div className="flex items-start gap-4">
         {/* 프로필 이미지 */}
         <Avatar className="w-16 h-16 border-2 border-primary/30">
-          {expert.profileImage ? (
-            <img src={expert.profileImage} alt={expert.name} />
-          ) : (
-            <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-white font-bold text-lg">
-              {initials}
-            </AvatarFallback>
-          )}
+          <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-white font-bold text-lg">
+            {initials}
+          </AvatarFallback>
         </Avatar>
 
         {/* 전문가 정보 */}
@@ -44,7 +42,7 @@ export function AuthorCard({ expert, showFullInfo = true }: AuthorCardProps) {
               </p>
             </div>
             <Link
-              to={`/experts/${expert.id}`}
+              href={`/experts/${expert.id}`}
               className="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1"
             >
               프로필 보기

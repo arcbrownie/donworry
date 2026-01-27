@@ -1,0 +1,4 @@
+// Next.js ESLint 설정 사용
+// eslint.config.js는 Next.js의 기본 ESLint 설정과 충돌할 수 있으므로
+// Next.js의 기본 설정을 사용하도록 주석 처리
+// 필요시 package.json의 eslintConfig 또는 .eslintrc.json 사용

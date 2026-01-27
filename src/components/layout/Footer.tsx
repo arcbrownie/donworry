@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Shield } from "lucide-react";
 
 const footerLinks = {
@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between mb-8">
           {/* Brand */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-baseline gap-2 mb-4">
+            <Link href="/" className="flex items-baseline gap-2 mb-4">
               <div className="w-7 h-7 rounded-lg gradient-button flex items-center justify-center">
                 <Shield className="w-4 h-4 text-white" fill="white" fillOpacity={0.3} />
               </div>
@@ -57,7 +57,7 @@ export default function Footer() {
                 {footerLinks.categories.map((link) => (
                   <li key={link.path} className="text-right md:text-left">
                     <Link
-                      to={link.path}
+                      href={link.path}
                       className={`text-sm text-muted-foreground hover:text-foreground transition-colors ${
                         link.label === '채무조정' ? 'tracking-normal' : 'tracking-tight'
                       }`}
@@ -77,7 +77,7 @@ export default function Footer() {
                 {footerLinks.services.map((link, index) => (
                   <li key={`${link.path}-${index}`} className="text-right md:text-left">
                     <Link
-                      to={link.path}
+                      href={link.path}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}
@@ -94,7 +94,7 @@ export default function Footer() {
                 {footerLinks.info.map((link) => (
                   <li key={link.path} className="text-right md:text-left">
                     <Link
-                      to={link.path}
+                      href={link.path}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}

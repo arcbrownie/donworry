@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { Share2, MessageCircle, Link2, Twitter, Copy, Check } from "lucide-react";
 import { Button } from "./button";
 import { cn } from "@/lib/utils";

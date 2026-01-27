@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+"use client";
+
+import React, { useEffect } from 'react';
 
 interface AdSenseInArticleProps {
   slot: string;

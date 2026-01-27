@@ -3,7 +3,7 @@
   <!-- 메인 페이지 -->
   <url>
     <loc>https://donworry.kr/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,87 +11,93 @@
   <!-- 카테고리 Hub 페이지 -->
   <url>
     <loc>https://donworry.kr/savings</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://donworry.kr/finance</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://donworry.kr/debt</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://donworry.kr/content</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://donworry.kr/experts</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <!-- 계산기 페이지 -->
   <url>
     <loc>https://donworry.kr/cal/part-time</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal/freelancer</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal/youth-tax</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal/soldier</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal/unemployment</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal/debt-reduction</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal/interest-saving</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal/life</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://donworry.kr/cal/finance</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -99,95 +105,101 @@
   <!-- 채무조정 페이지 -->
   <url>
     <loc>https://donworry.kr/debt/test</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/debt/guide</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://donworry.kr/debt/guide-content</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://donworry.kr/debt/personal-rehabilitation-bankruptcy</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/debt/credit-recovery-committee</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- 콘텐츠 페이지 (블로그) -->
+  <!-- 블로그 페이지 -->
   <url>
-    <loc>https://donworry.kr/personal-rehabilitation-2026-changes</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://donworry.kr/blog/weekly-holiday-pay-guide</loc>
-    <lastmod>2026-01-06</lastmod>
+    <loc>https://donworry.kr/blog/credit-card-vs-check-card</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/blog/first-loan-guide-2030</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://donworry.kr/blog/social-beginner-salary-guide</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://donworry.kr/blog/one-person-household-savings-detailed</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://donworry.kr/blog/credit-card-vs-check-card</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://donworry.kr/blog/investment-guide-for-beginners</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://donworry.kr/blog/one-person-household-savings</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://donworry.kr/blog/personal-rehabilitation-2026</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://donworry.kr/blog/social-beginner-salary-guide</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://donworry.kr/blog/weekly-holiday-pay-guide</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- 법적 페이지 -->
   <url>
-    <loc>https://donworry.kr/about</loc>
-    <lastmod>2026-01-06</lastmod>
+    <loc>https://donworry.kr/legal/about</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://donworry.kr/privacy</loc>
-    <lastmod>2026-01-06</lastmod>
+    <loc>https://donworry.kr/legal/privacy-policy</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://donworry.kr/terms</loc>
-    <lastmod>2026-01-06</lastmod>
+    <loc>https://donworry.kr/legal/terms-of-service</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://donworry.kr/disclaimer</loc>
-    <lastmod>2026-01-06</lastmod>
+    <loc>https://donworry.kr/legal/disclaimer</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

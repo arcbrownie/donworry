@@ -1,5 +1,8 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, ChevronRight, CheckCircle, Shield, PiggyBank, CreditCard, Scale } from "lucide-react";
 import {
   DropdownMenu,
@@ -92,10 +95,10 @@ export default function MainNavigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState<{ [key: string]: boolean }>({});
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,6 +109,17 @@ export default function MainNavigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 로고 클릭 시 맨 위로 스크롤
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // 현재 경로가 "/"인 경우에만 스크롤만 수행
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    // 다른 경로인 경우 Link의 기본 동작(href="/")이 실행되고, 
+    // 페이지 이동 후 스크롤은 layout이나 page 컴포넌트에서 처리될 수 있음
+  };
+
   return (
     <header className={`sticky top-0 z-50 w-full border-b border-border/50 backdrop-blur transition-colors duration-300 ${
       isScrolled 
@@ -114,7 +128,7 @@ export default function MainNavigation() {
     }`}>
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-[22px] group">
+        <Link href="/" className="flex items-center gap-[22px] group" onClick={handleLogoClick}>
           <div className="w-[43.2px] h-[43.2px] rounded-xl gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
             <Shield className="w-[25.2px] h-[25.2px] text-white" fill="white" fillOpacity={0.3} />
           </div>
@@ -157,7 +171,7 @@ export default function MainNavigation() {
                   onClick={(e) => {
                     // 드롭다운이 열려있지 않으면 첫 번째 메뉴로 이동
                     if (!openDropdowns[category.label]) {
-                      navigate(firstMenuPath);
+                      router.push(firstMenuPath);
                     }
                   }}
                 >
@@ -193,7 +207,7 @@ export default function MainNavigation() {
                           {item.subItems?.map((subItem) => (
                             <DropdownMenuItem key={subItem.path} asChild>
                               <Link
-                                to={subItem.path}
+                                href={subItem.path}
                                 className={`flex items-start gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors hover:bg-slate-200 focus:bg-slate-200 ${
                                   isActive(subItem.path)
                                     ? "bg-slate-200 text-foreground"
@@ -217,7 +231,7 @@ export default function MainNavigation() {
                   ) : (
                     <DropdownMenuItem key={item.path} asChild>
                       <Link
-                        to={item.path!}
+                        href={item.path!}
                         className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors hover:bg-slate-200 focus:bg-slate-200 ${
                           isActive(item.path!)
                             ? "bg-slate-200 text-foreground"
@@ -244,8 +258,8 @@ export default function MainNavigation() {
 
         {/* CTA Button (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
-          <Link to="/debt/test">
-            <Button className="px-[18px] py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 active:from-blue-800 active:to-purple-800 text-white shadow-soft hover:shadow-elevated transition-all duration-200 border-2 border-white/30">
+          <Link href="/debt/test">
+            <Button className="px-[18px] py-2.5 bg-transparent hover:bg-transparent active:bg-transparent text-blue-600 hover:text-blue-700 active:text-blue-800 shadow-soft hover:shadow-elevated transition-all duration-200 border-[3px] border-blue-600 hover:border-blue-700 active:border-blue-800">
               <span className="relative z-10 flex items-center gap-3 font-bold text-base">
                 🩺 <span>채무조정 무료 진단</span>
               </span>
@@ -265,7 +279,14 @@ export default function MainNavigation() {
             <div className="flex flex-col h-full">
               {/* Mobile Header */}
               <div className="flex items-center justify-between p-5 border-b border-border">
-                <Link to="/" className="flex items-center gap-[22px]" onClick={() => setMobileOpen(false)}>
+                <Link 
+                  href="/" 
+                  className="flex items-center gap-[22px]" 
+                  onClick={(e) => {
+                    setMobileOpen(false);
+                    handleLogoClick(e);
+                  }}
+                >
                   <div className="w-[43.2px] h-[43.2px] rounded-xl gradient-button flex items-center justify-center">
                     <Shield className="w-[25.2px] h-[25.2px] text-white" fill="white" fillOpacity={0.3} />
                   </div>
@@ -286,7 +307,7 @@ export default function MainNavigation() {
                   return (
                   <div key={category.label} className="mb-6">
                     <Link
-                      to={firstMenuPath}
+                      href={firstMenuPath}
                       onClick={() => setMobileOpen(false)}
                       className={`flex items-center gap-3 px-3 py-2 rounded-lg ${category.bgColor} mb-2 hover:opacity-80 transition-opacity`}
                     >
@@ -314,7 +335,7 @@ export default function MainNavigation() {
                               {item.subItems?.map((subItem) => (
                                 <Link
                                   key={subItem.path}
-                                  to={subItem.path}
+                                  href={subItem.path}
                                   onClick={() => setMobileOpen(false)}
                                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                                     isActive(subItem.path)
@@ -334,7 +355,7 @@ export default function MainNavigation() {
                         ) : (
                           <Link
                             key={item.path}
-                            to={item.path!}
+                            href={item.path!}
                             onClick={() => setMobileOpen(false)}
                             className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
                               isActive(item.path!)
@@ -358,8 +379,8 @@ export default function MainNavigation() {
 
               {/* Mobile CTA */}
               <div className="p-4 border-t border-border">
-                <Link to="/debt/test" onClick={() => setMobileOpen(false)}>
-                  <Button className="w-full px-[18px] py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 active:from-blue-800 active:to-purple-800 text-white shadow-soft hover:shadow-elevated transition-all duration-200 border-2 border-white/30">
+                <Link href="/debt/test" onClick={() => setMobileOpen(false)}>
+                  <Button className="w-full px-[18px] py-3 bg-transparent hover:bg-transparent active:bg-transparent text-blue-600 hover:text-blue-700 active:text-blue-800 shadow-soft hover:shadow-elevated transition-all duration-200 border-[3px] border-blue-600 hover:border-blue-700 active:border-blue-800">
                     <span className="relative z-10 flex items-center justify-center gap-3 font-bold text-base">
                       🩺 <span>채무조정 무료 진단</span>
                     </span>

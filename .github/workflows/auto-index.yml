@@ -1,0 +1,33 @@
+name: Auto Google Indexing
+
+on:
+  schedule:
+    # 매일 한국시간 오전 9시 (UTC 00:00)에 실행
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 수동 실행도 가능하도록
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Setup Google Service Account Key
+        run: |
+          echo '${{ secrets.GSC_KEY_JSON }}' > gsc-key.json
+        env:
+          GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
+      
+      - name: Run Google Indexing
+        run: npm run index:auto

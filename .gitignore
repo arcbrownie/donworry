@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# API Keys & Secrets
+gsc-key.json
+.next/
+node_modules/
+.env
+.env.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
