@@ -146,24 +146,8 @@ export default function FinanceHub() {
         </div>
       </section>
 
-      {/* Calculators */}
-      <section className="container py-12 mt-8">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
-            <span>🧮</span>
-            <span>금융 · 대출 계산기</span>
-          </h2>
-          <p className="text-base text-muted-foreground mt-1">세금과 금리를 쉽게 계산하세요</p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-2">
-          {calculators.map((calc) => (
-            <CalculatorWidget key={calc.path} {...calc} />
-          ))}
-        </div>
-      </section>
-
       {/* Blog */}
-      <section className="container py-12">
+      <section className="container py-12 mt-8">
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
             <span>📚</span>
@@ -213,6 +197,22 @@ export default function FinanceHub() {
               </Button>
             </div>
           </Carousel>
+        </div>
+      </section>
+
+      {/* Calculators */}
+      <section className="container py-12">
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+            <span>🧮</span>
+            <span>금융 · 대출 계산기</span>
+          </h2>
+          <p className="text-base text-muted-foreground mt-1">세금과 금리를 쉽게 계산하세요</p>
+        </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          {calculators.map((calc) => (
+            <CalculatorWidget key={calc.path} {...calc} />
+          ))}
         </div>
       </section>
 

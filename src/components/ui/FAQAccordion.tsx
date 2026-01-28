@@ -1,17 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 interface FAQItem {
   question: string;
   answer: string;
   keywords?: string[];
+  sourcePath?: string; // FAQ가 발췌된 블로그 경로
 }
 
 interface FAQAccordionProps {
@@ -49,10 +53,43 @@ export default function FAQAccordion({
 }: FAQAccordionProps) {
   const styles = variantStyles[variant];
   
-  // 모든 키워드 추출 (중복 제거)
+  // 키워드 정규화 함수 (유사한 키워드를 작은 단위로 통합)
+  const normalizeKeyword = (keyword: string): string => {
+    const normalizationMap: Record<string, string> = {
+      "예산법": "예산",
+      "예산관리": "예산",
+      "예산설정": "예산",
+      "주휴수당계산": "주휴수당",
+      "주휴수당지급": "주휴수당",
+      "대출상품": "대출",
+      "대출금리": "대출",
+      "대출신청": "대출",
+      "개인회생신청": "개인회생",
+      "개인회생절차": "개인회생",
+      "신용점수향상": "신용점수",
+      "신용관리": "신용점수",
+      "생활비절약": "절약",
+      "가계비절약": "절약",
+    };
+    
+    if (normalizationMap[keyword]) {
+      return normalizationMap[keyword];
+    }
+    
+    // 키워드가 다른 키워드를 포함하는 경우
+    for (const [longKeyword, shortKeyword] of Object.entries(normalizationMap)) {
+      if (keyword.includes(longKeyword) || longKeyword.includes(keyword)) {
+        return shortKeyword.length < keyword.length ? shortKeyword : keyword;
+      }
+    }
+    
+    return keyword;
+  };
+
+  // 모든 키워드 추출 및 정규화 (중복 제거)
   const allKeywords = Array.from(
     new Set(
-      items.flatMap(item => item.keywords || [])
+      items.flatMap(item => (item.keywords || []).map(normalizeKeyword))
     )
   );
 
@@ -117,9 +154,13 @@ export default function FAQAccordion({
     }
   };
 
-  // 키워드별 FAQ 필터링
+  // 키워드별 FAQ 필터링 (정규화된 키워드로 필터링)
   const filteredItems = selectedKeyword
-    ? items.filter(item => !item.keywords || item.keywords.length === 0 || item.keywords.includes(selectedKeyword))
+    ? items.filter(item => {
+        if (!item.keywords || item.keywords.length === 0) return false;
+        const normalizedItemKeywords = item.keywords.map(normalizeKeyword);
+        return normalizedItemKeywords.includes(selectedKeyword);
+      })
     : items;
 
   // 클릭 수에 따라 키워드 정렬
@@ -195,7 +236,21 @@ export default function FAQAccordion({
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-4">
-                  {item.answer}
+                  <div className="space-y-4">
+                    <p>{item.answer}</p>
+                    {item.sourcePath && (
+                      <Link href={item.sourcePath}>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="w-full sm:w-auto text-sm"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          자세한 내용 확인하기
+                        </Button>
+                      </Link>
+                    )}
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))

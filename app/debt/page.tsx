@@ -158,8 +158,25 @@ export default function DebtHub() {
         </div>
       </section>
 
-      {/* Info Card */}
+      {/* SEO Content */}
       <section className="container py-6 mt-8">
+        <div className="therapy-card">
+          <h3 className="font-semibold text-foreground mb-3 flex items-center gap-3">
+            <Scale className="w-5 h-5 text-category-debt" strokeWidth={1.5} />
+            채무조정이란?
+          </h3>
+          <div className="prose prose-base max-w-none text-muted-foreground">
+            <p>
+              채무조정은 과도한 빚으로 인해 정상적인 경제활동이 어려운 분들을 위한 법적 제도입니다.
+              개인회생, 개인파산, 신속채무조정 등 다양한 방법 중 본인의 상황에 맞는 최적의 해결책을 찾는 것이 중요합니다.
+              돈워리의 자가진단 도구를 통해 먼저 방향을 잡아보시고, 필요하다면 전문가 상담을 받아보세요.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Info Card */}
+      <section className="container py-6">
         <div className="therapy-card bg-gradient-to-br from-secondary/5 to-primary/5 border-secondary/20">
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center shrink-0">
@@ -178,39 +195,6 @@ export default function DebtHub() {
                 <Link href="/debt/test" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">자가진단</Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="container py-12">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
-            <span>🔧</span>
-            <span>채무 해결 도구</span>
-          </h2>
-          <p className="text-base text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-3">
-          {debtFeatures.map((feature) => (
-            <CalculatorWidget key={feature.path} {...feature} />
-          ))}
-        </div>
-      </section>
-
-      {/* SEO Content */}
-      <section className="container py-6">
-        <div className="therapy-card">
-          <h3 className="font-semibold text-foreground mb-3 flex items-center gap-3">
-            <Scale className="w-5 h-5 text-category-debt" strokeWidth={1.5} />
-            채무조정이란?
-          </h3>
-          <div className="prose prose-base max-w-none text-muted-foreground">
-            <p>
-              채무조정은 과도한 빚으로 인해 정상적인 경제활동이 어려운 분들을 위한 법적 제도입니다.
-              개인회생, 개인파산, 신속채무조정 등 다양한 방법 중 본인의 상황에 맞는 최적의 해결책을 찾는 것이 중요합니다.
-              돈워리의 자가진단 도구를 통해 먼저 방향을 잡아보시고, 필요하다면 전문가 상담을 받아보세요.
-            </p>
           </div>
         </div>
       </section>
@@ -266,6 +250,22 @@ export default function DebtHub() {
               </Button>
             </div>
           </Carousel>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="container py-12">
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+            <span>🔧</span>
+            <span>채무 해결 도구</span>
+          </h2>
+          <p className="text-base text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          {debtFeatures.map((feature) => (
+            <CalculatorWidget key={feature.path} {...feature} />
+          ))}
         </div>
       </section>
 

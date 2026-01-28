@@ -1,4 +1,5 @@
-import { Metadata } from "next";
+"use client";
+
 import { Calendar, Zap, Calculator, Users, PiggyBank, CreditCard, Scale } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
@@ -7,14 +8,8 @@ import CalculatorWidget from "@/components/ui/CalculatorWidget";
 import { Button } from "@/components/ui/button";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 어제보다 가벼운 오늘을 만드는 당신의 솔루션",
-  description: "돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 알바 실수령액, 프리랜서 환급, 청년 세금감면, 군인 적금 계산부터 개인회생, 채무조정 자가진단까지. 복잡한 금융 계산과 절차를 쉽고 따뜻하게 도와드립니다.",
-  alternates: {
-    canonical: "https://donworry.kr",
-  },
-};
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { getLatestContents } from "@/lib/content";
 
 const categories = [
   {
@@ -50,13 +45,8 @@ const featuredCalculators = [
   { path: "/cal/youth-tax", emoji: "🎓", title: "청년 세금감면", description: "중기청 90% 감면 혜택", tag: "금융 · 대출", variant: "finance" as const },
 ];
 
-const blogPosts = [
-  { emoji: "📊", title: "2026년 달라지는 개인회생 제도", excerpt: "새해부터 적용되는 개인회생 변경사항을 알아보세요.", category: "채무조정", path: "/personal-rehabilitation-2026-changes", isPlaceholder: false },
-  { emoji: "💡", title: "알바생 주휴수당 완벽 가이드", excerpt: "2026년 최저임금 기준 주휴수당 계산법과 지급 조건", category: "재테크 · 절약", path: "/blog/weekly-holiday-pay-guide", isPlaceholder: false },
-  { emoji: "🏦", title: "사회초년생을 위한 대출 가이드", excerpt: "신용점수 관리부터 유리한 대출 상품까지", category: "금융 · 대출", path: "/blog/first-loan-guide-2030", isPlaceholder: false },
-];
-
 export default function HomePage() {
+  const latestContents = getLatestContents(10);
   return (
     <div className="min-h-screen bg-background">
       <MainNavigation />
@@ -117,6 +107,57 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Latest Contents */}
+      <section className="container py-16 md:py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            최신 콘텐츠
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            돈워리가 준비한 실용적인 금융 정보
+          </p>
+        </div>
+        {latestContents.length > 0 && (
+          <div className="relative">
+            <Carousel
+              opts={{
+                align: "start",
+                slidesToScroll: 1,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {latestContents.map((content) => (
+                  <CarouselItem key={content.path} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <BlogCard
+                      title={content.title}
+                      excerpt={content.excerpt}
+                      emoji={content.emoji}
+                      category={content.category}
+                      path={content.path}
+                      isPlaceholder={content.isPlaceholder}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              {latestContents.length > 3 && (
+                <>
+                  <CarouselPrevious className="hidden md:flex -left-12 border-primary text-primary hover:bg-primary/10 hover:text-primary" />
+                  <CarouselNext className="hidden md:flex -right-12 border-primary text-primary hover:bg-primary/10 hover:text-primary" />
+                </>
+              )}
+            </Carousel>
+          </div>
+        )}
+        <div className="text-center mt-12">
+          <Link href="/content">
+            <Button variant="outline" size="sm" className="text-sm px-6">
+              더 많은 콘텐츠 보기
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* Featured Calculators */}
       <section className="bg-muted/50 py-16 md:py-20">
         <div className="container">
@@ -136,30 +177,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Blog Posts */}
-      <section className="container py-16 md:py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            최신 가이드
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            돈워리가 준비한 실용적인 금융 정보
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {blogPosts.map((post) => (
-            <BlogCard key={post.path} {...post} />
-          ))}
-        </div>
-        <div className="text-center mt-12">
-          <Link href="/content">
-            <Button variant="outline" size="lg" className="text-lg px-8">
-              더 많은 가이드 보기
-            </Button>
-          </Link>
-        </div>
-      </section>
-
       {/* Features */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-16 md:py-20">
         <div className="container">
@@ -175,7 +192,7 @@ export default function HomePage() {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">자문단 상담</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">자문단 기고</h3>
               <p className="text-muted-foreground">경험 많은 자문단의 신뢰할 수 있는 정보</p>
             </div>
             <div>

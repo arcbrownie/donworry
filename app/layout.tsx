@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -47,6 +46,12 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" href="/favicon.ico" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        {/* Next.js Script 대신 일반 script 태그 사용 (경고 제거) */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473"
+          crossOrigin="anonymous"
+        ></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -87,13 +92,6 @@ export default function RootLayout({
           <Toaster />
           <Sonner />
         </Providers>
-        {/* 애드센스 스크립트를 가장 마지막에, React 로드 후에 실행 */}
-        <Script
-          id="adsbygoogle-init"
-          strategy="afterInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8888557569927473"
-          crossOrigin="anonymous"
-        />
       </body>
     </html>
   );

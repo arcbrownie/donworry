@@ -6,6 +6,68 @@ export interface FAQItem {
   question: string;
   answer: string;
   keywords?: string[];
+  sourcePath?: string; // FAQ가 발췌된 블로그 경로
+}
+
+/**
+ * 키워드 정규화 맵 (유사한 키워드를 작은 단위로 통합)
+ * 예: "예산법" -> "예산", "주휴수당계산" -> "주휴수당"
+ */
+const KEYWORD_NORMALIZATION_MAP: Record<string, string> = {
+  // 예산 관련
+  "예산법": "예산",
+  "예산관리": "예산",
+  "예산설정": "예산",
+  
+  // 주휴수당 관련
+  "주휴수당계산": "주휴수당",
+  "주휴수당지급": "주휴수당",
+  
+  // 대출 관련
+  "대출상품": "대출",
+  "대출금리": "대출",
+  "대출신청": "대출",
+  
+  // 개인회생 관련
+  "개인회생신청": "개인회생",
+  "개인회생절차": "개인회생",
+  
+  // 신용 관련
+  "신용점수향상": "신용점수",
+  "신용관리": "신용점수",
+  
+  // 절약 관련
+  "생활비절약": "절약",
+  "가계비절약": "절약",
+};
+
+/**
+ * 키워드 정규화 함수 (유사한 키워드를 작은 단위로 통합)
+ */
+function normalizeKeyword(keyword: string): string {
+  // 정규화 맵에 있는 경우 통합
+  if (KEYWORD_NORMALIZATION_MAP[keyword]) {
+    return KEYWORD_NORMALIZATION_MAP[keyword];
+  }
+  
+  // 키워드가 다른 키워드를 포함하는 경우 (예: "예산법"이 "예산"을 포함)
+  for (const [longKeyword, shortKeyword] of Object.entries(KEYWORD_NORMALIZATION_MAP)) {
+    if (keyword.includes(longKeyword) || longKeyword.includes(keyword)) {
+      // 더 짧은 키워드 반환
+      return shortKeyword.length < keyword.length ? shortKeyword : keyword;
+    }
+  }
+  
+  return keyword;
+}
+
+/**
+ * 키워드 배열 정규화 (유사한 키워드 통합)
+ */
+function normalizeKeywords(keywords: string[]): string[] {
+  const normalized = keywords.map(normalizeKeyword);
+  // 중복 제거 및 정렬
+  return Array.from(new Set(normalized)).sort();
 }
 
 /**
@@ -67,7 +129,7 @@ export function extractKeywords(text: string): string[] {
   const allKeywords = [...foundCompoundKeywords, ...words];
   
   // 4. 중복 제거 및 정렬
-  return Array.from(new Set(allKeywords))
+  const uniqueKeywords = Array.from(new Set(allKeywords))
     .filter(k => k.trim().length > 0)
     .filter(k => !/^\d{4}$/.test(k)) // 연도(4자리 숫자) 제외
     .sort((a, b) => {
@@ -78,6 +140,9 @@ export function extractKeywords(text: string): string[] {
       if (!aIsCompound && bIsCompound) return 1;
       return a.localeCompare(b);
     });
+  
+  // 5. 키워드 정규화 (유사한 키워드 통합)
+  return normalizeKeywords(uniqueKeywords);
 }
 
 /**
@@ -100,6 +165,9 @@ export function mergeFAQs(...faqArrays: FAQItem[][]): FAQItem[] {
         if (!faq.keywords || faq.keywords.length === 0) {
           const extractedKeywords = extractKeywords(`${faq.question} ${faq.answer}`);
           faq.keywords = extractedKeywords;
+        } else {
+          // 키워드가 있는 경우 정규화 적용
+          faq.keywords = normalizeKeywords(faq.keywords);
         }
         
         merged.push(faq);
@@ -129,7 +197,11 @@ export function extractFAQsFromContent(content: { faqs?: FAQItem[] }): FAQItem[]
         keywords: extractedKeywords
       };
     }
-    return faq;
+    // 키워드가 있는 경우 정규화 적용
+    return {
+      ...faq,
+      keywords: normalizeKeywords(faq.keywords || [])
+    };
   });
 }
 

@@ -115,7 +115,7 @@ export default function Footer() {
               © 2026 Donworry. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground text-left md:text-right">
-              본 서비스는 참고용이며, 정확한 상담은 자문단과 진행하세요.
+              본 서비스는 참고용이며, 정확한 상담은 전문가와 진행하세요.
             </p>
           </div>
         </div>
