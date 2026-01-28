@@ -39,6 +39,30 @@ export const allContents: ContentItem[] = [
   
   // 금융 · 대출
   {
+    path: '/blog/tax-delinquency-restriction-release',
+    title: '국세 체납자 금융기관 이용 제한 해제 시기 완벽 가이드',
+    excerpt: '체납 해소 후 언제부터 대출이 가능한지, 연체 기록은 언제 삭제되는지 상세히 알려드립니다',
+    emoji: '📋',
+    category: '금융 · 대출' as const,
+    date: new Date().toISOString().split('T')[0],
+  },
+  {
+    path: '/blog/youth-leap-account-early-termination-vs-loan',
+    title: '2026년 청년 도약계좌 중도해지 vs 담보대출 비교',
+    excerpt: '급전 필요 시 해지 대신 대출이 유리한 케이스 완벽 분석',
+    emoji: '💰',
+    category: '재테크 · 절약' as const,
+    date: new Date().toISOString().split('T')[0],
+  },
+  {
+    path: '/blog/low-credit-emergency-loan-list',
+    title: '신용점수 600점 이하 1금융권 비상금대출 가능 리스트',
+    excerpt: '저신용자도 승인 확률 높은 은행별 대출 상품 총정리',
+    emoji: '🏦',
+    category: '금융 · 대출' as const,
+    date: new Date().toISOString().split('T')[0],
+  },
+  {
     path: '/blog/mortgage-refinance-fee-exemption-2026',
     title: '주택담보대출 갈아타기 중도상환수수료 면제 조건 2026',
     excerpt: '2026년 정부 지침에 따른 수수료 절감 팁부터 대환대출 신청 방법까지',
