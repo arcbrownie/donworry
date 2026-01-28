@@ -116,7 +116,7 @@ export default function CalculatorHub() {
       </div>
 
       {/* Info Card */}
-      <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5">
+      <div className="therapy-card text-center bg-gradient-to-br from-primary/5 to-secondary/5 shadow-soft">
         <span className="text-4xl mb-4 block">📊</span>
         <h2 className="text-xl font-semibold text-foreground mb-2">
           2026년 최신 기준 적용

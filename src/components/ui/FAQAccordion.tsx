@@ -235,11 +235,11 @@ export default function FAQAccordion({
                 <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-4">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4">
+                <AccordionContent className="text-base text-muted-foreground pb-4">
                   <div className="space-y-4">
-                    <p>{item.answer}</p>
+                    <p className="font-normal">{item.answer}</p>
                     {item.sourcePath && (
-                      <Link href={item.sourcePath}>
+                      <Link href={item.sourcePath} className="block mt-2.5">
                         <Button 
                           variant="outline" 
                           size="sm" 

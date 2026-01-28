@@ -45,10 +45,10 @@ export default function CreditRecoveryCommittee() {
         <div className="container relative z-10">
           <div className="text-center text-white">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
-              신용회복위원회 채무조정 완벽 가이드
+              신용회복위원회 채무조정 신청 방법 | 1397 전화 상담부터 서류 준비까지
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-              신청 절차부터 자격 조건까지 한 번에 정리
+              2~4주 내 빠른 채무 해결, 신청 절차와 자격 조건 완전 정리
             </p>
           </div>
         </div>

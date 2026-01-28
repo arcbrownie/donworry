@@ -45,10 +45,10 @@ export default function PersonalRehabilitationBankruptcy() {
         <div className="container relative z-10">
           <div className="text-center text-white">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
-              개인회생 · 개인파산 완벽 가이드
+              개인회생 vs 개인파산 차이점 5가지 | 2026년 신청 조건과 비용 총정리
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-              법원을 통한 채무 해결, 새로운 시작을 위한 선택
+              정기 수입 유무에 따른 선택 기준, 신청 조건, 비용, 절차까지 완전 비교
             </p>
           </div>
         </div>

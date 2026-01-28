@@ -13,8 +13,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Calculator, ArrowRight, CreditCard, TrendingUp, Shield } from "lucide-react";
-import AdSenseInArticle from "@/components/adsense/AdSenseInArticle";
-import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
 // FAQ는 blog-faqs.ts에서 관리됩니다
 
 // 대출 이자 계산기 컴포넌트
@@ -273,9 +271,6 @@ export default function FirstLoanGuide2030() {
               </ul>
             </section>
 
-            {/* Ad Container - Middle */}
-            <AdSenseInArticle slot="9686220962" />
-
             {/* Section 2 */}
             <section id="loan-products" className="mb-10 scroll-mt-20">
               <h2 id="loan-products-heading" className="text-2xl font-bold text-slate-900 mb-4 scroll-mt-20">
@@ -406,11 +401,6 @@ export default function FirstLoanGuide2030() {
             publishedDate="2025-12-20"
             lastUpdated="2026-01-27"
           />
-        </div>
-
-        {/* Ad Container - Bottom */}
-        <div className="max-w-4xl mx-auto mt-10">
-          <AdSenseDisplay slot="8564710988" />
         </div>
       </main>
 

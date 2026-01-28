@@ -10,8 +10,8 @@ import TableOfContents from "@/components/ui/TableOfContents";
 import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
 import { Button } from "@/components/ui/button";
 import { Calculator, ArrowRight } from "lucide-react";
-import AdSenseDisplay from "@/components/adsense/AdSenseDisplay";
-// FAQ는 faqs.ts 파일에서 관리됩니다
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { faqs } from "./faqs";
 
 export default function WeeklyHolidayPayGuide() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -47,10 +47,10 @@ export default function WeeklyHolidayPayGuide() {
         <div className="container relative z-10">
           <div className="text-center text-white">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
-              2026년 최신 알바생 주휴수당 완벽 가이드
+              알바 주휴수당 계산기 | 2026년 최저시급 10,030원 기준 받는 조건
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-              계산법부터 조건까지 한 번에 정리
+              주 15시간 근무 시 받을 수 있는 금액과 지급 조건 완전 정리
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function WeeklyHolidayPayGuide() {
               2026년 주휴수당 지급 조건 (이것만 체크하세요!)
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              주휴수당을 받기 위해서는 다음의 세 가지 핵심 조건을 모두 충족해야 합니다.
+              2026년 최저시급 10,030원 기준으로 주휴수당을 받기 위해서는 다음의 세 가지 핵심 조건을 모두 충족해야 합니다.
             </p>
             <ul className="space-y-4 mb-6">
               <li className="flex items-start gap-3">
@@ -135,7 +135,7 @@ export default function WeeklyHolidayPayGuide() {
               2026년 기준 내 주휴수당은 얼마일까? 계산법 정리
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              2026년 최저시급은 <strong className="text-primary font-semibold">10,320원</strong>입니다. 이를 기준으로 본인의 스케줄에 맞춰 계산해 보세요.
+              2026년 최저시급은 <strong className="text-primary font-semibold">10,030원</strong>입니다. 이를 기준으로 본인의 스케줄에 맞춰 계산해 보세요.
             </p>
 
             {/* Subsection 1 */}
@@ -148,8 +148,8 @@ export default function WeeklyHolidayPayGuide() {
               </p>
               <div className="bg-card border border-border rounded-lg p-4 mb-4">
                 <p className="text-foreground font-semibold mb-2">계산식:</p>
-                <p className="text-primary text-lg font-bold mb-2">8시간 × 10,320원 = 82,560원</p>
-                <p className="text-muted-foreground text-sm">월 환산: 주 40시간 근무 시 주휴수당을 포함한 월급은 2,156,880원입니다.</p>
+                <p className="text-primary text-lg font-bold mb-2">8시간 × 10,030원 = 80,240원</p>
+                <p className="text-muted-foreground text-sm">월 환산: 주 40시간 근무 시 주휴수당을 포함한 월급은 약 2,100,000원입니다.</p>
               </div>
             </div>
 
@@ -163,9 +163,11 @@ export default function WeeklyHolidayPayGuide() {
               </p>
               <div className="bg-card border border-border rounded-lg p-4 mb-4">
                 <p className="text-foreground font-semibold mb-2">계산식:</p>
-                <p className="text-primary text-lg font-bold mb-2">(1주일 총 근로시간 / 40시간) × 8시간 × 10,320원</p>
+                <p className="text-primary text-lg font-bold mb-2">(1주일 총 근로시간 / 40시간) × 8시간 × 10,030원</p>
                 <p className="text-muted-foreground text-sm mb-2">예시 (주 20시간 근무 시):</p>
-                <p className="text-primary font-semibold">(20 / 40) × 8 × 10,320 = 41,280원</p>
+                <p className="text-primary font-semibold">(20 / 40) × 8 × 10,030 = 40,120원</p>
+                <p className="text-muted-foreground text-sm mt-2">예시 (주 15시간 근무 시):</p>
+                <p className="text-primary font-semibold">(15 / 40) × 8 × 10,030 = 30,090원</p>
               </div>
             </div>
 
@@ -183,22 +185,22 @@ export default function WeeklyHolidayPayGuide() {
                   <tr className="hover:bg-muted/50 transition-colors">
                     <td className="border border-border/50 p-4 text-muted-foreground">풀타임 알바</td>
                     <td className="border border-border/50 p-4 text-muted-foreground">40시간</td>
-                    <td className="border border-border/50 p-4 text-foreground font-semibold">82,560원</td>
+                    <td className="border border-border/50 p-4 text-foreground font-semibold">80,240원</td>
                   </tr>
                   <tr className="hover:bg-muted/50 transition-colors">
                     <td className="border border-border/50 p-4 text-muted-foreground">파트타임 A</td>
                     <td className="border border-border/50 p-4 text-muted-foreground">30시간</td>
-                    <td className="border border-border/50 p-4 text-foreground font-semibold">61,920원</td>
+                    <td className="border border-border/50 p-4 text-foreground font-semibold">60,180원</td>
                   </tr>
                   <tr className="hover:bg-muted/50 transition-colors">
                     <td className="border border-border/50 p-4 text-muted-foreground">파트타임 B</td>
                     <td className="border border-border/50 p-4 text-muted-foreground">20시간</td>
-                    <td className="border border-border/50 p-4 text-foreground font-semibold">41,280원</td>
+                    <td className="border border-border/50 p-4 text-foreground font-semibold">40,120원</td>
                   </tr>
                   <tr className="hover:bg-muted/50 transition-colors">
                     <td className="border border-border/50 p-4 text-muted-foreground">미니 알바</td>
                     <td className="border border-border/50 p-4 text-muted-foreground">15시간</td>
-                    <td className="border border-border/50 p-4 text-foreground font-semibold">30,960원</td>
+                    <td className="border border-border/50 p-4 text-foreground font-semibold">30,090원</td>
                   </tr>
                 </tbody>
               </table>
@@ -230,6 +232,25 @@ export default function WeeklyHolidayPayGuide() {
               주휴수당 계산, 매번 직접 하기 번거로우시죠? <strong className="text-primary">돈워리(donworry.kr)</strong>에서는 여러분의 소중한 임금을 1원도 놓치지 않도록 정확한 계산기를 제공합니다. 지금 바로 확인하고 나의 정당한 권리를 찾으세요!
             </p>
           </section>
+
+          {/* FAQ Section */}
+          <section id="faq" className="scroll-mt-20 mb-10">
+            <h2 id="faq-heading" className="text-2xl font-bold text-foreground mb-4 scroll-mt-20">
+              자주 묻는 질문 (FAQ)
+            </h2>
+            <Accordion type="single" collapsible className="w-full space-y-2">
+              {faqs.map((item, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-lg px-4">
+                  <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-4">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-4">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
           </article>
         </div>
 
@@ -253,11 +274,6 @@ export default function WeeklyHolidayPayGuide() {
             publishedDate="2025-12-15"
             lastUpdated="2026-01-27"
           />
-        </div>
-
-        {/* Ad Container */}
-        <div className="max-w-4xl mx-auto mt-10">
-          <AdSenseDisplay slot="8564710988" />
         </div>
       </main>
 

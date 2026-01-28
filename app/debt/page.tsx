@@ -150,7 +150,7 @@ export default function DebtHub() {
           <Link href="/debt/test">
             <Button className="bg-white text-category-debt hover:bg-white/90 shadow-xl px-6 py-6 rounded-xl font-semibold">
               <span className="relative z-10 flex items-center gap-2">
-                🩺 무료 자가진단 시작하기
+                🩺  무료 자가진단 시작하기
                 <ArrowRight className="w-4 h-4" />
               </span>
             </Button>

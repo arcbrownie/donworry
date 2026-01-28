@@ -203,6 +203,27 @@ const articleInfoMap: Record<string, ArticleInfo> = {
     emoji: '📖',
     category: '채무조정',
   },
+  '/blog/rehabilitation-late-payment-emergency-loan': {
+    path: '/blog/rehabilitation-late-payment-emergency-loan',
+    title: '개인회생 변제금 미납 시 긴급생계비 대출 가이드',
+    excerpt: '변제금을 낼 수 없을 때 긴급생계비 대출로 해결하는 방법',
+    emoji: '🚨',
+    category: '채무조정',
+  },
+  '/blog/rehabilitation-12month-additional-loan': {
+    path: '/blog/rehabilitation-12month-additional-loan',
+    title: '개인회생 12개월 성실상환 후 추가대출 가이드',
+    excerpt: '성실 변제로 신용을 회복하고 추가 자금을 확보하는 방법',
+    emoji: '💪',
+    category: '채무조정',
+  },
+  '/blog/minimum-living-cost-calculator-2026': {
+    path: '/blog/minimum-living-cost-calculator-2026',
+    title: '2026년 가구원수별 최저생계비 및 변제금 계산 가이드',
+    excerpt: '내 가구에 맞는 최저생계비와 개인회생 변제금 계산 방법',
+    emoji: '📊',
+    category: '채무조정',
+  },
 };
 
 // 전문가별 관련 글 매핑
@@ -213,9 +234,9 @@ export const expertArticles: Record<string, string[]> = {
   'expert-finance-01': ['/blog/first-loan-guide-2030'],
   'expert-finance-02': ['/blog/credit-card-vs-check-card'],
   'expert-finance-03': ['/cal/freelancer', '/cal/youth-tax'],
-  'expert-debt-01': ['/personal-rehabilitation-2026-changes', '/debt/personal-rehabilitation-bankruptcy'],
-  'expert-debt-02': ['/debt/credit-recovery-committee'],
-  'expert-debt-03': ['/debt/guide'],
+  'expert-debt-01': ['/personal-rehabilitation-2026-changes', '/debt/personal-rehabilitation-bankruptcy', '/blog/minimum-living-cost-calculator-2026'],
+  'expert-debt-02': ['/debt/credit-recovery-committee', '/blog/rehabilitation-late-payment-emergency-loan'],
+  'expert-debt-03': ['/debt/guide', '/blog/rehabilitation-12month-additional-loan'],
 };
 
 // 경로로 글 정보 가져오기

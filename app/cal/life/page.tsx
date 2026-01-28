@@ -59,7 +59,7 @@ export default function SavingsCalculatorHub() {
       </div>
 
       {/* Info Card */}
-      <div className="therapy-card text-center bg-category-life-light border-l-4 border-category-life">
+      <div className="therapy-card text-center bg-category-life-light border-l-4 border-b-4 border-category-life shadow-soft">
         <span className="text-4xl mb-4 block">🏠</span>
         <h2 className="text-lg font-semibold text-foreground mb-2">
           재테크 · 절약 계산기

@@ -66,7 +66,7 @@ export default function FinanceCalculatorHub() {
       </div>
 
       {/* Info Card */}
-      <div className="therapy-card text-center bg-category-finance-light border-l-4 border-category-finance">
+      <div className="therapy-card text-center bg-category-finance-light border-l-4 border-b-4 border-category-finance shadow-soft">
         <span className="text-4xl mb-4 block">💳</span>
         <h2 className="text-lg font-semibold text-foreground mb-2">
           똑똑한 금융 · 대출 계산기
