@@ -6,16 +6,16 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import Providers from "./providers";
 
 export const metadata: Metadata = {
-  title: "돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 어제보다 가벼운 오늘을 만드는 당신의 솔루션",
-  description: "돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 알바 실수령액, 프리랜서 환급, 청년 세금감면, 군인 적금 계산부터 개인회생, 채무조정 자가진단까지. 복잡한 금융 계산과 절차를 쉽고 따뜻하게 도와드립니다.",
+  title: "돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 금융 계산기",
+  description: "알바 실수령액, 청년 세금감면, 채무조정 자가진단까지. 돈워리에서 복잡한 금융 계산을 쉽고 빠르게 해결하세요.",
   keywords: "돈워리, 개인회생, 채무조정, 신속채무조정, 알바 시급 계산기, 주휴수당, 프리랜서 세금, 3.3% 환급, 중기청 소득세 감면, 청년 세금, 군인 적금, 장병내일준비적금, 금융 계산기",
   authors: [{ name: "돈워리" }],
   openGraph: {
     type: "website",
     url: "https://donworry.kr",
     siteName: "돈워리",
-    title: "돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 어제보다 가벼운 오늘을 만드는 당신의 솔루션",
-    description: "돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 알바 실수령액, 프리랜서 환급, 청년 세금감면, 군인 적금 계산부터 개인회생, 채무조정 자가진단까지. 복잡한 금융 계산과 절차를 쉽고 따뜻하게 도와드립니다.",
+    title: "돈 걱정 끝, 일상은 가볍게! 금융 계산기 '돈워리'",
+    description: "나만 몰랐던 정부지원금부터 개인회생 자가진단까지, 지금 바로 확인해보세요.",
     images: [
       {
         url: "https://donworry.kr/og-image.png",
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "돈워리 - 일상은 가볍게, 돈 걱정은 없게 | 어제보다 가벼운 오늘을 만드는 당신의 솔루션",
-    description: "돈워리는 어제보다 가벼운 오늘을 만드는 당신의 금융 솔루션입니다. 알바 실수령액, 프리랜서 환급, 청년 세금감면, 군인 적금 계산부터 개인회생, 채무조정 자가진단까지. 복잡한 금융 계산과 절차를 쉽고 따뜻하게 도와드립니다.",
+    title: "돈 걱정 끝, 일상은 가볍게! 금융 계산기 '돈워리'",
+    description: "나만 몰랐던 정부지원금부터 개인회생 자가진단까지, 지금 바로 확인해보세요.",
     images: ["https://donworry.kr/og-image.png"],
   },
   alternates: {
