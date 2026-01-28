@@ -32,6 +32,14 @@ const calculators = [
     tag: "금융 · 대출",
     variant: "finance" as const 
   },
+  { 
+    path: "/cal/interest-saving", 
+    emoji: "💵", 
+    title: "이자 절감 계산기", 
+    description: "대출 이자 절감액",
+    tag: "금융 · 대출",
+    variant: "finance" as const 
+  },
 ];
 
 const blogPosts = [

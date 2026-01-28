@@ -19,6 +19,13 @@ const financeCalculators = [
     description: "청년 취업자 90% 감면 혜택을 확인하세요",
     tag: "청년 혜택",
   },
+  {
+    path: "/cal/interest-saving",
+    emoji: "💵",
+    title: "이자 절감 계산기",
+    description: "대출 이자 절감액",
+    tag: "대출 이자",
+  },
 ];
 
 export default function FinanceCalculatorHub() {

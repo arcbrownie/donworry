@@ -23,10 +23,10 @@ const navigationItems = [
     label: "재테크 · 절약",
     icon: PiggyBank,
     description: "티끌 모아 태산, 똑똑한 소비 습관",
-    color: "text-category-debt",
-    bgColor: "bg-category-debt/10",
-    hoverColor: "hover:bg-category-debt/10 hover:text-category-debt",
-    hoverBg: "hover:bg-category-debt/10",
+    color: "text-category-life",
+    bgColor: "bg-category-life/80",
+    hoverColor: "hover:bg-category-life/90 hover:text-category-life",
+    hoverBg: "hover:bg-category-life/90",
     items: [
       { path: "/savings", label: "재테크 · 절약 정보", emoji: "💰", description: "티끌 모아 태산, 똑똑한 소비 습관" },
       { 
@@ -46,10 +46,10 @@ const navigationItems = [
     label: "금융 · 대출",
     icon: CreditCard,
     description: "나에게 딱 맞는 금리와 상품 찾기",
-    color: "text-category-debt",
-    bgColor: "bg-category-debt/10",
-    hoverColor: "hover:bg-category-debt/10 hover:text-category-debt",
-    hoverBg: "hover:bg-category-debt/10",
+    color: "text-category-finance",
+    bgColor: "bg-category-finance/80",
+    hoverColor: "hover:bg-category-finance/90 hover:text-category-finance",
+    hoverBg: "hover:bg-category-finance/90",
     items: [
       { path: "/finance", label: "대출·금리·세금 정보", emoji: "🏦", description: "나에게 딱 맞는 금리와 상품 찾기" },
       { 
@@ -70,9 +70,9 @@ const navigationItems = [
     icon: Scale,
     description: "다시 시작하는 경제적 자유, 맞춤형 해결책",
     color: "text-category-debt",
-    bgColor: "bg-category-debt/10",
-    hoverColor: "hover:bg-category-debt/10 hover:text-category-debt",
-    hoverBg: "hover:bg-category-debt/10",
+    bgColor: "bg-category-debt/80",
+    hoverColor: "hover:bg-category-debt/90 hover:text-category-debt",
+    hoverBg: "hover:bg-category-debt/90",
     items: [
       { path: "/debt", label: "채무조정 정보", emoji: "📋", description: "맞춤형 채무 해결책" },
       { path: "/debt/credit-recovery-committee", label: "신용회복위원회 채무조정", emoji: "🏛️", description: "신용회복위원회를 통한 채무조정 안내" },
@@ -275,7 +275,7 @@ export default function MainNavigation() {
               <span className="sr-only">메뉴 열기</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-full sm:w-full max-w-full p-0 bg-background">
+          <SheetContent side="right" className="w-full sm:w-full max-w-full p-0 bg-background" showCloseButton={false}>
             <div className="flex flex-col h-full">
               {/* Mobile Header */}
               <div className="flex items-center justify-between p-5 border-b border-border">
@@ -309,11 +309,11 @@ export default function MainNavigation() {
                     <Link
                       href={firstMenuPath}
                       onClick={() => setMobileOpen(false)}
-                      className={`flex items-center gap-3 px-3 py-2 rounded-lg ${category.bgColor} mb-2 hover:opacity-80 transition-opacity`}
+                      className={`flex items-center gap-3 px-3 py-2 rounded-lg ${category.bgColor} text-white mb-2 hover:opacity-90 transition-opacity`}
                     >
-                      {category.icon && <category.icon className="w-5 h-5" strokeWidth={1.5} />}
+                      {category.icon && <category.icon className="w-5 h-5 text-white" strokeWidth={1.5} />}
                       <span 
-                        className={`font-semibold ${category.color} ${category.label === '채무조정' ? 'tracking-normal' : 'tracking-tight'}`} 
+                        className={`font-semibold text-white ${category.label === '채무조정' ? 'tracking-normal' : 'tracking-tight'}`} 
                         style={{ letterSpacing: category.label === '채무조정' ? '0' : '-0.02em' }}
                       >
                         {category.label}
