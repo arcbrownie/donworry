@@ -145,13 +145,36 @@ async function fetchSitemapWithLastmod() {
 }
 
 /**
+ * 제외할 URL 패턴 (법적 페이지 등)
+ */
+const EXCLUDED_URL_PATTERNS = [
+  '/legal/about',
+  '/legal/privacy-policy',
+  '/legal/terms-of-service',
+  '/legal/disclaimer',
+];
+
+/**
+ * URL이 제외 대상인지 확인
+ */
+function isExcludedUrl(url) {
+  return EXCLUDED_URL_PATTERNS.some(pattern => url.includes(pattern));
+}
+
+/**
  * 최근 24시간 이내에 업데이트된 URL 필터링
+ * (법적 페이지는 제외)
  */
 function filterRecentUrls(urlsWithLastmod) {
   const now = new Date();
   const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
   
   const recentUrls = urlsWithLastmod.filter((item) => {
+    // 법적 페이지는 제외
+    if (isExcludedUrl(item.url)) {
+      return false;
+    }
+    
     const lastmod = new Date(item.lastmod);
     return lastmod >= twentyFourHoursAgo;
   });
