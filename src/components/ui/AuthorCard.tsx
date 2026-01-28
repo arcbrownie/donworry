@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Expert } from "@/lib/experts";
 import { ExternalLink } from "lucide-react";
@@ -25,6 +25,9 @@ export function AuthorCard({ expert, showFullInfo = true }: AuthorCardProps) {
       <div className="flex items-start gap-4">
         {/* 프로필 이미지 */}
         <Avatar className="w-16 h-16 border-2 border-primary/30">
+          {expert.image && (
+            <AvatarImage src={expert.image} alt={expert.name} />
+          )}
           <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-white font-bold text-lg">
             {initials}
           </AvatarFallback>

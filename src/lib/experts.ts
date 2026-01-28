@@ -7,6 +7,7 @@ export interface Expert {
   bio: string; // 짧은 소개 (1-2줄)
   specialty: string; // 전문 분야
   intro: string; // 간단한 소개 문구 (ExpertDetail용)
+  image?: string; // 썸네일 이미지 경로 (선택사항)
 }
 
 // 전문가 페르소나 데이터
@@ -20,6 +21,7 @@ export const experts: Expert[] = [
     bio: '10년 차 공인재무설계사(CFP). 직장인들의 첫 월급 관리부터 노후 준비까지, 현실적인 자산 형성 로드맵을 제시합니다.',
     specialty: '개인 재무 설계, 스마트 예산 관리, 복리 저축 전략',
     intro: '당신의 월급이 의미 있는 자산이 되도록, 1:1 맞춤형 재무 설계를 약속합니다.',
+    image: '/experts/kim-minji.png',
   },
   {
     id: 'expert-savings-02',
@@ -29,6 +31,7 @@ export const experts: Expert[] = [
     bio: "'생활비 다이어트' 전문가. 고물가 시대에 숨은 지출을 찾아내고, 똑똑한 소비 습관을 통해 가벼운 일상을 만드는 법을 전파합니다.",
     specialty: '생활비 절감 솔루션, 가계부 컨설팅, 짠테크 노하우',
     intro: '무조건 참는 절약이 아닌, 삶의 질을 높이는 전략적 소비의 기술을 공유합니다.',
+    image: '/experts/lee-sujin.png',
   },
   {
     id: 'expert-savings-03',
@@ -38,6 +41,7 @@ export const experts: Expert[] = [
     bio: '자산운용사 출신의 투자 전략가. 투자가 처음인 초보자들이 시장의 파도에 휩쓸리지 않도록 리스크 관리 중심의 포트폴리오를 제안합니다.',
     specialty: '초보자 맞춤형 투자, 글로벌 자산 배분, 리스크 관리',
     intro: '잃지 않는 투자가 최고의 투자입니다. 안정적인 성장을 위한 정석 투자를 가이드합니다.',
+    image: '/experts/park-jihoon.png',
   },
   
   // 금융 · 대출 전문가 (3명)
@@ -58,6 +62,7 @@ export const experts: Expert[] = [
     bio: '금융 데이터 분석가. 실시간 시장 금리 동향을 분석하여 최적의 금융상품 가입 시점과 효율적인 신용 점수 관리법을 안내합니다.',
     specialty: '금융상품 수익률 분석, 신용점수 향상 전략, 시장 금리 전망',
     intro: '숫자 뒤에 숨은 금융의 흐름을 읽어, 당신의 이익을 극대화합니다.',
+    image: '/experts/jung-seoyeon.png',
   },
   {
     id: 'expert-finance-03',

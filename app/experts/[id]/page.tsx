@@ -40,9 +40,9 @@ export default function ExpertDetail() {
       <div className="min-h-screen bg-background">
         <MainNavigation />
         <section className="container py-16 text-center">
-          <h1 className="text-2xl font-bold mb-4">전문가를 찾을 수 없습니다</h1>
+          <h1 className="text-2xl font-bold mb-4">자문단을 찾을 수 없습니다</h1>
           <Link href="/experts">
-            <Button>전문가 목록으로 돌아가기</Button>
+            <Button>자문단 목록으로 돌아가기</Button>
           </Link>
         </section>
         <Footer />
@@ -61,7 +61,7 @@ export default function ExpertDetail() {
           <Link href="/experts">
             <Button variant="ghost" className="mb-6">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              전문가 목록으로
+              자문단 목록으로
             </Button>
           </Link>
           

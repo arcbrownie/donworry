@@ -175,8 +175,8 @@ export default function HomePage() {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">전문가 상담</h3>
-              <p className="text-muted-foreground">경험 많은 전문가들의 신뢰할 수 있는 정보</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">자문단 상담</h3>
+              <p className="text-muted-foreground">경험 많은 자문단의 신뢰할 수 있는 정보</p>
             </div>
             <div>
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">

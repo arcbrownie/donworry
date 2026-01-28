@@ -18,18 +18,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!expert) {
     return {
-      title: "전문가를 찾을 수 없습니다 | 돈워리",
+      title: "자문단을 찾을 수 없습니다 | 돈워리",
     };
   }
 
   return {
-    title: `${expert.name} ${expert.title} | 돈워리 전문가`,
+    title: `${expert.name} ${expert.title} | 돈워리 자문단`,
     description: expert.bio,
     alternates: {
       canonical: `https://donworry.kr/experts/${id}`,
     },
     openGraph: {
-      title: `${expert.name} ${expert.title} | 돈워리 전문가`,
+      title: `${expert.name} ${expert.title} | 돈워리 자문단`,
       description: expert.bio,
       url: `https://donworry.kr/experts/${id}`,
     },
