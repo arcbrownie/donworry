@@ -17,7 +17,7 @@ export const allContents: ContentItem[] = [
     title: '알바생 주휴수당 완벽 가이드',
     excerpt: '2026년 최저임금 기준 주휴수당 계산법과 지급 조건',
     emoji: '💡',
-    category: '재테크 · 절약',
+    category: '재테크 · 절약' as const,
     date: '2026-01-15',
   },
   {
@@ -25,7 +25,7 @@ export const allContents: ContentItem[] = [
     title: '사회초년생 첫 월급 관리법',
     excerpt: '월급날만 기다리지 말고, 똑똑하게 관리하는 방법을 알려드립니다.',
     emoji: '📊',
-    category: '재테크 · 절약',
+    category: '재테크 · 절약' as const,
     date: '2026-01-10',
   },
   {
@@ -33,7 +33,7 @@ export const allContents: ContentItem[] = [
     title: '1인 가구 생활비 절약 꿀팁 10가지',
     excerpt: '매달 10만원 이상 아끼는 실천 가능한 방법들',
     emoji: '🏠',
-    category: '재테크 · 절약',
+    category: '재테크 · 절약' as const,
     date: '2026-01-05',
   },
   
@@ -43,7 +43,7 @@ export const allContents: ContentItem[] = [
     title: '사회초년생을 위한 대출 가이드',
     excerpt: '신용점수 관리부터 유리한 대출 상품까지',
     emoji: '🏦',
-    category: '금융 · 대출',
+    category: '금융 · 대출' as const,
     date: '2026-01-20',
   },
   {
@@ -51,7 +51,7 @@ export const allContents: ContentItem[] = [
     title: '신용카드 vs 체크카드 비교',
     excerpt: '소비 패턴에 따른 최적의 카드 선택법',
     emoji: '💳',
-    category: '금융 · 대출',
+    category: '금융 · 대출' as const,
     date: '2026-01-18',
   },
   {
@@ -59,7 +59,7 @@ export const allContents: ContentItem[] = [
     title: '사회초년생을 위한 투자 입문서',
     excerpt: '적금만으로는 부족하다! 첫 투자를 시작하는 방법',
     emoji: '📈',
-    category: '금융 · 대출',
+    category: '금융 · 대출' as const,
     date: '2026-01-12',
   },
   
@@ -69,7 +69,7 @@ export const allContents: ContentItem[] = [
     title: '2026년 달라지는 개인회생 제도',
     excerpt: '새해부터 적용되는 개인회생 변경사항을 알아보세요.',
     emoji: '📊',
-    category: '채무조정',
+    category: '채무조정' as const,
     date: '2026-01-25',
   },
   {
@@ -77,7 +77,7 @@ export const allContents: ContentItem[] = [
     title: '개인회생 · 개인파산 완벽 가이드',
     excerpt: '법원을 통한 채무 해결, 새로운 시작을 위한 선택',
     emoji: '⚖️',
-    category: '채무조정',
+    category: '채무조정' as const,
     date: '2026-01-22',
   },
   {
@@ -85,7 +85,7 @@ export const allContents: ContentItem[] = [
     title: '신용회복위원회 채무조정 완벽 가이드',
     excerpt: '신용회복위원회를 통한 채무조정 절차와 혜택 안내',
     emoji: '🏛️',
-    category: '채무조정',
+    category: '채무조정' as const,
     date: '2026-01-20',
   },
   {
@@ -93,7 +93,7 @@ export const allContents: ContentItem[] = [
     title: '채무조정 가이드',
     excerpt: '채무 해결을 위한 종합 가이드',
     emoji: '📖',
-    category: '채무조정',
+    category: '채무조정' as const,
     date: '2026-01-15',
   },
 ].sort((a, b) => {

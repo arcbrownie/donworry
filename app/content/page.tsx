@@ -52,11 +52,14 @@ export default function ContentPage() {
       <section className="container py-16">
         <div className="space-y-16">
           {/* 재테크 · 절약 */}
-          {savingsContents.length > 0 && (
+          {savingsContents.length > 0 && (() => {
+            const savingsInfo = categoryInfo['재테크 · 절약'];
+            const SavingsIcon = savingsInfo.icon;
+            return (
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <div className={`w-12 h-12 rounded-xl ${categoryInfo['재테크 · 절약'].bgColor} flex items-center justify-center`}>
-                  <categoryInfo['재테크 · 절약'].icon className={`w-6 h-6 ${categoryInfo['재테크 · 절약'].color}`} />
+                <div className={`w-12 h-12 rounded-xl ${savingsInfo.bgColor} flex items-center justify-center`}>
+                  <SavingsIcon className={`w-6 h-6 ${savingsInfo.color}`} />
                 </div>
                 <h2 className="text-2xl font-bold text-foreground">
                   재테크 · 절약
@@ -93,14 +96,18 @@ export default function ContentPage() {
                 </Carousel>
               </div>
             </div>
-          )}
+            );
+          })()}
 
           {/* 금융 · 대출 */}
-          {financeContents.length > 0 && (
+          {financeContents.length > 0 && (() => {
+            const financeInfo = categoryInfo['금융 · 대출'];
+            const FinanceIcon = financeInfo.icon;
+            return (
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <div className={`w-12 h-12 rounded-xl ${categoryInfo['금융 · 대출'].bgColor} flex items-center justify-center`}>
-                  <categoryInfo['금융 · 대출'].icon className={`w-6 h-6 ${categoryInfo['금융 · 대출'].color}`} />
+                <div className={`w-12 h-12 rounded-xl ${financeInfo.bgColor} flex items-center justify-center`}>
+                  <FinanceIcon className={`w-6 h-6 ${financeInfo.color}`} />
                 </div>
                 <h2 className="text-2xl font-bold text-foreground">
                   금융 · 대출
@@ -137,14 +144,18 @@ export default function ContentPage() {
                 </Carousel>
               </div>
             </div>
-          )}
+            );
+          })()}
 
           {/* 채무조정 */}
-          {debtContents.length > 0 && (
+          {debtContents.length > 0 && (() => {
+            const debtInfo = categoryInfo['채무조정'];
+            const DebtIcon = debtInfo.icon;
+            return (
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <div className={`w-12 h-12 rounded-xl ${categoryInfo['채무조정'].bgColor} flex items-center justify-center`}>
-                  <categoryInfo['채무조정'].icon className={`w-6 h-6 ${categoryInfo['채무조정'].color}`} />
+                <div className={`w-12 h-12 rounded-xl ${debtInfo.bgColor} flex items-center justify-center`}>
+                  <DebtIcon className={`w-6 h-6 ${debtInfo.color}`} />
                 </div>
                 <h2 className="text-2xl font-bold text-foreground">
                   채무조정
@@ -181,7 +192,8 @@ export default function ContentPage() {
                 </Carousel>
               </div>
             </div>
-          )}
+            );
+          })()}
         </div>
       </section>
 
