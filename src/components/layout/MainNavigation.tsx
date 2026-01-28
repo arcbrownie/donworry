@@ -259,18 +259,9 @@ export default function MainNavigation() {
         {/* CTA Button (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
           <Link href="/debt/test">
-            <Button className="relative px-[18px] py-2.5 bg-transparent hover:bg-transparent active:bg-transparent shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden group rounded-lg">
-              {/* Animated gradient border */}
-              <div 
-                className="absolute inset-0 rounded-lg transition-opacity duration-300" 
-                style={{
-                  background: 'linear-gradient(135deg, hsl(232 68% 30%) 0%, hsl(280 78% 31%) 50%, hsl(232 68% 30%) 100%)',
-                  backgroundSize: '200% 100%',
-                  animation: 'gradient-x 3s ease infinite'
-                }}
-              ></div>
-              <div className="absolute inset-[3px] rounded-md bg-white"></div>
-              <span className="relative z-10 flex items-center gap-3 font-extrabold text-base transition-colors duration-300" style={{ color: 'hsl(280 78% 31%)' }}>
+            <Button className="relative px-[18px] py-2.5 bg-transparent hover:bg-transparent active:bg-transparent border-2 border-violet-200 hover:border-violet-300 shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden group rounded-lg">
+              <div className="absolute inset-0 rounded-lg bg-white"></div>
+              <span className="relative z-10 flex items-center gap-3 font-extrabold text-base transition-colors duration-300 text-violet-700">
                 🩺 <span>채무조정 무료 진단</span>
               </span>
             </Button>
@@ -281,7 +272,7 @@ export default function MainNavigation() {
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon" className="w-12 h-12">
-              <Menu className="w-8 h-8" />
+              <Menu className="w-10 h-10" strokeWidth={2.5} />
               <span className="sr-only">메뉴 열기</span>
             </Button>
           </SheetTrigger>
@@ -390,18 +381,9 @@ export default function MainNavigation() {
               {/* Mobile CTA */}
               <div className="p-4 border-t border-border">
                 <Link href="/debt/test" onClick={() => setMobileOpen(false)}>
-                  <Button className="relative w-full px-[18px] py-3 bg-transparent hover:bg-transparent active:bg-transparent shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden group rounded-lg">
-                    {/* Animated gradient border */}
-                    <div 
-                      className="absolute inset-0 rounded-lg transition-opacity duration-300" 
-                      style={{
-                        background: 'linear-gradient(135deg, hsl(232 68% 30%) 0%, hsl(280 78% 31%) 50%, hsl(232 68% 30%) 100%)',
-                        backgroundSize: '200% 100%',
-                        animation: 'gradient-x 3s ease infinite'
-                      }}
-                    ></div>
-                    <div className="absolute inset-[3px] rounded-md bg-white"></div>
-                    <span className="relative z-10 flex items-center justify-center gap-3 font-extrabold text-base transition-colors duration-300" style={{ color: 'hsl(280 78% 31%)' }}>
+                  <Button className="relative w-full px-[18px] py-3 bg-transparent hover:bg-transparent active:bg-transparent border-2 border-violet-200 hover:border-violet-300 shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden group rounded-lg">
+                    <div className="absolute inset-0 rounded-lg bg-white"></div>
+                    <span className="relative z-10 flex items-center justify-center gap-3 font-extrabold text-base transition-colors duration-300 text-violet-700">
                       🩺 <span>채무조정 무료 진단</span>
                     </span>
                   </Button>

@@ -44,8 +44,32 @@ const calculators = [
 
 const blogPosts = [
   { 
+    emoji: "🏠", 
+    title: "주택담보대출 갈아타기 중도상환수수료 면제 조건 2026", 
+    excerpt: "2026년 정부 지침에 따른 수수료 절감 팁부터 대환대출 신청 방법까지",
+    category: "금융 · 대출",
+    path: "/blog/mortgage-refinance-fee-exemption-2026",
+    isPlaceholder: false 
+  },
+  { 
+    emoji: "⏰", 
+    title: "소액 대출 연체 5일 전 긴급 해결 방법", 
+    excerpt: "연체 기록이 남기 전 5일 골든타임 안에 해결하는 방법",
+    category: "금융 · 대출",
+    path: "/blog/loan-overdue-5day-solution",
+    isPlaceholder: false 
+  },
+  { 
+    emoji: "💼", 
+    title: "프리랜서 햇살론 유스 부결 시 대안 3가지", 
+    excerpt: "프리랜서가 햇살론 유스에서 부결됐을 때 시도할 수 있는 현실적인 대출 대안",
+    category: "금융 · 대출",
+    path: "/blog/freelancer-loan-alternatives",
+    isPlaceholder: false 
+  },
+  { 
     emoji: "🏦", 
-    title: "사회초년생을 위한 대출 가이드", 
+    title: "사회초년생 첫 대출 완벽 가이드 2026", 
     excerpt: "신용점수 관리부터 유리한 대출 상품 고르는 법까지",
     category: "금융 · 대출",
     path: "/blog/first-loan-guide-2030",
@@ -53,7 +77,7 @@ const blogPosts = [
   },
   { 
     emoji: "💳", 
-    title: "신용카드 vs 체크카드 비교", 
+    title: "신용카드 vs 체크카드 완벽 비교 가이드 2026", 
     excerpt: "소비 패턴에 따른 최적의 카드 선택법",
     category: "금융 · 대출",
     path: "/blog/credit-card-vs-check-card",
@@ -61,7 +85,7 @@ const blogPosts = [
   },
   { 
     emoji: "📈", 
-    title: "사회초년생을 위한 투자 입문서", 
+    title: "사회초년생 투자 입문 완벽 가이드 2026", 
     excerpt: "적금만으로는 부족하다! 첫 투자를 시작하는 방법",
     category: "금융 · 대출",
     path: "/blog/investment-guide-for-beginners",

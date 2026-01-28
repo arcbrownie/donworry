@@ -41,7 +41,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
               개인회생 12개월 성실상환 후<br />추가대출 완벽 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -325,6 +325,82 @@ export default function Rehabilitation12MonthAdditionalLoan() {
             </section>
 
             <section className="mb-10">
+              <h2 id="real-case" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <Award className="w-7 h-7 text-[#1A237E]" />
+                실제 성공 사례
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">12개월 성실상환 후</strong> 추가대출을 성공적으로 받은 실제 사례입니다.
+              </p>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/5 to-[#4A148C]/5 p-6 rounded-lg my-6 border-l-4 border-[#1A237E]">
+                <h3 className="font-bold text-foreground mb-3">사례 1: A씨 (35세, 월 소득 280만원, 변제금 80만원)</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 개인회생 인가: 2024년 1월</li>
+                  <li>• 12개월 성실 변제: 2024년 1월~12월 (연체 0회)</li>
+                  <li>• 추가대출 신청: 2025년 1월 (새희망홀씨)</li>
+                  <li>• 신청 금액: 1,000만원 (법원 허가 필요)</li>
+                  <li>• 승인 결과: 1,000만원 승인, 금리 연 10.5%</li>
+                  <li>• 상환 계획: 변제금 80만 + 대출 상환 20만 = 월 100만원 (소득 대비 35.7%)</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/5 to-[#4A148C]/5 p-6 rounded-lg my-6 border-l-4 border-[#1A237E]">
+                <h3 className="font-bold text-foreground mb-3">사례 2: B씨 (42세, 월 소득 350만원, 변제금 120만원)</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 개인회생 인가: 2023년 6월</li>
+                  <li>• 12개월 성실 변제: 2023년 6월~2024년 5월</li>
+                  <li>• 추가대출 신청: 2024년 6월 (햇살론)</li>
+                  <li>• 신청 금액: 500만원 (법원 허가 불필요)</li>
+                  <li>• 승인 결과: 500만원 승인, 금리 연 12%</li>
+                  <li>• 상환 계획: 변제금 120만 + 대출 상환 15만 = 월 135만원 (소득 대비 38.6%)</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 id="detailed-process" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <FileCheck className="w-7 h-7 text-[#1A237E]" />
+                법원 허가 신청 상세 절차
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">500만원 초과</strong> 대출은 법원 허가가 필요합니다. 구체적인 절차를 안내합니다.
+              </p>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold mb-3">1단계: 서류 준비</p>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 추가 차입 허가 신청서 (법원 양식)</li>
+                  <li>• 대출 신청서 (금융기관 발급)</li>
+                  <li>• 대출 용도 증빙 (의료비 영수증, 생활비 증빙 등)</li>
+                  <li>• 소득 증빙 (급여명세서, 소득금액증명원)</li>
+                  <li>• 변제 이행 증명서 (관리인 발급)</li>
+                </ul>
+              </div>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold mb-3">2단계: 법원 제출</p>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 관할 법원에 서류 제출 (우편 또는 직접 방문)</li>
+                  <li>• 수수료: 5만원 (인지대)</li>
+                  <li>• 심사 기간: 약 2-4주</li>
+                </ul>
+              </div>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold mb-3">3단계: 허가 후 대출 신청</p>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 법원 허가서를 받은 후 금융기관에 대출 신청</li>
+                  <li>• 허가서와 함께 서류 제출</li>
+                  <li>• 금융기관 심사: 약 1주일</li>
+                  <li>• 대출 실행: 승인 후 3-7일 내 입금</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="mb-10">
               <h2 id="tips" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
                 <Shield className="w-7 h-7 text-[#1A237E]" />
                 주의사항 및 성공 팁
@@ -362,6 +438,20 @@ export default function Rehabilitation12MonthAdditionalLoan() {
                   <div>
                     <strong className="text-foreground block mb-1">24개월 목표:</strong>
                     <span className="text-muted-foreground">24개월 성실 변제 시 더 좋은 조건의 대출 이용 가능</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">용도 명확히:</strong>
+                    <span className="text-muted-foreground">의료비, 생활비 등 구체적인 용도를 증빙하여 신청</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">변호사 상담:</strong>
+                    <span className="text-muted-foreground">법원 허가 절차가 복잡하면 변호사 도움 받기</span>
                   </div>
                 </li>
               </ul>

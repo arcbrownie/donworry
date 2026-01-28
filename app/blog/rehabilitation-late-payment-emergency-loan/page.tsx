@@ -41,7 +41,7 @@ export default function RehabilitationLatePaymentLoan() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
               개인회생 변제금 미납 시<br />긴급생계비 대출 완벽 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -312,6 +312,79 @@ export default function RehabilitationLatePaymentLoan() {
             </section>
 
             <section className="mb-10">
+              <h2 id="real-case" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <AlertCircle className="w-7 h-7 text-[#1A237E]" />
+                실제 사례 및 대응
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">변제금 미납 위기</strong>를 극복한 실제 사례입니다.
+              </p>
+
+              <div className="bg-gradient-to-r from-red-500/5 to-red-600/5 p-6 rounded-lg my-6 border-l-4 border-red-600">
+                <h3 className="font-bold text-foreground mb-3">사례 1: 실직으로 변제금 납부 불가</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 상황: 개인회생 8개월차, 갑작스러운 실직</li>
+                  <li>• 변제금: 월 100만원 (납부 불가)</li>
+                  <li>• 대응: 신용회복위원회 긴급생계비 300만원 신청</li>
+                  <li>• 결과: 2주 만에 승인, 변제금 3개월치 납부</li>
+                  <li>• 후속 조치: 실직 증명서로 법원에 변제계획 변경 신청</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-red-500/5 to-red-600/5 p-6 rounded-lg my-6 border-l-4 border-red-600">
+                <h3 className="font-bold text-foreground mb-3">사례 2: 의료비 급증으로 자금 부족</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 상황: 개인회생 15개월차, 가족 중환자 발생</li>
+                  <li>• 변제금: 월 120만원 + 의료비 월 80만원</li>
+                  <li>• 대응: 햇살론 500만원 신청 (법원 허가 불필요)</li>
+                  <li>• 결과: 1주일 만에 승인, 의료비 부담 완화</li>
+                  <li>• 후속 조치: 의료비 증빙으로 법원에 최저생계비 조정 신청</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 id="detailed-application" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <FileText className="w-7 h-7 text-[#1A237E]" />
+                신청 서류 상세 가이드
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">긴급생계비 대출 신청</strong>에 필요한 서류를 구체적으로 정리했습니다.
+              </p>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold mb-3">필수 서류</p>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 신분증 (주민등록증 또는 운전면허증)</li>
+                  <li>• 개인회생 인가결정문 (사본)</li>
+                  <li>• 변제 이행 증명서 (관리인 발급, 최근 6개월)</li>
+                  <li>• 소득 증빙 (급여명세서, 소득금액증명원, 건강보험료 납부확인서)</li>
+                  <li>• 긴급 사유 증빙 (의료비 영수증, 실직 증명서, 생활비 증빙 등)</li>
+                  <li>• 통장 사본 (최근 3-6개월)</li>
+                </ul>
+              </div>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold mb-3">추가 서류 (상황별)</p>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 의료비: 진단서, 치료비 영수증, 약제비 영수증</li>
+                  <li>• 실직: 실직증명서, 구직활동 증명서</li>
+                  <li>• 생활비: 월세 계약서, 관리비 고지서, 식비 증빙</li>
+                  <li>• 법원 확인서: 일부 기관은 법원의 긴급대출 확인서 요구</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/10 to-[#4A148C]/10 border-l-4 border-[#1A237E] p-6 rounded-r-lg my-6">
+                <p className="text-muted-foreground">
+                  <strong className="text-[#1A237E]">💡 전문가 TIP:</strong> 서류가 부족하면 승인이 지연됩니다. 
+                  신청 전에 금융기관에 필요한 서류 목록을 미리 확인하고, 가능한 한 모든 증빙을 준비하세요.
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-10">
               <h2 id="alternatives" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
                 <Shield className="w-7 h-7 text-[#1A237E]" />
                 대안 및 장기 전략
@@ -327,21 +400,35 @@ export default function RehabilitationLatePaymentLoan() {
                   <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
                   <div>
                     <strong className="text-foreground block mb-1">변제계획 변경 신청:</strong>
-                    <span className="text-muted-foreground">소득 감소 시 법원에 변제금 감액 신청 가능</span>
+                    <span className="text-muted-foreground">소득 감소 시 법원에 변제금 감액 신청 가능 (최대 50% 감액)</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
                   <div>
                     <strong className="text-foreground block mb-1">연장 신청:</strong>
-                    <span className="text-muted-foreground">최대 2년까지 변제 기간 연장 가능 (법원 승인 필요)</span>
+                    <span className="text-muted-foreground">최대 2년까지 변제 기간 연장 가능 (법원 승인 필요, 총 7년까지)</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
                   <div>
                     <strong className="text-foreground block mb-1">지자체 지원:</strong>
-                    <span className="text-muted-foreground">일부 지자체에서 저소득층 긴급생계비 지원 (무이자)</span>
+                    <span className="text-muted-foreground">일부 지자체에서 저소득층 긴급생계비 지원 (무이자, 한도 300만원)</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">가족 지원:</strong>
+                    <span className="text-muted-foreground">가족으로부터 차용 (법원 보고 불필요, 500만원 이하)</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">부업 확보:</strong>
+                    <span className="text-muted-foreground">배달, 프리랜서 등으로 월 30-50만원 추가 소득</span>
                   </div>
                 </li>
               </ul>

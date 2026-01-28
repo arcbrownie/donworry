@@ -39,7 +39,7 @@ export default function LoanOverdue5DaySolution() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
               소액 대출 연체 5일 전<br />긴급 해결 방법
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -342,6 +342,76 @@ export default function LoanOverdue5DaySolution() {
             </section>
 
             <section className="mb-10">
+              <h2 id="scenario-example" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <Clock className="w-7 h-7 text-[#1A237E]" />
+                실제 상황별 대응 시나리오
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">연체 일수별</strong> 구체적인 대응 방법을 시나리오로 정리했습니다.
+              </p>
+
+              <div className="bg-gradient-to-r from-red-500/5 to-red-600/5 p-6 rounded-lg my-6 border-l-4 border-red-600">
+                <h3 className="font-bold text-foreground mb-3">시나리오 1: 연체 1일차 (D-1) - 오늘 발견</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 즉시 행동: 대출 기관 콜센터에 전화 (상환 의사 표명)</li>
+                  <li>• 당일 상환: 가능하면 당일 입금 (연체 기록 없음)</li>
+                  <li>• 예상 결과: 연체이자만 부과, 신용점수 영향 없음</li>
+                  <li>• 비용: 연체이자 약 0.05% (대출 잔액 1,000만원 기준 일 5,000원)</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-orange-500/5 to-orange-600/5 p-6 rounded-lg my-6 border-l-4 border-orange-600">
+                <h3 className="font-bold text-foreground mb-3">시나리오 2: 연체 3일차 (D-3) - 여유 있음</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 즉시 행동: 금융기관에 상환 일정 협의 (2일 내 상환 약속)</li>
+                  <li>• 자금 마련: 신용카드 현금서비스 또는 카드론 활용</li>
+                  <li>• 예상 결과: 5일 전 상환 시 신용평가 미등록</li>
+                  <li>• 비용: 연체이자 + 현금서비스 수수료 (약 0.1-0.2%)</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-red-500/5 to-red-600/5 p-6 rounded-lg my-6 border-l-4 border-red-600">
+                <h3 className="font-bold text-foreground mb-3">시나리오 3: 연체 4일차 (D-4) - 마지막 기회</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 즉시 행동: 가족/지인 차용 또는 모든 수단 동원</li>
+                  <li>• 협상: 금융기관에 "내일 상환 예정" 명확히 통보</li>
+                  <li>• 예상 결과: 내일까지 상환 시 5일차 회피 가능</li>
+                  <li>• 비용: 연체이자 + 긴급 자금 조달 비용</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 id="phone-script" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <AlertTriangle className="w-7 h-7 text-[#1A237E]" />
+                금융기관 통화 스크립트
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">금융기관에 전화할 때</strong> 이렇게 말하면 도움이 됩니다.
+              </p>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold mb-3">📞 통화 예시 (연체 3일차)</p>
+                <div className="space-y-3 text-muted-foreground">
+                  <p><strong className="text-foreground">고객:</strong> "안녕하세요. OO대출 연체 관련해서 전화드렸습니다."</p>
+                  <p><strong className="text-foreground">상담사:</strong> "네, 어떤 도움이 필요하신가요?"</p>
+                  <p><strong className="text-foreground">고객:</strong> "상환일을 놓쳤는데, 2일 내에 전액 상환하겠습니다. 혹시 신용평가 등록을 며칠만 유예해주실 수 있나요?"</p>
+                  <p><strong className="text-foreground">상담사:</strong> "2일 내 상환하시면 등록을 유예해드릴 수 있습니다."</p>
+                  <p><strong className="text-foreground">고객:</strong> "감사합니다. 정확한 상환 금액을 알려주시겠어요?"</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/10 to-[#4A148C]/10 border-l-4 border-[#1A237E] p-6 rounded-r-lg my-6">
+                <p className="text-muted-foreground">
+                  <strong className="text-[#1A237E]">💡 전문가 TIP:</strong> 통화 시 "상환 의사가 있다"는 것을 명확히 표현하고, 
+                  구체적인 상환 일정을 제시하세요. 일부 금융기관은 상환 의사가 있으면 신용평가 등록을 1-2일 유예해줍니다.
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-10">
               <h2 id="prevention" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
                 <TrendingDown className="w-7 h-7 text-[#1A237E]" />
                 연체 예방을 위한 장기 전략
@@ -378,6 +448,13 @@ export default function LoanOverdue5DaySolution() {
                   <div>
                     <strong className="text-foreground block mb-1">재무 상담:</strong>
                     <span className="text-muted-foreground">신용회복위원회 무료 상담 활용 (1600-5500)</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">대출 통합:</strong>
+                    <span className="text-muted-foreground">여러 소액대출을 하나로 통합하여 관리 간소화</span>
                   </div>
                 </li>
               </ul>

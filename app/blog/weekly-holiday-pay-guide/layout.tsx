@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "알바 주휴수당 완벽 가이드 2026 | 돈워리",
   description: "2026년 최저임금 기준 주휴수당 계산법 및 지급 조건 완벽 가이드. 주 15시간 근무 시 받을 수 있는 금액, 지급 조건, 미지급 시 신고 방법까지 실전 가이드.",
-  keywords: "주휴수당 계산기, 2026 최저시급 10,030원, 주휴수당 계산법, 알바 주휴수당, 주 15시간 근무, 주휴수당 신고",
+  keywords: "주휴수당 계산기, 2026 최저시급 10,320원, 주휴수당 계산법, 알바 주휴수당, 주 15시간 근무, 주휴수당 신고",
   alternates: {
     canonical: "https://donworry.kr/blog/weekly-holiday-pay-guide",
   },

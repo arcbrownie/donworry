@@ -9,6 +9,7 @@ import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
 import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
+import { RelatedPosts } from "@/components/ui/RelatedPosts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -180,7 +181,7 @@ export default function SocialBeginnerSalaryGuide() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
               사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -390,25 +391,28 @@ export default function SocialBeginnerSalaryGuide() {
                 </Link>
               </div>
             </div>
+
+            {/* Author Section - 본문과 왼쪽 정렬 */}
+            <div className="mt-12 pt-8 border-t border-border">
+              <ArticleAuthor 
+                expertId="expert-savings-01"
+                publishedDate="2026-01-15"
+                lastUpdated="2026-01-27"
+              />
+
+              {/* Share Buttons - 작성자 정보 아래 */}
+              <BlogShareButtons
+                title="사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추"
+                description="사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다."
+                variant="inline"
+                className="mt-8"
+              />
+            </div>
           </article>
         </div>
 
-        {/* Author Section */}
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-savings-01"
-            publishedDate="2026-01-15"
-            lastUpdated="2026-01-27"
-          />
-
-          {/* Share Buttons */}
-          <BlogShareButtons
-            title="사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추"
-            description="사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다."
-            variant="inline"
-            className="mt-8"
-          />
-        </div>
+        {/* 함께 읽으면 좋은 글 */}
+        <RelatedPosts category="재테크 · 절약" />
 
         {/* Newsletter Subscribe Section */}
         <div className="max-w-4xl mx-auto mt-16 mb-10">

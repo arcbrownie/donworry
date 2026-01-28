@@ -8,8 +8,9 @@ import CalculatorWidget from "@/components/ui/CalculatorWidget";
 import { Button } from "@/components/ui/button";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import Link from "next/link";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { getLatestContents } from "@/lib/content";
+import { useState, useEffect } from "react";
 
 const categories = [
   {
@@ -47,6 +48,8 @@ const featuredCalculators = [
 
 export default function HomePage() {
   const latestContents = getLatestContents(10);
+  const [api, setApi] = useState<CarouselApi>();
+
   return (
     <div className="min-h-screen bg-background">
       <MainNavigation />
@@ -111,7 +114,7 @@ export default function HomePage() {
       <section className="container py-16 md:py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            최신 콘텐츠
+            최신 가이드
           </h2>
           <p className="text-muted-foreground text-lg">
             돈워리가 준비한 실용적인 금융 정보
@@ -124,6 +127,7 @@ export default function HomePage() {
                 align: "start",
                 slidesToScroll: 1,
               }}
+              setApi={setApi}
               className="w-full"
             >
               <CarouselContent className="-ml-2 md:-ml-4">
@@ -152,7 +156,7 @@ export default function HomePage() {
         <div className="text-center mt-12">
           <Link href="/content">
             <Button variant="outline" size="sm" className="text-sm px-6">
-              더 많은 콘텐츠 보기
+              모든 가이드 보기
             </Button>
           </Link>
         </div>

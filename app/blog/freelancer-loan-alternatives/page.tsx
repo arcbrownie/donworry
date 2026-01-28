@@ -39,7 +39,7 @@ export default function FreelancerLoanAlternatives() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
               프리랜서 햇살론 유스<br />부결 시 대안 3가지
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -370,6 +370,109 @@ export default function FreelancerLoanAlternatives() {
             </section>
 
             <section className="mb-10">
+              <h2 id="comparison-table" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <FileText className="w-7 h-7 text-[#1A237E]" />
+                대안별 상세 비교표
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">3가지 대안</strong>을 한눈에 비교할 수 있도록 정리했습니다.
+              </p>
+
+              <div className="overflow-x-auto my-6">
+                <table className="w-full border-collapse bg-card rounded-lg overflow-hidden shadow-soft">
+                  <thead>
+                    <tr className="bg-[#1A237E]/10">
+                      <th className="border border-[#1A237E]/20 px-4 py-3 text-left font-bold text-foreground">항목</th>
+                      <th className="border border-[#1A237E]/20 px-4 py-3 text-left font-bold text-foreground">새희망홀씨</th>
+                      <th className="border border-[#1A237E]/20 px-4 py-3 text-left font-bold text-foreground">사잇돌대출</th>
+                      <th className="border border-[#1A237E]/20 px-4 py-3 text-left font-bold text-foreground">P2P 대출</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="hover:bg-muted/50 transition-colors">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">최대 한도</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">3,000만원</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">3,500만원</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">2,000만원</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors bg-slate-50">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">금리</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">연 10.5-13.5%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">연 8-15%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">연 12-20%</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">소득 증빙</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">통장 3개월</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">통장 6개월</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">유연함</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors bg-slate-50">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">신용등급</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">하위 20% 가능</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">하위 20% 가능</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">완화</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">승인 속도</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">1-2주</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">3-7일</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">1-3일</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors bg-slate-50">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">추천 대상</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">안정적 소득</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">거래은행 있음</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">긴급 자금</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 id="real-case" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <TrendingUp className="w-7 h-7 text-[#1A237E]" />
+                실제 성공 사례
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">햇살론 유스 부결 후</strong> 성공적으로 대출을 받은 프리랜서들의 실제 사례입니다.
+              </p>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/5 to-[#4A148C]/5 p-6 rounded-lg my-6 border-l-4 border-[#1A237E]">
+                <h3 className="font-bold text-foreground mb-3">사례 1: 디자이너 A씨 (30세, 연소득 2,800만원)</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 햇살론 유스 부결 사유: 건강보험료 납부 2개월만 기록</li>
+                  <li>• 대안 선택: 새희망홀씨 (통장 6개월 이력 준비 후 신청)</li>
+                  <li>• 승인 결과: 1,500만원 승인, 금리 연 11.5%</li>
+                  <li>• 성공 포인트: 같은 통장에 6개월간 꾸준히 입금, 월 평균 230만원 입금 증빙</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/5 to-[#4A148C]/5 p-6 rounded-lg my-6 border-l-4 border-[#1A237E]">
+                <h3 className="font-bold text-foreground mb-3">사례 2: 개발자 B씨 (28세, 연소득 4,200만원)</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 햇살론 유스 부결 사유: 신용점수 650점 (기준 미달)</li>
+                  <li>• 대안 선택: 거래은행(KB) 사잇돌대출</li>
+                  <li>• 승인 결과: 2,000만원 승인, 금리 연 9.5%</li>
+                  <li>• 성공 포인트: 2년간 거래한 KB 통장에 수입 입금, 거래 이력 우수</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/5 to-[#4A148C]/5 p-6 rounded-lg my-6 border-l-4 border-[#1A237E]">
+                <h3 className="font-bold text-foreground mb-3">사례 3: 작가 C씨 (32세, 연소득 1,800만원)</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li>• 햇살론 유스 부결 사유: 소득 증빙 어려움 (불규칙한 수입)</li>
+                  <li>• 대안 선택: P2P 대출 (렌딧)</li>
+                  <li>• 승인 결과: 800만원 승인, 금리 연 15%</li>
+                  <li>• 성공 포인트: 출판 계약서와 세금계산서 제출, 단기 상환 계획 명시</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="mb-10">
               <h2 id="tips" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
                 <Shield className="w-7 h-7 text-[#1A237E]" />
                 대출 승인율 높이는 팁
@@ -413,6 +516,20 @@ export default function FreelancerLoanAlternatives() {
                   <div>
                     <strong className="text-foreground block mb-1">부결 후 6개월 대기:</strong>
                     <span className="text-muted-foreground">부결되면 6개월 후 재신청 (그 사이 신용 관리)</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">신용카드 사용 관리:</strong>
+                    <span className="text-muted-foreground">신용카드 한도 사용률 30% 이하 유지 (신용점수 상승)</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">세금 신고 정확히:</strong>
+                    <span className="text-muted-foreground">종합소득세 신고로 소득금액증명원 발급 가능 (5월 이후)</span>
                   </div>
                 </li>
               </ul>

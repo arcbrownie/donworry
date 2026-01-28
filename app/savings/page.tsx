@@ -54,7 +54,7 @@ const blogPosts = [
   },
   { 
     emoji: "📊", 
-    title: "사회초년생을 위한 대출 가이드", 
+    title: "사회초년생 첫 월급 관리 완벽 가이드", 
     excerpt: "월급날만 기다리지 말고, 똑똑하게 관리하는 방법을 알려드립니다.",
     category: "재테크 · 절약",
     path: "/blog/social-beginner-salary-guide",
@@ -62,10 +62,10 @@ const blogPosts = [
   },
   { 
     emoji: "🏠", 
-    title: "1인 가구 생활비 절약 꿀팁 10가지", 
+    title: "1인 가구 생활비 절약 완벽 가이드", 
     excerpt: "매달 10만원 이상 아끼는 실천 가능한 방법들",
     category: "재테크 · 절약",
-    path: "/blog/one-person-household-savings-detailed",
+    path: "/blog/one-person-household-savings",
     isPlaceholder: false 
   },
   { 
@@ -85,7 +85,7 @@ const blogPosts = [
 const defaultSavingsFAQ: FAQItem[] = [
   { 
     question: "2026년 최저임금", 
-    answer: "2026년 최저임금은 시간당 10,030원입니다. 월급으로 환산하면 주 40시간 기준 약 209만원입니다.",
+    answer: "2026년 최저임금은 시간당 10,320원입니다. 월급으로 환산하면 주 40시간 기준 약 215만원입니다.",
     keywords: ["최저임금", "알바"]
   },
   { 

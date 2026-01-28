@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import { getContentsByCategory } from "@/lib/content";
 import { PiggyBank, CreditCard, Scale } from "lucide-react";
 
@@ -33,6 +33,10 @@ export default function ContentPage() {
   const savingsContents = getContentsByCategory('재테크 · 절약');
   const financeContents = getContentsByCategory('금융 · 대출');
   const debtContents = getContentsByCategory('채무조정');
+  
+  const [savingsApi, setSavingsApi] = useState<CarouselApi>();
+  const [financeApi, setFinanceApi] = useState<CarouselApi>();
+  const [debtApi, setDebtApi] = useState<CarouselApi>();
 
   return (
     <div className="min-h-screen bg-background">
@@ -41,10 +45,10 @@ export default function ContentPage() {
       <section className="bg-gradient-to-br from-primary/10 to-secondary/10 py-16">
         <div className="container text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            최신 콘텐츠
+            돈워리의 모든 가이드
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            돈워리가 준비한 최신 금융 정보를 확인하세요
+            돈워리 자문단이 작성한 분야별 가이드를 확인해보세요
           </p>
         </div>
       </section>
@@ -64,6 +68,9 @@ export default function ContentPage() {
                 <h2 className="text-2xl font-bold text-foreground">
                   재테크 · 절약
                 </h2>
+                <span className="text-sm text-muted-foreground ml-2">
+                  {savingsContents.length}개 가이드
+                </span>
               </div>
               <div className="relative">
                 <Carousel
@@ -71,6 +78,7 @@ export default function ContentPage() {
                     align: "start",
                     slidesToScroll: 1,
                   }}
+                  setApi={setSavingsApi}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-2 md:-ml-4">
@@ -112,6 +120,9 @@ export default function ContentPage() {
                 <h2 className="text-2xl font-bold text-foreground">
                   금융 · 대출
                 </h2>
+                <span className="text-sm text-muted-foreground ml-2">
+                  {financeContents.length}개 가이드
+                </span>
               </div>
               <div className="relative">
                 <Carousel
@@ -119,6 +130,7 @@ export default function ContentPage() {
                     align: "start",
                     slidesToScroll: 1,
                   }}
+                  setApi={setFinanceApi}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-2 md:-ml-4">
@@ -160,6 +172,9 @@ export default function ContentPage() {
                 <h2 className="text-2xl font-bold text-foreground">
                   채무조정
                 </h2>
+                <span className="text-sm text-muted-foreground ml-2">
+                  {debtContents.length}개 가이드
+                </span>
               </div>
               <div className="relative">
                 <Carousel
@@ -167,6 +182,7 @@ export default function ContentPage() {
                     align: "start",
                     slidesToScroll: 1,
                   }}
+                  setApi={setDebtApi}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-2 md:-ml-4">

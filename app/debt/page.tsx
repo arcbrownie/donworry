@@ -45,11 +45,43 @@ const debtFeatures = [
 
 const blogPosts = [
   { 
+    emoji: "📋", 
+    title: "2026년 개인회생 변제금 산정 기준 변경 완벽 가이드", 
+    excerpt: "달라진 법원 기준을 숫자로 비교 분석. 최저생계비 인상률, 변제금 계산 방법",
+    category: "채무조정",
+    path: "/blog/rehabilitation-repayment-2026-changes",
+    isPlaceholder: false 
+  },
+  { 
     emoji: "📊", 
-    title: "2026년 달라지는 개인회생 제도", 
+    title: "2026년 가구원수별 최저생계비 및 변제금 계산 가이드", 
+    excerpt: "내 가구에 맞는 최저생계비와 개인회생 변제금 계산 방법",
+    category: "채무조정",
+    path: "/blog/minimum-living-cost-calculator-2026",
+    isPlaceholder: false 
+  },
+  { 
+    emoji: "🚨", 
+    title: "개인회생 변제금 미납 시 긴급생계비 대출 가이드", 
+    excerpt: "변제금을 낼 수 없을 때 긴급생계비 대출로 해결하는 방법",
+    category: "채무조정",
+    path: "/blog/rehabilitation-late-payment-emergency-loan",
+    isPlaceholder: false 
+  },
+  { 
+    emoji: "💪", 
+    title: "개인회생 12개월 성실상환 후 추가대출 가이드", 
+    excerpt: "성실 변제로 신용을 회복하고 추가 자금을 확보하는 방법",
+    category: "채무조정",
+    path: "/blog/rehabilitation-12month-additional-loan",
+    isPlaceholder: false 
+  },
+  { 
+    emoji: "📊", 
+    title: "2026년 개인회생 제도 변경사항 완벽 가이드", 
     excerpt: "새해부터 적용되는 개인회생 변경사항과 준비 방법",
     category: "채무조정",
-    path: "/personal-rehabilitation-2026-changes",
+    path: "/blog/personal-rehabilitation-2026",
     isPlaceholder: false 
   },
   { 

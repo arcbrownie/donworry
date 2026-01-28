@@ -41,7 +41,7 @@ export default function MinimumLivingCostCalculator2026() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
               2026년 가구원수별 최저생계비<br />및 변제금 계산 완벽 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -346,6 +346,149 @@ export default function MinimumLivingCostCalculator2026() {
             </section>
 
             <section className="mb-10">
+              <h2 id="detailed-examples" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <Calculator className="w-7 h-7 text-[#1A237E]" />
+                상세 계산 예시
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">실제 사례</strong>를 통해 변제금 계산 방법을 더 자세히 알아보겠습니다.
+              </p>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold text-xl mb-4">📊 사례 1: 2인 가구 (부부, 월 소득 350만원)</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">월 소득: 3,500,000원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">최저생계비 (2인): 2,350,000원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">월 변제금: 3,500,000 - 2,350,000 = <strong className="text-[#1A237E]">1,150,000원</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">5년 총 변제금: 1,150,000 × 60개월 = <strong className="text-[#1A237E]">69,000,000원</strong></span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold text-xl mb-4">📊 사례 2: 4인 가구 (부부 + 자녀 2명, 월 소득 500만원)</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">월 소득: 5,000,000원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">최저생계비 (4인): 3,750,000원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">대학생 자녀 교육비 추가: +500,000원 (1인당)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">인정 최저생계비: 3,750,000 + 500,000 = 4,250,000원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">월 변제금: 5,000,000 - 4,250,000 = <strong className="text-[#1A237E]">750,000원</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">5년 총 변제금: 750,000 × 60개월 = <strong className="text-[#1A237E]">45,000,000원</strong></span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold text-xl mb-4">📊 사례 3: 1인 가구 (중증 질환자, 월 소득 250만원)</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">월 소득: 2,500,000원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">최저생계비 (1인): 1,450,000원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">의료비 추가 인정: +800,000원 (진단서 증빙)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">인정 최저생계비: 1,450,000 + 800,000 = 2,250,000원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">월 변제금: 2,500,000 - 2,250,000 = <strong className="text-[#1A237E]">250,000원</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">5년 총 변제금: 250,000 × 60개월 = <strong className="text-[#1A237E]">15,000,000원</strong></span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 id="regional-differences" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <Users className="w-7 h-7 text-[#1A237E]" />
+                지역별 최저생계비 차이
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">법원마다</strong> 최저생계비 기준이 약간씩 다를 수 있습니다. 
+                수도권과 지방, 대도시와 중소도시 간 차이가 있습니다.
+              </p>
+
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">서울/경기:</strong>
+                    <span className="text-muted-foreground">표준 최저생계비 + 주거비 10-15% 추가 인정 (월 20-30만원)</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">광역시:</strong>
+                    <span className="text-muted-foreground">표준 최저생계비 적용 (부산, 대구, 인천 등)</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">중소도시:</strong>
+                    <span className="text-muted-foreground">표준 최저생계비 적용 (일부 법원은 5% 감액 가능)</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">법원별 차이:</strong>
+                    <span className="text-muted-foreground">같은 지역이라도 관할 법원에 따라 5-10% 차이 가능</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/10 to-[#4A148C]/10 border-l-4 border-[#1A237E] p-6 rounded-r-lg my-6">
+                <p className="text-muted-foreground">
+                  <strong className="text-[#1A237E]">💡 전문가 TIP:</strong> 개인회생 신청 전 관할 법원의 최저생계비 기준을 
+                  변호사나 법원에 문의하여 확인하세요. 지역별 차이가 있어 변제금이 달라질 수 있습니다.
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-10">
               <h2 id="tips" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
                 <Shield className="w-7 h-7 text-[#1A237E]" />
                 변제금 부담 줄이는 팁
@@ -383,6 +526,13 @@ export default function MinimumLivingCostCalculator2026() {
                   <div>
                     <strong className="text-foreground block mb-1">변호사 상담:</strong>
                     <span className="text-muted-foreground">복잡한 경우 개인회생 전문 변호사의 도움 받기</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">주거비 증빙:</strong>
+                    <span className="text-muted-foreground">월세 계약서, 관리비 고지서 등으로 주거비 추가 인정 요청</span>
                   </div>
                 </li>
               </ul>

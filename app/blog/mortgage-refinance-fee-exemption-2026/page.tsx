@@ -39,7 +39,7 @@ export default function MortgageRefinanceFeeExemption2026() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
               주택담보대출 갈아타기<br />중도상환수수료 면제 조건 2026
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -356,6 +356,122 @@ export default function MortgageRefinanceFeeExemption2026() {
             </section>
 
             <section className="mb-10">
+              <h2 id="bank-comparison" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <Home className="w-7 h-7 text-[#1A237E]" />
+                은행별 대환대출 비교
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">주요 은행별</strong> 대환대출 조건을 비교했습니다.
+              </p>
+
+              <div className="overflow-x-auto my-6">
+                <table className="w-full border-collapse bg-card rounded-lg overflow-hidden shadow-soft">
+                  <thead>
+                    <tr className="bg-[#1A237E]/10">
+                      <th className="border border-[#1A237E]/20 px-4 py-3 text-left font-bold text-foreground">은행</th>
+                      <th className="border border-[#1A237E]/20 px-4 py-3 text-left font-bold text-foreground">금리 (변동)</th>
+                      <th className="border border-[#1A237E]/20 px-4 py-3 text-left font-bold text-foreground">취급수수료</th>
+                      <th className="border border-[#1A237E]/20 px-4 py-3 text-left font-bold text-foreground">특징</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="hover:bg-muted/50 transition-colors">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">KB국민은행</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">연 3.2-4.5%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">0.2-0.3%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">온라인 신청 가능</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors bg-slate-50">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">신한은행</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">연 3.1-4.3%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">0.2-0.4%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">금리 협상 여지 있음</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">하나은행</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">연 3.0-4.2%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">0.15-0.3%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">수수료 할인 이벤트</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors bg-slate-50">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">우리은행</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">연 3.2-4.4%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">0.2-0.35%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">고객 우대 금리</td>
+                    </tr>
+                    <tr className="hover:bg-muted/50 transition-colors">
+                      <td className="border border-[#1A237E]/20 px-4 py-3 font-semibold text-foreground">NH농협은행</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">연 3.3-4.6%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">0.2-0.3%</td>
+                      <td className="border border-[#1A237E]/20 px-4 py-3 text-muted-foreground">농협 회원 우대</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="bg-gradient-to-r from-[#1A237E]/10 to-[#4A148C]/10 border-l-4 border-[#1A237E] p-6 rounded-r-lg my-6">
+                <p className="text-muted-foreground">
+                  <strong className="text-[#1A237E]">💡 전문가 TIP:</strong> 은행별 금리와 수수료는 시기마다 변동됩니다. 
+                  최소 3곳 이상 비교 상담을 받고, 기존 은행에 타행 이동 의사를 밝혀 금리 인하를 요청하세요.
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-10">
+              <h2 id="detailed-calculation" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
+                <Calculator className="w-7 h-7 text-[#1A237E]" />
+                상세 손익 계산 예시
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                <strong className="text-[#1A237E]">실제 사례</strong>를 통해 갈아타기 손익을 더 구체적으로 계산해보겠습니다.
+              </p>
+
+              <div className="bg-[#1A237E]/5 p-6 rounded-lg my-6 border-2 border-[#1A237E]/20">
+                <p className="text-foreground font-bold text-xl mb-4">📊 사례: 대출 잔액 2억원, 2년 경과</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">기존 금리: 연 4.8% (월 이자 80만원)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">신규 금리: 연 3.5% (월 이자 58.3만원)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">월 이자 절감: 80만 - 58.3만 = 21.7만원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">연 이자 절감: 21.7만 × 12 = 260.4만원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">중도상환수수료: 2억 × 1% = <strong className="text-red-600">200만원</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">신규 대출 수수료: 2억 × 0.3% = 60만원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">총 비용: 200만 + 60만 = 260만원</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground"><strong className="text-green-600">손익분기점: 12개월</strong> (260만 ÷ 21.7만)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-bold text-[#1A237E]">•</span>
+                    <span className="text-muted-foreground">3년 후 순이익: (260.4만 × 3) - 260만 = <strong className="text-[#1A237E]">521.2만원</strong></span>
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="mb-10">
               <h2 id="caution" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20">
                 <Shield className="w-7 h-7 text-[#1A237E]" />
                 주의사항
@@ -394,10 +510,17 @@ export default function MortgageRefinanceFeeExemption2026() {
                     <span className="text-muted-foreground">주담대 이자 소득공제는 신규 대출에만 적용 (중도 전환 시 혜택 소멸)</span>
                   </div>
                 </li>
+                <li className="flex items-start gap-3">
+                  <span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span>
+                  <div>
+                    <strong className="text-foreground block mb-1">만기 확인:</strong>
+                    <span className="text-muted-foreground">신규 대출 만기가 기존보다 길어지면 총 이자 부담 증가 가능</span>
+                  </div>
+                </li>
               </ul>
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
-                DSR 계산은 
+                DSR 계산은{" "}
                 <Link href="/cal/debt-reduction" className="text-[#1A237E] hover:underline">
                   채무 계산기
                 </Link>

@@ -45,7 +45,7 @@ export default function PersonalRehabilitation2026() {
           <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
           <div className="container relative z-10">
             <div className="text-center text-white">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
                 2026년 개인회생 생계비 11만원 인상 | 1인가구 변제금 계산 완전 정리
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">

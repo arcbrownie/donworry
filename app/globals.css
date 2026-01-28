@@ -245,6 +245,19 @@
     flex-direction: column;
     @apply bg-card rounded-2xl overflow-hidden shadow-soft border border-border/50 hover:shadow-elevated transition-all duration-300 hover:-translate-y-1;
   }
+
+  /* Hero 제목 2줄 표시 (말줄임표 없이) */
+  section h1.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+
+  section h1.line-clamp-2::after {
+    display: none;
+  }
 }
 
 @layer utilities {

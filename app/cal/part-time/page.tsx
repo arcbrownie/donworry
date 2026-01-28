@@ -10,8 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Calculator, Clock } from "lucide-react";
 
-// 2026년 최저시급 (예상치 - 실제 발표 시 수정 필요)
-const MINIMUM_WAGE_2026 = 10030;
+// 2026년 최저시급
+const MINIMUM_WAGE_2026 = 10320;
 
 export default function PartTimeCalculator() {
   const [hourlyWage, setHourlyWage] = useState(MINIMUM_WAGE_2026);
@@ -58,7 +58,7 @@ export default function PartTimeCalculator() {
           <h3 className="text-lg font-semibold mb-3">주휴수당이란?</h3>
           <p className="mb-3">
             주휴수당은 주 15시간 이상 근무하는 근로자에게 주 1일분의 유급휴일을 주는 제도입니다.
-            2026년 최저임금(10,030원) 기준으로 계산되며, 실수령액에 큰 영향을 미칩니다.
+            2026년 최저임금(10,320원) 기준으로 계산되며, 실수령액에 큰 영향을 미칩니다.
           </p>
           <h3 className="text-lg font-semibold mb-3">계산 방법</h3>
           <ul className="list-disc pl-5 space-y-2">

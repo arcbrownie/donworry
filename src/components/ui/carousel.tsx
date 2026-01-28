@@ -171,6 +171,10 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
   ({ className, variant = "outline", size = "icon", ...props }, ref) => {
     const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
+    if (!canScrollPrev) {
+      return null;
+    }
+
     return (
       <Button
         ref={ref}
