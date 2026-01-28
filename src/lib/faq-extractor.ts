@@ -60,7 +60,8 @@ export function extractKeywords(text: string): string[] {
     .replace(/[^\uAC00-\uD7A3a-zA-Z0-9\s]/g, ' ') // 한글, 영문, 숫자만 남기고 나머지는 공백으로
     .split(/\s+/)
     .filter(word => word.length >= 2 && word.length <= 10)
-    .filter(word => !foundCompoundKeywords.some(ck => ck.includes(word))); // 복합 키워드에 포함된 단어 제외
+    .filter(word => !foundCompoundKeywords.some(ck => ck.includes(word))) // 복합 키워드에 포함된 단어 제외
+    .filter(word => !/^\d{4}$/.test(word)); // 연도(4자리 숫자) 제외
   
   // 3. 복합 키워드와 일반 키워드 결합
   const allKeywords = [...foundCompoundKeywords, ...words];
@@ -68,6 +69,7 @@ export function extractKeywords(text: string): string[] {
   // 4. 중복 제거 및 정렬
   return Array.from(new Set(allKeywords))
     .filter(k => k.trim().length > 0)
+    .filter(k => !/^\d{4}$/.test(k)) // 연도(4자리 숫자) 제외
     .sort((a, b) => {
       // 복합 키워드 우선 정렬
       const aIsCompound = COMPOUND_KEYWORDS.includes(a);
