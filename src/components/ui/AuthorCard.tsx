@@ -46,6 +46,8 @@ export function AuthorCard({ expert, showFullInfo = true }: AuthorCardProps) {
             </div>
             <Link
               href={`/experts/${expert.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary hover:text-primary/80 text-sm font-medium flex items-center gap-1"
             >
               프로필 보기

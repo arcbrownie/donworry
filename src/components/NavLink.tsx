@@ -19,6 +19,8 @@ const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
       <Link
         ref={ref}
         href={href}
+        target="_blank"
+        rel="noopener noreferrer"
         className={cn(className, isActive && activeClassName)}
         {...props}
       />

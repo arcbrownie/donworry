@@ -58,7 +58,7 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-primary/10 via-secondary/5 to-background py-20 md:py-28">
         <div className="container">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-[1.3]">
               일상은 가볍게,<br />
               돈 걱정은 없게
             </h1>
@@ -67,12 +67,12 @@ export default function HomePage() {
               당신의 금융 솔루션
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/debt/test">
+              <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                   🩺 채무조정 무료 진단
                 </Button>
               </Link>
-              <Link href="/cal">
+              <Link href="/cal" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6">
                   💰 계산기 둘러보기
                 </Button>
@@ -91,6 +91,8 @@ export default function HomePage() {
               <Link
                 key={category.path}
                 href={category.path}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`group relative overflow-hidden rounded-2xl p-8 ${category.gradient} border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg`}
               >
                 <div className="flex flex-col items-center text-center">
@@ -154,7 +156,7 @@ export default function HomePage() {
           </div>
         )}
         <div className="text-center mt-12">
-          <Link href="/content">
+          <Link href="/content" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="sm" className="text-sm px-6">
               모든 가이드 보기
             </Button>

@@ -46,7 +46,7 @@ export default function WeeklyHolidayPayGuide() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
               알바 주휴수당 계산기 | 2026년 최저시급 10,320원 기준 받는 조건
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -256,14 +256,17 @@ export default function WeeklyHolidayPayGuide() {
 
         {/* CTA Button */}
         <div className="max-w-4xl mx-auto mt-10 mb-10">
-          <div className="flex justify-center">
-            <Link href="/cal/part-time">
+          <div className="flex flex-col items-center gap-3">
+            <Link href="/cal/part-time" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-xl shadow-elevated">
                 <Calculator className="w-5 h-5 mr-2" />
-                <span className="font-bold">지금 바로 주휴수당 계산해보기</span>
+                <span className="font-bold">2026년 기준 내 주휴수당 얼마? 주휴수당 계산법으로 바로 계산하기</span>
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
+            <p className="text-muted-foreground text-center text-sm md:text-base">
+              2026년 기준 내 주휴수당은 얼마일까? 계산법 정리
+            </p>
           </div>
         </div>
 

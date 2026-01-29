@@ -41,7 +41,7 @@ export default function MinimumLivingCostCalculator2026() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
               2026년 가구원수별 최저생계비<br />및 변제금 계산 완벽 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -55,13 +55,6 @@ export default function MinimumLivingCostCalculator2026() {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
-            <div className="hidden lg:block">
-              <BlogShareButtons
-                title="2026년 가구원수별 최저생계비 및 변제금 계산 가이드"
-                description="내 가구에 맞는 최저생계비와 개인회생 변제금 계산 방법"
-                variant="sticky"
-              />
-            </div>
           </div>
 
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
@@ -75,7 +68,7 @@ export default function MinimumLivingCostCalculator2026() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">2026년 기준 가구원수별 최저생계비</strong>와 
                 변제금 계산 방법을 윤서진 개인회생 전문가가 상세히 알려드립니다. 
-                정확한 변제금은 <Link href="/cal/debt-reduction" className="text-[#1A237E] hover:underline">채무 계산기</Link>로 
+                정확한 변제금은 <Link href="/cal/debt-reduction" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">채무 계산기</Link>로 
                 확인해보세요.
               </p>
             </section>
@@ -237,7 +230,7 @@ export default function MinimumLivingCostCalculator2026() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 변제 계획 수립은 
-                <Link href="/debt/personal-rehabilitation-bankruptcy" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/debt/personal-rehabilitation-bankruptcy" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   개인회생 가이드
                 </Link>
                 에서 자세히 확인할 수 있습니다.
@@ -338,7 +331,7 @@ export default function MinimumLivingCostCalculator2026() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 소득 증빙 방법은 
-                <Link href="/debt/guide" className="text-[#1A237E] hover:underline">
+                <Link href="/debt/guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   채무조정 절차 가이드
                 </Link>
                 를 참고하세요.
@@ -539,7 +532,7 @@ export default function MinimumLivingCostCalculator2026() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인회생 완수 후 신용 회복에 대한 자세한 정보는 
-                <Link href="/blog/personal-rehabilitation-2026" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/personal-rehabilitation-2026" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   개인회생 가이드
                 </Link>
                 를 참고하세요.

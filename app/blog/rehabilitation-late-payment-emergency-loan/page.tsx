@@ -41,7 +41,7 @@ export default function RehabilitationLatePaymentLoan() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
               개인회생 변제금 미납 시<br />긴급생계비 대출 완벽 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -55,13 +55,6 @@ export default function RehabilitationLatePaymentLoan() {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
-            <div className="hidden lg:block">
-              <BlogShareButtons
-                title="개인회생 변제금 미납 시 긴급생계비 대출 가이드"
-                description="변제금을 낼 수 없을 때 긴급생계비 대출로 해결하는 방법"
-                variant="sticky"
-              />
-            </div>
           </div>
 
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
@@ -75,7 +68,7 @@ export default function RehabilitationLatePaymentLoan() {
                 이럴 때 활용할 수 있는 것이 바로 <strong className="text-[#1A237E]">긴급생계비 대출</strong>입니다. 
                 이 글에서는 개인회생 중에도 받을 수 있는 긴급생계비 대출의 자격, 한도, 신청 방법을 
                 한지우 채무조정 전문가가 상세히 알려드립니다. 관련 계산은 
-                <Link href="/cal/debt-reduction" className="text-[#1A237E] hover:underline">채무 계산기</Link>를 활용하세요.
+                <Link href="/cal/debt-reduction" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">채무 계산기</Link>를 활용하세요.
               </p>
             </section>
 
@@ -160,7 +153,7 @@ export default function RehabilitationLatePaymentLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 더 자세한 대출 상품 비교는 
-                <Link href="/debt/personal-rehabilitation-bankruptcy" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/debt/personal-rehabilitation-bankruptcy" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   개인회생 가이드
                 </Link>
                 에서 확인할 수 있습니다.
@@ -261,7 +254,7 @@ export default function RehabilitationLatePaymentLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신청 과정이 복잡하다면 
-                <Link href="/debt/guide" className="text-[#1A237E] hover:underline">
+                <Link href="/debt/guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   채무조정 절차 가이드
                 </Link>
                 도 함께 참고하세요.
@@ -435,7 +428,7 @@ export default function RehabilitationLatePaymentLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인회생 후 신용 회복에 대한 자세한 정보는 
-                <Link href="/blog/personal-rehabilitation-2026" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/personal-rehabilitation-2026" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   개인회생 가이드
                 </Link>
                 를 참고하세요.

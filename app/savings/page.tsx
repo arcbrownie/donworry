@@ -137,7 +137,7 @@ export default function SavingsHub() {
               <PiggyBank className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white">재테크 · 절약</h1>
+              <h1 className="hero-title text-4xl md:text-5xl font-bold text-white leading-[1.3]">재테크 · 절약</h1>
               <p className="text-white/90 text-lg">티끌 모아 태산, 똑똑한 소비 습관</p>
             </div>
           </div>

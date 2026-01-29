@@ -44,7 +44,7 @@ export default function PersonalRehabilitationBankruptcy() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3]">
               개인회생 vs 개인파산 차이점 5가지 | 2026년 신청 조건과 비용 총정리
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -482,14 +482,14 @@ export default function PersonalRehabilitationBankruptcy() {
         {/* CTA Buttons */}
         <div className="max-w-4xl mx-auto mt-10 mb-10">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/debt/test">
+            <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-xl shadow-elevated w-full sm:w-auto">
                 <Calculator className="w-5 h-5 mr-2" />
                 <span className="font-bold">채무조정 자가진단 시작하기</span>
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <Link href="/cal/debt-reduction">
+            <Link href="/cal/debt-reduction" target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 px-8 py-6 rounded-xl w-full sm:w-auto">
                 <Calculator className="w-5 h-5 mr-2" />
                 <span className="font-bold">개인회생 탕감액 계산하기</span>

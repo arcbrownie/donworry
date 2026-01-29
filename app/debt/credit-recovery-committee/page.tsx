@@ -44,12 +44,11 @@ export default function CreditRecoveryCommittee() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
-              신용회복위원회 채무조정 신청 방법 | 1397 전화 상담부터 서류 준비까지
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3]">
+              신용회복위원회 채무조정 신청 방법
+              <br />
+              온라인 예약부터 서류 준비까지
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-              2~4주 내 빠른 채무 해결, 신청 절차와 자격 조건 완전 정리
-            </p>
           </div>
         </div>
       </section>
@@ -107,8 +106,8 @@ export default function CreditRecoveryCommittee() {
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong className="text-foreground block mb-1">무료 서비스:</strong>
-                    <span className="text-muted-foreground">신용회복위원회 채무조정은 원칙적으로 무료로 제공됩니다. (단, 채권추심비 등 일부 비용 발생 가능)</span>
+                    <strong className="text-foreground block mb-1">비용:</strong>
+                    <span className="text-muted-foreground">상담은 무료이나, 채무조정 <strong className="text-foreground">신청 시 신청비 5만원</strong>이 발생합니다. 일부 지자체(예: 부산 청년 채무조정 지원)에서 신청비를 최대 100만원까지 지원하기도 합니다. 개인회생·파산 경유 시에는 위원회가 서류 작성·신용상담보고서를 무료로 제공하나, 인지대·송달료 등 법원 비용은 별도이며 지원제도로 보전할 수 있습니다.</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -168,6 +167,12 @@ export default function CreditRecoveryCommittee() {
                 </ul>
               </div>
 
+              <div className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg mb-4">
+                <p className="text-foreground text-sm">
+                  <strong>포함·제외 참고:</strong> 햇살론(햇살론15, 디딤돌대출 등)은 연체 시 포함 가능하고, 정상 상환 중이라도 전체 워크아웃 신청 시 조정 대상이 될 수 있습니다. 보증서 채무(신용보증기금·지역신용보증재단), 주택담보대출은 채무조정 대상에서 제외됩니다. 학자금대출(한국장학재단 연체)은 포함 가능합니다. 연체 90일 이상 일반 금융채무가 포함 원칙이며, 세금·과태료·공과금·보증채무·주택담보대출 등은 제외됩니다.
+                </p>
+              </div>
+
               <div className="bg-warning/10 border border-warning/30 rounded-lg p-4 mb-4">
                 <p className="text-foreground text-sm font-medium flex items-start gap-2">
                   <AlertCircle className="w-5 h-5 text-warning mt-0.5 flex-shrink-0" />
@@ -187,6 +192,9 @@ export default function CreditRecoveryCommittee() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용회복위원회 채무조정 신청 절차는 다음과 같습니다. 법원을 통한 개인회생보다 훨씬 간단하고 신속합니다.
               </p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                <strong className="text-foreground">온라인 예약이 필수</strong>이며, 신용회복위원회 홈페이지(ccrs.or.kr) 또는 앱으로 상담 예약을 해야 합니다. 공공정보 조회로 금융기관 채무·소득 정보 등이 대부분 자동 수집되므로 <strong className="text-foreground">서류 없이 방문할 수 있는 경우가 많습니다.</strong> 자동 조회가 되지 않는 경우에만 아래 서류를 준비하면 됩니다.
+              </p>
 
               <div className="space-y-6 mb-6">
                 <Card className="p-6 border-l-4 border-primary">
@@ -197,12 +205,13 @@ export default function CreditRecoveryCommittee() {
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-2">신청서 작성 및 제출</h3>
                       <p className="text-muted-foreground text-sm mb-2">
-                        신용회복위원회 홈페이지나 지점 방문을 통해 채무조정 신청서를 작성합니다. 소득 증빙 자료, 채무 증빙 자료, 가족 관계 증명서 등을 준비해야 합니다.
+                        신용회복위원회 홈페이지나 지점 방문을 통해 채무조정 신청서를 작성합니다. 필요 시 준비할 서류는 아래와 같습니다.
                       </p>
                       <ul className="text-xs text-muted-foreground space-y-1 ml-4">
-                        <li>• 소득 증명서 (급여명세서, 사업자 등록증 등)</li>
-                        <li>• 채무 증명서 (대출 약정서, 카드 이용 내역서 등)</li>
-                        <li>• 가족 관계 증명서 (최저생계비 계산용)</li>
+                        <li>• 주민등록등본 (최근 3개월 이내)</li>
+                        <li>• 가족관계증명서 (부양가족 증빙용)</li>
+                        <li>• 소득증빙 (프리랜서·특수고용직 시 급여명세서, 통장사본 등)</li>
+                        <li>• 채무관련 서류 (대출계약서, 연체고지서 등, 선택적)</li>
                       </ul>
                     </div>
                   </div>
@@ -268,7 +277,7 @@ export default function CreditRecoveryCommittee() {
                     이자율 인하
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    연체 이자율이 법정 최고 금리(20%)로 인하되거나, 경우에 따라 원금 보호를 위한 이자율 조정이 가능합니다.
+                    연체 이자율이 법정 최고 금리(20%)로 인하되거나, 경우에 따라 원금 보호를 위한 이자율 조정이 가능합니다. 채무조정 후 이자 감면 최대 70% 등 혜택을 받을 수 있습니다.
                   </p>
                 </Card>
                 <Card className="p-5 bg-blue-50 border-blue-200">
@@ -286,7 +295,7 @@ export default function CreditRecoveryCommittee() {
                     원금 일부 탕감
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    일부 금융회사는 원금의 일부를 탕감해주는 경우도 있습니다. (금융회사 정책에 따라 상이)
+                    일부 금융회사는 원금의 일부를 탕감해주는 경우도 있습니다. 원금 감면 최대 90%까지 가능한 경우가 있습니다.
                   </p>
                 </Card>
                 <Card className="p-5 bg-orange-50 border-orange-200">
@@ -324,7 +333,7 @@ export default function CreditRecoveryCommittee() {
                     </tr>
                     <tr className="hover:bg-muted/50 transition-colors">
                       <td className="border border-border/50 p-4 text-foreground font-medium">비용</td>
-                      <td className="border border-border/50 p-4 text-muted-foreground">무료</td>
+                      <td className="border border-border/50 p-4 text-muted-foreground">상담 무료, 신청비 5만원</td>
                       <td className="border border-border/50 p-4 text-muted-foreground">인지대, 송달료 등 약 30~50만원</td>
                     </tr>
                     <tr className="hover:bg-muted/50 transition-colors">
@@ -418,7 +427,14 @@ export default function CreditRecoveryCommittee() {
                     <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                     <span><strong className="text-foreground">신용정보 영향</strong>을 최소화하면서 채무를 조정하고 싶은 경우</span>
                   </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span><strong className="text-foreground">청년(만 34세 이하)</strong>은 연체 30일 이상 시 온라인 전용 프리워크아웃으로 방문 없이 신청할 수 있습니다.</span>
+                  </li>
                 </ul>
+                <p className="text-muted-foreground text-sm mt-4">
+                  2026년 빚 걱정 끝 워크아웃 확대(대출금 최대 70% 감면 등)가 적용됩니다. 문의: 1600-5500 또는 홈페이지(ccrs.or.kr) 공지 참고.
+                </p>
               </div>
             </section>
 
@@ -440,17 +456,11 @@ export default function CreditRecoveryCommittee() {
         {/* CTA Buttons */}
         <div className="max-w-4xl mx-auto mt-10 mb-10">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/debt/test">
+            <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-xl shadow-elevated w-full sm:w-auto">
                 <Calculator className="w-5 h-5 mr-2" />
                 <span className="font-bold">채무조정 자가진단 시작하기</span>
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/cal/debt-reduction">
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 px-8 py-6 rounded-xl w-full sm:w-auto">
-                <Calculator className="w-5 h-5 mr-2" />
-                <span className="font-bold">개인회생 탕감액 계산하기</span>
               </Button>
             </Link>
           </div>

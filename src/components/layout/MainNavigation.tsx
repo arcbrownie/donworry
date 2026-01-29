@@ -128,7 +128,7 @@ export default function MainNavigation() {
     }`}>
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-[22px] group" onClick={handleLogoClick}>
+        <Link href="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-[22px] group" onClick={handleLogoClick}>
           <div className="w-[43.2px] h-[43.2px] rounded-xl gradient-button flex items-center justify-center shadow-soft group-hover:shadow-elevated transition-shadow">
             <Shield className="w-[25.2px] h-[25.2px] text-white" fill="white" fillOpacity={0.3} />
           </div>
@@ -208,6 +208,8 @@ export default function MainNavigation() {
                             <DropdownMenuItem key={subItem.path} asChild>
                               <Link
                                 href={subItem.path}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className={`flex items-start gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors hover:bg-slate-200 focus:bg-slate-200 ${
                                   isActive(subItem.path)
                                     ? "bg-slate-200 text-foreground"
@@ -232,6 +234,8 @@ export default function MainNavigation() {
                     <DropdownMenuItem key={item.path} asChild>
                       <Link
                         href={item.path!}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={`flex items-start gap-3 px-3 py-3 rounded-lg cursor-pointer transition-colors hover:bg-slate-200 focus:bg-slate-200 ${
                           isActive(item.path!)
                             ? "bg-slate-200 text-foreground"
@@ -258,7 +262,7 @@ export default function MainNavigation() {
 
         {/* CTA Button (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
-          <Link href="/debt/test">
+          <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
             <Button className="relative px-[18px] py-2.5 bg-transparent hover:bg-transparent active:bg-transparent border-2 border-violet-200 hover:border-violet-300 shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden group rounded-lg">
               <div className="absolute inset-0 rounded-lg bg-white"></div>
               <span className="relative z-10 flex items-center gap-3 font-extrabold text-base transition-colors duration-300 text-violet-700">
@@ -282,6 +286,8 @@ export default function MainNavigation() {
               <div className="flex items-center justify-between p-5 border-b border-border">
                 <Link 
                   href="/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-[22px]" 
                   onClick={(e) => {
                     setMobileOpen(false);
@@ -309,6 +315,8 @@ export default function MainNavigation() {
                   <div key={category.label} className="mb-6">
                     <Link
                       href={firstMenuPath}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setMobileOpen(false)}
                       className={`flex items-center gap-3 px-3 py-2 rounded-lg ${category.bgColor} text-white mb-2 hover:opacity-90 transition-opacity`}
                     >
@@ -334,10 +342,12 @@ export default function MainNavigation() {
                             </CollapsibleTrigger>
                             <CollapsibleContent className="pl-4 space-y-1">
                               {item.subItems?.map((subItem) => (
-                                <Link
-                                  key={subItem.path}
-                                  href={subItem.path}
-                                  onClick={() => setMobileOpen(false)}
+<Link
+                                    key={subItem.path}
+                                    href={subItem.path}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setMobileOpen(false)}
                                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
                                     isActive(subItem.path)
                                       ? "bg-slate-200 text-foreground"
@@ -357,6 +367,8 @@ export default function MainNavigation() {
                           <Link
                             key={item.path}
                             href={item.path!}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setMobileOpen(false)}
                             className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
                               isActive(item.path!)
@@ -380,7 +392,7 @@ export default function MainNavigation() {
 
               {/* Mobile CTA */}
               <div className="p-4 border-t border-border">
-                <Link href="/debt/test" onClick={() => setMobileOpen(false)}>
+                <Link href="/debt/test" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
                   <Button className="relative w-full px-[18px] py-3 bg-transparent hover:bg-transparent active:bg-transparent border-2 border-violet-200 hover:border-violet-300 shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden group rounded-lg">
                     <div className="absolute inset-0 rounded-lg bg-white"></div>
                     <span className="relative z-10 flex items-center justify-center gap-3 font-extrabold text-base transition-colors duration-300 text-violet-700">

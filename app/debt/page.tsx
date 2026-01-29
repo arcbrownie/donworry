@@ -170,7 +170,7 @@ export default function DebtHub() {
               <Scale className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white">채무조정</h1>
+              <h1 className="hero-title text-4xl md:text-5xl font-bold text-white leading-[1.3]">채무조정</h1>
               <p className="text-white/90 text-lg">다시 시작하는 경제적 자유, 맞춤형 해결책</p>
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function DebtHub() {
             법적으로 보호받을 수 있는 다양한 해결책이 있습니다.
             돈워리가 새로운 시작을 응원합니다.
           </p>
-          <Link href="/debt/test">
+          <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
             <Button className="bg-white text-category-debt hover:bg-white/90 shadow-xl px-6 py-6 rounded-xl font-semibold">
               <span className="relative z-10 flex items-center gap-2">
                 🩺  무료 자가진단 시작하기
@@ -222,9 +222,9 @@ export default function DebtHub() {
                 새로운 시작을 할 수 있습니다.
               </p>
               <div className="flex flex-wrap gap-2">
-                <Link href="/debt/personal-rehabilitation-bankruptcy" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">개인회생 · 개인파산</Link>
-                <Link href="/debt/credit-recovery-committee" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">신용회복위원회 채무조정</Link>
-                <Link href="/debt/test" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">자가진단</Link>
+                <Link href="/debt/personal-rehabilitation-bankruptcy" target="_blank" rel="noopener noreferrer" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">개인회생 · 개인파산</Link>
+                <Link href="/debt/credit-recovery-committee" target="_blank" rel="noopener noreferrer" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">신용회복위원회 채무조정</Link>
+                <Link href="/debt/test" target="_blank" rel="noopener noreferrer" className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full hover:bg-secondary/20 transition-colors">자가진단</Link>
               </div>
             </div>
           </div>

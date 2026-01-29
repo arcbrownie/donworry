@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Shield } from "lucide-react";
 
 const footerLinks = {
@@ -21,17 +22,22 @@ const footerLinks = {
     { label: "이용약관", path: "/terms" },
     { label: "개인정보처리방침", path: "/privacy" },
     { label: "법적 고지", path: "/disclaimer" },
+    { label: "오류 제보", path: "/report" },
   ],
 };
 
 export default function Footer() {
+  const pathname = usePathname();
+  const infoLinks = footerLinks.info.filter(
+    (link) => link.path !== "/report" || pathname !== "/"
+  );
   return (
     <footer className="border-t border-border/50 bg-card mt-16">
       <div className="container py-12">
         <div className="flex flex-col md:flex-row justify-between mb-8">
           {/* Brand */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-baseline gap-2 mb-4">
+            <Link href="/" target="_blank" rel="noopener noreferrer" className="flex items-baseline gap-2 mb-4">
               <div className="w-7 h-7 rounded-lg gradient-button flex items-center justify-center">
                 <Shield className="w-4 h-4 text-white" fill="white" fillOpacity={0.3} />
               </div>
@@ -60,6 +66,8 @@ export default function Footer() {
                   <li key={link.path} className="text-right md:text-left">
                     <Link
                       href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`text-sm text-muted-foreground hover:text-foreground transition-colors ${
                         link.label === '채무조정' ? 'tracking-normal' : 'tracking-tight'
                       }`}
@@ -80,6 +88,8 @@ export default function Footer() {
                   <li key={`${link.path}-${index}`} className="text-right md:text-left">
                     <Link
                       href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}
@@ -93,10 +103,12 @@ export default function Footer() {
             <div className="flex-shrink-0">
               <h3 className="font-semibold text-sm text-foreground mb-4 text-right md:text-left">정보</h3>
               <ul className="space-y-2">
-                {footerLinks.info.map((link) => (
+                {infoLinks.map((link) => (
                   <li key={link.path} className="text-right md:text-left">
                     <Link
                       href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link.label}

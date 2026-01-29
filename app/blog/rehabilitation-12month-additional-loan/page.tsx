@@ -41,7 +41,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
               개인회생 12개월 성실상환 후<br />추가대출 완벽 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -55,13 +55,6 @@ export default function Rehabilitation12MonthAdditionalLoan() {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
-            <div className="hidden lg:block">
-              <BlogShareButtons
-                title="개인회생 12개월 성실상환 후 추가대출 가이드"
-                description="성실 변제로 신용을 회복하고 추가 자금을 확보하는 방법"
-                variant="sticky"
-              />
-            </div>
           </div>
 
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
@@ -74,7 +67,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">12개월 성실상환자 추가대출</strong>의 자격, 한도, 금리, 
                 신청 방법을 서준호 신용회복 전문가가 상세히 알려드립니다. 
-                대출 가능 금액은 <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 
+                대출 가능 금액은 <Link href="/cal/interest-saving" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 
                 확인해보세요.
               </p>
             </section>
@@ -166,7 +159,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 상품 비교는 
-                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   대출 가이드
                 </Link>
                 에서 자세히 확인할 수 있습니다.
@@ -274,7 +267,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 법원 허가 절차가 복잡하다면 
-                <Link href="/debt/personal-rehabilitation-bankruptcy" className="text-[#1A237E] hover:underline">
+                <Link href="/debt/personal-rehabilitation-bankruptcy" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   개인회생 가이드
                 </Link>
                 도 함께 참고하세요.
@@ -458,7 +451,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인회생 완수 후 신용 회복에 대한 자세한 정보는 
-                <Link href="/blog/personal-rehabilitation-2026" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/personal-rehabilitation-2026" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   개인회생 가이드
                 </Link>
                 를 참고하세요.

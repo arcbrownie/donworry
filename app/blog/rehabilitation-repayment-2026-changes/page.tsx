@@ -39,7 +39,7 @@ export default function Rehabilitation2026Changes() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
               2026년 개인회생 변제금 산정<br />기준 변경 완벽 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -53,13 +53,6 @@ export default function Rehabilitation2026Changes() {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
-            <div className="hidden lg:block">
-              <BlogShareButtons
-                title="2026년 개인회생 변제금 산정 기준 변경 가이드"
-                description="달라진 법원 기준을 숫자로 비교 분석"
-                variant="sticky"
-              />
-            </div>
           </div>
 
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
@@ -72,7 +65,7 @@ export default function Rehabilitation2026Changes() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">2025년과 2026년 기준을 숫자로 비교</strong>하여 
                 무엇이 어떻게 달라졌는지 윤서진 개인회생 전문가가 상세히 알려드립니다. 
-                변제금 계산은 <Link href="/cal/debt-reduction" className="text-[#1A237E] hover:underline">채무 계산기</Link>로 확인하세요.
+                변제금 계산은 <Link href="/cal/debt-reduction" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">채무 계산기</Link>로 확인하세요.
               </p>
             </section>
 
@@ -176,7 +169,7 @@ export default function Rehabilitation2026Changes() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 더 자세한 계산은{" "}
-                <Link href="/blog/minimum-living-cost-calculator-2026" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/minimum-living-cost-calculator-2026" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   2026년 최저생계비 가이드
                 </Link>
                 에서 확인하세요.
@@ -218,7 +211,7 @@ export default function Rehabilitation2026Changes() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 변제 계획 수립은 
-                <Link href="/debt/personal-rehabilitation-bankruptcy" className="text-[#1A237E] hover:underline">
+                <Link href="/debt/personal-rehabilitation-bankruptcy" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   개인회생 가이드
                 </Link>
                 를 참고하세요.
@@ -304,7 +297,7 @@ export default function Rehabilitation2026Changes() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 추가대출에 대한 자세한 정보는 
-                <Link href="/blog/rehabilitation-12month-additional-loan" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/rehabilitation-12month-additional-loan" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   성실상환자 추가대출 가이드
                 </Link>
                 를 참고하세요.
@@ -480,7 +473,7 @@ export default function Rehabilitation2026Changes() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인회생 완수 후 신용 회복은 
-                <Link href="/debt/credit-recovery-committee" className="text-[#1A237E] hover:underline">
+                <Link href="/debt/credit-recovery-committee" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   신용 회복 가이드
                 </Link>
                 를 참고하세요.

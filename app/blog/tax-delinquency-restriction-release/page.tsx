@@ -39,7 +39,7 @@ export default function TaxDelinquencyRestrictionRelease() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3]">
               국세 체납자 금융기관 이용 제한<br />해제 시기 완벽 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -53,13 +53,6 @@ export default function TaxDelinquencyRestrictionRelease() {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
-            <div className="hidden lg:block">
-              <BlogShareButtons
-                title="국세 체납자 금융기관 이용 제한 해제 시기 완벽 가이드"
-                description="체납 해소 후 금융거래 정상화 과정"
-                variant="sticky"
-              />
-            </div>
           </div>
 
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
@@ -72,7 +65,7 @@ export default function TaxDelinquencyRestrictionRelease() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">국세 체납 해소 후 금융거래 제한이 언제 해제되는지</strong>, 
                 연체 기록 삭제 시기, 그리고 정상화 과정을 강민수 세무 전문가가 단계별로 상세히 알려드립니다. 
-                세금 관련 정보는 <Link href="/blog/tax-deduction-guide" className="text-[#1A237E] hover:underline">연말정산 가이드</Link>에서도 확인할 수 있습니다.
+                세금 관련 정보는 <Link href="/blog/tax-deduction-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">연말정산 가이드</Link>에서도 확인할 수 있습니다.
               </p>
             </section>
 
@@ -442,7 +435,7 @@ export default function TaxDelinquencyRestrictionRelease() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 상품 비교는 
-                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   첫 대출 가이드
                 </Link>
                 에서 자세히 확인하세요.
@@ -542,7 +535,7 @@ export default function TaxDelinquencyRestrictionRelease() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용점수 관리 방법은 
-                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   신용점수 가이드
                 </Link>
                 에서 더 자세히 확인하세요.

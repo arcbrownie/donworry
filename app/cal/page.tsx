@@ -55,6 +55,8 @@ export default function CalculatorHub() {
           <Link
             key={calc.path}
             href={calc.path}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group therapy-card category-card-life hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 block"
           >
             <div className="flex items-start gap-4">
@@ -90,6 +92,8 @@ export default function CalculatorHub() {
           <Link
             key={calc.path}
             href={calc.path}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group therapy-card category-card-finance hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 block"
           >
             <div className="flex items-start gap-4">

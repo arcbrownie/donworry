@@ -239,7 +239,7 @@ export default function FAQAccordion({
                   <div className="space-y-4">
                     <p className="font-normal">{item.answer}</p>
                     {item.sourcePath && (
-                      <Link href={item.sourcePath} className="block mt-2.5">
+                      <Link href={item.sourcePath} target="_blank" rel="noopener noreferrer" className="block mt-2.5">
                         <Button 
                           variant="outline" 
                           size="sm" 

@@ -41,7 +41,7 @@ export default function ExpertDetail() {
         <MainNavigation />
         <section className="container py-16 text-center">
           <h1 className="text-2xl font-bold mb-4">자문단을 찾을 수 없습니다</h1>
-          <Link href="/experts">
+          <Link href="/experts" target="_blank" rel="noopener noreferrer">
             <Button>자문단 목록으로 돌아가기</Button>
           </Link>
         </section>
@@ -58,7 +58,7 @@ export default function ExpertDetail() {
       
       <section className="bg-gradient-to-br from-primary/10 to-secondary/10 py-16">
         <div className="container">
-          <Link href="/experts">
+          <Link href="/experts" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" className="mb-6">
               <ArrowLeft className="w-4 h-4 mr-2" />
               자문단 목록으로

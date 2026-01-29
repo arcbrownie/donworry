@@ -35,7 +35,7 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3]">
               2026년 청년 도약계좌<br />중도해지 vs 담보대출 비교
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">급전 필요 시 해지 대신 대출이 유리한 케이스 완벽 분석</p>
@@ -47,9 +47,6 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
-            <div className="hidden lg:block">
-              <BlogShareButtons title="2026년 청년 도약계좌 중도해지 vs 담보대출 비교" description="급전 필요 시 최선의 선택" variant="sticky" />
-            </div>
           </div>
 
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
@@ -62,7 +59,7 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">중도해지 손실 vs 담보대출 이자 비용</strong>을 구체적인 숫자로 비교하여 
                 케이스별 최선의 선택을 김민지 재테크 전문가가 상세히 알려드립니다. 
-                손익 계산은 <Link href="/cal/part-time" className="text-[#1A237E] hover:underline">적금 계산기</Link>로도 확인할 수 있습니다.
+                손익 계산은 <Link href="/cal/part-time" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">적금 계산기</Link>로도 확인할 수 있습니다.
               </p>
             </section>
 
@@ -382,7 +379,7 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 금리 계산은 
-                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   첫 대출 가이드
                 </Link>
                 에서 자세히 확인하세요.
@@ -782,7 +779,7 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 손익 계산은 
-                <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/cal/interest-saving" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   이자 절감 계산기
                 </Link>
                 로 정확히 확인하세요.

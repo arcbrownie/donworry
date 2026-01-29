@@ -159,7 +159,7 @@ export default function FinanceHub() {
               <CreditCard className="w-7 h-7 text-white" strokeWidth={1.5} />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white">금융 · 대출</h1>
+              <h1 className="hero-title text-4xl md:text-5xl font-bold text-white leading-[1.3]">금융 · 대출</h1>
               <p className="text-white/90 text-lg">나에게 딱 맞는 금리와 상품 찾기</p>
             </div>
           </div>

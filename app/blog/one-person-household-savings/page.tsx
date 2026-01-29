@@ -480,7 +480,7 @@ export default function OnePersonHouseholdSavingsDetailed() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
               1인 가구 생활비 절약 꿀팁 10가지: 매달 최소 15만원 확정 절감 가이드
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -748,14 +748,14 @@ export default function OnePersonHouseholdSavingsDetailed() {
             {/* CTA Buttons */}
             <div className="mt-10 mb-10">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/cal/interest-saving">
+                <Link href="/cal/interest-saving" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#4A148C] to-[#6A1B9A] hover:from-[#4A148C]/90 hover:to-[#6A1B9A]/90 text-white px-8 py-6 rounded-xl shadow-elevated">
                     <Calculator className="w-5 h-5 mr-2" />
                     <span className="font-bold">나의 예상 절감액 계산해보기</span>
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
-                <Link href="/debt/test">
+                <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#1A237E] to-[#283593] hover:from-[#1A237E]/90 hover:to-[#283593]/90 text-white px-8 py-6 rounded-xl shadow-elevated">
                     <Wallet className="w-5 h-5 mr-2" />
                     <span className="font-bold">고금리 대출 저금리로 갈아타기 상담</span>

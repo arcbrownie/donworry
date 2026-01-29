@@ -181,7 +181,7 @@ export default function SocialBeginnerSalaryGuide() {
         <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
               사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -197,14 +197,6 @@ export default function SocialBeginnerSalaryGuide() {
           {/* Table of Contents & Share Buttons */}
           <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
-            {/* Desktop: Sticky Share Buttons */}
-            <div className="hidden lg:block">
-              <BlogShareButtons
-                title="사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추"
-                description="사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다."
-                variant="sticky"
-              />
-            </div>
           </div>
 
           {/* Article Content */}
@@ -375,14 +367,14 @@ export default function SocialBeginnerSalaryGuide() {
             {/* CTA Buttons */}
             <div className="mt-10 mb-10">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/debt/test">
+                <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="w-full sm:w-auto bg-[#1A237E] hover:bg-[#1A237E]/90 text-white px-8 py-6 rounded-xl shadow-elevated">
                     <ShieldCheck className="w-5 h-5 mr-2" />
                     <span className="font-bold">무료 채무 상담 신청</span>
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
-                <Link href="/cal/interest-saving">
+                <Link href="/cal/interest-saving" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-[#1A237E] text-[#1A237E] hover:bg-[#1A237E]/10 px-8 py-6 rounded-xl">
                     <Calculator className="w-5 h-5 mr-2" />
                     <span className="font-bold">대출 이자 계산기</span>

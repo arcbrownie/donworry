@@ -89,7 +89,7 @@ export default function BlogCard({
   }
 
   return (
-    <Link href={path} className="blog-card group">
+    <Link href={path} target="_blank" rel="noopener noreferrer" className="blog-card group">
       <CardContent />
     </Link>
   );

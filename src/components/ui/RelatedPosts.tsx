@@ -37,6 +37,8 @@ export function RelatedPosts({ category, currentPath, limit = 3 }: RelatedPostsP
             <Link
               key={post.path}
               href={post.path}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block p-4 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all group"
             >
               <div className="flex items-start gap-3">

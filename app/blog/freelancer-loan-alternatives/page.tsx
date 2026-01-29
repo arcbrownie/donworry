@@ -39,7 +39,7 @@ export default function FreelancerLoanAlternatives() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
         <div className="container relative z-10">
           <div className="text-center text-white">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+            <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
               프리랜서 햇살론 유스<br />부결 시 대안 3가지
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -53,13 +53,6 @@ export default function FreelancerLoanAlternatives() {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-64 flex-shrink-0 space-y-4">
             <TableOfContents />
-            <div className="hidden lg:block">
-              <BlogShareButtons
-                title="프리랜서 햇살론 유스 부결 시 대안 3가지"
-                description="햇살론 유스 부결 후 시도할 수 있는 현실적인 대출 대안"
-                variant="sticky"
-              />
-            </div>
           </div>
 
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
@@ -72,7 +65,7 @@ export default function FreelancerLoanAlternatives() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">햇살론 유스 부결 후</strong> 시도할 수 있는 
                 현실적인 대출 대안 3가지를 최동현 대출 전문가가 알려드립니다. 
-                대출 한도는 <Link href="/calculators/loan" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.
+                대출 한도는 <Link href="/calculators/loan" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.
               </p>
             </section>
 
@@ -183,7 +176,7 @@ export default function FreelancerLoanAlternatives() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용회복위원회 대출은 
-                <Link href="/blog/credit-recovery-guide" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/credit-recovery-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
                   신용 회복 가이드
                 </Link>
                 에서 자세히 확인하세요.
@@ -248,7 +241,7 @@ export default function FreelancerLoanAlternatives() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 은행별 대출 비교는 
-                <Link href="/blog/loan-comparison" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/loan-comparison" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   대출 상품 비교 가이드
                 </Link>
                 를 참고하세요.
@@ -362,7 +355,7 @@ export default function FreelancerLoanAlternatives() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용점수 관리는 
-                <Link href="/blog/credit-score-guide" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/credit-score-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   신용점수 가이드
                 </Link>
                 를 참고하세요.
@@ -536,7 +529,7 @@ export default function FreelancerLoanAlternatives() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 부결 후 대처 방법은 
-                <Link href="/blog/loan-rejection-solution" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/loan-rejection-solution" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
                   대출 부결 가이드
                 </Link>
                 를 참고하세요.

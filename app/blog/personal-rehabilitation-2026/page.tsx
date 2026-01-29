@@ -45,7 +45,7 @@ export default function PersonalRehabilitation2026() {
           <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl" aria-hidden="true" />
           <div className="container relative z-10">
             <div className="text-center text-white">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight max-w-4xl mx-auto break-words line-clamp-2">
+              <h1 className="hero-title text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-[1.3] max-w-4xl mx-auto break-words line-clamp-2">
                 2026년 개인회생 생계비 11만원 인상 | 1인가구 변제금 계산 완전 정리
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -119,7 +119,7 @@ export default function PersonalRehabilitation2026() {
 
             {/* CTA Button 1 */}
             <div className="my-10 flex justify-center">
-              <Link href="/cal/debt-reduction">
+              <Link href="/cal/debt-reduction" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-xl shadow-elevated">
                   <Calculator className="w-5 h-5 mr-2" />
                   <span className="font-bold">내 예상 탕감액이 궁금하다면?</span>
@@ -275,12 +275,12 @@ export default function PersonalRehabilitation2026() {
             {/* CTA Buttons */}
             <div className="mt-10 mb-10">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/debt/test">
+                <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary text-primary hover:bg-primary/10 px-8 py-6 rounded-xl">
                     <span className="font-bold">🩺 채무조정 무료 자가진단</span>
                   </Button>
                 </Link>
-                <Link href="/cal/debt-reduction">
+                <Link href="/cal/debt-reduction" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-xl shadow-elevated">
                     <Calculator className="w-5 h-5 mr-2" />
                     <span className="font-bold">개인회생 계산기 바로가기</span>
