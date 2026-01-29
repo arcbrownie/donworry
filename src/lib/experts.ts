@@ -161,6 +161,13 @@ const articleInfoMap: Record<string, ArticleInfo> = {
     emoji: '💳',
     category: '금융 · 대출',
   },
+  '/blog/part-time-salary-statement-guide': {
+    path: '/blog/part-time-salary-statement-guide',
+    title: '알바비 급여명세서 확인법 완벽 가이드',
+    excerpt: '처음 알바하는 청소년·대학생을 위한 급여명세서 A to Z',
+    emoji: '📋',
+    category: '금융 · 대출',
+  },
   '/cal/freelancer': {
     path: '/cal/freelancer',
     title: '프리랜서 3.3% 환급 계산기',
@@ -233,7 +240,7 @@ export const expertArticles: Record<string, string[]> = {
   'expert-savings-03': ['/blog/investment-guide-for-beginners'],
   'expert-finance-01': ['/blog/first-loan-guide-2030'],
   'expert-finance-02': ['/blog/credit-card-vs-check-card'],
-  'expert-finance-03': ['/cal/freelancer', '/cal/youth-tax'],
+  'expert-finance-03': ['/blog/part-time-salary-statement-guide', '/cal/freelancer', '/cal/youth-tax'],
   'expert-debt-01': ['/personal-rehabilitation-2026-changes', '/debt/personal-rehabilitation-bankruptcy', '/blog/minimum-living-cost-calculator-2026'],
   'expert-debt-02': ['/debt/credit-recovery-committee', '/blog/rehabilitation-late-payment-emergency-loan'],
   'expert-debt-03': ['/debt/guide', '/blog/rehabilitation-12month-additional-loan'],

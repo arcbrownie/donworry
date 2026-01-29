@@ -6,7 +6,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { AlertCircle, CheckCircle, Clock, FileText, Building2, Shield, TrendingUp, HelpCircle, Calendar } from "lucide-react";
 
@@ -65,7 +65,7 @@ export default function TaxDelinquencyRestrictionRelease() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">국세 체납 해소 후 금융거래 제한이 언제 해제되는지</strong>, 
                 연체 기록 삭제 시기, 그리고 정상화 과정을 강민수 세무 전문가가 단계별로 상세히 알려드립니다. 
-                세금 관련 정보는 <Link href="/blog/tax-deduction-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">연말정산 가이드</Link>에서도 확인할 수 있습니다.
+                세금 관련 정보는 <Link href="/blog/part-time-salary-statement-guide" className="text-[#1A237E] hover:underline">연말정산 가이드</Link>에서도 확인할 수 있습니다.
               </p>
             </section>
 
@@ -435,7 +435,7 @@ export default function TaxDelinquencyRestrictionRelease() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 상품 비교는 
-                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
                   첫 대출 가이드
                 </Link>
                 에서 자세히 확인하세요.
@@ -535,7 +535,7 @@ export default function TaxDelinquencyRestrictionRelease() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용점수 관리 방법은 
-                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
                   신용점수 가이드
                 </Link>
                 에서 더 자세히 확인하세요.
@@ -746,21 +746,17 @@ export default function TaxDelinquencyRestrictionRelease() {
                 </div>
               </div>
             </section>
-          </article>
-        </div>
 
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-finance-03"
-            publishedDate={new Date().toISOString().split('T')[0]}
-            lastUpdated={new Date().toISOString().split('T')[0]}
-          />
-          <BlogShareButtons
-            title="국세 체납자 금융기관 이용 제한 해제 시기 완벽 가이드"
-            description="체납 해소 후 금융거래 정상화 과정"
-            variant="inline"
-            className="mt-8"
-          />
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-finance-03"
+                publishedDate={new Date().toISOString().split("T")[0]}
+                lastUpdated={new Date().toISOString().split("T")[0]}
+                shareTitle="국세 체납자 금융기관 이용 제한 해제 시기 완벽 가이드"
+                shareDescription="체납 해소 후 금융거래 정상화 과정"
+              />
+            </div>
+          </article>
         </div>
       </main>
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import { CreditCard, ChevronLeft, ChevronRight } from "lucide-react";
+import { CreditCard, ChevronLeft, ChevronRight, BookOpen, Calculator } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
@@ -128,10 +128,13 @@ const blogFAQs = blogFAQsByCategory["금융 · 대출"]();
 // FAQ 병합 (블로그 FAQ + 기본 FAQ)
 const financeFAQ = mergeFAQs(blogFAQs, defaultFinanceFAQ);
 
+type TabType = "guide" | "calculator";
+
 export default function FinanceHub() {
   const [api, setApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [tab, setTab] = useState<TabType>("guide");
 
   useEffect(() => {
     if (!api) {
@@ -170,16 +173,45 @@ export default function FinanceHub() {
         </div>
       </section>
 
-      {/* Blog */}
-      <section className="container py-12 mt-8">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
-            <span>📚</span>
-            <span>금융 · 대출 가이드</span>
-          </h2>
-          <p className="text-base text-muted-foreground mt-1">알아두면 돈 되는 금융 · 대출 지식</p>
+      {/* 탭: 가이드 / 계산기 */}
+      <section className="container py-8 mt-8">
+        <div className="flex items-center gap-6 border-b border-border pb-1">
+          <button
+            type="button"
+            onClick={() => setTab("guide")}
+            className={`flex items-center gap-2 font-medium text-base pb-2 -mb-px border-b-2 transition-colors ${
+              tab === "guide"
+                ? "border-category-finance text-category-finance"
+                : "border-transparent text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <BookOpen className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+            가이드
+          </button>
+          <button
+            type="button"
+            onClick={() => setTab("calculator")}
+            className={`flex items-center gap-2 font-medium text-base pb-2 -mb-px border-b-2 transition-colors ${
+              tab === "calculator"
+                ? "border-category-finance text-category-finance"
+                : "border-transparent text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <Calculator className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+            계산기
+          </button>
         </div>
-        <div className="relative">
+
+        {tab === "guide" && (
+          <div className="pt-6">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+                <span>📚</span>
+                <span>금융 · 대출 가이드</span>
+              </h2>
+              <p className="text-base text-muted-foreground mt-1">알아두면 돈 되는 금융 · 대출 지식</p>
+            </div>
+            <div className="relative">
           <Carousel
             opts={{
               align: "start",
@@ -222,22 +254,25 @@ export default function FinanceHub() {
             </div>
           </Carousel>
         </div>
-      </section>
+          </div>
+        )}
 
-      {/* Calculators */}
-      <section className="container py-12">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
-            <span>🧮</span>
-            <span>금융 · 대출 계산기</span>
-          </h2>
-          <p className="text-base text-muted-foreground mt-1">세금과 금리를 쉽게 계산하세요</p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-2">
-          {calculators.map((calc) => (
-            <CalculatorWidget key={calc.path} {...calc} />
-          ))}
-        </div>
+        {tab === "calculator" && (
+          <div className="pt-6">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+                <span>🧮</span>
+                <span>금융 · 대출 계산기</span>
+              </h2>
+              <p className="text-base text-muted-foreground mt-1">세금과 금리를 쉽게 계산하세요</p>
+            </div>
+            <div className="grid gap-3 md:grid-cols-2">
+              {calculators.map((calc) => (
+                <CalculatorWidget key={calc.path} {...calc} />
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       {/* FAQ */}

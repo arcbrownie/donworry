@@ -5,7 +5,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { Calendar, CreditCard, TrendingUp, CheckCircle, Shield, AlertCircle, FileText, Users, BarChart3 } from "lucide-react";
 
@@ -121,7 +121,7 @@ export default function BankruptcyDischargeCreditCardTimeline() {
                   </ul>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4 mt-6">신용점수 관리는 <Link href="/blog/credit-score-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">신용점수 가이드</Link>를 참고하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4 mt-6">신용점수 관리는 <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline">신용점수 가이드</Link>를 참고하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="credit-recovery" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><TrendingUp className="w-7 h-7 text-[#1A237E]" />신용점수 회복 과정</h2>
@@ -152,7 +152,7 @@ export default function BankruptcyDischargeCreditCardTimeline() {
                 <li className="flex items-start gap-3"><span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span><div><strong className="text-foreground block mb-1">정기 점검:</strong><span className="text-muted-foreground">3개월마다 신용점수 확인 (올크레딧, 크레딧포유). 이상 징후 조기 발견</span></div></li>
                 <li className="flex items-start gap-3"><span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span><div><strong className="text-foreground block mb-1">금융 상담:</strong><span className="text-muted-foreground">신용회복위원회(1600-5500) 정기 상담. 전문가의 조언으로 신용회복 속도 향상</span></div></li>
               </ul>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">신용회복은 <Link href="/blog/credit-recovery-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">신용 회복 가이드</Link>를 참고하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">신용회복은 <Link href="/debt/credit-recovery-committee" className="text-[#1A237E] hover:underline">신용 회복 가이드</Link>를 참고하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="caution" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><AlertCircle className="w-7 h-7 text-[#1A237E]" />주의사항</h2>
@@ -187,11 +187,17 @@ export default function BankruptcyDischargeCreditCardTimeline() {
                 </div>
               </div>
             </section>
+
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-debt-03"
+                publishedDate={new Date().toISOString().split("T")[0]}
+                lastUpdated={new Date().toISOString().split("T")[0]}
+                shareTitle="개인파산 면책 후 신용카드 발급 기간"
+                shareDescription="파산 후 신용회복 타임라인"
+              />
+            </div>
           </article>
-        </div>
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor expertId="expert-debt-03" publishedDate={new Date().toISOString().split('T')[0]} lastUpdated={new Date().toISOString().split('T')[0]} />
-          <BlogShareButtons title="개인파산 면책 후 신용카드 발급 기간" description="파산 후 신용회복 타임라인" variant="inline" className="mt-8" />
         </div>
       </main>
 

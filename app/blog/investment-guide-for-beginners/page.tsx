@@ -7,7 +7,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Shield, AlertTriangle, Target, PiggyBank, BarChart3, Calculator, ArrowRight, Wallet } from "lucide-react";
@@ -538,16 +538,16 @@ export default function InvestmentGuideForBeginners() {
                 </Link>
               </div>
             </div>
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-savings-03"
+                publishedDate="2026-01-10"
+                lastUpdated="2026-01-27"
+                shareTitle="사회초년생 투자 입문 완벽 가이드 2026"
+                shareDescription="적금만으로는 부족하다! 첫 투자를 시작하는 방법"
+              />
+            </div>
           </article>
-        </div>
-
-        {/* Author Section */}
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-savings-03"
-            publishedDate="2026-01-10"
-            lastUpdated="2026-01-27"
-          />
         </div>
 
         {/* Ad Container */}

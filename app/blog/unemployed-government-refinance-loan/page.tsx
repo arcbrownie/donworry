@@ -5,8 +5,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
-import { ShareButtons } from "@/components/ShareButtons";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { Users, FileText, CheckCircle, Building2, AlertCircle, Shield, Calculator, TrendingDown, Phone } from "lucide-react";
 
@@ -45,7 +44,7 @@ export default function UnemployedGovernmentRefinanceLoan() {
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             <section className="mb-10">
               <p className="text-muted-foreground leading-relaxed text-lg mb-4"><strong className="text-[#1A237E]">무직 상태</strong>에서도 고금리 대출을 저금리로 갈아탈 수 있을까요? 많은 분들이 무직자는 대환대출이 불가능하다고 생각하지만, 정부지원 대환대출을 활용하면 가능합니다.</p>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">실제로 서민금융진흥원 자료에 따르면, 무직자 대환대출 승인 건수는 연간 약 3만 건에 달합니다. 이 글에서는 <strong className="text-[#1A237E]">서민금융진흥원</strong> 등 공신력 있는 기관의 무직자 대환대출 신청 방법을 최동현 대출 전문가가 실제 사례와 함께 상세히 알려드립니다. 대출 한도는 <Link href="/calculators/loan" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">실제로 서민금융진흥원 자료에 따르면, 무직자 대환대출 승인 건수는 연간 약 3만 건에 달합니다. 이 글에서는 <strong className="text-[#1A237E]">서민금융진흥원</strong> 등 공신력 있는 기관의 무직자 대환대출 신청 방법을 최동현 대출 전문가가 실제 사례와 함께 상세히 알려드립니다. 대출 한도는 <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="possibility" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><Users className="w-7 h-7 text-[#1A237E]" />무직자도 대환대출 가능한가?</h2>
@@ -131,7 +130,7 @@ export default function UnemployedGovernmentRefinanceLoan() {
                   <li className="flex gap-2"><span className="text-[#1A237E]">7.</span>구직활동 증명 (고용센터 구직신청 확인서, 면접 확인서 등, 선택사항)</li>
                 </ul>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">대출 비교는 <Link href="/blog/loan-comparison" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 상품 비교 가이드</Link>를 참고하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">대출 비교는 <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline">대출 상품 비교 가이드</Link>를 참고하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="approval-tips" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><Shield className="w-7 h-7 text-[#1A237E]" />승인율 높이는 팁</h2>
@@ -165,7 +164,7 @@ export default function UnemployedGovernmentRefinanceLoan() {
                 <p className="text-muted-foreground font-bold"><strong>순 절감액:</strong> 180만원 - 27만원 = 153만원</p>
                 <p className="text-muted-foreground mt-4 text-sm">※ 대환 수수료는 대출금의 0.5-1% 수준이며, 기존 대출 중도상환수수료는 금융기관별로 상이합니다.</p>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">대출 계산은 <Link href="/calculators/loan" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>를 활용하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">대출 계산은 <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline">대출 계산기</Link>를 활용하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="caution" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><AlertCircle className="w-7 h-7 text-[#1A237E]" />주의사항</h2>
@@ -178,7 +177,7 @@ export default function UnemployedGovernmentRefinanceLoan() {
                 <li className="flex items-start gap-3"><span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span><div><strong className="text-foreground block mb-1">서류 정확성:</strong><span className="text-muted-foreground">모든 서류는 최근 1-3개월 이내 발급분만 유효. 오래된 서류는 재발급 필요</span></div></li>
                 <li className="flex items-start gap-3"><span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span><div><strong className="text-foreground block mb-1">재취업 후:</strong><span className="text-muted-foreground">재취업 후 소득증빙 제출 시 한도 증액 가능. 정상 상환 시 신용점수도 상승</span></div></li>
               </ul>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">채무 관리는 <Link href="/blog/debt-consolidation-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">채무통합 가이드</Link>를 참고하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">채무 관리는 <Link href="/blog/debt-consolidation-guide" className="text-[#1A237E] hover:underline">채무통합 가이드</Link>를 참고하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="contact" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><Phone className="w-7 h-7 text-[#1A237E]" />상담 및 신청 문의</h2>
@@ -193,11 +192,15 @@ export default function UnemployedGovernmentRefinanceLoan() {
                 </ul>
               </div>
             </section>
-            <ArticleAuthor expertId="expert-finance-01" publishedDate={new Date().toISOString().split('T')[0]} lastUpdated={new Date().toISOString().split('T')[0]} />
+
+            <ArticleFooter
+              expertId="expert-finance-01"
+              publishedDate={new Date().toISOString().split("T")[0]}
+              lastUpdated={new Date().toISOString().split("T")[0]}
+              shareTitle="무직자 정부지원 대환대출 신청법"
+              shareDescription="서민금융진흥원 대환대출 가이드"
+            />
           </article>
-        </div>
-        <div className="max-w-4xl mx-auto mt-8 flex justify-end">
-          <ShareButtons className="py-4 border-t border-border/30" />
         </div>
       </main>
 

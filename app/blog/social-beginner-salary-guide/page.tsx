@@ -7,7 +7,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { RelatedPosts } from "@/components/ui/RelatedPosts";
 import { Button } from "@/components/ui/button";
@@ -384,22 +384,14 @@ export default function SocialBeginnerSalaryGuide() {
               </div>
             </div>
 
-            {/* Author Section - 본문과 왼쪽 정렬 */}
-            <div className="mt-12 pt-8 border-t border-border">
-              <ArticleAuthor 
-                expertId="expert-savings-01"
-                publishedDate="2026-01-15"
-                lastUpdated="2026-01-27"
-              />
-
-              {/* Share Buttons - 작성자 정보 아래 */}
-              <BlogShareButtons
-                title="사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추"
-                description="사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다."
-                variant="inline"
-                className="mt-8"
-              />
-            </div>
+            {/* 작성자 정보(왼쪽) → 오류 제보 CTA → 이 글 공유하기(오른쪽) */}
+            <ArticleFooter
+              expertId="expert-savings-01"
+              publishedDate="2026-01-15"
+              lastUpdated="2026-01-27"
+              shareTitle="사회초년생 첫 월급 관리법: 돈 걱정 없는 미래를 위한 첫 단추"
+              shareDescription="사회초년생을 위한 첫 월급 관리 완벽 가이드. 50/30/20 예산 배분법, 비상금 구축, 신용점수 관리, 필수 금융상품까지 실전 월급 관리 노하우를 알려드립니다."
+            />
           </article>
         </div>
 

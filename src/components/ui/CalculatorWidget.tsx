@@ -34,8 +34,6 @@ export default function CalculatorWidget({
   return (
     <Link
       href={path}
-      target="_blank"
-      rel="noopener noreferrer"
       className={`group block p-4 rounded-xl ${variantStyles[variant]} shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1`}
     >
       <div className="flex items-start gap-4">

@@ -6,7 +6,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calculator } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -289,16 +289,17 @@ export default function PersonalRehabilitation2026() {
                 </Link>
               </div>
             </div>
-            </article>
-          </div>
 
-          {/* Author Section */}
-          <div className="max-w-4xl mx-auto mt-12">
-            <ArticleAuthor 
-              expertId="expert-debt-01"
-              publishedDate="2025-12-10"
-              lastUpdated="2026-01-27"
-            />
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-debt-01"
+                publishedDate="2025-12-10"
+                lastUpdated="2026-01-27"
+                shareTitle="2026년 개인회생 제도 변경사항 완벽 가이드"
+                shareDescription="2026년부터 적용되는 개인회생 변경사항과 준비 방법"
+              />
+            </div>
+            </article>
           </div>
         </main>
 

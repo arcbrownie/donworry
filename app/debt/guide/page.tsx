@@ -109,7 +109,7 @@ export default function DebtGuide() {
                 <>
                   <p><strong>개인회생:</strong> 정기적인 수입이 있는 채무자가 3~5년간 일정 금액을 상환하고 나머지 채무를 면책받는 제도입니다. 최대 90%까지 탕감 가능하며, 2026년부터 디지털 사법 시스템 도입으로 처리 속도가 빨라졌습니다.</p>
                   <p><strong>개인파산:</strong> 수입이 없거나 극히 적은 채무자가 모든 재산을 정리하고 모든 채무를 면책받는 제도입니다. 모든 채무 면책 가능하지만 신용 회복에 시간이 필요합니다.</p>
-                  <p>더 자세한 내용은 <Link href="/debt/personal-rehabilitation-bankruptcy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">개인회생 · 개인파산 완벽 가이드</Link>를 참고하세요.</p>
+                  <p>더 자세한 내용은 <Link href="/debt/personal-rehabilitation-bankruptcy" className="text-primary hover:underline font-medium">개인회생 · 개인파산 완벽 가이드</Link>를 참고하세요.</p>
                 </>
               ) : guide.title === "신용회복위원회 채무조정" ? (
                 <>
@@ -127,7 +127,7 @@ export default function DebtGuide() {
                     <li>비법정 절차로 신용정보 영향 최소화</li>
                     <li>이자율 인하 및 상환 기간 연장</li>
                   </ul>
-                  <p>더 자세한 내용은 <Link href="/debt/credit-recovery-committee" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">신용회복위원회 채무조정 완벽 가이드</Link>를 참고하세요.</p>
+                  <p>더 자세한 내용은 <Link href="/debt/credit-recovery-committee" className="text-primary hover:underline font-medium">신용회복위원회 채무조정 완벽 가이드</Link>를 참고하세요.</p>
                 </>
               ) : (
                 <>
@@ -137,7 +137,7 @@ export default function DebtGuide() {
                   → 개인회생 추천 (최대 90% 탕감)</p>
                   <p><strong>수입이 없거나 극히 적음</strong><br />
                   → 개인파산 검토 (100% 면책)</p>
-                  <p>정확한 판단은 전문가 상담을 통해 받으시는 것이 좋습니다. <Link href="/debt/test" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">채무조정 자가진단</Link>을 통해 나에게 맞는 해결책을 찾아보세요.</p>
+                  <p>정확한 판단은 전문가 상담을 통해 받으시는 것이 좋습니다. <Link href="/debt/test" className="text-primary hover:underline font-medium">채무조정 자가진단</Link>을 통해 나에게 맞는 해결책을 찾아보세요.</p>
                 </>
               )}
             </div>

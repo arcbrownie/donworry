@@ -6,7 +6,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { Clock, AlertTriangle, DollarSign, Shield, CheckCircle, TrendingDown } from "lucide-react";
 
@@ -65,7 +65,7 @@ export default function LoanOverdue5DaySolution() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">5일 골든타임</strong> 안에 연체를 해결하는 방법을 
                 최동현 대출 전문가가 단계별로 알려드립니다. 
-                긴급 자금 계산은 <Link href="/cal/interest-saving" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.
+                긴급 자금 계산은 <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.
               </p>
             </section>
 
@@ -227,7 +227,7 @@ export default function LoanOverdue5DaySolution() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 다양한 대출 상품 비교는 
-                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
                   대출 상품 비교 가이드
                 </Link>
                 에서 확인하세요.
@@ -327,7 +327,7 @@ export default function LoanOverdue5DaySolution() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 통합에 대한 정보는 
-                <Link href="/debt/guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/debt/guide" className="text-[#1A237E] hover:underline">
                   채무통합 가이드
                 </Link>
                 를 참고하세요.
@@ -454,28 +454,23 @@ export default function LoanOverdue5DaySolution() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용점수 관리는 
-                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline">
                   신용점수 가이드
                 </Link>
                 를 참고하세요.
               </p>
             </section>
+
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-finance-01"
+                publishedDate="2026-01-28"
+                lastUpdated="2026-01-28"
+                shareTitle="소액 대출 연체 5일 전 긴급 해결 방법"
+                shareDescription="연체 기록이 남기 전 5일 골든타임 안에 해결하는 방법"
+              />
+            </div>
           </article>
-        </div>
-
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-finance-01"
-            publishedDate="2026-01-28"
-            lastUpdated="2026-01-28"
-          />
-
-          <BlogShareButtons
-            title="소액 대출 연체 5일 전 긴급 해결 방법"
-            description="연체 기록이 남기 전 5일 골든타임 안에 해결하는 방법"
-            variant="inline"
-            className="mt-8"
-          />
         </div>
       </main>
 

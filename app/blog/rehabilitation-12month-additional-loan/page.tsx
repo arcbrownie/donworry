@@ -6,7 +6,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Award, DollarSign, FileCheck, TrendingUp, Calculator, Shield } from "lucide-react";
@@ -67,7 +67,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">12개월 성실상환자 추가대출</strong>의 자격, 한도, 금리, 
                 신청 방법을 서준호 신용회복 전문가가 상세히 알려드립니다. 
-                대출 가능 금액은 <Link href="/cal/interest-saving" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 
+                대출 가능 금액은 <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 
                 확인해보세요.
               </p>
             </section>
@@ -159,7 +159,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 상품 비교는 
-                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
                   대출 가이드
                 </Link>
                 에서 자세히 확인할 수 있습니다.
@@ -267,7 +267,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 법원 허가 절차가 복잡하다면 
-                <Link href="/debt/personal-rehabilitation-bankruptcy" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/debt/personal-rehabilitation-bankruptcy" className="text-[#1A237E] hover:underline">
                   개인회생 가이드
                 </Link>
                 도 함께 참고하세요.
@@ -451,7 +451,7 @@ export default function Rehabilitation12MonthAdditionalLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 개인회생 완수 후 신용 회복에 대한 자세한 정보는 
-                <Link href="/blog/personal-rehabilitation-2026" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/personal-rehabilitation-2026" className="text-[#1A237E] hover:underline">
                   개인회생 가이드
                 </Link>
                 를 참고하세요.
@@ -476,22 +476,17 @@ export default function Rehabilitation12MonthAdditionalLoan() {
                 ))}
               </Accordion>
             </section>
+
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-debt-03"
+                publishedDate="2026-01-28"
+                lastUpdated="2026-01-28"
+                shareTitle="개인회생 12개월 성실상환 후 추가대출 가이드"
+                shareDescription="성실 변제로 신용을 회복하고 추가 자금을 확보하는 방법"
+              />
+            </div>
           </article>
-        </div>
-
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-debt-03"
-            publishedDate="2026-01-28"
-            lastUpdated="2026-01-28"
-          />
-
-          <BlogShareButtons
-            title="개인회생 12개월 성실상환 후 추가대출 가이드"
-            description="성실 변제로 신용을 회복하고 추가 자금을 확보하는 방법"
-            variant="inline"
-            className="mt-8"
-          />
         </div>
       </main>
 

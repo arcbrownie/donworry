@@ -5,14 +5,19 @@ interface ArticleAuthorProps {
   expertId: string;
   publishedDate?: string;
   lastUpdated?: string;
+  /** 작성일·최종 수정일 오른쪽에 배치할 내용 (예: 이 글 공유하기 + 아이콘) */
+  rightSlot?: React.ReactNode;
 }
 
-export function ArticleAuthor({ expertId, publishedDate, lastUpdated }: ArticleAuthorProps) {
+export function ArticleAuthor({ expertId, publishedDate, lastUpdated, rightSlot }: ArticleAuthorProps) {
   const expert = getExpertById(expertId);
   
   if (!expert) {
     return null;
   }
+
+  const hasDates = publishedDate || lastUpdated;
+  const hasBottomRow = hasDates || rightSlot;
 
   return (
     <section className="mt-12 pt-8 border-t border-border">
@@ -25,13 +30,22 @@ export function ArticleAuthor({ expertId, publishedDate, lastUpdated }: ArticleA
       
       <AuthorCard expert={expert} />
       
-      {(publishedDate || lastUpdated) && (
-        <div className="mt-4 text-xs text-muted-foreground space-y-1">
-          {publishedDate && (
-            <p>작성일: {new Date(publishedDate).toLocaleDateString('ko-KR')}</p>
+      {hasBottomRow && (
+        <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          {hasDates && (
+            <div className="text-xs text-muted-foreground space-y-1 order-2 sm:order-1">
+              {publishedDate && (
+                <p>작성일: {new Date(publishedDate).toLocaleDateString('ko-KR')}</p>
+              )}
+              {lastUpdated && (
+                <p>최종 수정일: {new Date(lastUpdated).toLocaleDateString('ko-KR')}</p>
+              )}
+            </div>
           )}
-          {lastUpdated && (
-            <p>최종 수정일: {new Date(lastUpdated).toLocaleDateString('ko-KR')}</p>
+          {rightSlot && (
+            <div className="order-1 sm:order-2 sm:flex-shrink-0">
+              {rightSlot}
+            </div>
           )}
         </div>
       )}

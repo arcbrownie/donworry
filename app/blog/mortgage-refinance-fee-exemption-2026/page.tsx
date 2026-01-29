@@ -6,7 +6,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { Home, DollarSign, CheckCircle, Calculator, TrendingDown, Shield } from "lucide-react";
 
@@ -65,7 +65,7 @@ export default function MortgageRefinanceFeeExemption2026() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">2026년 정부 지침</strong>에 따른 중도상환수수료 면제 조건과 
                 절감 방법을 최동현 대출 전문가가 상세히 알려드립니다. 
-                갈아타기 손익은 <Link href="/cal/interest-saving" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.
+                갈아타기 손익은 <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.
               </p>
             </section>
 
@@ -169,7 +169,7 @@ export default function MortgageRefinanceFeeExemption2026() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 갈아타기 전략은 
-                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
                   대출 상품 비교 가이드
                 </Link>
                 에서 확인하세요.
@@ -285,7 +285,7 @@ export default function MortgageRefinanceFeeExemption2026() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 신청 방법은 
-                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline">
                   첫 대출 가이드
                 </Link>
                 를 참고하세요.
@@ -514,28 +514,23 @@ export default function MortgageRefinanceFeeExemption2026() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 DSR 계산은{" "}
-                <Link href="/cal/debt-reduction" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/cal/debt-reduction" className="text-[#1A237E] hover:underline">
                   채무 계산기
                 </Link>
                 로 미리 확인하세요.
               </p>
             </section>
+
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-finance-01"
+                publishedDate="2026-01-28"
+                lastUpdated="2026-01-28"
+                shareTitle="주택담보대출 갈아타기 중도상환수수료 면제 조건 2026"
+                shareDescription="2026년 정부 지침에 따른 수수료 절감 팁"
+              />
+            </div>
           </article>
-        </div>
-
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-finance-01"
-            publishedDate="2026-01-28"
-            lastUpdated="2026-01-28"
-          />
-
-          <BlogShareButtons
-            title="주택담보대출 갈아타기 중도상환수수료 면제 조건 2026"
-            description="2026년 정부 지침에 따른 수수료 절감 팁"
-            variant="inline"
-            className="mt-8"
-          />
         </div>
       </main>
 

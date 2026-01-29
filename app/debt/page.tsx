@@ -3,7 +3,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Scale, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Scale, ChevronLeft, ChevronRight, BookOpen, Calculator, Activity } from "lucide-react";
 import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/ui/BlogCard";
@@ -19,8 +19,8 @@ import { blogFAQsByCategory } from "@/lib/content/blog-faqs";
 const debtFeatures = [
   { 
     path: "/debt/test", 
-    emoji: "🩺", 
-    title: "채무조정 자가진단", 
+    emoji: "💓", 
+    title: "채무조정 무료 진단", 
     description: "나에게 맞는 해결책 찾기",
     tag: "채무조정",
     variant: "debt" as const 
@@ -139,10 +139,13 @@ const blogFAQs = blogFAQsByCategory["채무조정"]();
 // FAQ 병합 (블로그 FAQ + 기본 FAQ)
 const debtFAQ = mergeFAQs(blogFAQs, defaultDebtFAQ);
 
+type TabType = "guide" | "calculator";
+
 export default function DebtHub() {
   const [api, setApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [tab, setTab] = useState<TabType>("guide");
 
   useEffect(() => {
     if (!api) {
@@ -180,11 +183,10 @@ export default function DebtHub() {
             돈워리가 새로운 시작을 응원합니다.
           </p>
           <Link href="/debt/test" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-white text-category-debt hover:bg-white/90 shadow-xl px-6 py-6 rounded-xl font-semibold">
-              <span className="relative z-10 flex items-center gap-2">
-                🩺  무료 자가진단 시작하기
-                <ArrowRight className="w-4 h-4" />
-              </span>
+            <Button className="bg-white text-category-debt hover:bg-white/90 shadow-xl px-6 py-6 rounded-xl font-semibold flex items-center justify-center gap-2">
+              <Activity className="w-5 h-5 shrink-0" strokeWidth={2.5} />
+              채무조정 무료 진단
+              <ArrowRight className="w-4 h-4 shrink-0" />
             </Button>
           </Link>
         </div>
@@ -231,16 +233,45 @@ export default function DebtHub() {
         </div>
       </section>
 
-      {/* Blog */}
-      <section className="container py-12">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
-            <span>📚</span>
-            <span>채무조정 가이드</span>
-          </h2>
-          <p className="text-base text-muted-foreground mt-1">알아두면 도움이 되는 채무 관련 정보</p>
+      {/* 탭: 가이드 / 계산기 */}
+      <section className="container py-8">
+        <div className="flex items-center gap-6 border-b border-border pb-1">
+          <button
+            type="button"
+            onClick={() => setTab("guide")}
+            className={`flex items-center gap-2 font-medium text-base pb-2 -mb-px border-b-2 transition-colors ${
+              tab === "guide"
+                ? "border-category-debt text-category-debt"
+                : "border-transparent text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <BookOpen className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+            가이드
+          </button>
+          <button
+            type="button"
+            onClick={() => setTab("calculator")}
+            className={`flex items-center gap-2 font-medium text-base pb-2 -mb-px border-b-2 transition-colors ${
+              tab === "calculator"
+                ? "border-category-debt text-category-debt"
+                : "border-transparent text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <Calculator className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+            계산기
+          </button>
         </div>
-        <div className="relative">
+
+        {tab === "guide" && (
+          <div className="pt-6">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+                <span>📚</span>
+                <span>채무조정 가이드</span>
+              </h2>
+              <p className="text-base text-muted-foreground mt-1">알아두면 도움이 되는 채무 관련 정보</p>
+            </div>
+            <div className="relative">
           <Carousel
             opts={{
               align: "start",
@@ -283,22 +314,25 @@ export default function DebtHub() {
             </div>
           </Carousel>
         </div>
-      </section>
+          </div>
+        )}
 
-      {/* Features */}
-      <section className="container py-12">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
-            <span>🔧</span>
-            <span>채무 해결 도구</span>
-          </h2>
-          <p className="text-base text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-3">
-          {debtFeatures.map((feature) => (
-            <CalculatorWidget key={feature.path} {...feature} />
-          ))}
-        </div>
+        {tab === "calculator" && (
+          <div className="pt-6">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+                <span>🔧</span>
+                <span>채무 해결 도구</span>
+              </h2>
+              <p className="text-base text-muted-foreground mt-1">나에게 맞는 해결책을 찾아보세요</p>
+            </div>
+            <div className="grid gap-3 md:grid-cols-3">
+              {debtFeatures.map((feature) => (
+                <CalculatorWidget key={feature.path} {...feature} />
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       {/* FAQ */}

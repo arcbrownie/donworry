@@ -6,7 +6,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { XCircle, CheckCircle, TrendingUp, FileText, DollarSign, Shield } from "lucide-react";
 
@@ -65,7 +65,7 @@ export default function FreelancerLoanAlternatives() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">햇살론 유스 부결 후</strong> 시도할 수 있는 
                 현실적인 대출 대안 3가지를 최동현 대출 전문가가 알려드립니다. 
-                대출 한도는 <Link href="/calculators/loan" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.
+                대출 한도는 <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.
               </p>
             </section>
 
@@ -176,7 +176,7 @@ export default function FreelancerLoanAlternatives() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용회복위원회 대출은 
-                <Link href="/blog/credit-recovery-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/debt/credit-recovery-committee" className="text-[#1A237E] hover:underline mx-1">
                   신용 회복 가이드
                 </Link>
                 에서 자세히 확인하세요.
@@ -241,7 +241,7 @@ export default function FreelancerLoanAlternatives() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 은행별 대출 비교는 
-                <Link href="/blog/loan-comparison" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline">
                   대출 상품 비교 가이드
                 </Link>
                 를 참고하세요.
@@ -355,7 +355,7 @@ export default function FreelancerLoanAlternatives() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 신용점수 관리는 
-                <Link href="/blog/credit-score-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline">
                   신용점수 가이드
                 </Link>
                 를 참고하세요.
@@ -529,28 +529,23 @@ export default function FreelancerLoanAlternatives() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 부결 후 대처 방법은 
-                <Link href="/blog/loan-rejection-solution" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline">
                   대출 부결 가이드
                 </Link>
                 를 참고하세요.
               </p>
             </section>
+
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-finance-01"
+                publishedDate="2026-01-28"
+                lastUpdated="2026-01-28"
+                shareTitle="프리랜서 햇살론 유스 부결 시 대안 3가지"
+                shareDescription="햇살론 유스 부결 후 시도할 수 있는 현실적인 대출 대안"
+              />
+            </div>
           </article>
-        </div>
-
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-finance-01"
-            publishedDate="2026-01-28"
-            lastUpdated="2026-01-28"
-          />
-
-          <BlogShareButtons
-            title="프리랜서 햇살론 유스 부결 시 대안 3가지"
-            description="햇살론 유스 부결 후 시도할 수 있는 현실적인 대출 대안"
-            variant="inline"
-            className="mt-8"
-          />
         </div>
       </main>
 

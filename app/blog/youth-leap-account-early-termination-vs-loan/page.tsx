@@ -6,7 +6,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { PiggyBank, DollarSign, Calculator, TrendingUp, AlertCircle, CheckCircle, FileText, HelpCircle, Clock, BarChart3 } from "lucide-react";
 
@@ -59,7 +59,7 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 이 글에서는 <strong className="text-[#1A237E]">중도해지 손실 vs 담보대출 이자 비용</strong>을 구체적인 숫자로 비교하여 
                 케이스별 최선의 선택을 김민지 재테크 전문가가 상세히 알려드립니다. 
-                손익 계산은 <Link href="/cal/part-time" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">적금 계산기</Link>로도 확인할 수 있습니다.
+                손익 계산은 <Link href="/cal/part-time" className="text-[#1A237E] hover:underline">적금 계산기</Link>로도 확인할 수 있습니다.
               </p>
             </section>
 
@@ -379,7 +379,7 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 대출 금리 계산은 
-                <Link href="/blog/first-loan-guide-2030" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline mx-1">
                   첫 대출 가이드
                 </Link>
                 에서 자세히 확인하세요.
@@ -779,7 +779,7 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
 
               <p className="text-muted-foreground leading-relaxed text-lg mb-4">
                 손익 계산은 
-                <Link href="/cal/interest-saving" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline mx-1">
+                <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline mx-1">
                   이자 절감 계산기
                 </Link>
                 로 정확히 확인하세요.
@@ -1017,21 +1017,17 @@ export default function YouthLeapAccountEarlyTerminationVsLoan() {
                 </div>
               </div>
             </section>
-          </article>
-        </div>
 
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-savings-01"
-            publishedDate={new Date().toISOString().split('T')[0]}
-            lastUpdated={new Date().toISOString().split('T')[0]}
-          />
-          <BlogShareButtons
-            title="2026년 청년 도약계좌 중도해지 vs 담보대출 비교"
-            description="급전 필요 시 최선의 선택"
-            variant="inline"
-            className="mt-8"
-          />
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-savings-01"
+                publishedDate={new Date().toISOString().split("T")[0]}
+                lastUpdated={new Date().toISOString().split("T")[0]}
+                shareTitle="2026년 청년 도약계좌 중도해지 vs 담보대출 비교"
+                shareDescription="급전 필요 시 최선의 선택"
+              />
+            </div>
+          </article>
         </div>
       </main>
 

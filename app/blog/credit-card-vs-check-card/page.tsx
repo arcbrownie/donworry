@@ -7,7 +7,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CreditCard, Wallet, TrendingUp, Shield, Calculator, ArrowRight, AlertTriangle } from "lucide-react";
@@ -460,16 +460,16 @@ export default function CreditCardVsCheckCard() {
                 </Link>
               </div>
             </div>
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-finance-02"
+                publishedDate="2026-01-06"
+                lastUpdated="2026-01-27"
+                shareTitle="신용카드 vs 체크카드 차이와 선택 가이드"
+                shareDescription="소비 패턴에 따른 최적의 카드 선택법"
+              />
+            </div>
           </article>
-        </div>
-
-        {/* Author Section */}
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-finance-02"
-            publishedDate="2026-01-06"
-            lastUpdated="2026-01-27"
-          />
         </div>
 
         {/* Ad Container */}

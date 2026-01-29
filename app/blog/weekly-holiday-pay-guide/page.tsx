@@ -7,7 +7,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { Button } from "@/components/ui/button";
 import { Calculator, ArrowRight } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -251,6 +251,16 @@ export default function WeeklyHolidayPayGuide() {
               ))}
             </Accordion>
           </section>
+
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-savings-02"
+                publishedDate="2025-12-15"
+                lastUpdated="2026-01-27"
+                shareTitle="2026년 주휴수당 계산법 완벽 가이드"
+                shareDescription="2026년 기준 내 주휴수당은 얼마일까? 계산법 정리"
+              />
+            </div>
           </article>
         </div>
 
@@ -268,15 +278,6 @@ export default function WeeklyHolidayPayGuide() {
               2026년 기준 내 주휴수당은 얼마일까? 계산법 정리
             </p>
           </div>
-        </div>
-
-        {/* Author Section */}
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-savings-02"
-            publishedDate="2025-12-15"
-            lastUpdated="2026-01-27"
-          />
         </div>
       </main>
 

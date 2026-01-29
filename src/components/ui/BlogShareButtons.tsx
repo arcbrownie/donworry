@@ -11,6 +11,8 @@ interface BlogShareButtonsProps {
   url?: string;
   className?: string;
   variant?: "sticky" | "bottom-fixed" | "inline";
+  /** inline일 때 오른쪽 정렬 (블로그 푸터용) */
+  alignRight?: boolean;
 }
 
 export function BlogShareButtons({ 
@@ -18,7 +20,8 @@ export function BlogShareButtons({
   description, 
   url,
   className,
-  variant = "sticky"
+  variant = "sticky",
+  alignRight = false
 }: BlogShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -100,9 +103,9 @@ export function BlogShareButtons({
 
   const shareButtons = (
     <div className={cn(
-      "flex items-center gap-2",
-      variant === "inline" && "justify-center flex-wrap",
-      className
+      "flex items-center gap-2 flex-wrap",
+      variant === "inline" && (alignRight ? "justify-end" : "justify-center"),
+      variant !== "inline" && className
     )}>
       {/* 카카오톡 공유 */}
       <Button
@@ -200,7 +203,11 @@ export function BlogShareButtons({
   }
 
   return (
-    <div className={cn("py-4 border-t border-border/30", className)}>
+    <div className={cn(
+      "py-4 border-t border-border/30",
+      alignRight && "text-right",
+      className
+    )}>
       <p className="text-sm font-semibold text-foreground mb-3">이 글 공유하기</p>
       {shareButtons}
     </div>

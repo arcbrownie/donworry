@@ -7,7 +7,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -788,12 +788,14 @@ export default function OnePersonHouseholdSavingsDetailed() {
           </Card>
         </div>
 
-        {/* Author Section */}
+        {/* 작성자 정보 → 오류 제보 CTA → 이 글 공유하기 */}
         <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
+          <ArticleFooter
             expertId="expert-savings-02"
             publishedDate="2025-12-25"
             lastUpdated="2026-01-27"
+            shareTitle="1인 가구 절약 생활 가이드"
+            shareDescription="1인 가구를 위한 실속 절약 팁"
           />
         </div>
 

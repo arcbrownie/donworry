@@ -5,7 +5,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { BlogShareButtons } from "@/components/ui/BlogShareButtons";
 import { AlertCircle, Calculator, TrendingDown, CheckCircle, Shield, DollarSign, BarChart3, FileText, Users } from "lucide-react";
 
@@ -44,7 +44,7 @@ export default function CardLoanDebtCycleEscape() {
           <article className="flex-1 max-w-4xl prose prose-xl prose-slate max-w-none">
             <section className="mb-10">
               <p className="text-muted-foreground leading-relaxed text-lg mb-4"><strong className="text-[#1A237E]">카드론을 카드론으로 막고</strong> 있다면 매달 이자만 내다 원금은 줄지 않는 악순환에 빠져있을 가능성이 높습니다. 금융감독원 통계에 따르면, 카드론 돌려막기를 하는 사람은 평균 3-4개의 카드를 사용하며, 총 채무가 1,500만원을 넘는 경우가 많습니다.</p>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">이 글에서는 <strong className="text-[#1A237E]">고금리 카드론을 저금리 대출로 통합</strong>하여 이자 부담을 줄이는 방법을 한지우 채무조정 전문가가 실제 계산 사례와 함께 상세히 알려드립니다. 대환 손익은 <Link href="/calculators/loan" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">이 글에서는 <strong className="text-[#1A237E]">고금리 카드론을 저금리 대출로 통합</strong>하여 이자 부담을 줄이는 방법을 한지우 채무조정 전문가가 실제 계산 사례와 함께 상세히 알려드립니다. 대환 손익은 <Link href="/cal/interest-saving" className="text-[#1A237E] hover:underline">대출 계산기</Link>로 확인하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="vicious-cycle" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><AlertCircle className="w-7 h-7 text-[#1A237E]" />카드론 돌려막기의 악순환</h2>
@@ -137,7 +137,7 @@ export default function CardLoanDebtCycleEscape() {
                   </ul>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4 mt-6">대환대출 비교는 <Link href="/blog/loan-comparison" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">대출 상품 비교 가이드</Link>를 참고하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4 mt-6">대환대출 비교는 <Link href="/blog/first-loan-guide-2030" className="text-[#1A237E] hover:underline">대출 상품 비교 가이드</Link>를 참고하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="application-process" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><CheckCircle className="w-7 h-7 text-[#1A237E]" />신청 절차</h2>
@@ -171,7 +171,7 @@ export default function CardLoanDebtCycleEscape() {
               <div className="bg-gradient-to-r from-[#1A237E]/10 to-[#4A148C]/10 border-l-4 border-[#1A237E] p-6 rounded-r-lg my-6">
                 <p className="text-muted-foreground"><strong className="text-[#1A237E]">💡 전문가 TIP:</strong> 대환대출 후 6개월 동안은 추가 대출 신청을 절대 금지하세요. 신용조회가 많아지면 신용점수가 하락하고, 대환대출 상환에도 지장을 줄 수 있습니다.</p>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">개인회생은 <Link href="/blog/personal-bankruptcy-guide" target="_blank" rel="noopener noreferrer" className="text-[#1A237E] hover:underline">개인회생 가이드</Link>를 참고하세요.</p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-4">개인회생은 <Link href="/debt/personal-rehabilitation-bankruptcy" className="text-[#1A237E] hover:underline">개인회생 가이드</Link>를 참고하세요.</p>
             </section>
             <section className="mb-10">
               <h2 id="emergency-tips" className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3 scroll-mt-20"><DollarSign className="w-7 h-7 text-[#1A237E]" />긴급 자금 마련 팁</h2>
@@ -203,11 +203,17 @@ export default function CardLoanDebtCycleEscape() {
                 <li className="flex items-start gap-3"><span className="font-bold text-[#1A237E] text-xl mt-0.5">•</span><div><strong className="text-foreground block mb-1">연체 경고 받음:</strong><span className="text-muted-foreground">카드사에서 연체 경고 문자나 전화를 받는 경우</span></div></li>
               </ul>
             </section>
+
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-debt-02"
+                publishedDate={new Date().toISOString().split("T")[0]}
+                lastUpdated={new Date().toISOString().split("T")[0]}
+                shareTitle="카드론 돌려막기 탈출 방법"
+                shareDescription="채무통합으로 이자 줄이기"
+              />
+            </div>
           </article>
-        </div>
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor expertId="expert-debt-02" publishedDate={new Date().toISOString().split('T')[0]} lastUpdated={new Date().toISOString().split('T')[0]} />
-          <BlogShareButtons title="카드론 돌려막기 탈출 방법" description="채무통합으로 이자 줄이기" variant="inline" className="mt-8" />
         </div>
       </main>
 

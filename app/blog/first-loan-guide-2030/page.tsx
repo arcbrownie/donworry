@@ -7,7 +7,7 @@ import MainNavigation from "@/components/layout/MainNavigation";
 import Footer from "@/components/layout/Footer";
 import MobileFloatingCTA from "@/components/ui/MobileFloatingCTA";
 import TableOfContents from "@/components/ui/TableOfContents";
-import { ArticleAuthor } from "@/components/ui/ArticleAuthor";
+import { ArticleFooter } from "@/components/ui/ArticleFooter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -391,16 +391,17 @@ export default function FirstLoanGuide2030() {
                 "일상은 가볍게, 돈 걱정은 없게. 돈워리가 함께하겠습니다."
               </p>
             </div>
-          </article>
-        </div>
 
-        {/* Author Section */}
-        <div className="max-w-4xl mx-auto mt-12">
-          <ArticleAuthor 
-            expertId="expert-finance-01"
-            publishedDate="2025-12-20"
-            lastUpdated="2026-01-27"
-          />
+            <div className="max-w-4xl">
+              <ArticleFooter
+                expertId="expert-finance-01"
+                publishedDate="2025-12-20"
+                lastUpdated="2026-01-27"
+                shareTitle="2026년 첫 대출 가이드: 사회초년생·청년 대출 완벽 정리"
+                shareDescription="첫 대출 받기 전 꼭 알아야 할 것"
+              />
+            </div>
+          </article>
         </div>
       </main>
 

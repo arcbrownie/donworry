@@ -31,27 +31,28 @@ export default function BlogCard({
     채무: "bg-category-debt/25 text-category-debt",
   };
 
-  const categoryGradient: Record<string, string> = {
-    생활: "group-hover:bg-gradient-to-br group-hover:from-category-life-light group-hover:to-card",
-    "재테크/절약": "group-hover:bg-gradient-to-br group-hover:from-category-life-light group-hover:to-card",
-    "재테크 · 절약": "group-hover:bg-gradient-to-br group-hover:from-category-life-light group-hover:to-card",
-    금융: "group-hover:bg-gradient-to-br group-hover:from-category-finance-light group-hover:to-card",
-    "금융/대출": "group-hover:bg-gradient-to-br group-hover:from-category-finance-light group-hover:to-card",
-    "금융 · 대출": "group-hover:bg-gradient-to-br group-hover:from-category-finance-light group-hover:to-card",
-    채무조정: "group-hover:bg-gradient-to-br group-hover:from-category-debt-light group-hover:to-card",
-    채무: "group-hover:bg-gradient-to-br group-hover:from-category-debt-light group-hover:to-card",
+  /* 이미지 디자인: 카테고리별 아이콘 박스 배경 (연한 회색/노랑/파랑) */
+  const categoryIconBg: Record<string, string> = {
+    생활: "bg-gray-100",
+    "재테크/절약": "bg-amber-50",
+    "재테크 · 절약": "bg-amber-50",
+    금융: "bg-sky-50",
+    "금융/대출": "bg-sky-50",
+    채무조정: "bg-violet-50",
+    채무: "bg-violet-50",
   };
+
+  const cardWrapperClass = "rounded-xl border border-border bg-card shadow-sm hover:shadow-md transition-shadow overflow-hidden h-full flex flex-col";
 
   const CardContent = () => (
     <>
-      {/* Content */}
-      <div className={`p-4 transition-all duration-300 h-full flex flex-col ${categoryGradient[category] || ""}`}>
+      <div className="p-5 h-full flex flex-col">
         <div className="flex items-start gap-3 mb-3">
-          <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
+          <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${categoryIconBg[category] || "bg-gray-100"} ${categoryColors[category] || "text-muted-foreground"}`}>
             <span className="text-2xl">{emoji}</span>
           </div>
-          <div className="flex-1">
-            <span className={`text-xs font-medium px-2 py-0.5 rounded-full inline-block ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
+          <div className="flex-1 min-w-0">
+            <span className={`text-xs font-medium px-2.5 py-1 rounded-full inline-block ${categoryColors[category] || "bg-muted text-muted-foreground"}`}>
               {category}
             </span>
             {isPlaceholder && (
@@ -61,20 +62,18 @@ export default function BlogCard({
                 </span>
               </div>
             )}
-            {!isPlaceholder && (
-              <div className="mt-2 h-[24px]"></div>
-            )}
+            {!isPlaceholder && <div className="mt-2 h-[20px]" />}
           </div>
         </div>
-        <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors text-base md:text-lg min-h-[3rem]">
+        <h3 className="font-bold text-foreground mb-2 line-clamp-2 text-base leading-snug min-h-[2.75rem]">
           {title}
         </h3>
-        <p className="text-base text-muted-foreground line-clamp-2 mb-3 min-h-[2.5rem]">
+        <p className="text-sm text-muted-foreground line-clamp-2 mb-4 min-h-[2.5rem] truncate">
           {excerpt}
         </p>
-        <div className="flex items-center text-sm text-primary font-medium mt-auto pt-1">
+        <div className="flex items-center text-sm font-semibold text-[#7C3AED] group-hover:text-purple-700 mt-auto pt-1">
           자세히 보기
-          <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
         </div>
       </div>
     </>
@@ -82,14 +81,14 @@ export default function BlogCard({
 
   if (isPlaceholder) {
     return (
-      <div className="blog-card group cursor-default opacity-70">
+      <div className={`blog-card group cursor-default opacity-70 ${cardWrapperClass}`}>
         <CardContent />
       </div>
     );
   }
 
   return (
-    <Link href={path} target="_blank" rel="noopener noreferrer" className="blog-card group">
+    <Link href={path} className={`blog-card group block ${cardWrapperClass}`}>
       <CardContent />
     </Link>
   );
